@@ -1,0 +1,9 @@
+<odoo>
+
+    <menuitem id="hm_picture_library_menu_root" name="Photos"
+              web_icon="hm_picture_library,static/description/icon.png"
+              sequence="6"/>
+
+    <menuitem id="hm_picture_library_menu" parent="hm_picture_library_menu_root" name="Photos" action="hm_picture_library_action"
+              sequence="1"/>
+</odoo>

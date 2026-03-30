@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <data noupdate="0">
+        <record id="hm_technician_app_document_sync_action_server" model="ir.actions.server">
+            <field name="name">Technician app document sync</field>
+            <field name="model_id" ref="hm_technician_app.model_hm_technician_app_document_sync"/>
+            <field name="state">code</field>
+            <field name="code">
+                record.sync_technician_app_document()
+            </field>
+        </record>
+
+        <record id="hm_technician_app_document_sync_base_auto" model="base.automation">
+            <field name="action_server_id" ref="hm_technician_app.hm_technician_app_document_sync_action_server"/>
+            <field name="active" eval="True"/>
+            <field name="filter_pre_domain" eval="False"/>
+            <field name="trigger">on_create</field>
+        </record>
+
+
+        <record id="hm_technician_app_picture_sync_action_server" model="ir.actions.server">
+            <field name="name">Technician app picture sync</field>
+            <field name="model_id" ref="hm_technician_app.model_hm_technician_app_picture_sync"/>
+            <field name="state">code</field>
+            <field name="code">
+                record.sync_technician_app_picture()
+            </field>
+        </record>
+
+        <record id="hm_technician_app_picture_sync_base_auto" model="base.automation">
+            <field name="action_server_id" ref="hm_technician_app.hm_technician_app_picture_sync_action_server"/>
+            <field name="active" eval="True"/>
+            <field name="filter_pre_domain" eval="False"/>
+            <field name="trigger">on_create_or_write</field>
+        </record>
+
+
+        <record id="hm_technician_app_sync_action_server" model="ir.actions.server">
+            <field name="name">Technician app sync</field>
+            <field name="model_id" ref="hm_technician_app.model_hm_technician_app_sync"/>
+            <field name="state">code</field>
+            <field name="code">
+                record.sync_technician_app()
+            </field>
+        </record>
+
+        <record id="hm_technician_app_sync_base_auto" model="base.automation">
+            <field name="action_server_id" ref="hm_technician_app.hm_technician_app_sync_action_server"/>
+            <field name="active" eval="True"/>
+            <field name="filter_pre_domain" eval="False"/>
+            <field name="trigger">on_create_or_write</field>
+            <!--            <field name="trigger_field_ids"-->
+            <!--                   eval="[(4,ref('mrp.field_mrp_bom_line__bom_product_template_attribute_value_ids')), (4,ref('mrp.field_mrp_bom_line__product_qty')), (4,ref('mrp.field_mrp_bom_line__product_id')), (4,ref('mrp.field_mrp_bom_line__product_uom_id'))]"/>-->
+        </record>
+
+
+        <record id="technician_partner" model="res.partner">
+            <field name="name">Technician App partner</field>
+            <field name="email">odoobot@example.com</field>
+            <field name="image_1920" type="base64" file="mail/static/src/img/odoobot.png"/>
+        </record>
+
+        <record model="res.users" id="technician_user">
+            <field name="name">Technician App user</field>
+            <field name="partner_id" ref="hm_technician_app.technician_partner"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(4, ref('base.main_company'))]"/>
+            <field name="groups_id"
+                   eval="[(4,ref('base.group_user')),(4,ref('sales_team.group_sale_manager')),(4,ref('purchase.group_purchase_manager'))]"/>
+            <field name="email">technician@example.com</field>
+            <field name="login">technician@example.com</field>
+            <field name="signature"><![CDATA[<span>-- <br/>
+Technician</span>]]></field>
+        </record>
+
+
+        <record id="tech_app_mail_activity_data_todo" model="mail.activity.type">
+            <field name="name"> To Do : Failed requests</field>
+            <field name="icon">fa-tasks</field>
+            <field name="delay_count">5</field>
+            <field name="sequence">12</field>
+        </record>
+
+    </data>
+
+</odoo>

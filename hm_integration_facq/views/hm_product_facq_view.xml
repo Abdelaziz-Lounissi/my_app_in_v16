@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--        Form view-->
+        <record id="hm_integration_facq_form_view" model="ir.ui.view">
+            <field name="name">hm.product.facq.form</field>
+            <field name="model">hm.product.facq</field>
+            <field name="arch" type="xml">
+                <form class="oe_form_configuration" create="1" edit="1">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="executed"/>
+                                <field name="mark_as_updated"/>
+                                <field name="mark_as_created"/>
+                                <field name="updated" invisible="1"/>
+                                <field name="executed" invisible="1"/>
+                                <field name="name" invisible="1"/>
+                                <field name="product_id"/>
+                                <field name="label_fr"/>
+                                <field name="label_nl"/>
+                                <field name="provider_id"/>
+                                <field name="provider_name"/>
+                            </group>
+                            <group>
+                                <field name="brand_name"/>
+                                <field name="producer_id"/>
+                                <field name="public_price_tax_excluded"/>
+                                <field name="net_price_tax_excluded"/>
+                                <field name="unit"/>
+                                <field name="image_url" widget="url"/>
+                                <field name="technical_sheet" widget="url"/>
+                                <field name="log_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view-->
+        <record id="hm_integration_facq_list_view" model="ir.ui.view">
+            <field name="name">hm.product.facq.tree</field>
+            <field name="model">hm.product.facq</field>
+            <field name="arch" type="xml">
+                <tree string="Facq" create="false">
+                    <field name="updated" readonly="1" invisible="1"/>
+                    <field name="executed" readonly="1" invisible="1"/>
+                    <field name="product_id"/>
+                    <field name="label_fr"/>
+                    <field name="label_nl"/>
+                    <field name="provider_id"/>
+                    <field name="provider_name"/>
+                    <field name="brand_name"/>
+                    <field name="producer_id"/>
+                    <field name="public_price_tax_excluded"/>
+                    <field name="net_price_tax_excluded"/>
+                    <field name="unit"/>
+                    <field name="image_url"/>
+                    <field name="technical_sheet"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--        Search view-->
+        <record id="hm_integration_facq_search_view" model="ir.ui.view">
+            <field name="name">hm.product.facq.search</field>
+            <field name="model">hm.product.facq</field>
+            <field name="arch" type="xml">
+                <search string="Facq">
+                    <field name="product_id"/>
+                    <field name="label_fr"/>
+                    <field name="label_nl"/>
+                    <field name="provider_id"/>
+                    <field name="provider_name"/>
+                    <field name="brand_name"/>
+                    <field name="producer_id"/>
+                    <field name="public_price_tax_excluded"/>
+                    <field name="net_price_tax_excluded"/>
+                    <field name="unit"/>
+                    <field name="image_url"/>
+                    <field name="technical_sheet"/>
+                </search>
+            </field>
+        </record>
+
+        <!--        Action-->
+        <record id="hm_integration_facq_catalog_action" model="ir.actions.act_window">
+            <field name="name">Catalogue</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hm.product.facq</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="hm_integration_facq_search_view"/>
+        </record>
+
+        <!--        History-->
+        <record id="history_view_hm_product_facq_tree" model="ir.ui.view">
+            <field name="name">ir.attachment.history.tree</field>
+            <field name="model">ir.attachment</field>
+            <field name="arch" type="xml">
+                <tree string="Historiques Import Facq" create="false">
+                    <field name="name"/>
+                    <field name="create_date"/>
+                    <field name="create_uid" filename="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="history_view_hm_product_facq_form" model="ir.ui.view">
+            <field name="name">File History</field>
+            <field name="model">ir.attachment</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Historiques Import Facq" create="0" edit="0" delete="0">
+                    <header>
+                        <field name="import_state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="datas" filename="name" readonly="1"/>
+                                <field name="name" invisible="1"/>
+                            </group>
+                            <group>
+                                <separator colspan="4" string="Import Date :"/>
+                                <field name="import_start_date"  readonly="1"/>
+                                <field name="import_end_date"  readonly="1"/>
+                            </group>
+                            <group>
+                                <separator string="Statistiques :"/>
+                                <field name="count_line"/>
+                                <field name="count_created_line"/>
+                                <field name="count_updated_line"/>
+                                <field name="count_price_update"/>
+
+                            </group>
+                            <group>
+                                <field name="log_text" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="hm_historiques_import" model="ir.actions.act_window">
+            <field name="name">Historiques Import</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ir.attachment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('res_model', '=', 'hm_product_facq')]</field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('history_view_hm_product_facq_tree')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('history_view_hm_product_facq_form')})]"/>
+
+        </record>
+
+        <!--  end historiques-->
+
+        <record id="base.action_attachment" model="ir.actions.act_window">
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('base.view_attachment_tree')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('base.view_attachment_form')})]"/>
+
+        </record>
+
+    </data>
+</odoo>

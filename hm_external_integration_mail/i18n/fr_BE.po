@@ -1,0 +1,108 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_external_integration_mail
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e-20230110\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-11 14:38+0000\n"
+"PO-Revision-Date: 2023-10-11 14:38+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_external_integration_mail
+#: model:ir.model.fields,field_description:hm_external_integration_mail.field_hm_mail_references__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hm_external_integration_mail
+#: model:ir.model.fields,field_description:hm_external_integration_mail.field_hm_mail_references__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: hm_external_integration_mail
+#: model:ir.model.fields,field_description:hm_external_integration_mail.field_hm_mail_references__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: hm_external_integration_mail
+#: model:ir.model.fields,field_description:hm_external_integration_mail.field_hm_mail_references__mail_domain_name
+msgid "Domain name"
+msgstr "Nom de domaine"
+
+#. module: hm_external_integration_mail
+#: model_terms:ir.ui.view,arch_db:hm_external_integration_mail.view_hm_mail_references_search
+msgid "Email Search"
+msgstr ""
+
+#. module: hm_external_integration_mail
+#: model:ir.model,name:hm_external_integration_mail.model_mail_thread
+msgid "Email Thread"
+msgstr "Discussion par email"
+
+#. module: hm_external_integration_mail
+#: model_terms:ir.ui.view,arch_db:hm_external_integration_mail.view_hm_mail_references_form
+msgid "Email message"
+msgstr ""
+
+#. module: hm_external_integration_mail
+#: model:ir.actions.act_window,name:hm_external_integration_mail.action_view_hm_mail_references_mail
+#: model:ir.ui.menu,name:hm_external_integration_mail.menu_mail_references_mail
+msgid "Emails References"
+msgstr "Email References"
+
+#. module: hm_external_integration_mail
+#: model:ir.model,name:hm_external_integration_mail.model_hm_mail_references
+msgid "Hm Mail References"
+msgstr ""
+
+#. module: hm_external_integration_mail
+#: model:ir.model.fields,field_description:hm_external_integration_mail.field_hm_mail_references__id
+msgid "ID"
+msgstr ""
+
+#. module: hm_external_integration_mail
+#: model:ir.model.fields,field_description:hm_external_integration_mail.field_hm_mail_references____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hm_external_integration_mail
+#: model:ir.model.fields,field_description:hm_external_integration_mail.field_hm_mail_references__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hm_external_integration_mail
+#: model:ir.model.fields,field_description:hm_external_integration_mail.field_hm_mail_references__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hm_external_integration_mail
+#: model:ir.model.fields,field_description:hm_external_integration_mail.field_hm_mail_references__lead_id
+#: model_terms:ir.ui.view,arch_db:hm_external_integration_mail.view_hm_mail_references_search
+msgid "Lead"
+msgstr "Opportunité CRM"
+
+#. module: hm_external_integration_mail
+#: model:ir.model.fields,field_description:hm_external_integration_mail.field_hm_mail_references__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: hm_external_integration_mail
+#: model:ir.model,name:hm_external_integration_mail.model_mail_mail
+msgid "Outgoing Mails"
+msgstr "Emails à envoyer"
+
+#. module: hm_external_integration_mail
+#: model:ir.model.fields,field_description:hm_external_integration_mail.field_hm_mail_references__references
+msgid "References"
+msgstr "Références"
+
+#. module: hm_external_integration_mail
+#: model:ir.model.fields,field_description:hm_external_integration_mail.field_hm_mail_references__x_odoo_objects
+msgid "X-Odoo-Objects"
+msgstr ""

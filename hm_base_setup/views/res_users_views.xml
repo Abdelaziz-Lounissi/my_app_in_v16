@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--    <record id="studio_customization.odoo_studio_res_user_17b61df0-c9d4-4af2-8df3-a3fa2a14f0e1" model="ir.ui.view">-->
+    <record id="hm_view_users_form" model="ir.ui.view">
+        <field name="name">res.users.form.customization</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+                <page name="studio_page_ZciwQ" string="Autres accès">
+                    <group name="studio_group_ZciwQ">
+                        <group name="studio_group_ZciwQ_left" string="Accès externes fournis">
+                            <field name="hm_is_internal_user" invisible="1"/>
+                        </group>
+                        <group name="studio_group_ZciwQ_right"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,319 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+        <record model="ir.actions.server" id="hm_action_reset_so_to_invoice">
+            <field name="name">Repasser le SO en à facturer</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="groups_id" eval="[(4, ref('account.group_account_invoice'))]"/>
+            <field name="binding_model_id" ref="account.model_account_move" />
+            <field name="state">code</field>
+            <field name="binding_view_types">form</field>
+            <field name="code">
+if records:
+    action = records.action_reset_so_to_invoice()
+            </field>
+        </record>
+
+    <record id="hm_view_move_form_inherit" model="ir.ui.view">
+        <field name="name">account.move.form.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button name="action_view_ticket" type="object" class="oe_stat_button" icon="fa-life-ring">
+                    <div class="o_stat_info">
+                        <field name="total_ticket" class="o_stat_value"/>
+                        <span class="o_stat_text" attrs="{'invisible': [('total_ticket', '&lt;', 2)]}"> Tickets
+                        </span>
+                        <span class="o_stat_text" attrs="{'invisible': [('total_ticket', '&gt;', 1)]}"> Ticket
+                        </span>
+                    </div>
+                </button>
+
+            </xpath>
+            <xpath expr="//notebook/page/field/tree/field[@name='product_id']" position="replace">
+                <field name="product_id"
+                       style="width: 100%;white-space: pre-wrap;"
+                       optional="show"
+                       domain="context.get('default_type') in ('out_invoice', 'out_refund', 'out_receipt')
+                        and [('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]
+                        or [('purchase_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]"/>
+            </xpath>
+            <xpath expr="//notebook/page/field/tree/field[@name='product_id']" position="after">
+                <field name="computed_image_art" readonly="1"/>
+            </xpath>
+
+
+            <!--        view:    invoice_form_inherit10  -->
+            <xpath expr="//field[@name='invoice_origin']" position="after">
+                <field name="sale_order_id"/>
+            </xpath>
+
+            <!-- hm_account_invoice_supplier_form_view -->
+
+            <xpath expr="//field[@name='invoice_line_ids']//tree//field[@name='price_unit']" position="after">
+            </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']//tree//field[@name='price_subtotal']" position="after">
+            </xpath>
+
+            <xpath expr="//field[@name='invoice_line_ids']//tree//field[@name='product_uom_id']" position="attributes">
+                <attribute name="string">U</attribute>
+            </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']//tree//field[@name='product_uom_id']" position="attributes">
+                <attribute name="string">Unit</attribute>
+            </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']//tree//field[@name='product_uom_id']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']//tree//field[@name='discount']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//div[@name='journal_div']" position="after">
+                <field name="hm_technician" invisible="1"/>
+                <field name="hm_vat_number"
+                       attrs="{'invisible': [('move_type', 'not in', ('in_invoice', 'in_refund', 'in_receipt'))]}"/>
+                <field name="hm_withholding_obligation" options="{'size': [0, 90]}" attrs="{'invisible': [('hm_technician', '=', False)], 'required': [('hm_technician','=',True),('state','!=','draft'),('state','!=','cancel'),('move_type','!=','out_invoice')]}" widget="image"/>
+            </xpath>
+            <xpath expr="//field[@name='hm_withholding_obligation'][not(ancestor::field)]" position="attributes">
+                <attribute name="string">Withholding obligation</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='hm_withholding_obligation'][not(ancestor::field)]" position="attributes">
+                <attribute name="options">{"size":[0,180]}</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='invoice_origin'][not(ancestor::field)]" position="attributes">
+                <attribute name="attrs">{"invisible": [("invoice_origin","=",False)]}</attribute>
+                <attribute name="readonly"/>
+                <attribute name="invisible"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_origin'][not(ancestor::field)]" position="attributes">
+                <attribute name="attrs">{"invisible": [("invoice_origin","=",False)]}</attribute>
+                <attribute name="readonly"/>
+                <attribute name="invisible"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_origin'][not(ancestor::field)]" position="attributes">
+                <attribute name="attrs">{"invisible": [("invoice_origin","=",False)]}</attribute>
+                <attribute name="invisible"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_date'][not(ancestor::field)]" position="after">
+                <xpath expr="//field[@name='name'][not(ancestor::field)]" position="move"/>
+            </xpath>
+
+            <xpath expr="//field[@name='hm_vat_number'][not(ancestor::field)]" position="attributes">
+                <attribute name="string">VAT number</attribute>
+            </xpath>
+            <xpath expr="//field[@name='hm_vat_number'][not(ancestor::field)]" position="attributes">
+                <attribute name="attrs">{"invisible": [("move_type","!=","in_invoice")]}</attribute>
+                <attribute name="invisible"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']/tree//field[@name='discount']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="invisible"/>
+            </xpath>
+            <!-- hm_view_move_form -->
+            <xpath expr="//field[@name='partner_shipping_id']" position="after">
+                <field name="hm_property_id" string="Property"
+                       attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}"/>
+                <field name="hm_manager1" string="Manager"
+                       attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}"/>
+            </xpath>
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="hm_intervention_date" string="Intervention date" widget="date"/>
+            </xpath>
+
+            <!--   hm_view_move_form_view         -->
+
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='date']" position="attributes">
+                <attribute name="attrs">{"readonly": [["state","not in",["draft"]]]}</attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='date']" position="after">
+                <xpath expr="//field[@name='sale_order_id']" position="move"/>
+            </xpath>
+
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="hm_work_category" string="Catégorie de travaux"/>
+                <field name="hm_parent_work_category" string="Catégorie de travaux parent"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_incoterm_id']" position="after">
+                <xpath expr="//field[@name='journal_id']" position="move"/>
+            </xpath>
+
+            <xpath expr="//field[@name='sale_order_id']" position="after">
+                <field name="hm_so_manager_id" attrs="{'invisible': [('move_type', '!=', 'out_invoice')]}"/>
+            </xpath>
+
+            <xpath expr="//field[@name='ref']" position="attributes">
+                <attribute name="force_save">1</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_account_invoice_line_filter" model="ir.ui.view">
+        <field name="name">account.move.line.select</field>
+        <field name="model">account.move.line</field>
+        <field name="arch" type="xml">
+            <search string="Search Invoice">
+                <field
+                        name="partner_id"
+                        filter_domain="[('partner_id.name', 'ilike', self)]"
+                        string="Partner"
+                />
+                <field
+                        name="ref"
+                        filter_domain="[('ref', 'ilike', self)]"
+                        string="Reference"
+                />
+
+            </search>
+        </field>
+    </record>
+
+
+    <!--    <record id="studio_customization.default_activity_vie_3699c5f6-7427-4db3-9369-856fa49d1627" model="ir.ui.view">-->
+    <record id="hm_account_move_activity_view" model="ir.ui.view">
+        <field name="name">account.move.activity</field>
+        <field name="model">account.move</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <activity string="Journal Entries">
+                <templates>
+                    <div t-name="activity-box">
+                        <field name="name" modifiers="{'readonly': true, 'required': true}"/>
+                    </div>
+                </templates>
+            </activity>
+        </field>
+    </record>
+
+
+    <!--    <record id="studio_customization.odoo_studio_account__e97d3eb9-84c9-4655-bcae-28d8a4d69726" model="ir.ui.view">-->
+    <record id="hm_view_account_invoice_filter" model="ir.ui.view">
+        <field name="name">hm.account.invoice.select</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='team_id']" position="replace">
+                <field name="invoice_origin" string="Origin PO"/>
+                <field name="invoice_line_ids"/>
+            </xpath>
+            <xpath expr="//field[@name='journal_id']" position="replace"/>
+            <xpath expr="//filter[@name='salesperson']" position="before">
+                <filter context="{'group_by': 'partner_id'}" name="studio_group_by_3Ve5F" string="Partner"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!--    <record id="studio_customization.odoo_studio_account__169d92b1-db19-4375-aeb9-67b2d8f40253" model="ir.ui.view">-->
+    <record id="hm_view_account_move_kanban" model="ir.ui.view">
+        <field name="name">hm.account.move.kanban</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_move_kanban"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[1]/div[1]/strong[1]/span[1]/field[@name='journal_id']"
+                   position="after">
+                <field display="full" name="invoice_partner_display_name"/>
+            </xpath>
+        </field>
+    </record>
+
+        <!--    <record id="studio_customization.default_search_view__1e4883ab-4057-4712-ae94-6551e990b7d0" model="ir.ui.view">-->
+    <!--    <record id="studio_customization.odoo_studio_default__ffeffba7-3d56-4831-b87b-c511306be7ce" model="ir.ui.view">-->
+    <record id="hm_account_move_line_search_view" model="ir.ui.view">
+        <field name="name">account.move.line.search</field>
+        <field name="model">account.move.line</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <search string="Invoice Line">
+                <field name="name" on_change="1" modifiers="{'required': true}"/>
+                <field name="partner_id"/>
+                <filter domain="[('reconciled','=',False)]" name="studio_filter_S3vI1" string="Unreconciled"/>
+            </search>
+        </field>
+    </record>
+
+    <!--    <record id="studio_customization.odoo_studio_account__6c734645-12c1-4baf-acd2-9f6f5c119c90" model="ir.ui.view">-->
+    <record id="hm_view_invoice_tree" model="ir.ui.view">
+        <field name="name">hm.account.invoice.tree</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree[1]/field[@name='name']" position="after">
+                <field name="hm_property_id" attrs="{}" invisible="1"/>
+            </xpath>
+            <xpath expr="//tree[1]/field[@name='invoice_date']" position="after">
+                <field name="create_date" optional="hide"/>
+            </xpath>
+            <xpath expr="//field[@name='payment_mode_id']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!--    <record id="studio_customization.default_graph_view_f_996d886b-8dd4-46ae-ae73-d039f57a1e44" model="ir.ui.view">-->
+    <record id="hm_account_move_graph_view" model="ir.ui.view">
+        <field name="name">account.move.graph</field>
+        <field name="model">account.move</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <graph string="Journal Entries">
+                <field name="name" modifiers="{'readonly': true, 'required': true}"/>
+            </graph>
+        </field>
+    </record>
+
+    <!--    <record id="studio_customization.odoo_studio_account__4fcca546-106f-4fff-9195-8e911f8fa665" model="ir.ui.view">-->
+    <record id="hm_view_move_line_tree" model="ir.ui.view">
+        <field name="name">account.move.line.tree</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_tree"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='credit']" position="after">
+                <field name="balance"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- <record id="studio_customization.ligne_facture_e9f89d58-9ae7-4162-a7f2-5d844ab64db9" model="ir.actions.act_window">-->
+    <record id="hm_account_invoice_line_action" model="ir.actions.act_window">
+        <field name="name">Invoice Line</field>
+        <field name="res_model">account.move.line</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="hm_action_account_moves_line_purchase" model="ir.actions.act_window">
+        <field name="context">{'journal_type':'purchase', 'name_groupby':1, 'expand': 1, 'search_default_return_merchandise_no_made' : 1}
+        </field>
+        <field name="name">Invoice Lines</field>
+        <field name="res_model">account.move.line</field>
+        <field name="domain">[('display_type', 'not in', ('line_section',
+            'line_note')),('move_id.type','=','in_refund'),('exclude_from_invoice_tab','=',False),
+            ('move_id.state','=','draft')]
+        </field>
+        <!--        <field name="view_id" ref="hm_account.view_move_line_tree_grouped_inrefund"/>-->
+        <field name="search_view_id" ref="hm_account.view_account_invoice_line_filter"/>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="menu_account_invoice_supplier" name="Lignes des NC"
+              parent="account.menu_finance_payables"
+              action="hm_account.hm_action_account_moves_line_purchase" sequence="3"/>
+
+    <!--    id="studio_customization.comptabilite_ligne_f_328825eb-d1fd-4704-8a3b-67a128aa1c17"-->
+    <menuitem id="hm_accounting_suppliers_invoice_line_menu"
+              name="Invoice Line"
+              action="hm_account.hm_account_invoice_line_action"
+              parent="account.menu_finance_payables"
+              sequence="7"/>
+
+</odoo>

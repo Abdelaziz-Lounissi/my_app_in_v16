@@ -1,0 +1,19 @@
+<odoo>
+
+    <menuitem id="hm_integration_facq_menu_root" name="Facq"
+              web_icon="hm_integration_facq,static/description/app_icon.png"
+              sequence="6"/>
+    <menuitem id="menu_hm_integration_facq_catalog" parent="hm_integration_facq_menu_root" name="Catalog"
+
+              action="hm_integration_facq_catalog_action" sequence="7"/>
+
+    <menuitem id="menu_hm_integration_facq_import" parent="hm_integration_facq_menu_root" name="Import" sequence="8"
+    />
+
+
+    <menuitem id="menu_hm_historique" parent="menu_hm_integration_facq_import" name="Historiques import"
+              action="hm_historiques_import" sequence="23"/>
+    <menuitem id="menu_hm_facq_log" parent="menu_hm_integration_facq_import" name="Logs"
+              action="hm_facq_log_catalog_action" sequence="24"/>
+
+</odoo>

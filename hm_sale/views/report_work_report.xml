@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="hm_work_report_document">
+            <t t-call="web.external_layout">
+                <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})"/>
+                <t t-set="address">
+                    <div t-field="doc.partner_id"
+                         t-options="{'widget': 'contact', 'fields': ['address', 'name'], 'no_marker': True}"
+                         t-options-fields="['address', 'name', 'phone']"/>
+                    <p t-if="doc.partner_id.vat"><t t-esc="doc.company_id.country_id.vat_label or 'Tax ID'"/>:
+                        <span t-field="doc.partner_id.vat"/>
+                    </p>
+                </t>
+<!--                TODO : as Olivier wanted - show always the intervention address, remove form prod the comments lines bellow-->
+<!--                <t t-if="doc.partner_shipping_id == doc.partner_invoice_id and doc.partner_invoice_id != doc.partner_id or doc.partner_shipping_id != doc.partner_invoice_id">-->
+                    <t t-set="information_block">
+<!--                        <t t-if="doc.partner_shipping_id != doc.partner_invoice_id">-->
+                            <strong>Adresse d'intervention:</strong>
+                            <div t-field="doc.property_id.partner_id"
+                                 t-options="{'widget': 'contact', 'fields': ['address', 'name'], 'no_marker': True}"
+                                 t-options-fields="['address']"/>
+<!--                        </t>-->
+                        <br/>
+                        <div>
+                            <h3 style="color: red;">
+                                Rapport d'intervention
+                                <span t-field="doc.name"/>
+                            </h3>
+                        </div>
+                    </t>
+                    <br/>
+<!--                </t>-->
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <br/>
+
+                    <div class="row">
+                        <span>
+                            <strong>Technicien:</strong>
+                            <span t-field="doc.hm_imputed_technician_id.hm_surnom_heat_me"/>
+                            <br/>
+                        </span>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-3">
+                            <span>
+                                <strong>Date d'intervention:</strong>
+                                <br/>
+                            </span>
+                            <span t-field="doc.commitment_date"/>
+                        </div>
+                        <div class="col-3">
+                            <span>
+                                <strong>Référence client:</strong>
+                                <br/>
+                            </span>
+                            <span t-field="doc.client_order_ref"/>
+                        </div>
+                        <div class="col-3"/>
+                        <div class="col-3"/>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <div class="col">
+                            <span t-field="doc.wr_id.body_text"/>
+                            <t t-set="wr_pictures_count" t-value="len(doc.wr_id.picture_wr_info_ids)"/>
+                            <t t-if="wr_pictures_count &gt; 0">
+                                <t t-set="counter" t-value="0"/>
+                                <t t-foreach="doc.wr_id.picture_wr_info_ids" t-as="picture_info">
+                                    <t t-set="counter" t-value="counter + 1"/>
+                                    <t t-if="counter % 2 == 1">
+                                        <table class="table"
+                                               style="padding: 0; margin-top: 30px; margin-bottom: 20px; border-spacing: 0;border-collapse: collapse; page-break-inside: avoid;"
+                                               cellpadding="0" cellspacing="0">
+                                            <t t-set="left_picture" t-value="doc.wr_id.picture_wr_info_ids[counter-1]"/>
+                                            <tr style="page-break-inside: avoid;">
+                                                <!-- Colonne gauche -->
+                                                <td style="vertical-align: bottom; background-color: #FFFFFF; color: #000000; text-align:center;width: 50%; border:1px solid transparent !important;border-spacing: 0;padding: 0px; margin: 0px;">
+                                                    <t t-if="left_picture.image_256">
+                                                        <img t-attf-src="data:image/*;base64,{{left_picture.image_256}}"
+                                                             style="max-height:100%; max-width:100%;"/>
+                                                    </t>
+                                                    <t t-elif="left_picture.hm_picture_library_id.get_external_image_base64()">
+                                                        <img t-attf-src="data:image/*;base64,{{left_picture.hm_picture_library_id.get_external_image_base64()}}"
+                                                             style="max-width:256px; max-height:256px; width:auto; height:auto;"/>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <span style="font-size:12px;">Aucune image disponible</span>
+                                                    </t>
+                                                </td>
+
+
+                                                <!-- Colonne droite -->
+                                                <t t-if="wr_pictures_count &gt;= counter + 1">
+                                                    <t t-set="right_picture"
+                                                       t-value="doc.wr_id.picture_wr_info_ids[counter]"/>
+                                                    <td style="vertical-align: bottom; background-color: #FFFFFF; color: #000000; text-align:center;width: 50%; border:1px solid transparent !important;border-spacing: 0;padding: 0px; margin: 0px;">
+                                                        <t t-if="right_picture.image_256">
+                                                            <img t-attf-src="data:image/*;base64,{{right_picture.image_256}}"
+                                                                 style="max-height:100%; max-width:100%;"/>
+                                                        </t>
+                                                        <t t-elif="right_picture.hm_picture_library_id.get_external_image_base64()">
+                                                            <img t-attf-src="data:image/*;base64,{{right_picture.hm_picture_library_id.get_external_image_base64()}}"
+                                                                 style="max-width:256px; max-height:256px; width:auto; height:auto;"/>
+                                                        </t>
+                                                        <t t-else="">
+                                                            <span style="font-size:12px;">Aucune image disponible</span>
+                                                        </t>
+                                                    </td>
+                                                </t>
+                                            </tr>
+
+                                            <!-- Légendes -->
+                                            <tr style="page-break-inside: avoid;">
+                                                <td style="vertical-align: top; background-color: #FFFFFF; color: #000000; text-align:center;width: 50%; border:1px solid transparent !important;border-spacing: 0;padding: 0px; margin-bottom: 20px;">
+                                                    <t t-if="left_picture.caption">
+                                                        <span t-esc="left_picture.caption" style="font-size:12px;"/>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <span style="font-size:12px;"> </span>
+                                                    </t>
+                                                </td>
+                                                <t t-if="wr_pictures_count &gt;= counter + 1">
+                                                    <td style="vertical-align: top; background-color: #FFFFFF; color: #000000; text-align:center;width: 50%; border:1px solid transparent !important;border-spacing: 0;padding: 0px; margin-bottom: 20px;">
+                                                        <t t-if="right_picture.caption">
+                                                            <span t-esc="right_picture.caption"
+                                                                  style="font-size:12px;"/>
+                                                        </t>
+                                                        <t t-else="">
+                                                            <span style="font-size:12px;"> </span>
+                                                        </t>
+                                                    </td>
+                                                </t>
+                                            </tr>
+                                        </table>
+                                    </t>
+                                </t>
+                            </t>
+
+                            <t t-if="not doc.wr_id">
+                                <p>
+                                    Recommandation à adresser: Néant
+                                    <br/>
+                                    Danger à signaler: Néant
+                                </p>
+                            </t>
+                        </div>
+                    </div>
+
+                    <div class="oe_structure"/>
+                </div>
+            </t>
+        </template>
+
+        <template id="hm_report_work_report_document">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="hm_sale.hm_work_report_document" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

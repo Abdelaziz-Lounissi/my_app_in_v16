@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_product_equivalent_form_view" model="ir.ui.view">
+        <field name="name">product.template.product.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='sales']" position="after">
+                <page name="equivalent" string="Equivalent">
+                    <group>
+                        <field name="equivalent_product_ids" string=""
+                               context="{'tree_view_ref' : 'hm_product.hm_product_equivalent_tree_view'}"/>
+                    </group>
+                    <button type="object" icon="fa-arrow-right" class="btn-link" string="Edit equivalents"  name="open_equivalent_product"
+                            help="View Equivalents"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hm_product_equivalent_tree_view" model="ir.ui.view">
+        <field name="name">product.template.product.tree</field>
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+            <tree string="Equivalent Products">
+                <field name="sku"/>
+                <field name="name"/>
+                <field name="standard_price"/>
+                <field name="seller_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hm_product_select_equivalent_tree_view" model="ir.ui.view">
+        <field name="name">product.template.product.tree</field>
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+            <tree default_order="equivalent_id" decoration-success="equivalent_green_color != False " decoration-danger="can_add_equivalent == False and can_remove_equivalent == False" create="false" edit="false" delete="false" string="Equivalent Products">
+                <field name="sku"/>
+                <field name="name"/>
+                <field name="standard_price"/>
+                <field name="seller_ids" widget="many2many_tags"/>
+                <field name="equivalent_id" invisible="1"/>
+                <field name="equivalent_green_color" invisible="1"/>
+                <field name="can_remove_equivalent" invisible="1"/>
+                <field name="equivalent_filter" invisible="1"/>
+                <field name="can_add_equivalent" invisible="1"/>
+                <button name="add_equivalent_product" attrs="{'invisible': [('can_add_equivalent', '=', False)]}" type="object" icon="fa-lg fa-plus-circle" title="+"/>
+                <button name="remove_equivalent_product" attrs="{'invisible': [('can_remove_equivalent', '=', False)]}" type="object" icon="fa-lg fa-minus-circle" title="-"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

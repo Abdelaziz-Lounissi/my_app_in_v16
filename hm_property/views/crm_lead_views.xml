@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="crm_case_form_view_oppor_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.form.opportunity</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group/group[1]" position="after">
+                <group>
+                    <field name="property_id"
+                           context="{'emails_to_ignore_check': True, 'crm_email':context.get('email_from', False),'crm_phone':context.get('phone', False), 'default_street': street, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id}"/>
+                    <field name="partner_onsite_id"/>
+                    <field name="partner_ids_domain" invisible="1" force_save="1"/>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="domain">['&amp;', '|', ('company_id', '=', False), ('company_id', '=', company_id), '&amp;',('from_property', '=', False), ('id', 'in', partner_ids_domain)]
+                </attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="crm_tree_view_oppor_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.tree.opportunity</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="partner_ids_domain" invisible="1" force_save="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!--  ***  Kanban views ***-->
+    <record id="crm_kanban_quick_create_view_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.kanban.quick_create</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.quick_create_opportunity_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="domain">['&amp;', ('from_property', '=', False), '|', ('company_id', '=', False), ('company_id', '=', company_id)]
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hm_crm_email_addresses_not_copy_action" model="ir.actions.act_window">
+        <field name="name">Email addresses to not copy</field>
+        <field name="res_model">ir.config_parameter</field>
+        <field name="domain">[('key','=', 'emails_to_ignore')]</field>
+    </record>
+
+    <menuitem
+            id="crm_email_addresses_not_copy"
+            name="Email Addresses to Not Copy"
+            parent="crm.crm_menu_config"
+            action="hm_crm_email_addresses_not_copy_action"
+            sequence="10"/>
+</odoo>

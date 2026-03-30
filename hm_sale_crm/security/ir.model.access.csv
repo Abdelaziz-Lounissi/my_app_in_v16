@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hm_works_category_group_system,Works_category2 group_system,model_hm_works_category,base.group_system,1,1,1,1
+access_hm_works_category_group_user,Works_category2 group_user,model_hm_works_category,base.group_user,1,0,0,0
+access_hm_works_category_parent_group_system,Works_category_parent group_system,model_hm_works_category_parent,base.group_system,1,1,1,1
+access_hm_works_category_parent_group_user,Works_category_parent group_user,model_hm_works_category_parent,base.group_user,1,0,0,0

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="check_supplier_form_view" model="ir.ui.view">
+            <field name="name">Check Supplier</field>
+            <field name="model">check.supplier</field>
+            <field name="arch" type="xml">
+                <form string="Choose Vendor Pricelists">
+                    <field name="po_lines" mode="tree">
+                        <tree string="Purchase Order Lines" editable="bottom" create="false" delete="false">
+                            <field name="product_id" readonly="1"/>
+                            <field name="product_tmpl_id" invisible="1"/>
+                            <field name="product_qty" readonly="1"/>
+                            <field name="supplier_choice" required="1" options="{'no_create': True, 'no_create_edit':True, 'no_open': True}" context="{'is_supplier_choice':True, 'equivalent_tree_view_color':True}"/>
+                            <field name="equivalent_product_ids" invisible="1"/>
+                        </tree>
+                    </field>
+                    <footer>
+                        <button name="check_supplier"
+                                string="Apply"
+                                type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" name="check_supplier_cancel" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_change_check_supplier" model="ir.actions.act_window">
+            <field name="name">Check Supplier</field>
+            <field name="res_model">check.supplier</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="check_supplier_form_view"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

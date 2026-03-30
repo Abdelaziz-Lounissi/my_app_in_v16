@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_technician_app_attachment_form_vien" model="ir.ui.view">
+        <field name="name">ir.attachment.form</field>
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="base.view_attachment_form"/>
+        <field name="priority">999999</field>
+        <field name="arch" type="xml">
+            <field name="mimetype" position="after">
+                <field name="hm_document_type"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

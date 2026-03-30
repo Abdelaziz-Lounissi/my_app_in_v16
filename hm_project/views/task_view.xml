@@ -1,0 +1,392 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data>
+
+        <record id="hm_view_task_form3" model="ir.ui.view">
+            <field name="name">view.task.form3</field>
+            <field name="model">project.task</field>
+            <field name="priority">22</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                    <field name="version_id" domain="[('project_id','=',project_id)]" context="{'default_project_id': project_id}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--    <record id="studio_customization.odoo_studio_project__c997785d-b30b-4b78-8f1b-5385bdf640fe" model="ir.ui.view">-->
+        <!--        <record id="hm_view_task_form2" model="ir.ui.view">-->
+        <!--            <field name="name">project.task.form.customization</field>-->
+        <!--            <field name="model">project.task</field>-->
+        <!--            <field name="inherit_id" ref="project.view_task_form2"/>-->
+        <!--            <field name="priority">99</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <data>-->
+        <!--                    <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/field[@name='project_id']" position="after">-->
+        <!--                        <field name="hm_execute_id" string="Executer" help="Celui qui va réaliser la tache"-->
+        <!--                               placeholder="Qui va le réaliser"/>-->
+        <!--                        <field name="hm_reviewer_id" string="Reviewer"-->
+        <!--                               help="Celui qui validera la tache avant mise déploiement"/>-->
+        <!--                    </xpath>-->
+        <!--                    <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/field[@name='user_id']" position="after">-->
+        <!--                        <field name="hm_version" string="Version"/>-->
+        <!--                    </xpath>-->
+        <!--                    <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='tag_ids']" position="after">-->
+        <!--                        <field name="hm_priority" widget="priority" string="Priorité"/>-->
+        <!--                    </xpath>-->
+        <!--                    <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">-->
+        <!--                        <page name="studio_page_gp9mm" string="Taches liées">-->
+        <!--                            <group name="studio_group_gp9mm">-->
+        <!--                                <group name="studio_group_gp9mm_left">-->
+        <!--                                    <field name="hm_prior_task_ids" string="Tache préalable"-->
+        <!--                                           domain="[('project_id.id','=',172)]">-->
+        <!--                                        <tree decoration-bf="message_needaction==True"-->
+        <!--                                              decoration-danger="date_deadline and (date_deadline&lt;current_date)"-->
+        <!--                                              string="Tasks">-->
+        <!--                                            <field name="message_needaction" invisible="1"/>-->
+        <!--                                            <field name="sequence" invisible="not context.get('seq_visible', False)"/>-->
+        <!--                                            <field name="name"/>-->
+        <!--                                            <field name="project_id" invisible="context.get('user_invisible', False)"/>-->
+        <!--                                            <field name="user_id" invisible="context.get('user_invisible', False)"/>-->
+        <!--                                            <field name="planned_hours" widget="float_time"-->
+        <!--                                                   sum="Initially Planned Hours" attrs="{}" invisible="1"/>-->
+        <!--                                            <field name="remaining_hours" widget="float_time" sum="Remaining Hours"-->
+        <!--                                                   readonly="1" attrs="{}" invisible="1"/>-->
+        <!--                                            <field name="effective_hours" widget="float_time" sum="Spent Hours"-->
+        <!--                                                   invisible="1"/>-->
+        <!--                                            <field name="date_deadline"-->
+        <!--                                                   invisible="context.get('deadline_visible',True)"/>-->
+        <!--                                            <field name="stage_id" invisible="context.get('set_visible',False)"/>-->
+        <!--                                            <field name="progress" widget="progressbar"/>-->
+        <!--                                        </tree>-->
+        <!--                                        <form string="Task" class="o_form_project_tasks">-->
+        <!--                                            <header>-->
+        <!--                                                <button name="action_assign_to_me" string="Assign to Me" type="object"-->
+        <!--                                                        class="oe_highlight"-->
+        <!--                                                        attrs="{'invisible' : [('user_id', '!=', False)]}"/>-->
+        <!--                                                <button name="%(portal.portal_share_action)d" string="Share" type="action"-->
+        <!--                                                        class="oe_highlight oe_read_only"/>-->
+        <!--                                                <field name="stage_id" widget="statusbar"-->
+        <!--                                                       options="{'clickable': '1', 'fold_field': 'fold'}"/>-->
+        <!--                                            </header>-->
+        <!--                                            <sheet string="Task" name="studio_sheet_c39349">-->
+        <!--                                                <div class="oe_button_box" name="button_box">-->
+        <!--                                                    <button class="oe_stat_button" icon="fa-tasks" type="object"-->
+        <!--                                                            name="action_open_parent_task" string="Parent Task"-->
+        <!--                                                            attrs="{'invisible' : [('parent_id', '=', False)]}"-->
+        <!--                                                            groups="project.group_subtask_project"/>-->
+        <!--                                                    <button name="action_subtask" type="object" class="oe_stat_button"-->
+        <!--                                                            icon="fa-tasks"-->
+        <!--                                                            attrs="{'invisible' : [('parent_id', '!=', False)]}"-->
+        <!--                                                            context="{'project_id': subtask_project_id, 'name': name, 'partner_id': partner_id}"-->
+        <!--                                                            groups="project.group_subtask_project">-->
+        <!--                                                        <field string="Sub-tasks" name="subtask_count"-->
+        <!--                                                               widget="statinfo"/>-->
+        <!--                                                    </button>-->
+        <!--                                                    <button name="%(project.rating_rating_action_task)d" type="action"-->
+        <!--                                                            attrs="{'invisible': [('rating_count', '=', 0)]}"-->
+        <!--                                                            class="oe_stat_button" icon="fa-smile-o"-->
+        <!--                                                            groups="project.group_project_rating">-->
+        <!--                                                        <field name="rating_count" string="Rating" widget="statinfo"/>-->
+        <!--                                                    </button>-->
+        <!--                                                    <button type="object" name="action_view_so" class="oe_stat_button"-->
+        <!--                                                            icon="fa-dollar"-->
+        <!--                                                            attrs="{'invisible': [('sale_order_id', '=', False)]}"-->
+        <!--                                                            string="Sales Order"-->
+        <!--                                                            groups="sales_team.group_sale_salesman"/>-->
+        <!--                                                    <field name="sale_order_id" invisible="1"-->
+        <!--                                                           groups="sales_team.group_sale_salesman"/>-->
+        <!--                                                    <button name="toggle_active" type="object" groups="base.group_user"-->
+        <!--                                                            class="oe_stat_button" icon="fa-archive">-->
+        <!--                                                        <field name="active" widget="boolean_button"-->
+        <!--                                                               options="{'terminology': 'archive'}"/>-->
+        <!--                                                    </button>-->
+        <!--                                                </div>-->
+        <!--                                                <div class="oe_title pr-0" name="studio_div_ed63aa">-->
+        <!--                                                    <h1 class="d-flex flex-row justify-content-between">-->
+        <!--                                                        <field name="priority" widget="priority" class="mr-3"/>-->
+        <!--                                                        <field name="name" class="o_task_name text-truncate"-->
+        <!--                                                               placeholder="Task Title..."/>-->
+        <!--                                                        <field name="kanban_state" widget="state_selection"-->
+        <!--                                                               class="ml-auto"/>-->
+        <!--                                                    </h1>-->
+        <!--                                                </div>-->
+        <!--                                                <group name="studio_group_1466ea">-->
+        <!--                                                    <group name="studio_group_277f9c">-->
+        <!--                                                        <field name="project_id" domain="[('active', '=', True)]"/>-->
+        <!--                                                        <field name="hm_execute_id" string="Executer"-->
+        <!--                                                               help="Celui qui va réaliser la tache"-->
+        <!--                                                               placeholder="Qui va le réaliser"/>-->
+        <!--                                                        <field name="hm_reviewer_id" string="Reviewer"-->
+        <!--                                                               help="Celui qui validera la tache avant mise déploiement"/>-->
+        <!--                                                        <field name="user_id" class="o_task_user_field"-->
+        <!--                                                               options="{'no_open': True}"/>-->
+        <!--                                                        <field name="hm_version" string="Version"/>-->
+        <!--                                                        <field name="sale_line_id" string="Sales Order Item"-->
+        <!--                                                               attrs="{'invisible': ['|', ('partner_id', '=', False)]}"-->
+        <!--                                                               options="{'no_create': True}" readonly="0"-->
+        <!--                                                               context="{'create': False, 'edit': False, 'delete': False}"-->
+        <!--                                                               groups="base.group_private_addresses"/>-->
+        <!--                                                        <field name="billable_type" invisible="1"-->
+        <!--                                                               groups="base.group_private_addresses"/>-->
+        <!--                                                        <field name="is_project_map_empty" invisible="1"/>-->
+        <!--                                                        <field name="legend_blocked" invisible="1"/>-->
+        <!--                                                        <field name="legend_normal" invisible="1"/>-->
+        <!--                                                        <field name="legend_done" invisible="1"/>-->
+        <!--                                                    </group>-->
+        <!--                                                    <group name="studio_group_651fbf">-->
+        <!--                                                        <field name="date_deadline"/>-->
+        <!--                                                        <field name="tag_ids" widget="many2many_tags"-->
+        <!--                                                               options="{'color_field': 'color', 'no_create_edit': True}"/>-->
+        <!--                                                        <field name="hm_priority" widget="priority"-->
+        <!--                                                               string="Priorité"/>-->
+        <!--                                                    </group>-->
+        <!--                                                </group>-->
+        <!--                                                <notebook name="studio_notebook_5d48a1">-->
+        <!--                                                    <page name="description_page" string="Description">-->
+        <!--                                                        <field name="description" type="html"/>-->
+        <!--                                                        <div class="oe_clear" name="studio_div_7e7c12"/>-->
+        <!--                                                    </page>-->
+        <!--                                                    <field name="analytic_account_active" invisible="1"-->
+        <!--                                                           studio-view-group-ids="72"/>-->
+        <!--                                                    <field name="allow_timesheets" invisible="1"-->
+        <!--                                                           studio-view-group-ids="72"/>-->
+        <!--                                                    <page string="Timesheets"-->
+        <!--                                                          attrs="{'invisible': [('allow_timesheets', '=', False)]}"-->
+        <!--                                                          studio-view-group-ids="72" name="studio_page_733039">-->
+        <!--                                                        <group studio-view-group-ids="72" name="studio_group_f39358">-->
+        <!--                                                            <group studio-view-group-ids="72"-->
+        <!--                                                                   name="studio_group_c9271c">-->
+        <!--                                                                <field name="planned_hours" widget="float_time"-->
+        <!--                                                                       studio-view-group-ids="72"/>-->
+        <!--                                                                <label for="subtask_planned_hours"-->
+        <!--                                                                       groups="project.group_subtask_project"-->
+        <!--                                                                       attrs="{'invisible': [('subtask_count', '=', 0)]}"-->
+        <!--                                                                       studio-view-group-ids="72"/>-->
+        <!--                                                                <div class="o_row"-->
+        <!--                                                                     groups="project.group_subtask_project"-->
+        <!--                                                                     attrs="{'invisible': [('subtask_count', '=', 0)]}"-->
+        <!--                                                                     studio-view-group-ids="72"-->
+        <!--                                                                     name="studio_div_e3e725">-->
+        <!--                                                                    <field name="subtask_planned_hours"-->
+        <!--                                                                           widget="float_time"-->
+        <!--                                                                           studio-view-group-ids="72"/>-->
+        <!--                                                                    <span studio-view-group-ids="72">planned hours-->
+        <!--                                                                    </span>-->
+        <!--                                                                </div>-->
+        <!--                                                            </group>-->
+        <!--                                                            <group studio-view-group-ids="72"-->
+        <!--                                                                   name="studio_group_ca2acc">-->
+        <!--                                                                <field name="progress" widget="progressbar"-->
+        <!--                                                                       studio-view-group-ids="72"/>-->
+        <!--                                                            </group>-->
+        <!--                                                        </group>-->
+        <!--                                                        <group name="timesheet_error"-->
+        <!--                                                               attrs="{'invisible': [('analytic_account_active', '!=', False)]}"-->
+        <!--                                                               studio-view-group-ids="72">-->
+        <!--                                                            <div class="alert alert-warning" role="alert"-->
+        <!--                                                                 studio-view-group-ids="72" name="studio_div_085689">-->
+        <!--                                                                You can not log timesheets on this project since is-->
+        <!--                                                                linked to an inactive analytic account. Please change-->
+        <!--                                                                it, or reactivate the current one to timesheet on the-->
+        <!--                                                                project.-->
+        <!--                                                            </div>-->
+        <!--                                                        </group>-->
+        <!--                                                        <field name="timesheet_ids" mode="tree,kanban"-->
+        <!--                                                               attrs="{'invisible': [('analytic_account_active', '=', False)]}"-->
+        <!--                                                               context="{'default_project_id': project_id, 'default_name':''}"-->
+        <!--                                                               studio-view-group-ids="72">-->
+        <!--                                                            <tree editable="bottom" string="Timesheet Activities"-->
+        <!--                                                                  default_order="date" studio-view-group-ids="72"-->
+        <!--                                                                  decoration-muted="timesheet_invoice_id != False">-->
+        <!--                                                                <field name="date" studio-view-group-ids="72"/>-->
+        <!--                                                                <field name="user_id" invisible="1"-->
+        <!--                                                                       studio-view-group-ids="72"/>-->
+        <!--                                                                <field name="employee_id" required="1"-->
+        <!--                                                                       studio-view-group-ids="72"/>-->
+        <!--                                                                <field name="name" studio-view-group-ids="72"/>-->
+        <!--                                                                <field name="unit_amount" widget="timesheet_uom"-->
+        <!--                                                                       studio-view-group-ids="72"-->
+        <!--                                                                       string="Durée (Hour(s))"/>-->
+        <!--                                                                <field name="project_id" invisible="1"-->
+        <!--                                                                       studio-view-group-ids="72"/>-->
+        <!--                                                                <field name="timesheet_invoice_id" invisible="1"/>-->
+        <!--                                                                <field name="so_line" readonly="1"-->
+        <!--                                                                       attrs="{'column_invisible': ['|', ('parent.is_project_map_empty', '=', True), ('parent.billable_type', '!=', 'employee_rate')]}"/>-->
+        <!--                                                            </tree>-->
+        <!--                                                            <kanban class="o_kanban_mobile" studio-view-group-ids="72">-->
+        <!--                                                                <field name="date" studio-view-group-ids="72"/>-->
+        <!--                                                                <field name="user_id" studio-view-group-ids="72"/>-->
+        <!--                                                                <field name="employee_id" studio-view-group-ids="72"/>-->
+        <!--                                                                <field name="name" studio-view-group-ids="72"/>-->
+        <!--                                                                <field name="unit_amount" studio-view-group-ids="72"/>-->
+        <!--                                                                <field name="project_id" studio-view-group-ids="72"/>-->
+        <!--                                                                <templates studio-view-group-ids="72">-->
+        <!--                                                                    <t t-name="kanban-box" studio-view-group-ids="72">-->
+        <!--                                                                        <div t-attf-class="oe_kanban_card oe_kanban_global_click"-->
+        <!--                                                                             studio-view-group-ids="72"-->
+        <!--                                                                             name="studio_div_e4f26c">-->
+        <!--                                                                            <div class="row" studio-view-group-ids="72"-->
+        <!--                                                                                 name="studio_div_1f8552">-->
+        <!--                                                                                <div class="col-6"-->
+        <!--                                                                                     studio-view-group-ids="72"-->
+        <!--                                                                                     name="studio_div_6dcf38">-->
+        <!--                                                                                    <strong studio-view-group-ids="72">-->
+        <!--                                                                                        <span studio-view-group-ids="72">-->
+        <!--                                                                                            <t t-esc="record.employee_id.value"-->
+        <!--                                                                                               studio-view-group-ids="72"/>-->
+        <!--                                                                                        </span>-->
+        <!--                                                                                    </strong>-->
+        <!--                                                                                </div>-->
+        <!--                                                                                <div class="col-6 pull-right text-right"-->
+        <!--                                                                                     studio-view-group-ids="72"-->
+        <!--                                                                                     name="studio_div_16e983">-->
+        <!--                                                                                    <strong studio-view-group-ids="72">-->
+        <!--                                                                                        <t t-esc="record.date.value"-->
+        <!--                                                                                           studio-view-group-ids="72"/>-->
+        <!--                                                                                    </strong>-->
+        <!--                                                                                </div>-->
+        <!--                                                                            </div>-->
+        <!--                                                                            <div class="row" studio-view-group-ids="72"-->
+        <!--                                                                                 name="studio_div_d1f87f">-->
+        <!--                                                                                <div class="col-6 text-muted"-->
+        <!--                                                                                     studio-view-group-ids="72"-->
+        <!--                                                                                     name="studio_div_2c2422">-->
+        <!--                                                                                    <span studio-view-group-ids="72">-->
+        <!--                                                                                        <t t-esc="record.name.value"-->
+        <!--                                                                                           studio-view-group-ids="72"/>-->
+        <!--                                                                                    </span>-->
+        <!--                                                                                </div>-->
+        <!--                                                                                <div class="col-6"-->
+        <!--                                                                                     studio-view-group-ids="72"-->
+        <!--                                                                                     name="studio_div_72e1e3">-->
+        <!--                                                                                    <span class="pull-right text-right"-->
+        <!--                                                                                          studio-view-group-ids="72">-->
+        <!--                                                                                        <field name="unit_amount"-->
+        <!--                                                                                               widget="float_time"-->
+        <!--                                                                                               studio-view-group-ids="72"/>-->
+        <!--                                                                                    </span>-->
+        <!--                                                                                </div>-->
+        <!--                                                                            </div>-->
+        <!--                                                                        </div>-->
+        <!--                                                                    </t>-->
+        <!--                                                                </templates>-->
+        <!--                                                            </kanban>-->
+        <!--                                                            <form string="Timesheet Activities"-->
+        <!--                                                                  studio-view-group-ids="72">-->
+        <!--                                                                <sheet studio-view-group-ids="72"-->
+        <!--                                                                       name="studio_sheet_81604a">-->
+        <!--                                                                    <group studio-view-group-ids="72"-->
+        <!--                                                                           name="studio_group_66acef">-->
+        <!--                                                                        <field name="date" studio-view-group-ids="72"/>-->
+        <!--                                                                        <field name="user_id" invisible="1"-->
+        <!--                                                                               studio-view-group-ids="72"/>-->
+        <!--                                                                        <field name="employee_id" required="1"-->
+        <!--                                                                               studio-view-group-ids="72"/>-->
+        <!--                                                                        <field name="name" studio-view-group-ids="72"/>-->
+        <!--                                                                        <field name="unit_amount" string="Duration"-->
+        <!--                                                                               widget="float_time"-->
+        <!--                                                                               studio-view-group-ids="72"/>-->
+        <!--                                                                        <field name="project_id" invisible="1"-->
+        <!--                                                                               studio-view-group-ids="72"/>-->
+        <!--                                                                    </group>-->
+        <!--                                                                </sheet>-->
+        <!--                                                            </form>-->
+        <!--                                                        </field>-->
+        <!--                                                        <group attrs="{'invisible': [('analytic_account_active', '=', False)]}"-->
+        <!--                                                               studio-view-group-ids="72" name="studio_group_33e65a">-->
+        <!--                                                            <group class="oe_subtotal_footer oe_right"-->
+        <!--                                                                   name="project_hours" studio-view-group-ids="72">-->
+        <!--                                                                <field name="effective_hours" widget="float_time"-->
+        <!--                                                                       studio-view-group-ids="72"/>-->
+        <!--                                                                <field name="subtask_effective_hours"-->
+        <!--                                                                       widget="float_time"-->
+        <!--                                                                       attrs="{'invisible' : [('subtask_effective_hours', '=', 0.0)]}"-->
+        <!--                                                                       studio-view-group-ids="72"/>-->
+        <!--                                                                <field name="total_hours_spent" widget="float_time"-->
+        <!--                                                                       class="oe_subtotal_footer_separator"-->
+        <!--                                                                       attrs="{'invisible' : [('subtask_effective_hours', '=', 0.0)]}"-->
+        <!--                                                                       studio-view-group-ids="72"/>-->
+        <!--                                                                <field name="remaining_hours" widget="float_time"-->
+        <!--                                                                       class="oe_subtotal_footer_separator"-->
+        <!--                                                                       studio-view-group-ids="72"/>-->
+        <!--                                                            </group>-->
+        <!--                                                        </group>-->
+        <!--                                                    </page>-->
+        <!--                                                    <page name="extra_info" string="Extra Info">-->
+        <!--                                                        <group name="studio_group_e9fd5c">-->
+        <!--                                                            <group name="studio_group_c5e73c">-->
+        <!--                                                                <field name="sequence" groups="base.group_no_one"/>-->
+        <!--                                                                <field name="partner_id"-->
+        <!--                                                                       attrs="{'readonly': [('parent_id', '!=', False)]}"/>-->
+        <!--                                                                <field name="email_from"-->
+        <!--                                                                       attrs="{'readonly': [('parent_id', '!=', False)]}"/>-->
+        <!--                                                                <field name="email_cc" groups="base.group_no_one"/>-->
+        <!--                                                                <field name="parent_id"-->
+        <!--                                                                       domain="[('parent_id', '=', False)]"-->
+        <!--                                                                       attrs="{'invisible' : [('subtask_count', '&gt;', 0)]}"-->
+        <!--                                                                       groups="project.group_subtask_project"/>-->
+        <!--                                                                <field name="child_ids" invisible="1"/>-->
+        <!--                                                                <field name="subtask_project_id" invisible="1"/>-->
+        <!--                                                                <field name="company_id"-->
+        <!--                                                                       groups="base.group_multi_company"-->
+        <!--                                                                       options="{'no_create': True}"/>-->
+        <!--                                                                <field name="displayed_image_id"-->
+        <!--                                                                       groups="base.group_no_one"/>-->
+        <!--                                                            </group>-->
+        <!--                                                            <group name="studio_group_5cbd89">-->
+        <!--                                                                <field name="date_assign" groups="base.group_no_one"/>-->
+        <!--                                                                <field name="date_last_stage_update"-->
+        <!--                                                                       groups="base.group_no_one"/>-->
+        <!--                                                            </group>-->
+        <!--                                                            <group string="Working Time to Assign"-->
+        <!--                                                                   attrs="{'invisible': [('working_hours_open', '=', 0.0)]}"-->
+        <!--                                                                   name="studio_group_4edf10">-->
+        <!--                                                                <field name="working_hours_open" string="Hours"/>-->
+        <!--                                                                <field name="working_days_open" string="Days"/>-->
+        <!--                                                            </group>-->
+        <!--                                                            <group string="Working Time to Close"-->
+        <!--                                                                   attrs="{'invisible': [('working_hours_close', '=', 0.0)]}"-->
+        <!--                                                                   name="studio_group_86ec75">-->
+        <!--                                                                <field name="working_hours_close" string="Hours"/>-->
+        <!--                                                                <field name="working_days_close" string="Days"/>-->
+        <!--                                                            </group>-->
+        <!--                                                        </group>-->
+        <!--                                                    </page>-->
+        <!--                                                    <page name="studio_page_gp9mm" string="Taches liées">-->
+        <!--                                                        <group name="studio_group_gp9mm">-->
+        <!--                                                            <group name="studio_group_gp9mm_left">-->
+        <!--                                                                <field name="hm_prior_task_ids"-->
+        <!--                                                                       string="Tache préalable"/>-->
+        <!--                                                            </group>-->
+        <!--                                                            <group name="studio_group_gp9mm_right"/>-->
+        <!--                                                            <group name="studio_group_gp9mm_right"/>-->
+        <!--                                                        </group>-->
+        <!--                                                    </page>-->
+        <!--                                                </notebook>-->
+        <!--                                            </sheet>-->
+        <!--                                        </form>-->
+        <!--                                    </field>-->
+        <!--                                </group>-->
+        <!--                            </group>-->
+        <!--                        </page>-->
+        <!--                    </xpath>-->
+        <!--                </data>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <!--    <record id="studio_customization.odoo_studio_project__39cc3093-5cf4-4be2-8594-1805dd6135d3" model="ir.ui.view">-->
+        <!--        <record id="hm_view_task_kanban" model="ir.ui.view">-->
+        <!--            <field name="name">project.task.kanban.customization</field>-->
+        <!--            <field name="model">project.task</field>-->
+        <!--            <field name="inherit_id" ref="project.view_task_kanban"/>-->
+        <!--            <field name="priority">99</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <xpath expr="//field[@name='kanban_state']" position="after">-->
+        <!--                    <field display="full" name="hm_priority" widget="priority"/>-->
+        <!--                </xpath>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+    </data>
+</odoo>

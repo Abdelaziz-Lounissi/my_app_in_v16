@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="word_of_mouth" model="customer.source">
+            <field name="name">Bouche à oreille</field>
+        </record>
+
+        <record id="i_know_the_team" model="customer.source">
+            <field name="name">Je connais l'équipe</field>
+        </record>
+
+        <record id="i_have_already_called_on_you" model="customer.source">
+            <field name="name">J'ai déjà fait appel à vous</field>
+        </record>
+
+        <record id="google" model="customer.source">
+            <field name="name">Google</field>
+        </record>
+
+        <record id="trustup_be" model="customer.source">
+            <field name="name">Trustup.be</field>
+        </record>
+
+        <record id="facebook_pub" model="customer.source">
+            <field name="name">Facebook - pub</field>
+        </record>
+
+        <record id="facebook_local_groups" model="customer.source">
+            <field name="name">Facebook - Groupes locaux</field>
+        </record>
+
+        <record id="facebook_pfp" model="customer.source">
+            <field name="name">facebook - PFP</field>
+        </record>
+
+        <record id="at_the_request_of_my_landlord_or_trustee" model="customer.source">
+            <field name="name">A la demande de mon propriétaire ou syndic</field>
+        </record>
+
+        <record id="other" model="customer.source">
+            <field name="name">Autre</field>
+        </record>
+
+        <record id="via_website_form_no_more_info" model="customer.source">
+            <field name="name">Via formulaire site - pas plus d'info</field>
+        </record>
+
+        <record id="partner_wilink_immo" model="customer.source">
+            <field name="name">PARTENAIRE - Wilink immo</field>
+        </record>
+
+        <record id="partner_potvin" model="customer.source">
+            <field name="name">PARTENAIRE - Potvin</field>
+        </record>
+
+        <record id="partner_bdw_invest" model="customer.source">
+            <field name="name">PARTENAIRE - BDW invest</field>
+        </record>
+
+        <record id="partner_homedesk" model="customer.source">
+            <field name="name">PARTENAIRE - Homedesk</field>
+        </record>
+
+        <record id="supplier_bulex_xpert" model="customer.source">
+            <field name="name">FOURNISSEUR - Bulex Xpert</field>
+        </record>
+
+        <record id="supplier_bosch" model="customer.source">
+            <field name="name">FOURNISSEUR - Bosch</field>
+        </record>
+
+        <record id="supplier_buderus" model="customer.source">
+            <field name="name">FOURNISSEUR - Buderus</field>
+        </record>
+
+        <record id="supplier_vam_install" model="customer.source">
+            <field name="name">FOURNISSEUR - VAM Install</field>
+        </record>
+
+        <record id="supplier_stiebel" model="customer.source">
+            <field name="name">FOURNISSEUR - Stiebel</field>
+        </record>
+
+        <record id="partner_energreen" model="customer.source">
+            <field name="name">PARTENAIRE - Energreen</field>
+        </record>
+
+        <record id="website_chauffagiste_be_etc" model="customer.source">
+            <field name="name">Site chauffagiste.be etc</field>
+        </record>
+
+    </data>
+</odoo>

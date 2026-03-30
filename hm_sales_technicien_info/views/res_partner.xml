@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_res_partner_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="priority">101</field>
+        <field name="inherit_id" ref="hm_base_setup.hm_view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/notebook/page[@name='studio_page_UfVGP']/field[@name='zip_code']" position="before">
+                <group>
+                    <field name="agremeent_ids_tech" widget="many2many_tags" invisible="1"/>
+                </group>
+                <br/>
+                <group>
+                    <field name="region_tech" widget="many2many_tags" invisible="1"/>
+                </group>
+                <br/>
+                <group>
+                    <field name="work_type_ids" widget="many2many_tags"/>
+                </group>
+                <separator string="Agremeents" colspan="2"/>
+                <field name="agremeent_reg_ids"
+                       context="{'form_view_ref':'hm_sales_technicien_info.agreement_region_view_form'}">
+                    <tree editable="bottom" create="true" delete="true">
+                        <field name="agreement_id"/>
+                        <field name="region"/>
+                        <field name="name" force_save="1" readonly="1"/>
+                    </tree>
+                </field>
+            </xpath>
+
+            <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+                <page name="proposals" string="Proposals" attrs="{'invisible': [('hm_technician', '=', False)]}">
+                    <group name="proposals">
+                        <field name="proposal_lines"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter_technicien" model="ir.ui.view">
+        <field name="name">res.partner.technicien.form</field>
+        <field name="model">res.partner</field>
+        <field name="priority">101</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search/field[@name='name']" position="after">
+                <field name="work_type_ids"
+                       domain="[('work_type_ids', 'in', context.get('search_defaul_work_type_ids'))]"/>
+             </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_tree_for_popup" model="ir.ui.view">
+        <field name="name">res.partner.tree.for.popup</field>
+        <field name="model">res.partner</field>
+        <field eval="8" name="priority"/>
+        <field name="arch" type="xml">
+            <tree string="Technicians" create="false" delete="false">
+                <field name="display_name" string="Name"/>
+                <field name="region_tech" string="Sous-région" widget="many2many_tags"/>
+                <field name="work_type_ids" string="Type de mission" widget="many2many_tags"/>
+                <field name="agremeent_ids_tech" string="Agréments" widget="many2many_tags"/>
+                <field name="agremeent_reg_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hm_view_res_partner_filter" model="ir.ui.view">
+        <field name="name">res.partner.select.customization</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="replace">
+                <field name="work_type_ids"/>
+                <field name="agremeent_ids_tech"/>
+                <field name="work_type_ids"/>
+            </xpath>
+            <xpath expr="//field[@name='parent_id']" position="replace"/>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data>
+
+        <record id="mail_template_notification_failure" model="mail.template">
+            <field name="name">Notification Failure</field>
+            <field name="model_id" ref="model_hm_mobile_notification"/>
+            <field name="subject">Notification Failure ${object.id}</field>
+            <field name="body_html" type="html">
+                <div style="margin:0px;padding: 0px;">
+                  <p>An error occurred while sending the notification</p>
+                </div>
+            </field>
+            <field name="auto_delete" eval="False"/>
+        </record>
+
+        <record id="mail_template_delete_notification" model="mail.template">
+            <field name="name">Delete Notification</field>
+            <field name="model_id" ref="model_hm_mobile_notification"/>
+            <field name="subject">Delete Notification ${object.id}</field>
+            <field name="body_html" type="html">
+                <div style="margin:0px;padding: 0px;">
+                </div>
+            </field>
+            <field name="auto_delete" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="hm_product_supplierinfo_form_view">
+            <field name="name">product.supplierinfo.additional.supplier.form.view</field>
+            <field name="model">product.supplierinfo</field>
+            <field name="inherit_id" ref="product.product_supplierinfo_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_tmpl_id']" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </xpath>
+                <xpath expr="//div[1]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group/group[2]" position="inside">
+
+                    <field name="product_id" groups="product.group_product_variant"
+                           domain="[('product_tmpl_id', '=', product_tmpl_id)]"
+                           options="{'no_create_edit': True}"/>
+
+                    <field name="gross_price"/>
+                    <field name="price" string="Prix net"/>
+                    <field name="hm_imported_price"/>
+                    <field name="hm_special_price"/>
+                    <field name="hm_special_price_contract"/>
+                    <label for="date_start"/>
+                    <div class="o_row">
+                        <field name="date_start"/>
+                        to
+                        <field name="date_end"/>
+                    </div>
+                </xpath>
+                <xpath expr="//label[@for='min_qty']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group/group[2]/div[1]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//label[@for='delay']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='product_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group[@name='vendor']" position="inside">
+                    <field name="fabricant"/>
+                    <field name="manufacturer"/>
+                    <field name="manufacturer_code"/>
+                </xpath>
+                <xpath expr="//label[@for='price']" position="replace"></xpath>
+                <xpath expr="//group/group[2]/div[3]" position="replace"></xpath>
+
+                <xpath expr="//group/group[2]/div[2]" position="replace"></xpath>
+
+                <xpath expr="//label[@for='date_start']" position="replace"></xpath>
+
+                <xpath expr="//group/group[2]" position="after">
+                    <group string="Autres informations">
+                        <field name="long_name_fr"/>
+                        <field name="description_fr"/>
+                        <field name="category"/>
+                        <field name="parent_category"/>
+                        <field name="model"/>
+                        <field name="code_ean"/>
+                    </group>
+
+                    <group string="Remises">
+                        <field name="hm_calculated_discount"/>
+                        <field name="hm_calc_disc_vs_max_obt_disc"/>
+                        <field name="hm_max_obtained_discount"/>
+                    </group>
+                </xpath>
+
+                <xpath expr="//group" position="inside">
+                    <group colspan='2' string="Fiches techniques">
+                        <field name="fiche_fr"/>
+                        <field name="fiche_nl"/>
+                    </group>
+                </xpath>
+
+                <xpath expr="//group" position="inside">
+                    <group colspan='2' string="Images">
+                        <field name="image_url_1"/>
+                        <field name="image_url_2"/>
+                        <field name="image_url_3"/>
+                    </group>
+                </xpath>
+
+                <xpath expr="//group" position="inside">
+                    <group string="Traductions">
+                        <field name="name_nl"/>
+                        <field name="long_name_nl"/>
+                        <field name="description_nl"/>
+                    </group>
+                </xpath>
+
+                <xpath expr="//group" position="inside">
+                    <group string="Informations liées aux imports">
+                        <field name="created_date"/>
+                        <field name="updated_date"/>
+                        <field name="source"/>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="hm_product_template_only_form_view_multi_supplier" model="ir.ui.view">
+            <field name="name">product.template.form.view.multi.supplier</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="hm_product.hm_product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='default_code']" position="after">
+                    <field name="prime_supplier_id"/>
+                </xpath>
+                <xpath expr="//field[@name='seller_ids']" position="attributes">
+                    <attribute name="context">{'form_view_ref' :
+                        'product.product_supplierinfo_form_view','visible_product_tmpl_id': True,
+                        'default_product_tmpl_id':context.get('product_tmpl_id',active_id),
+                        'product_template_invisible_variant': True}
+                    </attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hm_product_normal_form_view_prime_supplier" model="ir.ui.view">
+            <field name="name">product.product.form.customization</field>
+            <field name="model">product.product</field>
+            <field name="priority">99</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='default_code']" position="after">
+                    <field name="prime_supplier_id"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

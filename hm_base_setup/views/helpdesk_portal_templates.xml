@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+<!--        <template id="hide_tickets_followup_state" inherit_id="helpdesk.tickets_followup">-->
+<!--            <xpath expr="//div[@class='col-md text-md-right']" position="attributes">-->
+<!--                <attribute name="class">d-none</attribute>-->
+<!--            </xpath>-->
+<!--        </template>-->
+    </data>
+</odoo>

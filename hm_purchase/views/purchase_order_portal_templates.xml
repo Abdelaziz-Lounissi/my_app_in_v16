@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="portal_my_home_menu_purchase_order" name="Portal layout : purchase order menu entries"
+              inherit_id="portal.portal_breadcrumbs" priority="60">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'purchase_order_technicien'"
+                t-attf-class="breadcrumb-item #{'active ' if not purchase_order_technicien else ''}">
+                <a t-if="purchase_order_technicien" t-attf-href="/my/purchase?{{ keep_query() }}">Bons de facturation
+                </a>
+                <t t-else="">Bons de facturation</t>
+            </li>
+            <li t-if="purchase_order_technicien" class="breadcrumb-item active">
+                <t t-esc="purchase_order_technicien.name"/>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_purchase_orders_technicien" name="My Purchase Orders">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Bons de facturation</t>
+            </t>
+            <t t-if="not purchase_orders">
+                <p>Il n'y a pas des bons de commande pour votre compte actuellement.</p>
+            </t>
+            <t t-if="purchase_orders" t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        <th/>
+                        <th># PO</th>
+                        <th>Intervention Date</th>
+                        <th>Intervention address</th>
+                        <th>Objet des travaux</th>
+                        <th>Total HTVA</th>
+                        <th>Work Order</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="purchase_orders" t-as="purchase_order">
+                        <tr>
+                            <td>
+                                <a class="btn" style="color: red;"
+                                   t-attf-href="/my/purchase/generate_pdf/#{purchase_order.id}?#{keep_query()}" target="_blank">
+                                    <i class="fa fa-file-pdf-o"/>
+                                </a>
+                            </td>
+
+                            <td>
+                                <a t-attf-href="/my/purchase/#{purchase_order.id}?#{keep_query()}">
+                                    <t t-esc="purchase_order.name"/>
+                                </a>
+                            </td>
+                            <td>
+                                <t t-if="purchase_order.hm_intervention_datetime">
+                                    <span t-field="purchase_order.hm_intervention_datetime"
+                                          t-options="{'widget': 'date'}"/>
+                                </t>
+                            </td>
+                            <td style="max-width: 20ch;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+                                <t t-if="purchase_order.hm_so_lie and purchase_order.hm_so_lie.property_id">
+                                    <span t-field="purchase_order.hm_so_lie.property_id"/>
+                                </t>
+                            </td>
+                            <td>
+                                <t t-if="purchase_order.hm_so_lie and purchase_order.hm_so_lie.hm_work_object">
+                                    <span t-field="purchase_order.hm_so_lie.hm_work_object"/>
+                                </t>
+                            </td>
+                            <td>
+                                <span t-field="purchase_order.amount_untaxed"
+                                      t-options='{"widget": "monetary", "display_currency": purchase_order.currency_id}'/>
+                            </td>
+                            <td>
+                                <t t-if="purchase_order.hm_so_lie">
+                                    <span t-field="purchase_order.hm_so_lie"/>
+                                </t>
+                            </td>
+
+                        </tr>
+                    </t>
+                </tbody>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_purchase_order_page" name="Purchase Order Portal Template">
+        <t t-call="portal.portal_layout">
+            <t t-set="po" t-value="purchase_order_technicien"/>
+            <div id="optional_placeholder"/>
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h4>
+                                    <t t-if="purchase_order_technicien.state in ['draft', 'sent']">
+                                        Demande de prix
+                                    </t>
+                                    <t t-else="1">
+                                        Commande fournisseur
+                                    </t>
+                                    <span t-esc="purchase_order_technicien.name"/>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb8">
+                            <strong>Date:</strong>
+                            <span t-field="purchase_order_technicien.date_order" t-options='{"widget": "date"}'/>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <strong>Product</strong>
+                            </div>
+                            <div class="col-lg-2 text-right o_hidden">
+                                <strong>Unit Price</strong>
+                            </div>
+                            <div class="col-lg-6 text-right">
+                                <strong>Quantity</strong>
+                            </div>
+                            <div class="col-lg-2 text-right o_hidden">
+                                <strong>Subtotal</strong>
+                            </div>
+                        </div>
+                        <t t-set="current_subtotal" t-value="0"/>
+                        <t t-foreach="purchase_order_technicien.order_line" t-as="ol">
+                            <t t-set="current_subtotal" t-value="current_subtotal + ol.price_subtotal"
+                               groups="account.group_show_line_subtotals_tax_excluded"/>
+                            <t t-set="current_subtotal" t-value="current_subtotal + ol.price_total"
+                               groups="account.group_show_line_subtotals_tax_included"/>
+                            <div t-if="not ol.display_type" class="row purchases_vertical_align">
+                                <div class="col-lg-1 text-center">
+                                    <img t-att-src="image_data_uri(resize_to_48(ol.product_id.image_1024))" alt="Product" class="d-none d-lg-inline"/>
+                                </div>
+                                <div id='product_name' class="col-lg-5">
+                                    <span t-esc="ol.name"/>
+                                </div>
+                                <div class="col-lg-2 text-right o_hidden">
+                                    <span t-field="ol.price_unit"
+                                          t-options='{"widget": "monetary", "display_currency": purchase_order_technicien.currency_id}'/>
+                                </div>
+                                <div class="col-lg-6 text-right">
+                                    <span t-esc="ol.product_qty"/>
+                                </div>
+                                <div class="col-lg-2 text-right o_hidden">
+                                    <span t-field="ol.price_subtotal"
+                                          t-options='{"widget": "monetary", "display_currency": purchase_order_technicien.currency_id}'/>
+                                </div>
+                            </div>
+                            <t t-if="ol.display_type == 'line_section'">
+                                <div class="col-lg-12 bg-200">
+                                    <strong t-esc="ol.name"/>
+                                </div>
+                                <t t-set="current_section" t-value="ol"/>
+                                <t t-set="current_subtotal" t-value="0"/>
+                            </t>
+                            <t t-elif="ol.display_type == 'line_note'">
+                                <div class="col-lg-12 font-italic">
+                                    <span t-esc="ol.name"/>
+                                </div>
+                            </t>
+                            <t t-if="current_section and (ol_last or purchase_order_technicien.order_line[ol_index+1].display_type == 'line_section')">
+                                <div class="row">
+                                    <div class="col-lg-10 text-right">Subtotal</div>
+                                    <div class="col-lg-2 text-right">
+                                        <span
+                                                t-esc="current_subtotal"
+                                                t-options='{"widget": "monetary", "display_currency": purchase_order_technicien.currency_id}'
+                                        />
+                                    </div>
+                                </div>
+                            </t>
+                        </t>
+
+                        <!--                        <hr/>-->
+
+                        <div class="row o_hidden">
+                            <div class="col-lg-12 text-right">
+                                <div class="row">
+                                    <div class="col-lg-10 text-right">
+                                        Montant hors-taxe :
+                                    </div>
+                                    <div class="col-lg-2 text-right">
+                                        <span t-field="purchase_order_technicien.amount_untaxed"
+                                              t-options='{"widget": "monetary", "display_currency": purchase_order_technicien.currency_id}'/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-10 text-right">
+                                        Taxes:
+                                    </div>
+                                    <div class="col-lg-2 text-right">
+                                        <span t-field="purchase_order_technicien.amount_tax"
+                                              t-options='{"widget": "monetary", "display_currency": purchase_order_technicien.currency_id}'/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-10 text-right">
+                                        <strong>Total:</strong>
+                                    </div>
+                                    <div class="col-lg-2 text-right">
+                                        <strong>
+                                            <span t-field="purchase_order_technicien.amount_total"
+                                                  t-options='{"widget": "monetary", "display_currency": purchase_order_technicien.currency_id}'/>
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="oe_structure mb32"/>
+        </t>
+    </template>
+
+</odoo>

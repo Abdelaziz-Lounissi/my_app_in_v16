@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <record id="base.lang_fr_BE" model="res.lang">
+        <field name="time_format">%H:%M</field>
+        <field name="thousands_sep"></field>
+    </record>
+
+</odoo>
+

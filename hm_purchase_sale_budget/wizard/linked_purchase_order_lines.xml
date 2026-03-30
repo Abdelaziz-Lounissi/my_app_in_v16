@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_linked_purchase_order_lines_tree" model="ir.ui.view">
+        <field name="name">view.linked.purchase.order.lines.tree</field>
+        <field name="model">linked.purchase.order.lines</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" delete="false" editable="bottom">
+                <field name="new_product_id" optional="hide"/>
+                <field name="new_name"/>
+                <field name="new_product_uom_qty" sum="Total Qty New"/>
+                <button name="action_open_po" type="object" class="btn btn-sm btn-secondary" icon="fa-lg fa-arrow-circle-o-right" title="Open Purchase Order"/>
+                <field name="order_id" string="Purchase Order Reference"/>
+                <field name="po_line_id" optional="hide"/>
+                <field name="name"/>
+                <field name="hm_technical_info"/>
+                <field name="product_uom_qty" string="Qty" sum="Total Qty"/>
+                <field name="price_unit" optional="hide"/>
+                <field name="hm_budget" optional="hide" string="Budget"/>
+                <field name="sale_order_id" optional="show"/>
+                <field name="price_subtotal" optional="show"/>
+                <field name="qty_delivered" sum="Total Qty delivered"/>
+                <field name="qty_invoiced" sum="Total Qty invoiced"/>
+                <field name="date_order" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

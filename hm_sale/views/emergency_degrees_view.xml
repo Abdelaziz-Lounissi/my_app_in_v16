@@ -1,0 +1,29 @@
+<odoo>
+
+    <record id="hm_emergy_dugrees_tree_view" model="ir.ui.view">
+        <field name="name">order.emergency.degrees.tree</field>
+        <field name="model">order.emergency.degrees</field>
+        <field name="priority">2</field>
+        <field name="arch" type="xml">
+            <tree string="Emergency Degrees">
+                <field name="sequence" widget="handle" />
+                <field name="name"/>
+                <field name="urgency_fee"/>
+                <field name="delay_to_plan_intervention"/>
+                <field name="product_ids"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hm_emergy_dugrees" model="ir.actions.act_window">
+        <field name="name">Emergency Degrees</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">order.emergency.degrees</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="hm_emergy_dugrees_id" name="Emergency Degrees" sequence="40"
+                            parent="sale.menu_sales_config" action="hm_emergy_dugrees"/>
+
+</odoo>

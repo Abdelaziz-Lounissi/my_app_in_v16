@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_view_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.view.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="priority">999999</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sale_order_template_id']" position="after">
+                <field name="hm_fiscal_position_template_forced_id" string="Fiscal Position template forced"
+                       attrs="{}" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="hm_work_category" string="Catégorie de travaux"/>
+                <field name="hm_parent_work_category" string="Catégorie de travaux parent"/>
+            </xpath>
+
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='price_subtotal']" position="after">
+                <field name="hm_sol_state" invisible="1" />
+                <button string="OP" help="Option" name="run_option_process" type="object"  colspan="2"/>
+                <button string="VA" help="Variant" name="run_variant_process" class="bg-success" type="object"  colspan="2"/>
+            </xpath>
+
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']//tree" position="attributes">
+                <attribute name="decoration-muted">hm_sol_state and hm_sol_state == 'option'</attribute>
+                <attribute name="decoration-success">hm_sol_state and hm_sol_state == 'variant'</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="hm_view_sales_order_filter_inherit" model="ir.ui.view">
+        <field name="name">sale.order.list.select.customization</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='order_month']" position="after">
+                <filter context="{'group_by': 'hm_parent_work_category'}" name="studio_group_by_VtafN"
+                        string="Catégorie de travaux parent"/>
+                <filter context="{'group_by': 'hm_work_category'}" name="studio_group_by_rnS4v"
+                        string="Catégorie de travaux"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hm_sale_order_search_inherit" model="ir.ui.view">
+        <field name="name">sale.order.search.customization</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="hm_sale.hm_sale_order_search"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='group_by_commitment_date']" position="after">
+                <filter context="{'group_by': 'hm_parent_work_category'}" name="studio_group_by_VtafN"
+                        string="Catégorie de travaux parent"/>
+                <filter context="{'group_by': 'hm_work_category'}" name="studio_group_by_rnS4v"
+                        string="Catégorie de travaux"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hm_sale_order_view_search_inherit_quotation_inherit" model="ir.ui.view">
+        <field name="name">sale.order.search.inherit.quotation.customization</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='order_month']" position="after">
+                <filter context="{'group_by': 'hm_work_category'}" name="groupby_hm_work_category"
+                        string="Catégorie de travaux"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

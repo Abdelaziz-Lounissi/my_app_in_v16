@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- <record id="studio_customization.default_tree_view_fo_51a35638-ce34-4fe1-92b0-41350b661b2c" model="ir.ui.view">-->
+        <record id="hm_property_type_tree_view" model="ir.ui.view">
+            <field name="name">hm.property.type.tree</field>
+            <field name="model">hm.property.type</field>
+            <field name="priority">16</field>
+            <field name="arch" type="xml">
+                <tree string="Realty Type">
+                    <field name="name" modifiers="{}"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- <record id="studio_customization.type_de_bien_7d72e3a7-5f6b-4328-9f96-f8439c23fcde" model="ir.actions.act_window">-->
+        <record id="hm_property_type_action" model="ir.actions.act_window">
+            <field name="name">Type de bien</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hm.property.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- <record id="studio_customization.bien_immobilier_type_acfafc4f-b005-4705-8a6a-a69b6330ccb0" model="ir.ui.menu">-->
+        <menuitem id="hm_property_type_menu"
+                  name="Type de bien"
+                  action="hm_property.hm_property_type_action"
+                  parent="hm_property.hm_property_menu_root"
+                  sequence="1"/>
+
+    </data>
+</odoo>

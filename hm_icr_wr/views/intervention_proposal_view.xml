@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <!-- Form view -->
+        <record id="view_technician_intervention_proposal_form_inherit" model="ir.ui.view">
+            <field name="name">Technician Intervention Proposal</field>
+            <field name="model">hm.technician.intervention.proposal</field>
+            <field name="inherit_id" ref="hm_sales_technicien_info.view_technician_intervention_proposal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='hm_customer_availability_id']" position="before">
+                    <field name="hm_icr_id"/>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

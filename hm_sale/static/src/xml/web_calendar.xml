@@ -1,0 +1,9 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="calendar-box">
+        <div t-att-style="typeof color === 'string' ? ('background-color:' + color) + ';' : ''"
+             t-attf-class="#{record.is_highlighted ? 'o_event_hightlight' : ''} #{typeof color === 'number' ? _.str.sprintf('o_calendar_color_%s', color) : 'o_calendar_color_1'}">
+            <div class="o_event_title" t-esc="record.display_name"/>
+            <t t-if="record.hm_imputed_technician_id" t-esc="record.hm_imputed_technician_id[1]"/>
+        </div>
+    </t>
+</templates>

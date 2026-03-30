@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_technician_app_so_order_form" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="priority">999999</field>
+        <field name="arch" type="xml">
+            <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+                <page name="rapport_technicien" string="Rapport technicien">
+                    <group name="group_1">
+                        <field name="hm_tech_sync_id"/>
+                        <field name="ask_qr_code"/>
+                        <field name="hm_tech_report_qr_code"/>
+                        <field name="hm_tech_report_intervention_status"/>
+                        <field name="hm_tech_report_arrival"/>
+                        <field name="hm_tech_report_departure"/>
+                        <field name="hm_tech_report_summary"/>
+                        <field name="hm_tech_report_improvement_suggestions"/>
+                        <field name="hm_tech_report_internal_notes"/>
+                        <field name="hm_tech_intervention_billable_h" widget="float_time" invisible="1"/>
+                        <field name="hm_tech_report_start_stop_log" help="Les heures affichées sont les heures UTC (il faut ajouter 1h en hiver et 2 heures en été)."/>
+                        <field name="technicien_report_picture_info_ids">
+                            <tree>
+                                <field name="image_1920" widget='image' class="oe_avatar" options='{"zoom": true, "preview_image":"image_256"}' readonly="1" force_save="1"/>
+                                <field name="caption" readonly="1" force_save="1"/>
+                            </tree>
+                        </field>
+
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

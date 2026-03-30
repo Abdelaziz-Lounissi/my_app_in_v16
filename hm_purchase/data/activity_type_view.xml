@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hm_purchase_activity_order_or_cancel" model="mail.activity.type">
+            <field name="name">À faire URGENT : Commander ou annuler le PO?</field>
+            <field name="icon">fa-tasks</field>
+            <field name="delay_count">0</field>
+            <field name="sequence">12</field>
+        </record>
+
+        <record id="hm_purchase_activity_supplier_po_encoding_check" model="mail.activity.type">
+            <field name="name">À faire URGENT : Vérifier si PO a été encodé par le fournisseur</field>
+            <field name="icon">fa-tasks</field>
+            <field name="delay_count">0</field>
+            <field name="sequence">12</field>
+        </record>
+
+        <record id="hm_purchase_activity_po_check_qty_sku_delivery" model="mail.activity.type">
+            <field name="name">À faire URGENT : Vérifier quantités, SKU, disponibilité, date et adresse de livraison</field>
+            <field name="icon">fa-tasks</field>
+            <field name="delay_count">0</field>
+            <field name="sequence">12</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_sale_order_line_tree_grouping" model="ir.ui.view">
+        <field name="name">view.sale.order.line.tree.grouping</field>
+        <field name="model">sale.order.line</field>
+        <field name="arch" type="xml">
+            <tree string="Sales Order Lines" create="false" delete="false">
+                <field name="line_label_section"/>
+                <field name="order_id"/>
+                <field name="order_partner_id"/>
+                <field name="product_id"/>
+                <field name="name"/>
+                <field name="salesman_id"/>
+                <field name="product_uom_qty" string="Qty"/>
+                <field name="hm_technical_info"/>
+                <field name="qty_delivered"/>
+                <field name="qty_invoiced"/>
+                <field name="price_unit"/>
+                <field name="purchase_price"/>
+                <field name="discount"/>
+                <field name="tax_id" widget="many2many_tags"/>
+                <field name="qty_to_invoice"/>
+                <field name="product_uom" string="Unit of Measure" groups="uom.group_uom"/>
+                <field name="price_subtotal" sum="Total" widget="monetary"/>
+                <field name="amount_budget" widget="monetary"/>
+                <field name="amount_labor" widget="monetary"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_sale_order_line_filter_inherit_sale_budget" model="ir.ui.view">
+        <field name="name">view.sale.order.line.filter.inherit.sale.budget</field>
+        <field name="model">sale.order.line</field>
+        <field name="priority">1000</field>
+        <field name="inherit_id" ref="sale.view_sales_order_line_filter"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='salesperson']" position="after">
+                <filter string="Section" name="line_sections" domain="[]" context="{'group_by':'line_label_section'}"/>
+            </xpath>
+            <xpath expr="//filter[@name='my_sales_order_lines']" position="after">
+                <filter string="Budget" name="line_budgets" domain="[('line_label_section', '=', 'Budget')]"/>
+                <filter string="Labor" name="line_labor" domain="[('line_label_section', '=', 'Labor')]"/>
+                <filter string="Budget &amp; Labor" name="line_labor" domain="['|', ('line_label_section', '=', 'Budget, Labor'), ('line_label_section', '=', 'Budget &#47; Labor')]"/>
+                <filter string="PO Emport" name="line_budgets" domain="[('line_label_section', '=', 'PO Emport')]"/>
+                <filter string="PO Emport Budget" name="line_labor" domain="[('line_label_section', '=', 'PO Emport Budget')]"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="action_order_line_sections" model="ir.actions.act_window">
+        <field name="name">Order Lines Section</field>
+        <field name="res_model">sale.order.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="account.view_move_tree"/>
+        <field name="context">{'search_default_line_sections': 1}</field>
+        <field name="search_view_id" ref="hm_purchase_sale_budget.view_sale_order_line_filter_inherit_sale_budget"/>
+    </record>
+
+    <record id="action_order_line_sections_view_tree" model="ir.actions.act_window.view">
+        <field name="sequence">1</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="hm_purchase_sale_budget.view_sale_order_line_tree_grouping"/>
+        <field name="act_window_id" ref="hm_purchase_sale_budget.action_order_line_sections"/>
+    </record>
+
+    <record id="action_order_line_sections_view_form" model="ir.actions.act_window.view">
+        <field name="sequence">2</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="sale.sale_order_line_view_form_readonly"/>
+        <field name="act_window_id" ref="hm_purchase_sale_budget.action_order_line_sections"/>
+    </record>
+
+</odoo>

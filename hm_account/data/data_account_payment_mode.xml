@@ -1,0 +1,31 @@
+<odoo>
+    <data noupdate="1">
+        <record id="hm_domiciliation_belfius" model="account.payment.mode">
+            <field name="name">Domiciliation Belfius</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="bank_account_link">fixed</field>
+            <field name="payment_method_id" search="[('code', '=', 'dm_outbound')]"/>
+            <field name="fixed_journal_id" search="[('id', '=', 18)]"/>
+            <field name="default_journal_ids" search="[('type', '=', 'purchase')]"/>
+        </record>
+
+        <record id="hm_transfert_sepa_belfius" model="account.payment.mode">
+            <field name="name">Transfert SEPA Belfius</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="bank_account_link">fixed</field>
+            <field name="payment_method_id" search="[('code', '=', 'sepa_ct')]"/>
+            <field name="fixed_journal_id" search="[('id', '=', 18)]"/>
+            <field name="default_journal_ids" search="[('type', '=', 'purchase')]"/>
+        </record>
+
+        <record id="hm_manual_belfius" model="account.payment.mode">
+            <field name="name">Manuel Belfius</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="bank_account_link">fixed</field>
+            <field name="payment_method_id" ref="account.account_payment_method_manual_out"/>
+            <field name="fixed_journal_id" search="[('id', '=', 18)]"/>
+            <field name="default_journal_ids" search="[('type', '=', 'purchase')]"/>
+        </record>
+
+    </data>
+</odoo>

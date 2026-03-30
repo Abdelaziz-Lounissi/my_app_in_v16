@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <data noupdate="1">
+
+        <!-- <record id="studio_customization.imput_activity_recu__e2bcb3ac-437f-4c3c-93f2-d513e513a3d5" model="ir.actions.server">-->
+        <record id="hm_input_activity_received_rgpd_gdpr_complaint_automation" model="ir.actions.server">
+            <field name="name">Imput Activity - Recu réclamation RGPD GDPR</field>
+            <field name="model_id" ref="project.model_project_task"/>
+            <field name="state">next_activity</field>
+            <field name="activity_summary">RECU GDPR réclamation</field>
+            <field name="activity_user_type">specific</field>
+            <field name="activity_user_id" eval="2"/>
+        </record>
+
+    </data>
+
+    <!--      <record id="studio_customization.imput_activity_recu__1a6e7a74-02cc-45f4-ae61-a3f76628c08c" model="base.automation">-->
+    <record id="hm_action_input_activity_received_rgpd_gdpr_complaint_automation" model="base.automation">
+        <field name="action_server_id" ref="hm_project.hm_input_activity_received_rgpd_gdpr_complaint_automation"/>
+    </record>
+
+</odoo>

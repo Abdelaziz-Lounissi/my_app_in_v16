@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+
+    <record id="hm_crm_lead_subscription_view_form" model="ir.ui.view">
+        <field name="name">crm.lead.form.opportunity</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+               <button class="oe_stat_button" type="object" name="action_crm_sale_subscription" icon="fa-refresh">
+                    <field string="Subscriptions" name="subscription_count" widget="statinfo"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>
+
+
+

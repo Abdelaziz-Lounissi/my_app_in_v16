@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Get catalogs -->
+        <record id="facq_get_catalog_cron" model="ir.cron">
+            <field name="name">Facq - Step 1: Get catalog</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(days=1)).strftime('%Y-%m-%d 03:00:00')"/>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_hm_product_facq"/>
+            <field name="code">model.get_facq_catalog()</field>
+            <field name="state">code</field>
+            <field name="priority" eval="1"/>
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="facq_import_catalog_cron" model="ir.cron">
+            <field name="name">Facq - Step 2: Import catalog</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">1</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(days=1)).strftime('%Y-%m-%d 03:00:00')"/>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_hm_product_facq"/>
+            <field name="code">model.import_facq_catalog()</field>
+            <field name="state">code</field>
+            <field name="priority" eval="1"/>
+            <field name="active" eval="False"/>
+        </record>
+
+        <!-- Update products based on supplier catalogs -->
+        <record id="facq_merge_products_cron" model="ir.cron">
+            <field name="name">Facq - Step 3: Update Heat Me Catalog with Facq Catalog</field>
+            <field name="active" eval="False"/>
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(days=1)).strftime('%Y-%m-%d 04:00:00')"/>
+            <field name="model_id" ref="model_product_template"/>
+            <field name="state">code</field>
+            <field name="code">model.facq_merge_products()</field>
+            <field name="priority" eval="2"/>
+        </record>
+
+        <record id="facq_pvcheck_cron" model="ir.cron">
+            <field name="name">Facq - PVCheck: Update Facq Catalog</field>
+            <field name="active" eval="True"/>
+            <field name="interval_number">2</field>
+            <field name="interval_type">hours</field>
+            <field name="model_id" ref="model_hm_product_facq"/>
+            <field name="state">code</field>
+            <field name="code">model.facq_pvcheck_update()</field>
+            <field name="priority" eval="2"/>
+        </record>
+    </data>
+
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_mrp_bom_form_inherit_budget" model="ir.ui.view">
+        <field name="name">view.mrp.bom.form.inherit.budget</field>
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+        <field name="priority">9999</field>
+        <field name="arch" type="xml">
+            <field name="type" position="after">
+                <field name="budget_standard_price" readonly="1"/>
+                <field name="labor_standard_price" readonly="1"/>
+            </field>
+            <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_qty']" position="after">
+                <field name="amount_budget"/>
+                <field name="amount_labor"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

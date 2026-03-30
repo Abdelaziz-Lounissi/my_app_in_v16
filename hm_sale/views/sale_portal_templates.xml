@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="sale_order_portal_content_inherit1" name="Order Design" inherit_id="sale.sale_order_portal_content">
+        <xpath expr="//div[@id='introduction']/h2" position="after">
+            <h3 class="my-0">
+                <t t-out="sale_order.hm_work_object"/>
+            </h3>
+        </xpath>
+        <xpath expr="//div[@id='shipping_address']/address" position="replace">
+            <address t-field="sale_order.partner_shipping_id" t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}'/>
+        </xpath>
+        <xpath expr="//div/section/div/table[@id='sales_order_table']/thead/tr/th[5]" position="replace">
+        </xpath>
+        <xpath expr="//div/section/div/table[@id='sales_order_table']/tbody/t[@t-as='line']/tr/t/td[5]"
+               position="replace">
+        </xpath>
+        <xpath expr="//div/section/div/table[@id='sales_order_table']/thead/tr/th[1]" position="before">
+            <th class="text-left">Image</th>
+        </xpath>
+        <xpath expr="//table[@id='sales_order_table']/tbody/t[@t-as='line']/tr/t/td[1]" position="replace">
+            <td>
+                <t t-if="line.product_id.image_1920">
+                    <img t-attf-src="data:image/*;base64,{{line.product_id.image_1920}}"
+                         style="width:50px;height:50px"/>
+                </t>
+            </td>
+            <td>
+                <strong>
+                    <t t-if="line.hm_sol_state != 'normal'">
+                        <span style="color: red;" t-if="line.hm_sol_state == 'option'">OPTION -</span>
+                        <span style="color: red;" t-if="line.hm_sol_state == 'variant'">VARIANTE -</span>
+                        <span t-field="line.product_id.name"/>
+                    </t>
+                    <t t-else="">
+                        <span t-field="line.product_id.name"/>
+                    </t>
+                </strong>
+                <br/>
+                <span t-field="line.product_id.description_sale"/>
+                <br/>
+                <t t-if="line.spec">
+                    <br/>>> <span t-field="line.spec"/>
+                </t>
+            </td>
+        </xpath>
+        <xpath expr="//section/h3" position="before">
+            <t t-if="not (sale_order.sale_order_template_id.hm_work_category.hm_works_category_parent_id.do_not_display_icr_at_customer)">
+                <t t-if="sale_order.icr_id">
+                    <h3>
+                        Demande initiale du client
+                    </h3>
+                    <span style="font-size:14px;" t-field="sale_order.icr_id.body_text"/>
+
+                    <t t-set="icr_pictures_count" t-value="len(sale_order.icr_id.picture_icr_info_ids)"/>
+                    <t t-if="icr_pictures_count > 0">
+                        <t t-set="counter" t-value="0"/>
+                        <t t-foreach="sale_order.icr_id.picture_icr_info_ids" t-as="picture_info">
+                            <t t-set="counter" t-value="counter + 1"/>
+
+                            <t t-if="counter % 2 == 1">
+                                <table class="table"
+                                       style="padding: 0; margin-top: 30px; margin-bottom: 20px; border-spacing: 0;
+                      border-collapse: collapse; page-break-inside: avoid;"
+                                       cellpadding="0" cellspacing="0">
+                                    <t t-set="left_picture"
+                                       t-value="sale_order.icr_id.picture_icr_info_ids[counter-1]"/>
+
+                                    <tr style="page-break-inside: avoid;">
+                                        <!-- Colonne gauche -->
+                                        <td style="vertical-align: bottom; background-color: #FFFFFF; color: #000000;
+                           text-align:center; width: 50%; border:1px solid transparent !important;
+                           border-spacing: 0; padding: 0px; margin: 0px;">
+                                            <t t-if="left_picture.image_256">
+                                                <img t-attf-src="data:image/*;base64,{{left_picture.image_256}}"
+                                                     style="max-width:256px; max-height:256px; width:auto; height:auto;"/>
+                                            </t>
+                                            <t t-elif="left_picture.hm_picture_library_id.get_external_image_base64()">
+                                                <img t-attf-src="data:image/*;base64,{{left_picture.hm_picture_library_id.get_external_image_base64()}}"
+                                                     style="max-width:256px; max-height:256px; width:auto; height:auto;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <span style="font-size:12px;">Aucune image disponible</span>
+                                            </t>
+                                        </td>
+
+                                        <!-- Colonne droite -->
+                                        <t t-if="icr_pictures_count &gt;= counter + 1">
+                                            <t t-set="right_picture"
+                                               t-value="sale_order.icr_id.picture_icr_info_ids[counter]"/>
+                                            <td style="vertical-align: bottom; background-color: #FFFFFF; color: #000000;
+                               text-align:center; width: 50%; border:1px solid transparent !important;
+                               border-spacing: 0; padding: 0px; margin: 0px;">
+                                                <t t-if="right_picture.image_256">
+                                                    <img t-attf-src="data:image/*;base64,{{right_picture.image_256}}"
+                                                         style="max-width:256px; max-height:256px; width:auto; height:auto;"/>
+                                                </t>
+                                                <t t-elif="right_picture.hm_picture_library_id.get_external_image_base64()">
+                                                    <img t-attf-src="data:image/*;base64,{{right_picture.hm_picture_library_id.get_external_image_base64()}}"
+                                                         style="max-width:256px; max-height:256px; width:auto; height:auto;"/>
+                                                </t>
+                                                <t t-else="">
+                                                    <span style="font-size:12px;">Aucune image disponible</span>
+                                                </t>
+                                            </td>
+                                        </t>
+                                    </tr>
+
+                                    <!-- Légendes -->
+                                    <tr style="page-break-inside: avoid;">
+                                        <td style="vertical-align: top; background-color: #FFFFFF; color: #000000;
+                           text-align:center; width: 50%; border:1px solid transparent !important;
+                           border-spacing: 0; padding: 0px; margin-bottom: 20px;">
+                                            <t t-if="left_picture.caption">
+                                                <span t-esc="left_picture.caption" style="font-size:12px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <span style="font-size:12px;"></span>
+                                            </t>
+                                        </td>
+
+                                        <t t-if="icr_pictures_count &gt;= counter + 1">
+                                            <td style="vertical-align: top; background-color: #FFFFFF; color: #000000;
+                               text-align:center; width: 50%; border:1px solid transparent !important;
+                               border-spacing: 0; padding: 0px; margin-bottom: 20px;">
+                                                <t t-if="right_picture.caption">
+                                                    <span t-esc="right_picture.caption" style="font-size:12px;"/>
+                                                </t>
+                                                <t t-else="">
+                                                    <span style="font-size:12px;"></span>
+                                                </t>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                </table>
+                            </t>
+                        </t>
+                    </t>
+                </t>
+            </t>
+        </xpath>
+
+        <xpath expr="//div[@id='total']/div/t" position="after">
+            <table>
+                <tr class="border-black" style="color: green;" t-if="len(sale_order.hm_premium_ids) > 0">
+                    <td>
+                        <strong style="color: green;">Total des primes disponibles**</strong>
+                    </td>
+                    <td class="text-right" style="background-color: white;">
+                        <span t-field="sale_order.hm_sum_premium_total"/>
+                    </td>
+                </tr>
+                <tr class="border-black text-right" style="color: white;" t-if="len(sale_order.hm_premium_ids) > 0">
+                    <td style="background-color: green;">
+                        <strong style="color: white;">Total net primes déduites**</strong>
+                    </td>
+                    <td class="text-right" style="background-color: green;">
+                        <span t-field="sale_order.hm_amount_total_with_premium"/>
+                    </td>
+                </tr>
+            </table>
+        </xpath>
+        <xpath expr="//section[@id='details']" position="after">
+            <section id="primes" class="mt-5" t-if="len(sale_order.hm_premium_ids) > 0">
+                <p>
+                    <strong>Des primes sont normalement disponibles pour ces travaux:</strong>
+                </p>
+                <div t-if="len(sale_order.hm_premium_ids) &gt; 0">
+                    <table class="table table-sm" style="float:left !important;width:100%!important">
+                        <thead>
+                            <th>Primes normalement disponibles</th>
+                            <th>Quantité</th>
+                            <th class="text-right">Montant</th>
+                            <th class="text-right">Total</th>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="sale_order.hm_premium_ids" t-as="prime">
+
+                                <td>
+                                    <span t-field="prime.hm_prime_id.hm_description_of_the_premium_for_the_customer"/>
+                                </td>
+                                <td class="text-center">
+                                    <t t-if=" str(prime.hm_qty_prime)[2:] == '0'">
+                                        <span t-esc="int(prime.hm_qty_prime)"/>
+                                    </t>
+
+                                    <t t-else="">
+                                        <span t-esc="prime.hm_qty_prime"/>
+                                    </t>
+                                </td>
+
+                                <td class="text-right">
+                                    <span t-field="prime.hm_unit_price_prime"
+                                          t-options="{'widget': 'monetary', 'display_currency': sale_order.pricelist_id.currency_id}"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="prime.hm_subtotal_prime"
+                                          t-options="{'widget': 'monetary', 'display_currency': sale_order.pricelist_id.currency_id}"/>
+                                    <span t-field="prime.hm_currency_id"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <div id="total" class="row" name="total">
+                        <div t-attf-class="#{'col-3' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
+                            <table class="table table-sm">
+                                <tr class="border-black" style="color: white;">
+                                    <td style="color: green;">
+                                        <strong tyle="color: green;">Total des primes disponibles**</strong>
+                                    </td>
+                                    <td class="text-right" style="color: green;">
+                                        <span t-esc="sale_order.hm_amount_total_line_premium"
+                                              t-options="{'widget': 'monetary', 'display_currency': sale_order.pricelist_id.currency_id}"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    <span>** Les primes suivantes sont normalement disponibles.
+                        Il appartient au client de vérifier s'il y est éligible, sous réserve de disponibilité ou
+                        compatibilité.
+                        Heat Me vous accompagnera dans la demande et vous fournira les documents nécessaires,
+                        mais la demande doit être introduite par le client.
+                    </span>
+                </p>
+            </section>
+        </xpath>
+        <xpath expr="//div[@t-if='invoices']" position="replace">
+        </xpath>
+
+    </template>
+
+    <template id="hm_sale_order_portal_content_inherit_sale_stock" name="Orders Shipping Followup" inherit_id="sale_stock.sale_order_portal_content_inherit_sale_stock">
+        <xpath expr="//t[@t-if='delivery_orders']" position="replace">
+        </xpath>
+        <xpath expr="//div[@t-if='sale_order.incoterm']" position="replace">
+        </xpath>
+    </template>
+
+
+    <template id="sale_order_portal_content_inherit2" name="Order Design"
+              inherit_id="sale_quotation_builder.sale_order_portal_content_inherit_sale_quotation_builder">
+        <xpath expr="//div[@t-field='line.website_description']" position="replace">
+            <div t-att-class="'oe_no_empty' if line.product_id.product_tmpl_id.quotation_only_description else 'oe_no_empty d-print-none'"
+                 t-field="line.product_id.product_tmpl_id.quotation_only_description"/>
+        </xpath>
+    </template>
+
+
+</odoo>

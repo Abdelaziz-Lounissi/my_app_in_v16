@@ -1,0 +1,465 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <record id="hm_purchase_order_form_refactoring" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <!--     >>>>>>     Header    <<<<<   -->
+                <xpath expr="//form[1]/header[1]" position="after">
+                    <header>
+                        <field name="po_type" string="PO Type" attrs="{}" invisible="1"/>
+                        <field name="stage2_id" widget="statusbar" options="{'clickable': '1'}"
+                               domain="[('po_type', '=', po_type)]"
+                               attrs="{'invisible': [('state', '!=', 'purchase')]}"/>
+                    </header>
+                </xpath>
+                <xpath expr="//header" position="inside">
+                    <button name="action_credit_note_send" string="Ask Credit Note" type="object"
+                            class="btn btn-warning"/>
+                </xpath>
+
+                <!--     >>>>>>     Header / Buttons    <<<<<   -->
+                <xpath expr="//button[@name='button_done']" position="attributes">
+                    <attribute name="states">purchase</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_cancel']" position="attributes">
+                    <attribute name="states">draft,to approve,sent,purchase</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_done']" position="attributes">
+                    <attribute name="states">purchase</attribute>
+                </xpath>
+                <xpath expr="//header/button[@name='action_rfq_send'][last()]" position="after">
+                    <button name="action_rfq_send" string="Re-Send PO by Email" type="object"
+                            context="{'re_sent_to_supplier':True, 'send_rfq': False}"
+                            attrs="{'invisible': [('stage2_id', '!=', %(hm_purchase.purchase_stage3_po_marchandise)d), ('stage2_id', '!=', %(hm_purchase.purchase_stage2_po_marchandise)d)]}"/>
+                </xpath>
+                <xpath expr="//header/button[@name='action_rfq_send'][3]" position="attributes">
+                    <attribute name="context">{'send_rfq': False, 're_sent_to_supplier': False}</attribute>
+                </xpath>
+
+                <!--     >>>>>>     form     <<<<<   -->
+                <xpath expr="//field[@name='date_order']" position="after">
+                    <field name="so_manager"/>
+                    <field name="has_group_sale_manager" invisible="1"/>
+                    <field name="state2" invisible="1"/>
+                    <field name="hm_so_lie"
+                           force_save="1"
+                           context="{'purchase_order_classique_emport': True}"
+                           options='{"always_reload": True}'
+                           domain="[ '&amp;', '&amp;', ['state2', '!=', 'to_invoice'], ['state2', '!=', 'invoiced'], ['state', '=', 'sale']]"
+                           attrs="{'readonly': [('stage2_id', 'in', (%(hm_purchase.purchase_stage5_po_marchandise)d, %(hm_purchase.purchase_stage2_po_emport_marchandise)d, %(hm_purchase.purchase_stage2_po_technicien)d, %(hm_purchase.purchase_stage2_po_commission)d))], 'required': [('po_type','in',('po_marchandise', 'po_emport_marchandise', 'po_technicien', 'po_commission'))], 'invisible': [('po_type','=','po_frais_generaux')]}"/>
+                    <field name="date_confirm"/>
+
+                </xpath>
+                <field name="effective_date" position="before">
+                    <field name="show_supplier_encoded_button" invisible="1"/>
+                </field>
+                <xpath expr="//form[1]/header[1]/field[@name='state']" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='partner_ref']" position="after">
+                    <field name="hm_intervention_datetime" string="Date intervention"
+                           attrs="{'invisible': [('po_type','=','po_frais_generaux')]}"
+                           readonly="1"/>
+                    <field name="hm_date_state2_update_deadline"
+                           attrs="{'invisible': [('po_type','!=','po_marchandise')]}"/>
+                    <field name="hm_state2_update_overdue" invisible="1"/>
+                    <field name="po_type" string="PO Type"
+                           attrs="{'readonly': [('stage2_id', 'in', (%(hm_purchase.purchase_stage5_po_marchandise)d, %(hm_purchase.purchase_stage2_po_emport_marchandise)d, %(hm_purchase.purchase_stage2_po_technicien)d, %(hm_purchase.purchase_stage2_po_commission)d))]}"
+                           required="1"/>
+                    <field name="hm_person_who_will_do_the_kidnapping_id" string="Personne qui fera l'enlèvement"
+                           help="Technicien ou client qui emportera la marchandise"
+                           domain="[('from_property', '=', False)]"
+                           attrs="{'required': [('hm_delivery_address_id','!=',False)], 'invisible': [('po_type','in',('po_technicien','po_commission', 'po_frais_generaux'))]}"/>
+                    <field name="hm_delivery_address_id" string="Adresse livraison de préférence"
+                           domain="[('from_property', '=', False)]"
+                           attrs="{'invisible': [('po_type','in',('po_technicien','po_commission','po_frais_generaux'))]}"
+                           readonly="1"/>
+                    <field name="hm_delivery_address"
+                           attrs="{'invisible': [('po_type','in',('po_technicien','po_commission'))]}"
+                           string="Adresse de livraison choisie"
+                           domain="[('from_property', '=', False)]"/>
+                    <field name="hm_delivery_date" string="Delivery Date" widget="date"
+                           attrs="{'invisible': [('po_type','in',('po_technicien','po_commission'))]}"/>
+                </xpath>
+                <xpath expr="//field[@name='date_order']" position="attributes">
+                    <attribute name="attrs">{"readonly": [("state","in",["purchase","done","cancel"])]}</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='so_manager']" position="attributes">
+                    <attribute name="string">Manager SO</attribute>
+                    <attribute name="attrs">{"invisible": [('po_type','=','po_frais_generaux')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='origin']" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="hm_imputed_technician_id" string="Technicien"
+                           attrs="{'invisible': [('po_type','=','po_frais_generaux')]}"/>
+                    <field name="hm_po_deleted_from_portal" string="PO supprimé du portail"
+                           help="Cocher cette case lorsque PO ne doit plus être facturé"
+                           attrs="{'invisible': ['|',['po_type','=','po_frais_generaux'],'&amp;',['po_type','not in',('po_technicien','po_commission')],['state','in',('draft', 'sent', 'cancel')]]}"/>
+                </xpath>
+
+                <xpath expr="//div[@name='date_planned_div']" position="after">
+                    <field name="block_auto_send_to_technician" attrs="{'invisible': [('po_type','=','po_frais_generaux')]}"/>
+                </xpath>
+
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="dest_address_id" string="Adresse d'intervention SO:"
+                           widget="res_partner_many2one"/>
+                </xpath>
+
+                <!--     >>>>>>     notebook     <<<<<   -->
+                <xpath expr="//notebook" position="before">
+                    <group>
+                        <field name="credit_note_claim_reason"/>
+                    </group>
+                </xpath>
+
+                <!--   >>>>>>   order_line Tree <<<<<  -->
+                <xpath expr="//notebook/page/field[@name='order_line']/tree" position="attributes">
+                    <attribute name="limit">200</attribute>
+                </xpath>
+                <xpath expr="//notebook/page/field/tree/field[@name='product_id']" position="after">
+                    <field name="computed_image_art" readonly="1"/>
+                </xpath>
+                <xpath expr="//notebook/page/field/tree/field[@name='product_qty']" position="attributes">
+                    <attribute name="string">Commandé</attribute>
+                </xpath>
+                <xpath expr="//notebook/page/field/tree/field[@name='price_subtotal']" position="attributes">
+                    <attribute name="optional">""</attribute>
+                    <attribute name="string">Total commandé</attribute>
+                </xpath>
+                <xpath expr="//notebook/page/field/tree/field[@name='product_id']" position="replace">
+                    <field
+                            name="product_id"
+                            style="width: 100%;white-space: pre-wrap;"
+                            attrs="{'readonly': [('state', 'in', ('purchase', 'to approve','done', 'cancel'))],'required': [('display_type', '=', False)],}"
+                            context="{'partner_id':parent.partner_id, 'quantity':product_qty,'uom':product_uom, 'company_id': parent.company_id}"
+                            force_save="1"
+                            domain="[('purchase_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]"/>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='qty_received']"
+                       position="attributes">
+                    <attribute name="attrs">{'column_invisible': ['|',('parent.state', 'not in', ('purchase', 'done')),
+                        ('parent.po_type', 'not in', ('po_marchandise', 'po_emport_marchandise', 'po_technicien',
+                        'po_frais_generaux', 'po_commission'))], 'readonly':
+                        [('qty_received_method', '!=', 'manual')]}
+                    </attribute>
+                    <attribute name="optional">""</attribute>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='qty_invoiced']"
+                       position="attributes">
+                    <attribute name="attrs">{'column_invisible': [('parent.state', 'not in', ('purchase', 'done'))]}
+                    </attribute>
+                    <attribute name="optional">""</attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[@name='order_line']/tree[1]/field[@name='product_id']"
+                       position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[@name='order_line']/tree[1]/field[@name='name']"
+                       position="after">
+                    <field name="hm_technical_info" string="Infos tech" invisible="1"
+                           attrs="{'column_invisible': [('parent.state', '=', 'purchase'), ('parent.po_type', 'in', ('po_emport_marchandise', 'po_marchandise'))]}"/>
+                    <field name="company_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[@name='order_line']/tree[1]/field[@name='date_planned']"
+                       position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[@name='order_line']/tree[1]/field[@name='product_uom']"
+                       position="attributes">
+                    <attribute name="attrs">{"readonly": [("state","in",["purchase","done","cancel"])]}</attribute>
+                    <attribute name="optional">hide</attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[@name='order_line']/tree[1]/field[@name='price_unit']"
+                       position="after">
+                    <field name="hm_budget" string="Budget" widget="monetary"/>
+                    <field name="used_in_bom_count" invisible="1"/>
+                    <button name="create_so_line_from_po_line" attrs="{'invisible': [('sale_line_id', '!=', False)]}" help="Ajouter cette ligne au SO" type="object" icon="fa-plus-square"/>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[@name='order_line']/tree[1]/field[@name='taxes_id']"
+                       position="after">
+
+                    <field name="hm_description_from_so" string="Description from SO" attrs="{}" invisible="1"/>
+                    <field name="sale_line_id" string="Sale Line ID" optional="hide"/>
+                    <field name="sale_order_id" string="Bon de commande" optional="hide"/>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[@name='order_line']/tree[1]/field[@name='price_unit']"
+                       position="replace">
+                    <field name="price_unit" widget="monetary" attrs="{'readonly': [('qty_invoiced', '!=', 0)]}"/>
+                </xpath>
+
+                <!--   >>>>>>   order_line Form <<<<<  -->
+                <xpath expr="//notebook/page/field[@name='order_line']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('has_group_sale_manager', '=', False)]}</attribute>
+                     <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form/field[@name='state']" position="after">
+                    <field name="state2" invisible="1"/>
+                    <field name="po_type" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form/group" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', ('display_type', '!=', False),('state2', '=',
+                        'invoiced')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form/label[1][@for='name']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', ('display_type', '!=', 'line_section'),('state2','=',
+                        'invoiced')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form/label[2][@for='name']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', ('display_type', '!=', 'line_note'),('state2','=',
+                        'invoiced')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form/field[@name='name']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', ('display_type', '=', False),('state2','=',
+                        'invoiced')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[@name='order_line']/tree[1]/field[@name='taxes_id']"
+                       position="attributes">
+                    <attribute name="string">TVA</attribute>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+
+    <record id="hm_purchase_order_tree_view" model="ir.ui.view">
+        <field name="name">purchase.order.tree.customization</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_order']" position="attributes">
+                <attribute name="attrs">{"readonly": [("state","in",["purchase","done","cancel"])]}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='date_planned']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='origin']" position="attributes">
+                <attribute name="string">SO lié</attribute>
+            </xpath>
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="dest_address_id"/>
+                <field name="hm_interv_address_name" string="Adresse interv" attrs="{}" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='amount_total']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hm_so_purchase_order_tree_view" model="ir.ui.view">
+        <field name="name">purchase.order.tree.customization</field>
+        <field name="model">purchase.order</field>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <tree string="Commande fournisseur"
+                  decoration-muted="po_type == 'po_marchandise' and state!='cancel'"
+                  decoration-info="po_type == 'po_technicien' and state!='cancel'" expand="1"
+                  decoration-success="po_type == 'po_emport_marchandise' and state!='cancel'"
+                  decoration-warning="po_type == 'po_marchandise' and state!='cancel'"
+                  decoration-danger="po_type == 'po_commission' and state!='cancel'">
+                <field name="name" string="Référence" readonly="1"/>
+                <field name="partner_ref" readonly="1"/>
+                <field name="date_approve" invisible="context.get('quotation_only', False)"/>
+                <field name="partner_id" readonly="1" on_change="1" can_create="true" can_write="true"/>
+                <field name="po_type"/>
+                <field name="groupby_stage2_name" invisible="1"/>
+                <field name="amount_untaxed" sum="Montant total hors taxe" string="Total commandé HTVA"
+                       widget="monetary"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hm_purchase_order_calendar" model="ir.ui.view">
+        <field name="name">purchase.order.calendar</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_calendar"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//calendar[1]" position="attributes">
+                <attribute name="date_start">hm_intervention_datetime</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hm_request_quotation_select_view" model="ir.ui.view">
+        <field name="name">request.quotation.select.customization</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
+        <field name="priority">99</field>
+        <field name="active" eval="True"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="hm_so_lie"/>
+                <field name="dest_address_id"/>
+            </xpath>
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="hm_person_who_will_do_the_kidnapping_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='to_approve']" position="replace">
+                <filter name="hm_state2_update_overdue" string="Retards de gestion"
+                        domain="[('state', '=', 'purchase'), ('hm_state2_update_overdue', '=', True), ('po_type', 'not in', ('po_technicien', 'po_commission')), ('stage2_id', 'not in', (%(hm_purchase.purchase_stage4_po_frais)d, %(hm_purchase.purchase_stage2_po_emport_marchandise)d, %(hm_purchase.purchase_stage5_po_marchandise)d))]"/>
+            </xpath>
+            <xpath expr="//search[1]/group[1]/filter[@name='order_date']" position="after">
+                <filter context="{'group_by': 'state'}" name="groupby_state"
+                        string="Statut"/>
+                <filter context="{'group_by': 'invoice_status'}" name="studio_group_by_b4toS"
+                        string="Billing Status"/>
+                <filter string="PO Type" name="po_type" domain="[]" context="{'group_by': 'po_type'}"/>
+                <filter string="State2 PO" name="groupby_stage2_name" domain="[]"
+                        context="{'group_by': 'groupby_stage2_name'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hm_purchase_order_view_search" model="ir.ui.view">
+        <field name="name">purchase.order.select</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_view_search"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//search[1]/group[1]/filter[@name='order_date']" position="after">
+                <filter context="{'group_by': 'invoice_status'}" name="studio_group_by_bAToC" string="Billing Status"/>
+                <filter string="PO Type" name="po_type" domain="[]" context="{'group_by': 'po_type'}"/>
+                <filter string="State2 PO" name="groupby_stage2_name" domain="[]"
+                        context="{'group_by': 'groupby_stage2_name'}"/>
+            </xpath>
+            <xpath expr="//filter[@name='invoiced']" position="after">
+                <filter name="hm_state2_update_overdue" string="Retards de gestion"
+                        domain="[('state', '=', 'purchase'), ('hm_state2_update_overdue', '=', True), ('po_type', 'not in', ('po_technicien', 'po_commission')), ('stage2_id', 'not in', (%(hm_purchase.purchase_stage4_po_frais)d, %(hm_purchase.purchase_stage2_po_emport_marchandise)d, %(hm_purchase.purchase_stage5_po_marchandise)d))]"/>            </xpath>
+
+        </field>
+    </record>
+
+    <record id="hm_orders_to_confirm_action" model="ir.actions.act_window">
+        <field name="name">Commandes à confirmer</field>
+        <field name="res_model">purchase.order</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="hm_new_button_action" model="ir.actions.act_window">
+        <field name="name">New Button</field>
+        <field name="res_model">purchase.order.line</field>
+        <field name="context">{'search_default_sale_order_id': active_id,'default_sale_order_id': active_id}</field>
+        <field name="domain">[('sale_order_id', '=', active_id)]</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <record id="hm_po_action" model="ir.actions.act_window">
+        <field name="name">PO</field>
+        <field name="res_model">purchase.order</field>
+        <field name="context">{'search_default_groupby_stage2_name': 1,'default_hm_so_lie': active_id}</field>
+        <field name="domain">[('hm_so_lie', '=', active_id)]</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="purchase.view_purchase_order_filter"/>
+        <field name="view_id" ref="hm_so_purchase_order_tree_view"/>
+    </record>
+
+    <menuitem id="purchase.menu_procurement_management"
+              name="Orders"
+              parent="purchase.menu_purchase_root"/>
+
+    <menuitem id="purchase.menu_procurement_management_supplier_name"
+              name="Vendors" sequence="4"
+              parent="purchase.menu_procurement_management" action="account.res_partner_action_supplier"/>
+
+    <menuitem id="purchase.menu_purchase_config" groups="purchase.group_purchase_manager"
+              name="Configuration" sequence="4"
+              parent="purchase.menu_purchase_root"/>
+
+    <menuitem id="purchase.menu_purchase_form_action"
+              action="purchase.purchase_form_action" name="Bons de commande" sequence="1"
+              parent="purchase.menu_procurement_management"/>
+
+    <menuitem id="purchase.purchase_report" groups="purchase.group_purchase_manager"
+              action="purchase.action_purchase_order_report_all" name="Reporting" sequence="3"
+              parent="purchase.menu_purchase_root"/>
+
+    <menuitem id="purchase.menu_purchase_products"
+              name="Products"
+              parent="purchase.menu_purchase_root"
+              sequence="2"/>
+
+    <menuitem id="hm_order_line_menu"
+              name="Order Line"
+              parent="purchase.menu_procurement_management"
+              sequence="3"/>
+
+    <record id="hm_purchase_order_techniciens_filters" model="ir.filters">
+        <field name="name">Techniciens</field>
+        <field name="model_id">purchase.order</field>
+        <field name="domain">[("partner_id.hm_technician","=",True)]</field>
+        <field name="sort">[]</field>
+        <field name="is_default" eval="False"/>
+        <field name="active" eval="True"/>
+        <field name="action_id" eval="False"/>
+    </record>
+
+    <record id="hm_purchase_order_treat_filters" model="ir.filters">
+        <field name="name">A traiter</field>
+        <field name="model_id">purchase.order</field>
+        <field name="domain">[("state", "=", "draft")]</field>
+        <field name="context">{'group_by': ['partner_id']}</field>
+        <field name="sort">[]</field>
+        <field name="active" eval="True"/>
+        <field name="is_default" eval="False"/>
+    </record>
+
+    <record id="hm_purchase_order_interventions_filters" model="ir.filters">
+        <field name="name">Interventions en_cours</field>
+        <field name="model_id">purchase.order</field>
+        <field name="domain">[("state", "=", "sent")]</field>
+        <field name="context">{'orderedBy': [], 'group_by': ['dest_address_id']}</field>
+        <field name="sort">[]</field>
+        <field name="active" eval="True"/>
+        <field name="is_default" eval="False"/>
+    </record>
+
+    <record id="hm_purchase_order_tobe_confirmed3_filters" model="ir.filters">
+        <field name="name">Commandes à confirmerV3</field>
+        <field name="model_id">purchase.order</field>
+        <field name="active" eval="True"/>
+        <field name="domain">["&amp;","&amp;","&amp;","&amp;","&amp;","&amp;",("partner_ref","=",False),("po_type","!=","po_technicien"),("partner_id","not
+            ilike","emport"),("state","=","purchase"),("date_approve","&gt;","2020-11-28
+            23:00:00"),("invoice_ids","=",False), ("hm_po_deleted_from_portal","=",False)]
+        </field>
+        <field name="is_default" eval="True"/>
+        <field name="sort">["date_approve"]</field>
+        <field name="action_id" ref="hm_purchase.hm_orders_to_confirm_action"/>
+    </record>
+
+    <record id="hm_purchase_order_lines_filters" model="ir.filters">
+        <field name="name">PO lines</field>
+        <field name="model_id">purchase.order.line</field>
+        <field name="context">{'group_by': ['order_id']}</field>
+        <field name="sort">[]</field>
+        <field name="active" eval="True"/>
+        <field name="is_default" eval="True"/>
+        <field name="action_id" ref="hm_purchase.hm_new_button_action"/>
+    </record>
+
+</odoo>

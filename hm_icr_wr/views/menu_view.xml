@@ -1,0 +1,14 @@
+<odoo>
+
+    <menuitem id="hm_icr_wr_menu_root" name="ICR &amp; Work Report"
+              web_icon="hm_icr_wr,static/description/icon.png"
+              sequence="6"/>
+
+    <menuitem id="hm_icr_menu" parent="hm_icr_wr_menu_root" name="ICR" action="hm_icr_action"
+              sequence="1"/>
+
+    <menuitem id="hm_wr_menu" parent="hm_icr_wr_menu_root" name="Work Report" action="hm_wr_action"
+              sequence="2"/>
+
+
+</odoo>

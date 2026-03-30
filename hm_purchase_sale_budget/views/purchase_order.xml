@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_purchase_order_kanban_inherit_po_emport" model="ir.ui.view">
+        <field name="name">view.purchase.order.kanban.inherit.po.emport</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.view_purchase_order_kanban"/>
+        <field name="priority">9000</field>
+        <field name="arch" type="xml">
+            <field name="activity_state" position="after">
+                <field name="is_po_emport"/>
+            </field>
+            <xpath expr="//div[hasclass('oe_kanban_bottom_right')]" position="inside">
+                <span t-if="record.is_po_emport.raw_value" class="badge badge-success">Emport</span>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_purchase_order_tree_inherit_po_emport" model="ir.ui.view">
+        <field name="name">view.purchase.order.tree.inherit.po.emport</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+        <field name="priority">9000</field>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="is_po_emport" invisible="1"/>
+                <field name="po_type" invisible="1"/>
+            </field>
+            <xpath expr="//tree" position="attributes">
+                <attribute name="decoration-success">po_type == 'po_emport_marchandise' and state!='cancel'</attribute>
+                <attribute name="decoration-info">po_type == 'po_technicien' and state!='cancel'</attribute>
+                <attribute name="decoration-warning">po_type == 'po_marchandise' and state!='cancel'</attribute>
+                <attribute name="decoration-muted">po_type == 'po_marchandise' and state!='cancel'</attribute>
+                <attribute name="decoration-danger">po_type == 'po_commission' and state!='cancel'</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Request for quotation -->
+    <record id="purchase.purchase_rfq" model="ir.actions.act_window">
+        <field name="domain">[]</field>
+        <field name="context">{'quotation_only': True, 'purchase_order_classique_emport': True, 'purchase_order_emport': True, 'default_is_po_emport': True, 'default_po_type': 'po_emport_marchandise'}</field>
+    </record>
+
+    <!-- Purchase Order -->
+    <record id="purchase.purchase_form_action" model="ir.actions.act_window">
+        <field name="domain">[('state','in',('purchase', 'done'))]</field>
+        <field name="context">{'purchase_order_classique_emport': True, 'purchase_order_emport': True, 'default_is_po_emport': True, 'default_po_type': 'po_emport_marchandise'}</field>
+    </record>
+
+    <record id="view_purchase_order_tree_other_pos_budget" model="ir.ui.view">
+        <field name="name">view.purchase.order.tree.other.pos.budget</field>
+        <field name="model">purchase.order</field>
+        <field name="arch" type="xml">
+            <tree string="Other Purchase Order Related" create="false" edit="false" delete="false">
+                <field name="partner_ref" optional="hide"/>
+                <field name="name" string="Reference" readonly="1"/>
+                <field name="date_order" invisible="not context.get('quotation_only', False)" optional="hide"/>
+                <field name="date_approve" invisible="context.get('quotation_only', False)" optional="hide"/>
+                <field name="partner_id" readonly="1"/>
+                <field name="company_id" readonly="1" options="{'no_create': True}" groups="base.group_multi_company"
+                       optional="hide"/>
+                <field name="date_planned" invisible="context.get('quotation_only', False)" optional="hide"/>
+                <field name="user_id" optional="show"/>
+                <field name="origin" optional="hide"/>
+                <field name="amount_untaxed" sum="Total Untaxed amount" string="Untaxed" widget="monetary"
+                       optional="hide"/>
+                <field name="amount_total" sum="Total amount" widget="monetary" optional="hide"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="state" optional="show"/>
+                <field name="invoice_status" optional="hide"/>
+                <field name="hm_so_lie"/>
+                <field name="sale_order_total_budget"/>
+                <field name="total_used_budget" sum="Total budget used"/>
+                <field name="total_budget_left"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hm_purchase_budget_form_view" model="ir.ui.view">
+        <field name="name">hm.purchase.order.budget.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="priority">10000</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="is_po_emport" invisible="1"/>
+                <field name="is_emport_sale_order_readonly" invisible="1"/>
+                <field name="state2" invisible="1"/>
+                <field name="hm_intervention_property_address" string="Intervention address" attrs="{'invisible': ['|', ('is_po_emport','=',True), ('po_type','=','po_frais_generaux')], 'readonly': [('is_po_emport','=',True)]}"/>
+            </xpath>
+            <field name="company_id" position="after">
+                <field name="sale_order_total_budget" widget="monetary" attrs="{'invisible': [('po_type', '!=', 'po_emport_marchandise')]}"/>
+                <field name="id" invisible="1"/>
+                <label for="total_budget_left" attrs="{'invisible': [('po_type', '!=', 'po_emport_marchandise')]}"/>
+                <div name="total_budget_left_div" class="o_row" attrs="{'invisible': [('po_type', '!=', 'po_emport_marchandise')]}">
+                    <field name="total_budget_left" widget="monetary"/>
+                    <button name="action_open_other_po_emport" type="object" icon="fa-external-link-square" title="Open other PO emport"
+                            attrs="{'invisible': [('id', '=', False)]}"/>
+                </div>
+                <field name="total_used_budget" widget="monetary" attrs="{'invisible': [('po_type', '!=', 'po_emport_marchandise')]}"/>
+            </field>
+            <xpath expr="//field[@name='order_line']/tree/field[last()]" position="after">
+                <field name="sale_line_id" string="Sale Line ID" invisible="1"/>
+                <field name="is_po_emport" invisible="1"/>
+                <field name="potential_match_line_count" invisible="1"/>
+<!--                TODO: clean me-->
+<!--                <button name="action_link_to_sale_order" type="object" icon="fa-lg fa-plus-circle"-->
+<!--                        title="Append line to Sale Order"-->
+<!--                        attrs="{'invisible': ['|', ('sale_line_id', '!=', False), ('qty_received', '=', 0)]}"/>-->
+                <button name="action_unlink_from_sale_order" type="object" icon="fa-lg fa-minus-circle"
+                        title="Remove line from Sale Order"
+                        attrs="{'invisible': ['|', ('sale_line_id', '=', False), ('qty_received', '=', 0)]}"
+                        confirm="Are you sure you want to delete this line on Sale Order line? "/>
+                <button name="action_open_potential_duplicate" icon="fa-lg fa-copy" title="Open Potential duplicates"
+                        type="object"
+                        attrs="{'invisible':['|', ('potential_match_line_count', '=', 0), ('potential_match_line_count', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree" position="attributes">
+                <attribute name="options">{'show_selectors': True}</attribute>
+                <attribute name="decoration-success">sale_line_id and is_po_emport == True</attribute>
+            </xpath>
+
+<!--       todo : debug for master: to re activiate      -->
+<!--            <xpath expr="//field[@name='hm_budget']" position="attributes">-->
+<!--                <attribute name="attrs">{'column_invisible': [('parent.po_type', 'not in', ('po_emport_marchandise', 'po_marchandise'))], 'readonly': [('sale_line_id','=',False)], 'invisible': ['|', ('used_in_bom_count','>', 0), ('sale_line_id','=',False)]}</attribute>-->
+<!--            </xpath>-->
+
+<!--            todo: clean me-->
+<!--            <xpath expr="//button[@name='action_link_to_sale_order']" position="after">-->
+<!--                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[@name='order_line']/tree[1]/field[@name='taxes_id']"-->
+<!--                       position="move"/>-->
+<!--            </xpath>-->
+        </field>
+    </record>
+
+    <record id="hm_purchase_order_view_tree" model="ir.ui.view">
+        <field name="name">view.purchase.order.tree.inherit.po.emport</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="po_type" invisible="1"/>
+            </field>
+            <xpath expr="//tree" position="attributes">
+                <attribute name="decoration-success">po_type == 'po_emport_marchandise' and state!='cancel'</attribute>
+                <attribute name="decoration-info">po_type == 'po_technicien' and state!='cancel'</attribute>
+                <attribute name="decoration-warning">po_type == 'po_marchandise' and state!='cancel'</attribute>
+                <attribute name="decoration-muted">po_type == 'po_marchandise' and state!='cancel'</attribute>
+                <attribute name="decoration-danger">po_type == 'po_commission' and state!='cancel'</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

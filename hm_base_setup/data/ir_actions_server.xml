@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- <record id="studio_customization.dispo_technicien_mis_f640ea5d-3896-4b25-b133-c9c41d44b784" model="ir.actions.server">-->
+        <record id="available_technician_setting_dispo_action" model="ir.actions.server">
+            <!--            <field name="name">Dispo technicien - mis en dispo</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.dispo_technicien_mis_b7866a14-4368-4c46-9f9c-25358f7553f8" model="ir.actions.server">-->
+        <record id="available_technician_setting_indispo_action" model="ir.actions.server">
+            <!--            <field name="name">Dispo technicien - mise en indispo</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.cocher_ne_plus_deman_02ef561f-234e-4d91-a1a2-f15e1943d5ff" model="ir.actions.server">-->
+        <record id="check_do_not_ask_for_customer_feedback_action" model="ir.actions.server">
+            <!--            <field name="name">Cocher - ne plus demander avis client</field>-->
+        </record>
+
+        <!--  <record id="studio_customization.mail_avis_google_con_0b7ebc07-5102-4132-b7a0-e73ff4926bfe" model="ir.actions.server">-->
+        <record id="mail_avis_google_contact_action" model="ir.actions.server">
+            <!--            <field name="name">Mail avis google contact</field>-->
+        </record>
+
+        <!--  <record id="studio_customization.demande_avis_sur_fac_364373dc-d9fc-42a8-9d30-366dc3e3ba95" model="ir.actions.server">-->
+        <record id="request_opinions_on_facebook_and_google_action" model="ir.actions.server">
+            <!--            <field name="name">Demande avis sur Facebook et Google</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.dispo_technicien_mis_54707fa6-44d9-429a-9ae2-713a3cbc9181" model="ir.actions.server">-->
+        <record id="available_technician_action" model="ir.actions.server">
+            <!--            <field name="name">Dispo technicien - mise en dispo</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.mettre_le_gestionnai_06c93daa-81ca-4fa1-891f-6ad5f7f0c112" model="ir.actions.server">-->
+        <record id="put_manager_follower_of_the_client_action" model="ir.actions.server">
+            <!--            <field name="name">Mettre le gestionnaire en follower du client</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.cocher_ne_plus_deman_4b1dd064-e031-440d-aca9-13a46c338b4a" model="ir.actions.server">-->
+        <record id="check_no_longer_ask_for_customer_reviews_action" model="ir.actions.server">
+            <!--            <field name="name">Cocher "ne plus demander avis client"</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_techn_1feed249-94fb-445c-84e4-f21a1afaf26d" model="ir.actions.server">-->
+        <record id="input_activity_technician_available_again_action" model="ir.actions.server">
+            <!--            <field name="name">Technician is available ➡️ Create activity for Martin</field>-->
+        </record>
+
+        <record id="send_mail_notif_update_action_server" model="ir.actions.server">
+            <!--            <field name="name">Envoyer un email à Jérôme et Aziz si l'action automatique est mise à jour manuellement</field>-->
+        </record>
+
+    </data>
+</odoo>

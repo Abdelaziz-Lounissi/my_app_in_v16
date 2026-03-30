@@ -1,0 +1,133 @@
+  <t t-set="template" t-value="object.get_report_template()"/>
+                <div style="margin: 0px; padding: 0px;">
+                    <t t-if="template">
+                        <p t-if="template == 5" style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">
+                            <i>
+                                <font style="font-size:12px;">
+                                    Indien u vragen hebt over de planning van uw site, reageer dan niet op deze e-mail en neem rechtstreeks contact op met de technisch beheerder via de link
+                                </font>
+                                <a style="text-decoration:none;background-color:transparent;color:rgb(0, 135, 132);"
+                                   t-attf-href="{{ object.sale_order_id.get_portal_url() }} ">
+                                    <font style="font-size:12px;"><t t-out="object.sale_order_id.name">SO12345</t>.</font>
+                                </a>
+                            </i>
+                            <br/>
+                            <br/>
+                        </p>
+
+                        <p style="margin-bottom: 0px;">
+                            Beste <t t-out="object.partner_id.display_name or '''klant'''">klant</t>,
+                            <br/>
+                            <br/>
+                        </p>
+
+                        <p t-if="template == 1" style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">
+                            Gelieve in bijlage de factuur <strong><t t-out="object.name">FAC/2024/123</t></strong>
+                            van een bedrag van <strong><t t-out="format_amount(object.amount_total, object.currency_id)">50,00 €</t></strong>
+                            voor de interventie <strong><t t-out="object.sale_order_id.name">SOXXX</t></strong> te vinden.
+                            <br/>
+                            De factuur dient betaald te worden op rekening <strong><t t-out="object.partner_bank_id.display_name or 'Belfius - BE86 0689 4661 5650'">[Ontvangende bankrekening]</t></strong> met de volgende mededeling: <strong><t t-out="object.name">FAC/2024/123</t></strong>.
+                            <br/>
+                            Wij danken u bij voorbaat om deze te betalen vóór de vervaldatum op <strong><t t-out="object.invoice_date_due.strftime('%d/%m/%Y')">dd/mm/yyyy</t></strong>.
+                            <br/>
+                            <br/>
+                        </p>
+
+                        <p t-elif="template == 5"
+                           style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">
+                            In bijlage vindt u de factuur
+                            <strong>
+                                <t t-out="object.name">FAC/2024/123</t>
+                            </strong>
+                            voor een bedrag van
+                            <strong>
+                                <t t-out="format_amount(object.amount_total, object.currency_id)">50,00 €</t>
+                            </strong>
+                            .
+                            <br/>
+                            <br/>
+                            Wij danken u bij voorbaat voor het zo snel mogelijk betalen van de factuur, zodat we
+                            de site snel kunnen organiseren.
+                            <br/>
+                            <br/>
+                            Als dit een spoedklus is, stuur ons dan het betalingsbewijs als antwoord op deze e-mail.
+                            <br/>
+                            <br/>
+                        </p>
+
+                        <p t-elif="template == 6"
+                           style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">
+                            In bijlage vindt u de creditnota
+                            <strong>
+                                <t t-out="object.name">NC/2024/123</t>
+                            </strong>
+                            voor een bedrag van
+                            <strong>
+                                <t t-out="format_amount(object.amount_total, object.currency_id)">50,00 €</t>
+                            </strong>
+                            .
+                            <br/>
+                            <br/>
+                            U kunt dit bedrag in mindering brengen op uw volgende betaling of ons vertellen van welk
+                            bankrekeningnummer u wilt worden afgeschreven.
+                            bankrekeningnummer dat u terugbetaald wilt hebben door deze e-mail te beantwoorden.
+                            <br/>
+                            <br/>
+                        </p>
+                    </t>
+
+                    <t t-else="">
+                        <p style="margin:0px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding:0px;font-size: 13px;">
+                            Beste
+                            <t t-if="object.partner_id.parent_id">
+                                <t t-out="object.partner_id.name"></t>
+                                (<t t-out="object.partner_id.parent_id.name"></t>),
+                            </t>
+                            <t t-else="">
+                                <t t-out="object.partner_id.name"></t>,
+                            </t>
+                            <br/>
+                            <br/>
+                            Dit is uw
+                            <t t-if="object.name">
+                                factuur
+                                <strong>
+                                    <t t-out="object.name">FAC/2024/123</t>
+                                </strong>
+                            </t>
+                            <t t-else="">
+                                factuur
+                            </t>
+                            <t t-if="object.invoice_origin">
+                                (met referentie: <t t-out="object.invoice_origin">Ref factuur</t>)
+                            </t>
+                            voor een bedrag van
+                            <strong>
+                                <t t-out="format_amount(object.amount_total, object.currency_id)">50,00 €</t>
+                            </strong>
+                            van <t t-out="object.company_id.name">Heat Me</t>.
+                            <br/>
+                            <br/>
+                            Alvast bedankt voor het verzorgen van de betaling ervan.
+                            <br/>
+                            <br/>
+                        </p>
+                    </t>
+
+                    <div id="qrcode" t-if="object.display_qr_code and object.amount_residual > 0">
+                        <t t-set="qr_code_url" t-value="object._generate_qr_code(silent_errors=True)"/>
+                        <p t-if="qr_code_url">
+                            <strong class="text-center">Scan me met je bank-app.</strong><br/><br/>
+                            <img class="border border-dark rounded" t-att-src="qr_code_url"/>
+                        </p>
+                    </div>
+
+                    <p style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">
+                        Neem gerust contact met ons op als je vragen hebt.
+                        <br/>
+                        <br/>
+                        Met vriendelijke groeten,
+                        <br/>
+                        De boekhoudafdeling
+                    </p>
+                </div>

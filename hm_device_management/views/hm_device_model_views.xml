@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_device_model_search_view" model="ir.ui.view">
+        <field name="name">hm.device.model.search</field>
+        <field name="model">hm.device.model</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="product_tmpl_id"/>
+                <field name="model_name"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="hm_device_model_tree_view" model="ir.ui.view">
+        <field name="name">hm.device.model.tree</field>
+        <field name="model">hm.device.model</field>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="product_tmpl_id"/>
+                <field name="model_name"/>
+            </tree>
+        </field>
+    </record>
+
+<record id="hm_device_model_form_view" model="ir.ui.view">
+    <field name="name">hm.device.model.form</field>
+    <field name="model">hm.device.model</field>
+    <field name="priority">99</field>
+    <field name="arch" type="xml">
+        <form string="Device Model Information">
+            <sheet>
+                <group string="General Information" colspan="2">
+                    <group>
+                        <field name="product_tmpl_id" options="{'no_open': True}" placeholder="Select a product template"/>
+                        <field name="model_name" placeholder="Enter model name"/>
+                    </group>
+                </group>
+
+            </sheet>
+            <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers"/>
+                <field name="message_ids" widget="mail_thread"/>
+            </div>
+        </form>
+    </field>
+</record>
+
+    <record id="hm_device_model_act_window" model="ir.actions.act_window">
+        <field name="name">Device model</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hm.device.model</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

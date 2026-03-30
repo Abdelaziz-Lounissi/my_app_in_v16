@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="agreement_region_view_form" model="ir.ui.view">
+        <field name="name">hm.agreement.region.view.form</field>
+        <field name="model">hm.agreement.region</field>
+        <field name="arch" type="xml">
+            <form string="Agreement">
+                <sheet>
+                    <group>
+                        <field name="agreement_id"/>
+                        <field name="region"/>
+                        <field name="partner_id" invisible="1"/>
+                        <field name="name" readonly="1" force_save="1"/>
+                        <field name="hm_access_profession_id"/>
+                        <field name="hm_category_competence_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="agreement_region_view_tree" model="ir.ui.view">
+        <field name="name">hm.agreement.region.tree</field>
+        <field name="model">hm.agreement.region</field>
+        <field name="arch" type="xml">
+            <tree string="Agreement">
+                <field name="agreement_id"/>
+                <field name="region"/>
+                <field name="partner_id" invisible="1"/>
+                <field name="name" readonly="1" force_save="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="agreement_region_view_kanban" model="ir.ui.view">
+        <field name="name">hm.agreement.region.kanban</field>
+        <field name="model">hm.agreement.region</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <kanban string="agreement and region">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_card_content">
+                                <field name="name"
+                                       modifiers="{'readonly': true, 'required': true}"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="hm_agreement_region_action" model="ir.actions.act_window">
+        <field name="name">Agréments et compétences</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hm.agreement.region</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <menuitem id="hm_approvals_and_skills_menu"
+              name="Agréments et compétences"
+              action="hm_sales_technicien_info.hm_agreement_region_action"
+              parent="hm_base_setup.hm_config_technicians_menu"
+              sequence="1"/>
+
+</odoo>

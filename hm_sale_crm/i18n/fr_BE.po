@@ -1,0 +1,679 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_sale_crm
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e-20230110\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-31 14:04+0000\n"
+"PO-Revision-Date: 2023-03-31 14:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_sale_crm
+#: model:mail.template,body_html:hm_sale_crm.mail_template_interview_tracking_mail_client_time_to_plan
+msgid ""
+"<p style=\"margin:0px 0 1rem 0;font-size:13px;font-family:&quot;Lucida "
+"Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\"><span style=\"color: "
+"rgb(156, 156, 148); font-style: initial; font-variant-ligatures: initial; "
+"font-variant-caps: initial; font-weight: initial; text-align: "
+"inherit;\">***Cet e-mail a été transmis aux adresses suivantes:</span><span "
+"style=\"text-align: inherit;\"><font "
+"color=\"#9c9c94\">&nbsp;${object.hm_partner.email or '''-'''} "
+"-&nbsp;</font><font "
+"color=\"#9c9c94\">${object.dest_address_id.email or '''-'''} "
+"-&nbsp;</font></span><span style=\"text-align: inherit;\"><font "
+"color=\"#9c9c94\">"
+"</font></span><span style=\"color: rgb(156, 156, 148); text-align: "
+"inherit; font-style: initial; font-variant-ligatures: initial; font-variant-"
+"caps: initial; font-weight: initial;\">&nbsp;***</span></p><p "
+"style=\"margin:0px 0 1rem 0;font-size:13px;font-family:&quot;Lucida "
+"Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\"><span style=\"text-"
+"align: inherit;\"><font color=\"#9c9c94\"><br></font></span><span "
+"style=\"font-style: initial; font-variant-ligatures: initial; font-variant-"
+"caps: initial; font-weight: initial; text-align: inherit;\">Cher "
+"client,</span><br></p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-"
+"family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-"
+"serif;\">Selon notre système de suivi il est temps d'organiser le prochain "
+"<b style=\"font-weight:bolder;\"><u>entretien </u></b>de votre installation "
+"technique.</p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-"
+"family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-"
+"serif;\"><br></p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-"
+"family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-"
+"serif;\"><u>Concerne l'installation située à l'adresse suivante:</u></p><p "
+"style=\"margin:0px 0 1rem 0;font-size:13px;font-family:&quot;Lucida "
+"Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\"><b style=\"font-"
+"weight:bolder;\">${object.dest_address_id.contact_address}</b></p><p"
+" style=\"margin:0px 0 1rem 0;font-size:13px;font-family:&quot;Lucida "
+"Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\"><br></p><p "
+"style=\"margin:0px 0 1rem 0;font-size:13px;font-family:&quot;Lucida "
+"Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\">Sauf avis contraire, "
+"l'intervention sera facturée au client suivant:</p><p style=\"margin:0px 0 "
+"1rem 0;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, "
+"Verdana, Arial, sans-serif;\">${object.hm_partner.name}</p><p "
+"style=\"margin:0px 0 1rem 0;font-size:13px;font-family:&quot;Lucida "
+"Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\"><br></p><p "
+"style=\"margin:0px 0 1rem 0;font-size:13px;font-family:&quot;Lucida "
+"Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\">Pourriez-vous nous "
+"transmettre une ou plusieurs dates qui vous conviendraient durant le mois à "
+"venir afin d'organiser cela au mieux? Ceci par simple réponse à ce mail. Si "
+"vous avez des demandes particulières, n'hésitez pas à nous en faire "
+"part.</p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-"
+"family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-"
+"serif;\"><br>Nous sommes à votre disposition pour toute question.</p><p "
+"style=\"margin:0px 0 1rem 0;font-size:13px;font-family:&quot;Lucida "
+"Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\"><br></p><p "
+"style=\"margin:0px 0 1rem 0;font-size:13px;font-family:&quot;Lucida "
+"Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\">L'équipe Heat "
+"Me</p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family:&quot;Lucida"
+" Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\">+32 (0)2 486 76 "
+"76</p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family:&quot;Lucida"
+" Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\"><br></p>"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields.selection,name:hm_sale_crm.selection__hm_maintenance_acts__hm_pipeline_status_bar_selection__time_to-organise
+msgid "A organiser"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields.selection,name:hm_sale_crm.selection__hm_maintenance_acts__hm_pipeline_status_bar_selection__to_validate
+msgid "A valider"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__hm_access_to_the_necessary_profession_id
+msgid "Accès à la profession nécessaire"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.actions.act_window,name:hm_sale_crm.hm_action_maintenance_acts
+#: model:ir.ui.menu,name:hm_sale_crm.hm_maintenance_acts_menu
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_maintenance_acts_view_form
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_maintenance_acts_view_kanban
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_maintenance_acts_view_search
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_maintenance_acts_view_tree
+msgid "Actes maintenance"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.filters,name:hm_sale_crm.filter_hm_maintenance_acts
+msgid "Actes maintenance A VALIDER"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.actions.act_window,name:hm_sale_crm.action_works_category
+#: model:ir.ui.menu,name:hm_sale_crm.works_category_menu
+msgid "Catégorie de travaux"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.actions.act_window,name:hm_sale_crm.action_works_category_parents
+#: model:ir.ui.menu,name:hm_sale_crm.menu_works_category_parents
+msgid "Catégorie de travaux parente"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__hm_works_category_count
+msgid "Catégorie de travaux count"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__hm_works_category_parent_id
+msgid "Catégorie de travaux parent"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_config_setting_ratio
+msgid "Charge de gestion"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__hm_so_manager_theoretical_workload_in_minutes
+msgid "Charge de gestion estimée en minutes"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__hm_partner
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_maintenance_acts_view_form
+msgid "Client facturé"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields.selection,name:hm_sale_crm.selection__hm_maintenance_acts__hm_pipeline_status_bar_selection__cloturé
+msgid "Cloturé"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model,name:hm_sale_crm.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de config"
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__create_icr_automatically
+msgid "Create ICR from Technician Report"
+msgstr "Créer automatiquement un ICR depuis le rapport technicien"
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__create_uid
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_type__create_uid
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__create_uid
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category_parent__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__create_date
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_type__create_date
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__create_date
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category_parent__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_maintenance_acts_view_kanban
+msgid "Delete"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_crm_lead__hm_html_description
+msgid "Description html"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__display_name
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_type__display_name
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__display_name
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category_parent__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_maintenance_acts_view_kanban
+msgid "Edit"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields.selection,name:hm_sale_crm.selection__hm_maintenance_acts__hm_pipeline_status_bar_selection__en_retard
+msgid "En retard"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category_parent__hm_sales_teams
+msgid "Equipes de vente"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__hm_name
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_type__hm_name
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__hm_name
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category_parent__hm_name
+msgid "HM Name"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:mail.template,subject:hm_sale_crm.mail_template_interview_tracking_mail_client_time_to_plan
+msgid "Heat Me - Organisons l'entretien de votre installation de chauffage"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_res_config_settings__hm_so_manager_workload_ratio
+msgid "Hm So Manager Workload Ratio"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__id
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_type__id
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__id
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category_parent__id
+msgid "ID"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,help:hm_sale_crm.field_hm_maintenance_acts__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,help:hm_sale_crm.field_hm_maintenance_acts__message_needaction
+#: model:ir.model.fields,help:hm_sale_crm.field_hm_maintenance_acts__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,help:hm_sale_crm.field_hm_maintenance_acts__message_has_error
+#: model:ir.model.fields,help:hm_sale_crm.field_hm_maintenance_acts__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,help:hm_sale_crm.field_hm_works_category__create_icr_automatically
+msgid ""
+"If this box is checked, the intervention will be automatically approved upon"
+" receipt of the technician report. An ICR linked to the lead will be "
+"automatically created based on the same technician report"
+msgstr "Si cette case est cochée, l'intervention sera automatiquement approuvée à la réception du rapport technicien. Un ICR lié au lead sera automatiquement créé sur base de ce même rapport technicien"
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__hm_info_next_maintenance
+msgid "Infos prochain entretien"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category_parent__hm_is_maintenance_work
+msgid "Is Maintenance Work"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts____last_update
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_type____last_update
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category____last_update
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category_parent____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__write_uid
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_type__write_uid
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__write_uid
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category_parent__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__write_date
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_type__write_date
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__write_date
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category_parent__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_config_setting_ratio
+msgid ""
+"Le ratio charge de gestion est utilisé pour convertir\n"
+"                                        la 'Charge de gestion estimée en minutes' en 'Points de gestion'.\n"
+"                                        Formule: Points de gestion = Charge de gestion estimée en minutes / Ratio charge de gestion"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model,name:hm_sale_crm.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Piste/opportunité"
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields.selection,name:hm_sale_crm.selection__hm_works_category__hm_intervention_type__maintenance
+msgid "Maintenance"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model,name:hm_sale_crm.model_hm_maintenance_acts
+msgid "Maintenance Acts"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.actions.act_window,name:hm_sale_crm.hm_action_maintenance_type
+#: model:ir.model,name:hm_sale_crm.model_hm_maintenance_type
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_maintenance_type_view_form
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_maintenance_type_view_tree
+msgid "Maintenance Type"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__name
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_type__name
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__name
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category_parent__name
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_maintenance_acts_view_form
+msgid "Name"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category_parent__do_not_display_icr_at_customer
+msgid "Ne pas afficher l'IRC chez le client"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__hm_new_checkbox_works_category
+msgid "New Case à cocher"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,help:hm_sale_crm.field_hm_maintenance_acts__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,help:hm_sale_crm.field_hm_maintenance_acts__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,help:hm_sale_crm.field_hm_maintenance_acts__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__old_object_id
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_type__old_object_id
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__old_object_id
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category_parent__old_object_id
+msgid "Old object ID"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields.selection,name:hm_sale_crm.selection__hm_maintenance_acts__hm_pipeline_status_bar_selection__perdu
+msgid "Perdu"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__hm_pipeline_status_bar_selection
+msgid "Pipeline status bar"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category_parent__hm_nameplate_to_be_registered
+msgid "Plaquette signalétique à enregistrer"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__hm_so_manager_workload_points
+msgid "Points de gestion"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields.selection,name:hm_sale_crm.selection__hm_maintenance_acts__hm_pipeline_status_bar_selection__proposition_client
+msgid "Proposition client"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__hm_periodicity
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_type__hm_periodicity
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_maintenance_acts_view_form
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_maintenance_type_view_form
+msgid "Périodicité"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.ui.menu,name:hm_sale_crm.hm_menu_quotation_templates
+msgid "Quotation Templates"
+msgstr "Modèles de devis"
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.actions.server,name:hm_sale_crm.hm_sub_action_maintenance_followup_email_1_month_before
+msgid "SOUS-ACTION: Suivi entretien - mail 1 mois avant"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.actions.server,name:hm_sale_crm.hm_sub_action_maintenance_followup_pass_status_overdue
+msgid "SOUS-ACTION: Suivi entretien - passe status \"En retard\""
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.actions.server,name:hm_sale_crm.hm_sub_action_maintenance_followup_internal_comm_customer_call
+msgid "SOUS-ACTION: Suivi entretien: COMM INTERNE: appel client"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.actions.server,name:hm_sale_crm.hm_sub_action_maintenance_followup_change_status_bar
+msgid "SOUS-ACTION: suivi entretiens - changer status bar"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__hm_stage_id
+msgid "Stage"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,help:hm_sale_crm.field_hm_maintenance_acts__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.actions.server,name:hm_sale_crm.hm_customer_followup_follower_addition
+msgid "Suivi client - ajout follower"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields.selection,name:hm_sale_crm.selection__hm_maintenance_acts__hm_pipeline_status_bar_selection__followed
+msgid "Suivi en cours"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.ui.menu,name:hm_sale_crm.hm_interview_tracking_menu
+msgid "Suivi entretiens"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:base.automation,name:hm_sale_crm.hm_action_maintenance_followup_internal_comm_maintenance_reminder_to_be_done_1_year
+#: model:ir.actions.server,name:hm_sale_crm.hm_maintenance_followup_internal_comm_maintenance_reminder_to_be_done_1_year
+msgid "Suivi entretiens - COMM INTERNE: relance entretien à faire (1an)"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:base.automation,name:hm_sale_crm.hm_action_maintenance_followup_internal_comm_maintenance_reminder_to_be_done_2_year
+#: model:ir.actions.server,name:hm_sale_crm.hm_maintenance_followup_internal_comm_maintenance_reminder_to_be_done_2_year
+msgid "Suivi entretiens - COMM INTERNE: relance entretien à faire (2an)"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:base.automation,name:hm_sale_crm.hm_action_maintenance_followup_internal_comm_maintenance_reminder_to_be_done_6_months
+#: model:ir.actions.server,name:hm_sale_crm.hm_maintenance_followup_internal_comm_maintenance_reminder_to_be_done_6_months
+msgid "Suivi entretiens - COMM INTERNE: relance entretien à faire (6mois)"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.actions.server,name:hm_sale_crm.action_follow_up_interviews_date_encoding_following_previous_interview
+msgid "Suivi entretiens - Encodage date suite entretien précédent"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:base.automation,name:hm_sale_crm.hm_action_maintenance_followup_customer_mail_1_month_before_period_1_year
+#: model:ir.actions.server,name:hm_sale_crm.hm_maintenance_followup_customer_mail_1_month_before_period_1_year
+msgid "Suivi entretiens - Mail client 1 mois avant (période 1 an)"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:base.automation,name:hm_sale_crm.hm_action_maintenance_followup_customer_mail_1_month_before_period_2_year
+#: model:ir.actions.server,name:hm_sale_crm.hm_maintenance_followup_customer_mail_1_month_before_period_2_year
+msgid "Suivi entretiens - Mail client 1 mois avant (période 2 an)"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:base.automation,name:hm_sale_crm.hm_action_maintenance_followup_customer_mail_1_month_before_period_6_months
+#: model:ir.actions.server,name:hm_sale_crm.hm_maintenance_followup_customer_mail_1_month_before_period_6_months
+msgid "Suivi entretiens - Mail client 1 mois avant (période 6 mois))"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__hm_tel_partner
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_maintenance_acts_view_form
+msgid "Tel client"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields.selection,name:hm_sale_crm.selection__hm_works_category__hm_intervention_type__travaux
+msgid "Travaux"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__hm_intervention_type
+msgid "Type d'intervention"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__hm_maintenance_type_id
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_works_category__hm_maintenance_type
+#: model:ir.ui.menu,name:hm_sale_crm.hm_maintenance_type_menu
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_maintenance_acts_view_search
+msgid "Type de maintenance"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__hm_interviews_type_id
+msgid "Type entretiens"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.actions.act_window,name:hm_sale_crm.hm_action_type_maintenance_acts
+msgid "Type maintenance"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,help:hm_sale_crm.field_hm_maintenance_acts__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,field_description:hm_sale_crm.field_hm_maintenance_acts__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model.fields,help:hm_sale_crm.field_hm_maintenance_acts__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.model,name:hm_sale_crm.model_hm_works_category
+#: model:ir.model,name:hm_sale_crm.model_hm_works_category_parent
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_works_category_view_form
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_works_category_view_search
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_works_category_view_tree
+msgid "Works Category"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_works_category_parent_view_form
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_works_category_parent_view_tree
+msgid "Works Category Parent"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model_terms:ir.ui.view,arch_db:hm_sale_crm.hm_works_category_view_search
+msgid "Works_category_parent"
+msgstr ""
+
+#. module: hm_sale_crm
+#: model:ir.actions.server,name:hm_sale_crm.hm_customer_satisfaction_survey_creation_test
+msgid "test création sondage satisf client"
+msgstr ""

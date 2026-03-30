@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+crm.access_crm_stage_manager,crm.stage,crm.model_crm_stage,sales_team.group_sale_manager,1,0,0,0
+access_crm_stage_sys_admin,crm.stage,crm.model_crm_stage,base.group_system,1,1,1,1
+access_mail_template_public,mail.template_public,mail.model_mail_template,base.group_public,1,0,0,0

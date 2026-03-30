@@ -1,0 +1,682 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_integration_vanmarcke
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-12 16:16+0000\n"
+"PO-Revision-Date: 2022-09-12 16:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_needaction
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__activity_ids
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__activity_exception_decoration
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__activity_state
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_attachment_count
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__category
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_product_supplierinfo__category
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__check_empty_files
+msgid "Check Empty Files"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__check_import
+msgid "Check Import"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.result_view_hm_product_vanmarcke_import
+msgid "Close"
+msgstr "Fermer"
+
+#. module: hm_integration_vanmarcke
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.hm_product_vanmarcke_view_search
+msgid "Code EAN"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__create_uid
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__create_date
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__description_fr
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_product_supplierinfo__description_fr
+msgid "Description FR"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__description_nl
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_product_supplierinfo__description_nl
+msgid "Description NL"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__display_name
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__display_name
+msgid "Display Name"
+msgstr "Afficher Nom"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__code_ean
+msgid "EAN code"
+msgstr "Code EAN"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__executed
+msgid "Executed"
+msgstr "Exécuté"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__fiche_fr
+msgid "Fiche FR"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__fiche_nl
+msgid "Fiche NL"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__file_csv
+msgid "File CSV"
+msgstr "Fichier CSV"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__file_dbf
+msgid "File DBF"
+msgstr "Fichier DBF"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.actions.act_window,name:hm_integration_vanmarcke.action_hm_product_vanmarcke_import_history
+msgid "File History"
+msgstr "Historique des imports"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.actions.act_window,name:hm_integration_vanmarcke.action_hm_product_vanmarcke_import_history_updated
+msgid "File History Updated"
+msgstr "Historique des mises à jour du catalogue Heat Me"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__name_csv
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__name_dbf
+msgid "File name"
+msgstr "Fichier"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_follower_ids
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_channel_ids
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_partner_ids
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__gross_price
+msgid "Gross price"
+msgstr "Prix brut"
+
+#. module: hm_integration_vanmarcke
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.hm_product_vanmarcke_view_search
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model,name:hm_integration_vanmarcke.model_hm_product_vanmarcke
+msgid "Hm Product Van Marcke"
+msgstr "Hm Produit Van Marcke"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model,name:hm_integration_vanmarcke.model_hm_product_vanmarcke_import
+msgid "Hm Product Van Marcke Import"
+msgstr "Hm Importer Produit Van Marcke"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__id
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__id
+msgid "ID"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__activity_exception_icon
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke__activity_exception_icon
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_needaction
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_unread
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_needaction
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_has_error
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__image_url_1
+msgid "Image Url 1"
+msgstr "URL de l'image 1"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__image_url_2
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_product_supplierinfo__image_url_2
+msgid "Image Url 2"
+msgstr "URL de l'image 2"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__image_url_3
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_product_supplierinfo__image_url_3
+msgid "Image Url 3"
+msgstr "URL de l'image 3"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.ui.menu,name:hm_integration_vanmarcke.menu_hm_product_vanmarcke_import
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.history_view_hm_product_vanmarcke_import
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.result_view_hm_product_vanmarcke_import
+msgid "Import"
+msgstr "Importer"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__import_date
+msgid "Import Date"
+msgstr "Date d'import"
+
+#. module: hm_integration_vanmarcke
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.history_view_hm_product_vanmarcke_import
+msgid "Import Date :"
+msgstr "Date d'import"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.actions.act_window,name:hm_integration_vanmarcke.action_hm_product_vanmarcke_import
+msgid "Import File CSV/dbf"
+msgstr "Import Van Marcke"
+
+#. module: hm_integration_vanmarcke
+#: code:addons/hm_integration_vanmarcke/models/hm_product_vanmarcke_import.py:0
+#: code:addons/hm_integration_vanmarcke/wizard/import_hm_product_vanmarcke.py:0
+#, python-format
+msgid "Import File result"
+msgstr "Résultat du fichier d'importation"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.ui.menu,name:hm_integration_vanmarcke.menu_hm_product_vanmarcke_import_history
+msgid "Import History"
+msgstr "Historique des imports"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.ui.menu,name:hm_integration_vanmarcke.menu_hm_product_vanmarcke_import_history_list
+msgid "Import History List"
+msgstr "Import Van Marcke"
+
+#. module: hm_integration_vanmarcke
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.view_hm_product_vanmarcke_import
+msgid "Import Van Marcke"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_is_follower
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke____last_update
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__write_uid
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__write_date
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: hm_integration_vanmarcke
+#: code:addons/hm_integration_vanmarcke/models/hm_product_vanmarcke_import.py:0
+#: code:addons/hm_integration_vanmarcke/wizard/import_hm_product_vanmarcke.py:0
+#, python-format
+msgid "Le fichier est vide\n"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__note_import_product_vanmarcke
+msgid "Log"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__long_name_fr
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_product_supplierinfo__long_name_fr
+msgid "Long Name FR"
+msgstr "Nom long FR"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__long_name_nl
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_product_supplierinfo__long_name_nl
+msgid "Long Name NL"
+msgstr "Nom long NL"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_main_attachment_id
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__fabricant
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.hm_product_vanmarcke_view_search
+msgid "Manufacturer"
+msgstr "Fabricant"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__manufacturer_code
+msgid "Manufacturer code"
+msgstr "Code fabricant"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_has_error
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_ids
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__minimum_quantity
+msgid "Minimum quantity"
+msgstr "Quantité minimum"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__model
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.hm_product_vanmarcke_view_search
+msgid "Model"
+msgstr "Modèle"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__name_fr
+msgid "Name FR"
+msgstr "Nom FR"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__name_nl
+msgid "Name NL"
+msgstr "Nom NL"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__net_price
+msgid "Net Price"
+msgstr "Prix net"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__activity_date_deadline
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__activity_summary
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__activity_type_id
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: code:addons/hm_integration_vanmarcke/models/hm_product_vanmarcke_import.py:0
+#: code:addons/hm_integration_vanmarcke/wizard/import_hm_product_vanmarcke.py:0
+#, python-format
+msgid "No file sent."
+msgstr "Aucun fichier envoyé."
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_needaction_counter
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_has_error_counter
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_needaction_counter
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_has_error_counter
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_unread_counter
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__parent_category
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_product_supplierinfo__parent_category
+msgid "Parent category"
+msgstr "Catégorie parent"
+
+#. module: hm_integration_vanmarcke
+#: code:addons/hm_integration_vanmarcke/models/hm_product_vanmarcke_import.py:0
+#, python-format
+msgid "Please select the 2 Van Marcke files (*.csv and *.dbf)"
+msgstr "Veuillez sélectionner les 2 fichiers Van Marcke (*.csv et *.dbf)"
+
+#. module: hm_integration_vanmarcke
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.view_hm_product_vanmarcke_import
+msgid ""
+"Please select the 2 Van Marcke files (*.csv and *.dbf) in order to import "
+"them simultaneously"
+msgstr ""
+"Rendez-vous sur https://customermaster-app.vanmarcke.com/p/prijslijsten et "
+"téléchargez les 2 fichiers suivants: 'Informations sur le produit' "
+"(D71830.csv) et 'Net' (D71830.dbf)"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__price_code
+msgid "Price code"
+msgstr "Code de prix"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model,name:hm_integration_vanmarcke.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.actions.act_window,name:hm_integration_vanmarcke.action_hm_product_vanmarcke
+#: model:ir.ui.menu,name:hm_integration_vanmarcke.hm_product_vanmarcke_menu
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.view_hm_product_vanmarcke_form
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.view_hm_product_vanmarcke_tree
+msgid "Product Van Marcke"
+msgstr "Produit Van Marcke"
+
+#. module: hm_integration_vanmarcke
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.history_view_hm_product_vanmarcke_tree
+msgid "Product Van Marcke History"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__mark_as_created
+msgid "Product supplier info to be created"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__mark_as_updated
+msgid "Product supplier info to be updated"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: code:addons/hm_integration_vanmarcke/models/hm_product_vanmarcke_import.py:0
+#, python-format
+msgid "Repository not found"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__activity_user_id
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.result_view_hm_product_vanmarcke_import
+msgid "Results :"
+msgstr "Résultats"
+
+#. module: hm_integration_vanmarcke
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.hm_product_vanmarcke_view_search
+msgid "Search Product Van Marcke"
+msgstr "Rechercher Produit Van Marcke"
+
+#. module: hm_integration_vanmarcke
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.view_hm_product_vanmarcke_import
+msgid "Select (.CSV) file :"
+msgstr "Sélectionnez le fichier CSV"
+
+#. module: hm_integration_vanmarcke
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.view_hm_product_vanmarcke_import
+msgid "Select (.DBF) file :"
+msgstr "Sélectionnez le fichier DBF"
+
+#. module: hm_integration_vanmarcke
+#: code:addons/hm_integration_vanmarcke/wizard/import_hm_product_vanmarcke.py:0
+#, python-format
+msgid "Seuls les fichiers CSV sont supportés."
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.history_view_hm_product_vanmarcke_import
+msgid "Statistiques :"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke__activity_state
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: code:addons/hm_integration_vanmarcke/models/hm_product_vanmarcke_import.py:0
+#: code:addons/hm_integration_vanmarcke/models/hm_product_vanmarcke_import.py:0
+#: code:addons/hm_integration_vanmarcke/wizard/import_hm_product_vanmarcke.py:0
+#, python-format
+msgid "Successful import"
+msgstr "Import avec succès"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model,name:hm_integration_vanmarcke.model_product_supplierinfo
+msgid "Supplier Pricelist"
+msgstr "Liste de prix du fournisseur"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__supplier_code
+msgid "Supplier code"
+msgstr "Code fournisseur"
+
+#. module: hm_integration_vanmarcke
+#: code:addons/hm_integration_vanmarcke/models/hm_product_vanmarcke_import.py:0
+#, python-format
+msgid ""
+"The file has no requested extension, please check your file which must be "
+"(*.csv)"
+msgstr ""
+"Le fichier n'a pas d'extension demandée, veuillez vérifier votre fichier qui"
+" doit être (*.csv)"
+
+#. module: hm_integration_vanmarcke
+#: code:addons/hm_integration_vanmarcke/models/hm_product_vanmarcke_import.py:0
+#, python-format
+msgid ""
+"The file has no requested extension, please check your file which must be "
+"(*.dbf)"
+msgstr ""
+"Le fichier n'a pas d'extension demandée, veuillez vérifier votre fichier qui"
+" doit être (*.dbf)"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__count_line_csv
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__count_line_dbf
+msgid "Total File Line"
+msgstr "Nombre de lignes du fichier source"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__count_created_line_csv
+msgid "Total created in csv file"
+msgstr "Nombre de produits créés"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__count_created_line_dbf
+msgid "Total created in dbf file"
+msgstr "Nombre de produits créés"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__count_updated_line_csv
+msgid "Total updated in csv file"
+msgstr "Nombre de produits mis à jour"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__count_updated_line_dbf
+msgid "Total updated in dbf file"
+msgstr "Nombre de produits mis à jour"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__count_updated_price_csv
+msgid "Total updated price in csv file"
+msgstr "Nombre de prix mis à jour"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__count_updated_price_dbf
+msgid "Total updated price in dbf file"
+msgstr "Nombre de prix mis à jour"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke__activity_exception_decoration
+#: model:ir.model.fields,help:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_unread
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__message_unread_counter
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke_import__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__updated
+msgid "Updated"
+msgstr "Mise à jour"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.model.fields,field_description:hm_integration_vanmarcke.field_hm_product_vanmarcke__vat_code
+msgid "VAT code"
+msgstr "Code TVA"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.ui.menu,name:hm_integration_vanmarcke.vanmarcke_menu_root
+msgid "Van Marcke"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.actions.server,name:hm_integration_vanmarcke.van_merge_products_ir_actions_server
+#: model:ir.cron,cron_name:hm_integration_vanmarcke.van_merge_products
+#: model:ir.cron,name:hm_integration_vanmarcke.van_merge_products
+msgid "Van Marcke - Step 1: Merge products"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model:ir.actions.server,name:hm_integration_vanmarcke.update_products_ir_actions_server
+#: model:ir.cron,cron_name:hm_integration_vanmarcke.update_products
+#: model:ir.cron,name:hm_integration_vanmarcke.update_products
+msgid "Van Marcke -> Heat-me: Update products (step 2)"
+msgstr "Van Marcke -> Heat-me : Mettre à jour les produits (étape 2)"
+
+#. module: hm_integration_vanmarcke
+#: model:ir.actions.server,name:hm_integration_vanmarcke.cron_vanmarcke_update_fabricant_products_ir_actions_server
+msgid ""
+"Van Marcke: Remplir EAN et Fabricant dans la base articles de Odoo (step 1)"
+msgstr ""
+
+#. module: hm_integration_vanmarcke
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.view_hm_product_vanmarcke_import
+msgid "_Cancel"
+msgstr "_Annuler"
+
+#. module: hm_integration_vanmarcke
+#: model_terms:ir.ui.view,arch_db:hm_integration_vanmarcke.view_hm_product_vanmarcke_import
+msgid "_Import"
+msgstr "_Importer"

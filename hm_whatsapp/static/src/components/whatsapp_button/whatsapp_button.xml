@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+        <t t-name="hm_whatsapp.extend_sms_button_with_whatsapp" t-inherit="sms.SendSMSButton" t-inherit-mode="extension" owl="1">
+            <xpath expr="//a[hasclass('o_field_phone_sms')]" position="after">
+            <a
+                    t-att-title="title"
+                    t-att-href="whatsAppHref"
+                    t-on-click.prevent.stop="onClickWhatsApp"
+                    class="ms-3 d-inline-flex align-items-center o_field_phone_WhatsApp"
+            ><i class="fa fa-mobile"></i>
+                <small class="fw-bold ms-1">WhatsApp</small></a>
+        </xpath>
+    </t>
+
+</templates>

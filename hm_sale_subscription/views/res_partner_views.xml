@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_subscription.sale_subscription_action_res_partner" model="ir.actions.act_window">
+        <field name="context">{'default_partner_id': active_id}</field>
+        <field name="domain">
+            [('is_subscription', '=', True), '|', '|',
+            ('partner_onsite_id', '=', active_id),
+            ('partner_invoice_id', '=', active_id),
+            ('partner_id', '=', active_id)]
+        </field>
+        <field name="name">Subscriptions</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+
+    <record id="sale_subscription_kanban_res_partner" model="ir.actions.act_window.view" >
+        <field name="sequence" eval="0"/>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="sale_subscription.sale_subscription_view_kanban"/>
+        <field name="act_window_id" ref="sale_subscription.sale_subscription_action_res_partner"/>
+    </record>
+</odoo>

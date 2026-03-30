@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <!-- State for PO Marchandise -->
+
+    <record model="purchase.stage" id="purchase_stage1_po_marchandise">
+        <field name="name">À traiter</field>
+        <field name="sequence">1</field>
+        <field name="po_type">po_marchandise</field>
+    </record>
+
+    <record model="purchase.stage" id="purchase_stage2_po_marchandise">
+        <field name="name">Envoyé au fournisseur</field>
+        <field name="sequence">2</field>
+        <field name="po_type">po_marchandise</field>
+    </record>
+
+    <record model="purchase.stage" id="purchase_stage3_po_marchandise">
+        <field name="name">Confirmé par fournisseur</field>
+        <field name="sequence">3</field>
+        <field name="po_type">po_marchandise</field>
+    </record>
+
+    <record model="purchase.stage" id="purchase_stage4_po_marchandise">
+        <field name="name">Réceptionné</field>
+        <field name="sequence">4</field>
+        <field name="po_type">po_marchandise</field>
+    </record>
+
+    <record model="purchase.stage" id="purchase_stage5_po_marchandise">
+        <field name="name">Clôturé</field>
+        <field name="sequence">5</field>
+        <field name="po_type">po_marchandise</field>
+    </record>
+
+    <record model="purchase.stage" id="purchase_stage6_po_marchandise">
+        <field name="name">Annulé</field>
+        <field name="sequence">10</field>
+        <field name="po_type">po_marchandise</field>
+    </record>
+
+    <record model="purchase.stage" id="purchase_stage7_po_marchandise">
+        <field name="name">Contrôlé par HM</field>
+        <field name="sequence">4</field>
+        <field name="po_type">po_marchandise</field>
+    </record>
+
+    <!-- State for PO Emport Marchandise -->
+
+    <record model="purchase.stage" id="purchase_stage1_po_emport_marchandise">
+        <field name="name">À traiter</field>
+        <field name="sequence">6</field>
+        <field name="po_type">po_emport_marchandise</field>
+    </record>
+
+    <record model="purchase.stage" id="purchase_stage2_po_emport_marchandise">
+        <field name="name">Clôturé</field>
+        <field name="sequence">7</field>
+        <field name="po_type">po_emport_marchandise</field>
+    </record>
+
+    <record model="purchase.stage" id="purchase_stage3_po_emport_marchandise">
+        <field name="name">Annulé</field>
+        <field name="sequence">11</field>
+        <field name="po_type">po_emport_marchandise</field>
+    </record>
+
+    <!-- State for PO Technicien -->
+
+    <record model="purchase.stage" id="purchase_stage1_po_technicien">
+        <field name="name">À traiter</field>
+        <field name="sequence">8</field>
+        <field name="po_type">po_technicien</field>
+    </record>
+
+    <record model="purchase.stage" id="purchase_stage2_po_technicien">
+        <field name="name">Clôturé</field>
+        <field name="sequence">9</field>
+        <field name="po_type">po_technicien</field>
+    </record>
+
+    <record model="purchase.stage" id="purchase_stage3_po_technicien">
+        <field name="name">Annulé</field>
+        <field name="sequence">12</field>
+        <field name="po_type">po_technicien</field>
+    </record>
+
+    <!-- State for PO Commission -->
+
+    <record model="purchase.stage" id="purchase_stage1_po_commission">
+        <field name="name">À traiter</field>
+        <field name="sequence">13</field>
+        <field name="po_type">po_commission</field>
+    </record>
+
+    <record model="purchase.stage" id="purchase_stage2_po_commission">
+        <field name="name">Clôturé</field>
+        <field name="sequence">14</field>
+        <field name="po_type">po_commission</field>
+    </record>
+
+    <record model="purchase.stage" id="purchase_stage3_po_commission">
+        <field name="name">Annulé</field>
+        <field name="sequence">15</field>
+        <field name="po_type">po_commission</field>
+    </record>
+
+    <!-- State for PO frais généraux -->
+
+    <record model="purchase.stage" id="purchase_stage1_po_frais">
+        <field name="name">À traiter</field>
+        <field name="sequence">20</field>
+        <field name="po_type">po_frais_generaux</field>
+    </record>
+
+    <record model="purchase.stage" id="purchase_stage2_po_frais">
+        <field name="name">Envoyé au fournisseur</field>
+        <field name="sequence">25</field>
+        <field name="po_type">po_frais_generaux</field>
+    </record>
+
+    <record model="purchase.stage" id="purchase_stage3_po_frais">
+        <field name="name">Encodé par fournisseur</field>
+        <field name="sequence">30</field>
+        <field name="po_type">po_frais_generaux</field>
+    </record>
+
+    <record model="purchase.stage" id="purchase_stage4_po_frais">
+        <field name="name">Clôturé</field>
+        <field name="sequence">35</field>
+        <field name="po_type">po_frais_generaux</field>
+    </record>
+
+    <record model="purchase.stage" id="purchase_stage5_po_frais">
+        <field name="name">Annulé</field>
+        <field name="sequence">40</field>
+        <field name="po_type">po_frais_generaux</field>
+    </record>
+
+</odoo>

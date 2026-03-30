@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="hm_picture_library_action_automation_reset_picture" model="base.automation">
+            <field name="action_server_id"  ref="hm_picture_library.hm_picture_library_action_reset_picture"/>
+            <field name="active" eval="True"/>
+            <field name="last_run" eval="False"/>
+            <field name="trg_date_id" eval="False"/>
+            <field name="trg_date_range" eval="False"/>
+            <field name="trg_date_range_type" eval="False"/>
+            <field name="trigger">on_create_or_write</field>
+        </record>
+
+        <record id="hm_create_picture_library_from_attachments_act_automation" model="base.automation">
+            <field name="action_server_id"  ref="hm_picture_library.hm_picture_create_picture_library_from_attachments_action_serv"/>
+            <field name="active" eval="True"/>
+            <field name="last_run" eval="False"/>
+            <field name="trg_date_id" eval="False"/>
+            <field name="trg_date_range" eval="False"/>
+            <field name="trg_date_range_type" eval="False"/>
+            <field name="trigger">on_create</field>
+        </record>
+
+        <record id="hm_update_picture_library_from_attachments_act_automation" model="base.automation">
+            <field name="action_server_id"  ref="hm_picture_library.hm_picture_update_picture_library_from_attachments_action_serv"/>
+            <field name="active" eval="True"/>
+            <field name="last_run" eval="False"/>
+            <field name="trg_date_id" eval="False"/>
+            <field name="trg_date_range" eval="False"/>
+            <field name="trg_date_range_type" eval="False"/>
+            <field name="trigger">on_write</field>
+        </record>
+
+    </data>
+</odoo>

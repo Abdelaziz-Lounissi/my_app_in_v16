@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <!-- <record id="studio_customization.studio_report_docume_0bfd61b7-f607-49f5-bcbf-197eccfa7d52" model="ir.ui.view">-->
+    <template id="studio_report_document">
+        <t t-call="web.external_layout">
+            <div class="page"/>
+        </t>
+    </template>
+
+    <!-- <record id="studio_customization.odoo_studio_studio_c_608a799b-7e31-4206-b39d-8eeeccbb5eeb" model="ir.ui.view">-->
+    <template id="studio_report_document_inherit" inherit_id="hm_base_setup.studio_report_document">
+        <xpath expr="/t/t/div" position="inside">
+            <div class="row">
+                <div class="col">
+                    <!-- Debug field does not exist-->
+                    <span t-field="doc.x_studio_attestations_doc" t-options-widget="'image'"/>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="/t/t/div/div" position="after">
+            <div class="row address">
+                <div class="col-5">
+                    <div t-field="doc.partner_id" t-options-widget="'contact'"/>
+                </div>
+                <div class="col-5 offset-2"/>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- <record id="studio_customization.studio_main_report_817c349d-a577-4c23-b003-8e55ddce52dc" model="ir.ui.view">-->
+    <template id="studio_main_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="hm_base_setup.studio_report_document"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'HeatMe : Products & Pricelists',
+    'version': '16.0.1.0.0',
+    'author': 'Aziz, Netskill Group(NSG)',
+    'category': 'Sales/Pricelists',
+    'summary': 'Products & Pricelists Management',
+    'website': 'https://netskill.be/',
+    'depends': ['mail', 'product', 'sale_product_configurator', 'purchase_stock', 'mrp', 'sale_quotation_builder'],
+    'data': [
+        'security/ir.model.access.csv',
+        'data/ir_actions_server.xml',
+        'data/base_automation.xml',
+        'views/product_views.xml',
+        'views/product_template_views.xml',
+        'views/technical_sheets_views.xml',
+        'views/hm_substitution.xml',
+        'views/hm_product_equivalent.xml',
+        'views/export_products.xml',
+        'views/report_technical_sheets.xml',
+    ],
+    'installable': True,
+    'application': True,
+    'license': 'LGPL-3',
+}

@@ -1,0 +1,374 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <!--report_technician_billing_order-->
+    <template id="hm_report_purchaseorder_document" inherit_id="purchase.report_purchaseorder_document" priority="99">
+        <xpath expr="/t/t/div/table/thead/tr/th[4]" position="after">
+            <th>
+                <span>Qté reçue</span>
+            </th>
+        </xpath>
+        <xpath expr="//t[@t-if='not line.display_type']/td[4]" position="after">
+            <td>
+                <span t-field="line.product_qty"/>
+            </td>
+        </xpath>
+        <xpath expr="/t[1]/t[1]/div[1]/table[1]/thead[1]/tr[1]/th[3]" position="replace"/>
+        <xpath expr="//t[@t-if='not line.display_type']/td[3]" position="replace"/>
+        <xpath expr="/t[1]/t[1]/div[1]/table[1]/thead[1]/tr[1]/th[3]" position="replace"/>
+        <xpath expr="//t[@t-if='not line.display_type']/td[3]" position="replace"/>
+        <xpath expr="/t/t/div/table/thead/tr/th[3]" position="after">
+            <th>
+                <span>Qté Facturé</span>
+            </th>
+        </xpath>
+        <xpath expr="//t[@t-if='not line.display_type']/td[3]" position="after">
+            <td>
+                <span t-field="line.qty_invoiced"/>
+            </td>
+        </xpath>
+        <xpath expr="/t/t/div/table/thead/tr/th[3]/span" position="replace">
+            <span>Qté livrées</span>
+        </xpath>
+        <xpath expr="/t/t/div/table/thead/tr/th[4]/span" position="replace">
+            <span>Qté  déjà Facturé</span>
+        </xpath>
+        <xpath expr="/t/t/div/table/thead/tr/th[6]/strong" position="replace">
+            <strong>Montant total</strong>
+        </xpath>
+
+        <xpath expr="//t/div/div[hasclass('mt-4')]" position="replace">
+            <!--                <h2 t-if="o.state in ['purchase', 'done']">Bon de facturation #-->
+            <!--                    <span t-field="o.name"/>-->
+            <!--                </h2>-->
+
+            <div class="mt-4">
+                <h2 t-if="o.state in ['purchase', 'done']">Bon pour facturation #
+                    <span t-field="o.name"/>
+                </h2>
+            </div>
+
+        </xpath>
+        <!--            <xpath expr="/t/t/div/h2[3]" position="replace">-->
+        <!--                <h2 t-if="o.state in ['purchase', 'done']">Bon pour facturation #-->
+        <!--                    <span t-field="o.name"/>-->
+        <!--                </h2>-->
+        <!--            </xpath>-->
+        <xpath expr="/t/t/div/div[4]" position="after">
+            <div class="row">
+                <div class="col">
+                    <span>New Text Block</span>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="/t/t/div/div[5]/div/span" position="replace">
+            <span>Le présent relevé</span>
+        </xpath>
+        <xpath expr="/t/t/div/div[5]/div/span" position="replace">
+            <span>
+                <p>Le présent relevé reprend les prestations que vous avez réalisées pour Heat Me, selon les
+                    informations que vous nous avez transmises.
+                    <br/>
+                    <br/>
+                </p>
+                <p>Merci de reprendre le numéro du bon de commande (PO) sur votre facture et d'y annexer le présent
+                    bon qui constitue le descriptif officiel des prestations que vous facturez à Heat Me.
+                </p>
+            </span>
+        </xpath>
+        <xpath expr="/t/t/div/table/thead/tr/th[1]" position="after">
+            <th>
+                <span>Infos tech</span>
+            </th>
+        </xpath>
+        <xpath expr="//td[@id='product']" position="after">
+            <td>
+                <span t-field="line.hm_technical_info"/>
+            </td>
+        </xpath>
+        <xpath expr="//t[@t-if='not line.display_type']/td[7]/span[1]" position="attributes">
+        </xpath>
+        <xpath expr="/t/t/div/table/thead/tr/th[4]/span" position="replace">
+            <span>Qté commandée</span>
+        </xpath>
+
+        <xpath expr="/t/t/div/div[4]" position="after">
+            <div class="row">
+                <div class="col">
+                    <span t-field="o.hm_so_lie.wr_id.body_text"/>
+                    <t t-set="wr_pictures_count" t-value="len(o.hm_so_lie.wr_id.picture_wr_info_ids)"/>
+                    <t t-if="wr_pictures_count > 0">
+                        <t t-set="counter" t-value="0"/>
+                        <t t-foreach="o.hm_so_lie.wr_id.picture_wr_info_ids" t-as="picture_info">
+                            <t t-set="counter" t-value="counter + 1"/>
+
+                            <t t-if="counter % 2 == 1">
+                                <table class="table"
+                                       style="padding: 0; margin-top: 30px; margin-bottom: 20px; border-spacing: 0;border-collapse: collapse; page-break-inside: avoid;"
+                                       cellpadding="0" cellspacing="0">
+                                    <t t-set="left_picture"
+                                       t-value="o.hm_so_lie.wr_id.picture_wr_info_ids[counter-1]"/>
+                                    <tr style="page-break-inside: avoid;">
+                                        <td style="vertical-align: bottom; background-color: #FFFFFF; color: #000000; text-align:center;width: 50%; border:1px solid transparent !important;border-spacing: 0;padding: 0px; margin: 0px;">
+                                            <img t-attf-src="data:image/*;base64,{{left_picture.image_256}}"
+                                                 style="max-height:100%; max-width:100%;"/>
+                                        </td>
+                                        <t t-if="wr_pictures_count >= counter + 1">
+                                            <t t-set="right_picture"
+                                               t-value="o.hm_so_lie.wr_id.picture_wr_info_ids[counter]"/>
+                                            <td style="vertical-align: bottom; background-color: #FFFFFF; color: #000000; text-align:center;width: 50%; border:1px solid transparent !important;border-spacing: 0;padding: 0px; margin: 0px;">
+                                                <img t-attf-src="data:image/*;base64,{{right_picture.image_256}}"
+                                                     style="max-height:100%; max-width:100%;"/>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                    <tr style="page-break-inside: avoid;">
+                                        <td style="vertical-align: top; background-color: #FFFFFF; color: #000000; text-align:center;width: 50%; border:1px solid transparent !important;border-spacing: 0;padding: 0px; margin-bottom: 20px;">
+                                            <t t-if="left_picture.caption">
+                                                <span t-esc="left_picture.caption" style="font-size:12px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <span style="font-size:12px;">&#160;</span>
+                                            </t>
+                                        </td>
+                                        <t t-if="wr_pictures_count >= counter + 1">
+                                            <td style="vertical-align: top; background-color: #FFFFFF; color: #000000; text-align:center;width: 50%; border:1px solid transparent !important;border-spacing: 0;padding: 0px; margin-bottom: 20px;">
+                                                <t t-if="right_picture.caption">
+                                                    <span t-esc="right_picture.caption" style="font-size:12px;"/>
+                                                </t>
+                                                <t t-else="">
+                                                    <span style="font-size:12px;">&#160;</span>
+                                                </t>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                </table>
+                            </t>
+                        </t>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="/t/t/div/div[5]" position="after">
+            <div class="row">
+                <div class="col">
+                    <span/>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="/t/t/div/div[7]/div/span/p[1]" position="replace">
+            <p/>
+        </xpath>
+        <xpath expr="/t/t/div/div[7]/div/span/p[1]" position="replace">
+            <p>Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que l'ensemble
+                des recommandations et risques dont le client doit être informé. Le même rapport sera transmis au
+                client.<br/>Ceci a été établit selon les informations que vous nous avez transmises, vous êtes tenus
+                d'en vérifier le contenu
+            </p>
+        </xpath>
+        <xpath expr="/t/t/div/div[7]/div/span/p[2]" position="replace">
+            <p>Merci de reprendre le numéro du bon de commande (PO) sur votre facture et d'y annexer le présent
+                bon.
+            </p>
+        </xpath>
+        <xpath expr="/t/t/div/div[7]/div/span/p[1]" position="replace">
+            <p>Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que l'ensemble
+                des recommandations et risques dont le client doit être informé. Le même rapport sera transmis au
+                client.<br/>Ceci a été établit selon les informations que vous nous avez transmises, vous êtes tenus
+                d'en vérifier le contenu. Si celui-ci est complet,  ce bon est désormais facturable.
+            </p>
+        </xpath>
+        <xpath expr="/t/t/div/div[7]/div/span/p[1]" position="replace">
+            <p>Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que l'ensemble
+                des recommandations et risques dont le client doit être informé. Le même rapport sera transmis au
+                client.<br/>Ceci a été établit selon les informations que vous nous avez transmises, vous êtes tenus
+                d'en vérifier le contenu. Si celui-ci est complet,  ce bon est désormais facturable. Dans le cas
+                contraire, merci d'y apporter des corrections en réponse à ce mail.
+            </p>
+        </xpath>
+        <xpath expr="/t/t/div/div[5]" position="after">
+            <div class="row">
+                <div class="col">
+                    <span>New Text Block</span>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="/t/t/div/div[6]/div/span" position="replace">
+            <span>
+                <h3>
+                    Rapport d'intervention du technicien
+                </h3>
+            </span>
+        </xpath>
+        <xpath expr="/t[1]/t[1]/div[1]/div[5]/div[1]" position="replace"/>
+        <xpath expr="/t/t/div/div[8]/div/span/p[1]" position="replace">
+            <p>
+                <i>Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que
+                    l'ensemble des recommandations et risques dont le client doit être informé. Le même rapport sera
+                    transmis au client.<br/>Ceci a été établit selon les informations que vous nous avez transmises,
+                    vous êtes tenus d'en vérifier le contenu. Si celui-ci est complet,  ce bon est désormais
+                    facturable. Dans le cas contraire, merci d'y apporter des corrections en réponse à ce mail.
+                </i>
+            </p>
+        </xpath>
+        <xpath expr="/t[1]/t[1]/div[1]/div[8]/div[1]/span[1]/p[2]" position="replace"/>
+        <xpath expr="/t/t/div/div[8]/div/span/p/i" position="replace">
+            <i>Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que l'ensemble
+                des recommandations et risques dont le client doit être informé. Le même rapport sera transmis au
+                client.<br/>Ceci a été établit selon les informations que vous nous avez transmises, vous êtes tenus
+                d'en vérifier le contenu. Si celui-ci est complet,  ce bon est désormais facturable. Dans le cas
+                contraire, merci d'y apporter les corrections en réponse à ce mail.
+            </i>
+        </xpath>
+        <xpath expr="/t/t/div/table/thead/tr/th[1]/strong" position="replace">
+            <strong>Description des prestations:</strong>
+        </xpath>
+        <xpath expr="/t[1]/t[1]/div[1]/div[7]/div[1]/span[1]" position="attributes">
+            <attribute name="t-field"/>
+        </xpath>
+
+        <xpath expr="/t/t/div/div[6]" position="after">
+            <div class="row">
+                <div class="col">
+                    <span t-field="o.wr_id.body_text"/>
+                    <t t-set="wr_pictures_count" t-value="len(o.wr_id.picture_wr_info_ids)"/>
+                    <t t-if="wr_pictures_count > 0">
+                        <t t-set="counter" t-value="0"/>
+                        <t t-foreach="o.wr_id.picture_wr_info_ids" t-as="picture_info">
+                            <t t-set="counter" t-value="counter + 1"/>
+
+                            <t t-if="counter % 2 == 1">
+                                <table class="table"
+                                       style="padding: 0; margin-top: 30px; margin-bottom: 20px; border-spacing: 0;border-collapse: collapse; page-break-inside: avoid;"
+                                       cellpadding="0" cellspacing="0">
+                                    <t t-set="left_picture" t-value="o.wr_id.picture_wr_info_ids[counter-1]"/>
+                                    <tr style="page-break-inside: avoid;">
+                                        <td style="vertical-align: bottom; background-color: #FFFFFF; color: #000000; text-align:center;width: 50%; border:1px solid transparent !important;border-spacing: 0;padding: 0px; margin: 0px;">
+                                            <img t-attf-src="data:image/*;base64,{{left_picture.image_256}}"
+                                                 style="max-height:100%; max-width:100%;"/>
+                                        </td>
+                                        <t t-if="wr_pictures_count >= counter + 1">
+                                            <t t-set="right_picture"
+                                               t-value="o.wr_id.picture_wr_info_ids[counter]"/>
+                                            <td style="vertical-align: bottom; background-color: #FFFFFF; color: #000000; text-align:center;width: 50%; border:1px solid transparent !important;border-spacing: 0;padding: 0px; margin: 0px;">
+                                                <img t-attf-src="data:image/*;base64,{{right_picture.image_256}}"
+                                                     style="max-height:100%; max-width:100%;"/>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                    <tr style="page-break-inside: avoid;">
+                                        <td style="vertical-align: top; background-color: #FFFFFF; color: #000000; text-align:center;width: 50%; border:1px solid transparent !important;border-spacing: 0;padding: 0px; margin-bottom: 20px;">
+                                            <t t-if="left_picture.caption">
+                                                <span t-esc="left_picture.caption" style="font-size:12px;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <span style="font-size:12px;">&#160;</span>
+                                            </t>
+                                        </td>
+                                        <t t-if="wr_pictures_count >= counter + 1">
+                                            <td style="vertical-align: top; background-color: #FFFFFF; color: #000000; text-align:center;width: 50%; border:1px solid transparent !important;border-spacing: 0;padding: 0px; margin-bottom: 20px;">
+                                                <t t-if="right_picture.caption">
+                                                    <span t-esc="right_picture.caption" style="font-size:12px;"/>
+                                                </t>
+                                                <t t-else="">
+                                                    <span style="font-size:12px;">&#160;</span>
+                                                </t>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                </table>
+                            </t>
+                        </t>
+                    </t>
+
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="/t/t/div/div[6]/div/span" position="replace">
+            <span>
+                <h3>
+                    Rapport d'intervention
+                </h3>
+                <u>
+                    <b>
+                        <br/>
+                    </b>
+                </u>
+            </span>
+        </xpath>
+        <xpath expr="/t/t/div/div[6]" position="after">
+            <div class="row">
+                <div class="col">
+                    <span>New Text Block</span>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="/t/t/div/div[7]/div/span" position="replace">
+            <span>
+                <p t-if="not o.wr_id">Recommandation à adresser: Néant<br/>Danger à signaler: Néant
+                </p>
+            </span>
+        </xpath>
+        <xpath expr="/t[1]/t[1]/div[1]/div[7]/div[1]/span[1]" position="attributes">
+            <attribute name="t-if">not o.wr_id.body_text or not o.wr_id.picture_wr_info_ids</attribute>
+        </xpath>
+        <xpath expr="/t/t/div/div[10]/div/span" position="replace">
+            <span>
+                <p>
+                    <i> </i>
+                </p>
+                <p>
+                    <i>Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que
+                        l'ensemble des recommandations et risques dont le client doit être informé. Le même rapport
+                        sera transmis au client.<br/>Ceci a été établit selon les informations que vous nous avez
+                        transmises, vous êtes tenus d'en vérifier le contenu. Si celui-ci est complet,  ce bon est
+                        désormais facturable. Dans le cas contraire, merci d'y apporter les corrections en réponse à
+                        ce mail.
+                    </i>
+                </p>
+            </span>
+        </xpath>
+
+        <xpath expr="//t/div/div[@id='informations']/div[1]" position="replace">
+
+            <div t-if="o.hm_so_lie" class="col-3 bm-2">
+                <strong>Bon de travail concerné:</strong>
+                <p t-field="o.hm_so_lie" class="m-0"/>
+            </div>
+        </xpath>
+        <xpath expr="/t[1]/t[1]/t[3]/t[1]/div[1]/div[1]" position="attributes">
+            <attribute name="t-options-fields">['address', 'name']</attribute>
+        </xpath>
+        <xpath expr="/t[1]/t[1]/t[3]/t[1]/div[1]/div[1]" position="attributes">
+            <attribute name="t-options-fields">['address']</attribute>
+        </xpath>
+        <xpath expr="/t/t/div/div[1]" position="after">
+            <div class="row">
+                <div class="col-3">
+                    <span>
+                        <strong>Property name:</strong>
+                        <br/>
+                    </span>
+                    <span t-field="o.hm_intervention_property_address.name"/>
+                </div>
+                <div class="col-3"/>
+                <div class="col-3"/>
+                <div class="col-3"/>
+            </div>
+        </xpath>
+        <xpath expr="/t/t/div/div[2]/div[1]/span[1]" position="replace">
+            <span>
+                <strong>Intervention address:</strong>
+                <br/>
+            </span>
+        </xpath>
+        <xpath expr="/t[1]/t[1]/t[3]/t[1]/div[1]" position="replace"/>
+        <xpath expr="/t/t/t[3]/t/strong" position="replace">
+            <strong> </strong>
+        </xpath>
+        <xpath expr="/t[1]/t[1]/div[1]/table[1]/thead[1]/tr[1]/th[5]" position="replace"/>
+        <xpath expr="/t[1]/t[1]/div[1]/table[1]/tbody[1]/t[2]/tr[1]/t[1]/td[5]" position="replace"/>
+        <xpath expr="/t[1]/t[1]/div[1]/table[1]/tbody[1]/t[2]/tr[1]/t[1]/td[6]/span[1]" position="attributes">
+            <attribute name="t-field">line.price_subtotal</attribute>
+        </xpath>
+    </template>
+</odoo>

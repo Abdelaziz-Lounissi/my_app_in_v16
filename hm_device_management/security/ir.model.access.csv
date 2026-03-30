@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hm_device,access_hm_device,model_hm_device,,1,1,1,1
+access_hm_device_model,access_hm_device_model,model_hm_device_model,,1,1,1,1
+access_hm_so_device_select,model_hm_so_device_select,model_hm_so_device_select,,1,1,1,1

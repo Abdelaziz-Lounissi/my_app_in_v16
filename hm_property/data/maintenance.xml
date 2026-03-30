@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="update_partner_of_property" model="ir.cron">
+        <field name="name">update partner of property</field>
+        <field name="interval_number">5</field>
+        <field name="interval_type">months</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="model_id" ref="model_hm_property"/>
+        <field name="code">model.update_partner()</field>
+        <field name="state">code</field>
+    </record>
+
+    <record id="update_properties_build_year" model="ir.cron">
+        <field name="name">Update properties build year</field>
+        <field name="interval_number">5</field>
+        <field name="interval_type">months</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="model_id" ref="model_hm_property"/>
+        <field name="code">model.update_properties_build_year()</field>
+        <field name="state">code</field>
+    </record>
+
+</odoo>

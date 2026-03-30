@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hm_res_partner_view_inherit" model="ir.ui.view">
+        <field name="name">hm.res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[@name='sales_purchases']" position="inside">
+                <group>
+                    <group>
+                        <field name="hm_last_customer_review_request_on" string="Last customer review request"/>
+                    </group>
+                </group>
+
+            </xpath>
+            <xpath expr="//field[@name='property_payment_term_id']" position="after">
+                <field name="min_amount_to_ask_deposit"/>
+            </xpath>
+
+            <xpath expr="//field[@name='lang']" position="after">
+                <field name="b2b_partner_id"/>
+                <field name="prevent_auto_email"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

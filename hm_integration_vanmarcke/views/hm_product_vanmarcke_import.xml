@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_hm_product_vanmarcke_import" model="ir.ui.view">
+            <field name="name">hm.product.vanmarcke.import.form</field>
+            <field name="model">hm.product.vanmarcke.import</field>
+            <field name="arch" type="xml">
+                <form string="Import Van Marcke">
+                    <div>Please select the 2 Van Marcke files (*.csv and *.dbf) in order to import them simultaneously
+                    </div>
+                    <group col="5">
+                        <separator string="Select (.CSV) file :" colspan="4"/>
+                        <field name="file_csv" filename="name_csv" nolabel="1"/>
+                        <field name="name_csv" invisible="1"/>
+                    </group>
+                    <group col="5">
+                        <separator string="Select (.DBF) file :" colspan="4"/>
+                        <field name="file_dbf" filename="name_dbf" nolabel="1"/>
+                        <field name="name_dbf" invisible="1"/>
+                    </group>
+                    <separator colspan="4"/>
+                    <footer>
+                        <button name="import_file" string="_Import" type="object" icon="fa-file"/>
+                        <button special="cancel" string="_Cancel" icon="fa-times"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_hm_product_vanmarcke_import" model="ir.actions.act_window">
+            <field name="name">Import File CSV/dbf</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hm.product.vanmarcke.import</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_hm_product_vanmarcke_import"/>
+            <field name="target">new</field>
+        </record>
+
+        <record id="result_view_hm_product_vanmarcke_import" model="ir.ui.view">
+            <field name="name">Import File</field>
+            <field name="model">hm.product.vanmarcke.import</field>
+            <field name="type">form</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <form string="Import">
+                    <gropup>
+                        <separator colspan="4" string="Results :"/>
+                        <field name="note_import_product_vanmarcke" colspan="4" nolabel="1" width="850" height="400"
+                               readonly="1"/>
+                    </gropup>
+<!--                    <footer>-->
+<!--                        <button name="refresh_page" string="Close" type="object" icon="fa-times"/>-->
+<!--                    </footer>-->
+                </form>
+            </field>
+        </record>
+
+
+        <!--        History-->
+        <record id="history_view_hm_product_vanmarcke_tree" model="ir.ui.view">
+            <field name="name">hm.product.vanmarcke.import.tree</field>
+            <field name="model">hm.product.vanmarcke.import</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Product Van Marcke History" create="false" default_order='import_date desc'>
+                    <field name="import_date"/>
+                    <field name="name_csv"/>
+                    <field name="file_csv" filename="name_csv"/>
+                    <field name="name_dbf"/>
+                    <field name="file_dbf" filename="name_dbf"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="history_view_hm_product_vanmarcke_import" model="ir.ui.view">
+            <field name="name">File History</field>
+            <field name="model">hm.product.vanmarcke.import</field>
+            <field name="type">form</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <form string="Import" create="0" edit="0" delete="0">
+                    <header modifiers="{}">
+                        <field name="import_state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="file_csv" filename="name_csv" readonly="1"/>
+                                <field name="name_csv" invisible="1"/>
+                                <field name="import_csv_done" readonly="1"/>
+
+                                <separator string="Statistiques :"/>
+                                <field name="count_line_csv"/>
+                                <field name="count_created_line_csv"/>
+                                <field name="count_updated_line_csv"/>
+                                <field name="count_updated_price_csv"/>
+
+                            </group>
+                            <gropup>
+                                <separator colspan="4" string="Import Date :"/>
+                                <field name="import_date" colspan="4" nolabel="1" readonly="1"/>
+                            </gropup>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="file_dbf" filename="name_dbf" readonly="1"/>
+                                <field name="name_dbf" invisible="1"/>
+                                <field name="import_dbf_done" readonly="1"/>
+
+                                <separator string="Statistiques :"/>
+                                <field name="count_line_dbf"/>
+                                <field name="count_created_line_dbf"/>
+                                <field name="count_updated_line_dbf"/>
+                                <field name="count_updated_price_dbf"/>
+                            </group>
+
+                        </group>
+
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="action_hm_product_vanmarcke_import_history" model="ir.actions.act_window">
+            <field name="name">File History</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hm.product.vanmarcke.import</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>
+        <record id="history_hm_product_vanmarcke_action_view_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="hm_integration_vanmarcke.history_view_hm_product_vanmarcke_tree"/>
+            <field name="act_window_id" ref="action_hm_product_vanmarcke_import_history"/>
+        </record>
+        <record id="history_hm_product_vanmarcke_action_view_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="hm_integration_vanmarcke.history_view_hm_product_vanmarcke_import"/>
+            <field name="act_window_id" ref="action_hm_product_vanmarcke_import_history"/>
+        </record>
+
+        <record id="action_hm_product_vanmarcke_import_history_updated" model="ir.actions.act_window">
+            <field name="name">File History Updated</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hm.product.vanmarcke</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('mark_as_updated','=',True)]</field>
+        </record>
+
+    </data>
+</odoo>

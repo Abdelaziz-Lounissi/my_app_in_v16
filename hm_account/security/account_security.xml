@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="hm_group_invoicing_readonly" model="res.groups">
+            <field name="name">Factures clients en lecture uniquement</field>
+            <field name="category_id" ref="base.module_category_accounting_accounting"/>
+        </record>
+
+    </data>
+</odoo>

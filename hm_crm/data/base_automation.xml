@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- <record id="studio_customization.nouvelle_activite_da_c0b4df5a-3715-4ce6-85db-c5eca642f06f" model="base.automation">-->
+        <record id="hm_action_new_activity_in_crm_interventions_or_partner_put_salesperson_team_leader" model="base.automation">
+            <field name="action_server_id" ref="hm_crm.hm_new_activity_in_crm_interventions_or_partner_put_salesperson_team_leader"/>
+        </record>
+
+        <!--  <record id="studio_customization.mettre_en_rouge_oppo_6b42e146-576c-4a8f-af32-a71166780485" model="base.automation">-->
+        <record id="hm_action_put_in_red_opportunity_pipeline_intervention" model="base.automation">
+            <field name="action_server_id" ref="hm_crm.hm_put_in_red_opportunity_pipeline_intervention"/>
+        </record>
+
+        <!--  <record id="studio_customization.mettre_en_rouge_oppo_7f811ed1-5864-46d0-a857-1a2fb06666be" model="base.automation">-->
+        <record id="hm_action_put_in_green_opportunity_pipeline_partnerships" model="base.automation">
+            <field name="action_server_id" ref="hm_crm.hm_put_in_green_opportunity_pipeline_partnerships"/>
+        </record>
+
+        <!--  <record id="studio_customization.mettre_en_rouge_oppo_4a39de93-17dd-40cf-836f-3f73090790f1" model="base.automation">-->
+        <record id="hm_action_put_in_blue_opportunity_pipeline_project" model="base.automation">
+            <field name="action_server_id" ref="hm_crm.hm_put_in_blue_opportunity_pipeline_project"/>
+        </record>
+
+        <!--  <record id="studio_customization.mettre_en_rouge_oppo_76f99a6a-f28d-44fd-99db-eb178e36d9f6" model="base.automation">-->
+        <record id="hm_action_put_in_orange_opportunity_pipeline_technician" model="base.automation">
+            <field name="action_server_id" ref="hm_crm.hm_put_in_orange_opportunity_pipeline_technician"/>
+        </record>
+
+        <!--  <record id="studio_customization.mettre_en_rouge_oppo_de454a0f-445c-472f-ab88-ac1fc3fbe189" model="base.automation">-->
+        <record id="hm_action_intervention_opportunity_check_delay_customer_contact" model="base.automation">
+            <field name="action_server_id" ref="hm_crm.hm_intervention_opportunity_check_delay_customer_contact"/>
+        </record>
+
+        <!--  <record id="studio_customization.opportunite_interven_ece041b2-b41a-4118-a032-15a56ad696ae" model="base.automation">-->
+        <record id="hm_action_quote_opportunity_check_delay_customer_contact" model="base.automation">
+            <field name="action_server_id" ref="hm_crm.hm_quote_opportunity_check_delay_customer_contact"/>
+        </record>
+
+<!--          <record id="studio_customization.nouvelle_activite_da_d7ef6e9b-bb6e-45cf-8f9f-77bc7f0323de" model="base.automation">-->
+        <record id="hm_action_new_activity_in_crm_not_interventions_or_partner_activity_assign_lead_to_team_leader" model="base.automation">
+            <field name="action_server_id" ref="hm_crm.hm_new_activity_in_crm_not_interventions_or_partner_activity_assign_lead_to_team_leader"/>
+        </record>
+
+        <!--  <record id="studio_customization.nouvelle_activite_da_1ad56557-0757-410a-9b86-349770aabe9f" model="base.automation">-->
+        <record id="hm_action_imput_activity_salesman_defined_activity_make_quote_at_seller" model="base.automation">
+            <field name="action_server_id" ref="hm_crm.hm_imput_activity_salesman_defined_activity_make_quote_at_seller"/>
+        </record>
+
+        <!--  <record id="studio_customization.salesman_defined_fro_e9a5b796-7625-46ac-996a-975c754fa71a" model="base.automation">-->
+        <record id="hm_action_salesman_defined_from_creation_imput_activity_make_quotation" model="base.automation">
+            <field name="action_server_id" ref="hm_crm.hm_salesman_defined_from_creation_imput_activity_make_quotation"/>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_suivi_2353a0da-c831-46db-9f4d-eb0652a647d4" model="base.automation">-->
+        <record id="hm_action_input_activity_trade_tracking_when_change_state" model="base.automation">
+            <field name="action_server_id" ref="hm_crm.hm_input_activity_trade_tracking_when_change_state"/>
+        </record>
+
+        <!--    <record id="studio_customization.imput_activity_suivi_d133ad02-508a-411b-85b2-e857b5b1572f" model="base.automation">-->
+        <record id="hm_action_input_activity_commercial_followup_when_change_state2" model="base.automation">
+            <field name="action_server_id" ref="hm_crm.hm_input_activity_commercial_followup_when_change_state2"/>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_suivi_367e0302-4024-4cbf-9975-ff71db971f7b" model="base.automation">-->
+        <record id="hm_action_adapt_sales_team_for_technicien_when_push_in_selected_state" model="base.automation">
+            <field name="action_server_id" ref="hm_crm.hm_adapt_sales_team_for_technicien_when_push_in_selected_state"/>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_suivi_a2dad985-411f-48cd-8821-74e924832113" model="base.automation">-->
+        <record id="hm_action_input_activity_lead_lost_without_reason" model="base.automation">
+            <field name="action_server_id" ref="hm_crm.hm_input_activity_lead_lost_without_reason"/>
+        </record>
+
+    </data>
+</odoo>

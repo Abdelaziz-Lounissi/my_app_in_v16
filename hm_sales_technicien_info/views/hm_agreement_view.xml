@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="hm_agreement_form_view" model="ir.ui.view">
+            <field name="name">hm.agreement.form</field>
+            <field name="model">hm.agreement</field>
+            <field name="arch" type="xml">
+                <form string="Agreement">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hm_agreement_list_view" model="ir.ui.view">
+            <field name="name">hm.agreement.tree</field>
+            <field name="model">hm.agreement</field>
+            <field name="arch" type="xml">
+                <tree string="Agreement">
+                    <field name="name" string="Name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hm_agrement_action" model="ir.actions.act_window">
+            <field name="name">Agreement</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hm.agreement</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <menuitem id="menu_hm_agrement_action" parent="sale.prod_config_main" name="Agreement" sequence="20"
+                  action="hm_agrement_action"/>
+
+    </data>
+
+</odoo>

@@ -1,0 +1,3178 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-31 16:23+0000\n"
+"PO-Revision-Date: 2024-08-31 16:23+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_line__bom_count
+msgid "# Bill of Material"
+msgstr ""
+
+#. module: hm_sale
+#: model:mail.template,report_name:hm_sale.hm_mail_template_request_review_on_google_after_execution
+#: model:mail.template,report_name:hm_sale.mail_template_order_confirmation_without_date_and_vat_certificate_request
+msgid ""
+"${(object.name or '').replace('/','_')}${object.state == 'draft' and '' or ''}\n"
+"            "
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+msgid ""
+"%\n"
+"                                            discount"
+msgstr ""
+"%\n"
+"                                            remise"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid ""
+"% of\n"
+"                                            discount"
+msgstr ""
+"% de\n"
+"                                            remise"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+msgid ""
+"% of\n"
+"                                        discount"
+msgstr ""
+"% de\n"
+"                                        remise"
+
+#. module: hm_sale
+#: model:ir.actions.report,print_report_name:hm_sale.hm_action_proposal_radiators_with_price
+#: model:ir.actions.report,print_report_name:hm_sale.hm_action_proposal_radiators_without_price
+#: model:ir.actions.report,print_report_name:hm_sale.hm_action_technician_work_order
+msgid ""
+"(object.state in ('draft', 'sent') and 'Quotation - %s' % (object.name)) or "
+"'Order - %s' % (object.name)"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid ""
+"------------------------------------\n"
+"                    <br/>\n"
+"                    <br/>\n"
+"                    <b>\n"
+"                        <u>Nom du propriétaire du bien</u>\n"
+"                    </b>\n"
+"                    (pour attestation PEB):"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid ""
+"------------------------------------<br/>Nom du propriétaire du bien (pour "
+"attestation PEB):"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document_inherit_description
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_portal_content_inherit1
+msgid "<br/>&gt;&gt;"
+msgstr ""
+
+#. module: hm_sale
+#: model:mail.template,body_html:hm_sale.hm_mail_template_confirmation_of_sav_intervention_or_sales_visit
+msgid ""
+"<div style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">\n"
+"    <p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><font style=\"color:rgb(156, 156, 148);\">***Cet e-mail a été transmis aux adresses suivantes: ${object.partner_id.email} -&nbsp;</font><span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: rgb(156, 156, 148);\">${object.partner_shipping_id.email or '''-'''} -</span><font style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: rgb(156, 156, 148);\">&nbsp;</font><span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: rgb(156, 156, 148);\">${object.partner_shipping_id.hm_manager_mail or '''-'''} -&nbsp;</span><span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: rgb(156, 156, 148);\"/span><span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: rgb(156, 156, 148);\">&nbsp;***</span><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Cher ${object.partner_id.display_name or '''client'''},&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Nous confirmons que le rendez vous suivant a été pris avec un de nos techniciens.</p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><u><br></u></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><b style=\"font-weight:bolder;\"><u>Date d'intervention convenue :</u>&nbsp;</b><span style=\"font-weight:700;font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; text-align: inherit;\">${format_datetime(object.commitment_date)}</span></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><i>L'heure est une estimation pouvant varier.</i></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><u>Adresse d'intervention:&nbsp;</u></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">&nbsp;</p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\"><i>${object.property_id.display_name}</i></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\"><u>Personne de contact sur place:</u></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\"><u><i><br></i></u></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;\"><span style=\"text-align:inherit;\"><i>${object.partner_onsite_id.display_name}</i><i><br></i></span></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;\"><span style=\"text-align:inherit;\"><i>${object.partner_onsite_id.phone}</i></span>&nbsp;</p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">&nbsp;</p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Merci de vérifier ces informations et de nous prévenir en cas de problème.</p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Cordialement,</p>\n"
+"</div>\n"
+"            "
+msgstr ""
+"<div style=\"font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><font style=\"color:#9c9c94;\">***Cet e-mail a été transmis aux adresses suivantes: ${object.partner_id.email} -&nbsp;</font><span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">${object.partner_shipping_id.email or '''-'''} -</span><font style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">&nbsp;</font><span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">${object.partner_shipping_id.hm_manager_mail or '''-'''} -&nbsp;</span><span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\" span=\"\"><span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">&nbsp;***</span><br></span></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Cher ${object.partner_id.display_name or '''client'''},&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Nous confirmons que le rendez vous suivant a été pris avec un de nos techniciens.</p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><u><br></u></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><b style=\"box-sizing:border-box;font-weight:bolder;\"><u>Date d'intervention convenue :</u>&nbsp;</b><span style=\"font-weight:700;font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; text-align: inherit;\">${format_datetime(object.commitment_date)}</span></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><i>L'heure est une estimation pouvant varier.</i></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><u>Adresse d'intervention:&nbsp;</u></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">&nbsp;</p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\"><i>${object.property_id.display_name}</i></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\"><br></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\"><u>Personne de contact sur place:</u></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\"><u><i><br></i></u></p><p style=\"margin:0px;box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;\"><span style=\"text-align:inherit;\"><i>${object.partner_onsite_id.display_name}<br></i></span></p><p style=\"margin:0px;box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;\"><span style=\"text-align:inherit;\"><i>${object.partner_onsite_id.phone}</i></span>&nbsp;</p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">&nbsp;</p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Merci de vérifier ces informations et de nous prévenir en cas de problème.</p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Cordialement,</p>\n"
+"</div>\n"
+"            "
+
+#. module: hm_sale
+#: model:mail.template,body_html:hm_sale.mail_template_order_confirmation_without_date_and_vat_certificate_request
+msgid ""
+"<div style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">\n"
+"    <p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><font style=\"color:rgb(156, 156, 148);\">***Cet e-mail a été transmis aux adresses suivantes: ${object.partner_id.email} </font><span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: rgb(156, 156, 148);\">-</span><font style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: rgb(156, 156, 148);\">&nbsp;</font><span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: rgb(156, 156, 148);\">${object.partner_shipping_id.hm_manager_mail or '''-'''}&nbsp;</span><span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: rgb(156, 156, 148);\">&nbsp;</span><span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: rgb(156, 156, 148);\">&nbsp;***</span><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Cher ${object.partner_id.display_name or '''client'''},&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Nous vous remercions pour votre commande dont vous trouverez une copie ci-jointe. Nous vous recontacterons sous peu afin de définir la date d'intervention.</p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Le devis est basé sur un taux de TVA réduit à 6%. Pour bénéficier de ce taux réduit, votre bâtiment doit être à usage résidentiel depuis plus de 10 ans. Vous devez nous renvoyer l'attestation ci-joint complétée et signée afin de pouvoir en jouir sur vos factures Heat Me.</p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Vous pouvez renvoyer le document scanné en réponse à ce mail. Si votre bâtiment ne répond pas aux exigences de l'administration TVA, merci de nous le faire savoir, nous corrigerons notre devis.</p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Cordialement,</p>\n"
+"</div>\n"
+"            "
+msgstr ""
+"<div style=\"font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        <font style=\"color:#9c9c94;\">***Cet e-mail a été transmis aux adresses suivantes:\n"
+"             <t t-out=\"object.partner_id.email\"></t>\n"
+"        </font>\n"
+"        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"            -\n"
+"        </span>\n"
+"        <font style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"            &nbsp;\n"
+"        </font>\n"
+"        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"            <t t-out=\"object.partner_shipping_id.hm_manager_mail or '-' \"></t> &nbsp;\n"
+"        </span>\n"
+"        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"            &nbsp;\n"
+"        </span>\n"
+"        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"            &nbsp;***\n"
+"        </span>\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Cher <t t-out=\"object.partner_id.display_name or 'client' \"></t> ,&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Nous vous remercions pour votre commande dont vous trouverez une copie ci-jointe. Nous vous recontacterons sous\n"
+"        peu afin de définir la date d'intervention.\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Le devis est basé sur un taux de TVA réduit à 6%. Pour bénéficier de ce taux réduit, votre bâtiment doit être à\n"
+"        usage résidentiel depuis plus de 10 ans. Vous devez nous renvoyer l'attestation ci-joint complétée et signée\n"
+"        afin de pouvoir en jouir sur vos factures Heat Me.\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Vous pouvez renvoyer le document scanné en réponse à ce mail. Si votre bâtiment ne répond pas aux exigences de\n"
+"        l'administration TVA, merci de nous le faire savoir, nous corrigerons notre devis.\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Cordialement,\n"
+"    </p>\n"
+"</div>\n"
+
+#. module: hm_sale
+#: model:mail.template,body_html:hm_sale.hm_mail_template_request_review_on_google_after_execution
+msgid ""
+"<div style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">\n"
+"    <p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Cher(e) ${object.partner_id.display_name or '''client'''},&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Nous avons récemment effectué une intervention sur votre installation de chauffage ou de plomberie et espérons que celle-ci a pleinement répondu à vos attentes.</p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Pourrais-je vous demander une minute de votre temps, pour nous écrire un <b style=\"font-weight:bolder;\">commentaire sur Google</b> (et Facebook si possible)? Ceci nous permettra de connaitre votre avis sur nos services, et nous permettra de rencontrer la demande de nouveaux clients.</p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Pour <b style=\"font-weight:bolder;\">google</b>, vous pouvez cliquer directement sur le lien&nbsp;<b style=\"font-weight:bolder;\"><a href=\"https://www.google.be/search?ei=PI36XJfhCc-QkwWLiZ1A&amp;q=heat+me+chauffage&amp;oq=heat&amp;gs_l=psy-ab.1.0.35i39l2j0l2j0i131j0j0i131j0l3.19397.19905..20729...0.0..0.59.227.4......0....1..gws-wiz.......0i71j0i67.COF1Q9EXiks#lrd=0x47c3d7d960c41eb1:0x437e583a3593ac88,1,,,\" style=\"background-color:transparent;color:rgb(0, 135, 132);text-decoration-thickness:initial;\">ici</a>&nbsp;</b>pour un accès rapide.</p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Pour <b style=\"font-weight:bolder;\">facebook</b>, c'est <a href=\"https://www.facebook.com/Heat-Me-1009992305852685\" style=\"background-color:transparent;color:rgb(0, 135, 132);text-decoration-thickness:initial;\"><b style=\"font-weight:bolder;\">ici</b></a>!</p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;\">Enfin, s'il vous reste un peu de temps, le site&nbsp;<a href=\"https://www.trustup.be/fr/entreprise/heat-me?modal-rating=1\" style=\"background-color:transparent;text-decoration-thickness:initial;color: rgb(0, 135, 132); display: inline-block; word-break: break-all;\"><b style=\"font-weight:bolder;\">Trustup</b></a>&nbsp;nous supporte aussi.</p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;\"><br style=\"color:rgb(102, 102, 102);\"></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Vous avez des suggestions ou remarques pour améliorer nos services? Nous serions ravis si nous en faisiez part en réponse à ce mail!</p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Cordialement,</p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">L'équipe Heat Me,</p>\n"
+"</div>\n"
+"            "
+msgstr ""
+"<div style=\"font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Cher(e) ${object.partner_id.display_name or '''client'''},&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Nous avons récemment effectué une intervention sur votre installation de chauffage ou de plomberie et espérons que celle-ci a pleinement répondu à vos attentes.</p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Pourrais-je vous demander une minute de votre temps, pour nous écrire un <b style=\"box-sizing:border-box;font-weight:bolder;\">commentaire sur Google</b> (et Facebook si possible)? Ceci nous permettra de connaitre votre avis sur nos services, et nous permettra de rencontrer la demande de nouveaux clients.</p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Pour <b style=\"box-sizing:border-box;font-weight:bolder;\">google</b>, vous pouvez cliquer directement sur le lien&nbsp;<b style=\"box-sizing:border-box;font-weight:bolder;\"><a href=\"https://g.page/r/CX1DMTm9tGI5EB0/review\" style=\"text-decoration:none;box-sizing:border-box;background-color:transparent;color:#008784;text-decoration-thickness:initial;\">ici</a>&nbsp;</b>pour un accès rapide.</p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Pour <b style=\"box-sizing:border-box;font-weight:bolder;\">facebook</b>, c'est <a href=\"https://www.facebook.com/Heat-Me-1009992305852685\" style=\"text-decoration:none;box-sizing:border-box;background-color:transparent;color:#008784;text-decoration-thickness:initial;\"><b style=\"box-sizing:border-box;font-weight:bolder;\">ici</b></a>!</p><p style=\"margin:0px;box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;\">Enfin, s'il vous reste un peu de temps, le site&nbsp;<a href=\"https://www.trustup.be/fr/entreprise/heat-me?modal-rating=1\" style=\"text-decoration:none;box-sizing:border-box;background-color:transparent;text-decoration-thickness:initial;color: #008784; display: inline-block; word-break: break-all;\"><b style=\"box-sizing:border-box;font-weight:bolder;\">Trustup</b></a>&nbsp;nous supporte aussi.</p><p style=\"margin:0px;box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;\"><br style=\"color:#666666;\"></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Vous avez des suggestions ou remarques pour améliorer nos services? Nous serions ravis si nous en faisiez part en réponse à ce mail!</p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Cordialement,</p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">L'équipe Heat Me,</p>\n"
+"</div>\n"
+"            "
+
+#. module: hm_sale
+#: model:mail.template,body_html:hm_sale.hm_mail_template_appointment_reminder
+msgid ""
+"<div style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin:0px;padding: 0px;\">\n"
+"    <p style=\"margin:0px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding:0px;font-size: 13px;\">\n"
+"        Dear(e) <t t-out=\"object.partner_id.display_name or 'client' \"/>,&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br/>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding:0px;font-size: 13px;\">\n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px;\">\n"
+"        We remind you that you have <b style=\"font-weight: bolder;font-size: 13px;\">appointment tomorrow</b> with&nbsp;<span\n"
+"            style=\"font-size:13px;font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit;\">\n"
+"        our technician&nbsp;\n"
+"    </span>\n"
+"        <span style=\"font-size:13px;font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; text-align: inherit; font-weight: bolder;\">\n"
+"            <t t-out=\"object.hm_imputed_technician_id.hm_surnom_heat_me or 'HeatMe' \"/>\n"
+"        </span>\n"
+"        <span style=\"font-size:13px;font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit;\">\n"
+"            . This concerns the following intervention:&nbsp;\n"
+"        </span>\n"
+"        <span style=\"text-align:inherit;\">&nbsp;<t t-out=\"object.name or 'n/a' \"/> <t t-out=\"object.hm_work_object or '-' \"/></span>\n"
+"    </p>\n"
+"    <br/>\n"
+"    <t t-if=\"object.hm_imputed_technician_id and object.hm_imputed_technician_id.partner_image_url and object.hm_imputed_technician_id.hm_is_real_picture == True\">\n"
+"            <img src=\"{{ (object.hm_imputed_technician_id.partner_image_url) }}\"\n"
+"         style=\"border-style:none;vertical-align:middle;height:100px;width:100px;\" width=\"100\" height=\"100\" />\n"
+"    </t>\n"
+"    <br/>\n"
+"\n"
+"    <div style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\">\n"
+"        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit;\">\n"
+"            <br/>\n"
+"        </span>\n"
+"    </div>\n"
+"    <p style=\"margin:0px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding:0px;font-size: 13px;\">\n"
+"        <u>\n"
+"            <br/>\n"
+"        </u>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px;\">\n"
+"        <span style=\"font-weight: bolder;\"><u>Agreed action date</u>&nbsp;:&nbsp;\n"
+"        </span>\n"
+"        <span style=\"font-weight:700;font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; text-align: inherit;\">\n"
+"            <t t-out=\"object.commitment_date\"/>\n"
+"            <br/>\n"
+"        </span>\n"
+"        <i>The technician's arrival time is an estimate. The technician generally arrives within 2 hours of the service\n"
+"            date agreed above.\n"
+"        </i>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px;\">\n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"margin: 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px;\">\n"
+"        <u>Service address</u>&nbsp;:<br/><t t-out=\"object.property_id.display_name\"/>\n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px;\">\n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;font-size: 13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px;\">\n"
+"        <u>On-site contact person</u>&nbsp;:\n"
+"        <br/>\n"
+"        <span style=\"text-align:inherit;\">\n"
+"            <i><t t-out=\"object.partner_onsite_id.display_name\"/></i>\n"
+"            <i>\n"
+"                <br/>\n"
+"            </i>\n"
+"        </span>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px;\">\n"
+"        <span style=\"text-align:inherit;\">\n"
+"            <i><t t-out=\"object.partner_onsite_id.phone\"/></i>\n"
+"        </span>&nbsp;\n"
+"    </p>\n"
+"    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px;\">\n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"margin: 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px;\">\n"
+"        Please check this information and let us know if there are any problems.\n"
+"    </p>\n"
+"    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px;\">\n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px;\">\n"
+"        Cordially,\n"
+"    </p>\n"
+"</div>\n"
+msgstr ""
+"<div style=\"font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">\n"
+"\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Cher·ère <t t-out=\"object.partner_id.display_name or '''client·e'''\"></t>,<br><br></p>\n"
+"\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">Nous vous rappelons que vous avez <strong style=\"box-sizing:border-box;font-weight:bolder;\">rendez-vous demain\n"
+"    </strong> avec&nbsp;<span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit;\">notre technicien&nbsp;<t t-out=\"object.hm_imputed_technician_id.hm_surnom_heat_me or 'Heat Me' \"></t></span>.\n"
+"    </p>\n"
+"    <br>\n"
+"    <t t-if=\"object.hm_imputed_technician_id and object.hm_imputed_technician_id.partner_image_url and\n"
+"    object.hm_imputed_technician_id.hm_is_real_picture == True\">\n"
+"        <img src=\"{{ (object.hm_imputed_technician_id.partner_image_url) }}\" style=\"box-sizing:border-box;vertical-align:middle;height:100px;width:100px;\" width=\"100\" height=\"100\">\n"
+"    </t>\n"
+"    <br>\n"
+"\n"
+"    <div>\n"
+"        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit;\">\n"
+"            <br>\n"
+"        </span>\n"
+"    </div>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;padding:0px;font-size: 13px;\">\n"
+"        <u>\n"
+"            <br>\n"
+"        </u>\n"
+"    </p>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;padding:0px;font-size: 13px;\">\n"
+"        <b style=\"box-sizing:border-box;font-weight:bolder;\"><u>Date d'intervention convenue</u>&nbsp;:</b>&nbsp;<t t-out=\"object.hm_imputed_technician_id.hm_surnom_heat_me or 'Le technicien' \"></t> se présentera le <t t-out=\"format_datetime(object.commitment_date, tz='Europe/Brussels', dt_format='dd/MM/YYYY')\"></t>\n"
+"entre <t t-out=\"format_datetime(object.commitment_date, tz='Europe/Brussels', dt_format='HH:mm')\"></t>\n"
+"et <t t-out=\"format_datetime(object.commitment_date, tz='Europe/Samara', dt_format='HH:mm')\"></t><br><br></p>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;padding:0px;font-size: 13px;\">\n"
+"        <u>Adresse d'intervention:&nbsp;</u>\n"
+"    </p>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;padding:0px;\">&nbsp;</p>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;padding:0px;\">\n"
+"        <i><t t-out=\"object.property_id.display_name\"></t></i>\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;padding:0px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;padding:0px;\">\n"
+"        <u>Personne de contact sur place:</u>\n"
+"    </p>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;padding:0px;\">\n"
+"        <u>\n"
+"            <i>\n"
+"                <br>\n"
+"            </i>\n"
+"        </u>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;box-sizing:border-box;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <span style=\"text-align:inherit;\">\n"
+"            <i><t t-out=\"object.partner_onsite_id.display_name\"></t>\n"
+"                <br>\n"
+"            </i>\n"
+"        </span>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;box-sizing:border-box;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <span style=\"text-align:inherit;\">\n"
+"            <i><t t-out=\"object.partner_onsite_id.phone\"></t></i>\n"
+"        </span>&nbsp;\n"
+"    </p>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;padding:0px;font-size: 13px;\">&nbsp;</p>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;padding:0px;font-size: 13px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;padding:0px;font-size: 13px;\">Merci de vérifier ces informations\n"
+"        et de nous prévenir en cas de problème.\n"
+"    </p>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;padding:0px;font-size: 13px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;padding:0px;font-size: 13px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;padding:0px;font-size: 13px;\">Cordialement,</p>\n"
+"</div>\n"
+
+#. module: hm_sale
+#: model:mail.template,body_html:hm_sale.hm_mail_template_order_confirmation_with_date
+msgid ""
+"<div style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin:0px;padding: 0px;\">\n"
+"    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding:0px; font-size: 13px;\">\n"
+"        <font style=\"color:rgb(156, 156, 148);\">***This email has been forwarded to the following addresses:\n"
+"            <t t-out=\"object.partner_id.email\"/>\n"
+"        </font>\n"
+"        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: rgb(156, 156, 148);\">\n"
+"            -\n"
+"        </span>\n"
+"        <font style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: rgb(156, 156, 148);\">\n"
+"             \n"
+"        </font>\n"
+"        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: rgb(156, 156, 148);\">\n"
+"            <t t-out=\"object.partner_shipping_id.hm_manager_mail or '-' \"/> \n"
+"        </span>\n"
+"        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: rgb(156, 156, 148);\">\n"
+"             \n"
+"        </span>\n"
+"        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: rgb(156, 156, 148);\">\n"
+"             ***\n"
+"        </span>\n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"        Dear <t t-out=\"object.partner_id.display_name or '''client'''\"/>,  \n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"        Thank you for your order, a copy of which is attached.\n"
+"    </p>\n"
+"    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"        The following appointment has been scheduled with our technician\n"
+"        <b style=\"font-weight:bolder;\">\n"
+"            <t t-out=\"object.hm_imputed_technician_id.hm_surnom_heat_me or 'Heat Me' \"/>\n"
+"        </b>\n"
+"        .\n"
+"    </p>\n"
+"    <br/>\n"
+"\n"
+"\n"
+"    <img class=\"rounded-circle\"\n"
+"         style=\"text-decoration:none;outline-width:0px;outline-style:initial;outline-color:initial;line-height:100%;border-left-width:0px;border-bottom-width:0px;border-right-width:0px;border-top-width:0px;border-radius:50%;border-style:none;vertical-align:middle;height:120px;width:100px;\"\n"
+"         width=\"100\" height=\"120\"\n"
+"         t-attf-src=\"/web/image/res.partner/{{ (object.hm_imputed_technician_id.id) }}/image_1920\"/>\n"
+"    <br/>\n"
+"\n"
+"    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px;\">\n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding: 0px;\">\n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <span style=\"font-weight:bolder;\">\n"
+"            <u>Agreed intervention date :</u>\n"
+"        </span>\n"
+"        <span style=\"font-weight:700;font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; text-align: inherit;\">\n"
+"            <t t-out=\"format_datetime(object.commitment_date, tz=object.partner_id.tz, lang_code=object.partner_id.lang)\"/>\n"
+"            <br/>\n"
+"        </span>\n"
+"        <i>The time is an estimate and may vary.</i>\n"
+"    </p>\n"
+"    <p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <u>Intervention address:</u>\n"
+"        <br/>\n"
+"        <t t-out=\"object.property_id.display_name\"/>\n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <u>On-site contact person:</u>\n"
+"        <br/>\n"
+"        <span style=\"text-align:inherit;\">\n"
+"            <i>\n"
+"                <t t-out=\"object.partner_onsite_id.display_name\"/>\n"
+"            </i>\n"
+"            <i>\n"
+"                <br/>\n"
+"            </i>\n"
+"        </span>\n"
+"    </p>\n"
+"    <p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <span style=\"text-align:inherit;\">\n"
+"            <i>\n"
+"                <t t-out=\"object.partner_onsite_id.phone\"/>\n"
+"            </i>\n"
+"        </span>\n"
+"    </p>\n"
+"    <p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        Please verify this information and let us know if there are any issues.\n"
+"    </p>\n"
+"    <p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <br/>\n"
+"    </p>\n"
+"    <p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        Best regards,\n"
+"    </p>\n"
+"</div>"
+msgstr ""
+"<div style=\"font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin:0px;padding: 0px;\">\n"
+"    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding:0px; font-size: 13px;\">\n"
+"        <font style=\"color:#9c9c94;\">***Cet e-mail a été transmis aux adresses suivantes:\n"
+"            <t t-out=\"object.partner_id.email\"></t>\n"
+"        </font>\n"
+"        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"            -\n"
+"        </span>\n"
+"        <font style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"            &nbsp;\n"
+"        </font>\n"
+"        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"            <t t-out=\"object.partner_shipping_id.hm_manager_mail or '-' \"></t>&nbsp;\n"
+"        </span>\n"
+"        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"            &nbsp;\n"
+"        </span>\n"
+"        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"            &nbsp;***\n"
+"        </span>\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"        Cher <t t-out=\"object.partner_id.display_name or '''client'''\"></t>,&nbsp;&nbsp;\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"        Nous vous remercions pour votre commande dont vous trouverez une copie ci-jointe.\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"        Le rendez-vous suivant a été pris avec notre technicien\n"
+"        <b style=\"box-sizing:border-box;font-weight:bolder;\">\n"
+"            <t t-out=\"object.hm_imputed_technician_id.hm_surnom_heat_me or 'Heat Me' \"></t>\n"
+"        </b>\n"
+"        .\n"
+"    </p>\n"
+"    <br>\n"
+"\n"
+"\n"
+"    <img class=\"rounded-circle\" style=\"box-sizing:border-box;text-decoration:none;outline-width:0px;outline-style:initial;outline-color:initial;line-height:100%;border-left-width:0px;border-bottom-width:0px;border-right-width:0px;border-top-width:0px;border-radius:50%;border-style:none;vertical-align:middle;height:120px;width:100px;\" width=\"100\" height=\"120\" t-attf-src=\"/web/image/res.partner/{{ (object.hm_imputed_technician_id.id) }}/image_1920\">\n"
+"    <br>\n"
+"\n"
+"    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;box-sizing:border-box;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <span style=\"font-weight:bolder;\">\n"
+"            <u>Date d'intervention convenue :</u>\n"
+"        </span>\n"
+"        <span style=\"font-weight:700;font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; text-align: inherit;\">\n"
+"            <t t-out=\"format_datetime(object.commitment_date, tz=object.partner_id.tz, lang_code=object.partner_id.lang)\"></t>\n"
+"            <br>\n"
+"        </span>\n"
+"        <i>L'heure est une estimation pouvant varier.</i>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <u>Adresse d'intervention:</u>\n"
+"        <br>\n"
+"        <t t-out=\"object.property_id.display_name\"></t>\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;box-sizing:border-box;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <u>Personne de contact sur place:</u>\n"
+"        <br>\n"
+"        <span style=\"text-align:inherit;\">\n"
+"            <i>\n"
+"                <t t-out=\"object.partner_onsite_id.display_name\"></t>\n"
+"            </i>\n"
+"            <i>\n"
+"                <br>\n"
+"            </i>\n"
+"        </span>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <span style=\"text-align:inherit;\">\n"
+"            <i>\n"
+"                <t t-out=\"object.partner_onsite_id.phone\"></t>\n"
+"            </i>\n"
+"        </span>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        Merci de vérifier ces informations et de nous prévenir en cas de problème.\n"
+"    </p>\n"
+"    <p style=\"margin:0px;box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"margin:0px;box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin-right:0px;margin-bottom: 0px; margin-left: 0px; padding: 0px;\">\n"
+"        Cordialement,\n"
+"    </p>\n"
+"</div>"
+
+#. module: hm_sale
+#: model:mail.template,body_html:hm_sale.hm_mail_template_intervention_report
+msgid ""
+"<div style=\"font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin:0px;padding: 0px;\">\n"
+"                    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"                        <font style=\"color:#9c9c94;\">***This e-mail has been sent to the following addresses:\n"
+"                            <t t-out=\"object.partner_id.email\"></t>\n"
+"                        </font>\n"
+"                        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"                            <t t-out=\"object.partner_shipping_id.email or '''-'''\"></t> -\n"
+"                        </span>\n"
+"                        <font style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"\n"
+"                        </font>\n"
+"                        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"                            <t t-out=\"object.partner_shipping_id.hm_manager_mail or '''-'''\"></t>\n"
+"                        </span>\n"
+"                        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"                           ***\n"
+"                        </span>\n"
+"                        <br>\n"
+"                    </p>\n"
+"                    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"                        <br>\n"
+"                    </p>\n"
+"                    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">Dear\n"
+"                        <t t-out=\"object.partner_id.display_name or '''client'''\"></t>,<br><br>\n"
+"                    </p>\n"
+"\n"
+"                    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">Please find enclosed the Heat Me technician's report.</p>\n"
+"\n"
+"                    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">Thank you for your confidence.<br><br>\n"
+"                    </p>\n"
+"\n"
+"                    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">Kind regards,\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin:0px;padding: 0px;\">\n"
+"                    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"                        <font style=\"color:#9c9c94;\">***Cet e-mail a été transmis aux adresses suivantes :\n"
+"                            <t t-out=\"object.partner_id.email\"></t>\n"
+"                        </font>\n"
+"                        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"                            <t t-out=\"object.partner_shipping_id.email or '''-'''\"></t> -\n"
+"                        </span>\n"
+"                        <font style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"\n"
+"                        </font>\n"
+"                        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"                            <t t-out=\"object.partner_shipping_id.hm_manager_mail or '''-'''\"></t>\n"
+"                        </span>\n"
+"                        <span style=\"font-style:initial;font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit; color: #9c9c94;\">\n"
+"                           ***\n"
+"                        </span>\n"
+"                        <br>\n"
+"                    </p>\n"
+"                    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">\n"
+"                        <br>\n"
+"                    </p>\n"
+"                    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">Cher·ère\n"
+"                        <t t-out=\"object.partner_id.display_name or '''client'''\"></t>,<br><br>\n"
+"                    </p>\n"
+"\n"
+"                    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">Veuillez trouver le rapport d'intervention du technicien Heat Me en pièce jointe.</p>\n"
+"\n"
+"                    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">Nous vous remercions pour votre confiance.<br><br>\n"
+"                    </p>\n"
+"\n"
+"                    <p style=\"box-sizing:border-box;margin:0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;padding: 0px; font-size: 13px;\">Bien à vous,\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document_inherit
+msgid ""
+"<font style=\"color: rgb(8, 82, 148);\">\n"
+"                    <u>Intervention address:</u>\n"
+"                </font>"
+msgstr ""
+"<font style=\"color: rgb(8, 82, 148);\">\n"
+"                    <u>Adresse d'intervention:</u>\n"
+"                </font>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_work_report_document
+msgid ""
+"<span>\n"
+"                                    <strong>Work Report</strong>\n"
+"                                </span>\n"
+"                                <br/>\n"
+"                                <span>\n"
+"                                    <strong>Bon de commande</strong>\n"
+"                                </span>\n"
+"                                <br/>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_work_report_document
+msgid ""
+"<span>\n"
+"                                <strong>Date d'intervention:</strong>\n"
+"                                <br/>\n"
+"                            </span>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid ""
+"<span>\n"
+"                            <strong>Customer:</strong>\n"
+"                            <br/>\n"
+"                        </span>"
+msgstr ""
+"<span>\n"
+"                            <strong>Client:</strong>\n"
+"                            <br/>\n"
+"                        </span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid ""
+"<span>\n"
+"                            <strong>On-site contact:</strong>\n"
+"                            <br/>\n"
+"                        </span>"
+msgstr ""
+"<span>\n"
+"                            <strong>Contact sur place:</strong>\n"
+"                            <br/>\n"
+"                        </span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document_inherit
+msgid ""
+"<span>\n"
+"                            <strong>Property name:</strong>\n"
+"                            <br/>\n"
+"                        </span>"
+msgstr ""
+"<span>\n"
+"                            <strong>Nom du bien:</strong>\n"
+"                            <br/>\n"
+"                        </span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_without_price_document
+msgid ""
+"<span>\n"
+"                        <strong>Property name:</strong>\n"
+"                        <br/>\n"
+"                    </span>"
+msgstr ""
+"<span>\n"
+"                        <strong>Nom du bien:</strong>\n"
+"                        <br/>\n"
+"                    </span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document_inherit
+msgid ""
+"<span>\n"
+"                    <strong>Intervention address:</strong>\n"
+"                    <br/>\n"
+"                </span>"
+msgstr ""
+"<span>\n"
+"                    <strong>Adresse d'intervention:</strong>\n"
+"                    <br/>\n"
+"                </span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid ""
+"<span>\n"
+"                    <strong>Intervention date:</strong>\n"
+"                    <br/>\n"
+"                </span>"
+msgstr ""
+"<span>\n"
+"                    <strong>Date d'intervention:</strong>\n"
+"                    <br/>\n"
+"                </span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid ""
+"<span>\n"
+"                    <strong>SO Manager:</strong>\n"
+"                    <br/>\n"
+"                </span>"
+msgstr ""
+"<span>\n"
+"                    <strong>Gestionnaire SO:</strong>\n"
+"                    <br/>\n"
+"                </span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_without_price_document
+msgid ""
+"<span>\n"
+"                <b>\n"
+"                    <u>\n"
+"                        <i>In partnership with </i>\n"
+"                    </u>\n"
+"                </b>\n"
+"            </span>"
+msgstr ""
+"<span>\n"
+"                <b>\n"
+"                    <u>\n"
+"                        <i>En partenariat avec </i>\n"
+"                    </u>\n"
+"                </b>\n"
+"            </span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2_inherit
+msgid ""
+"<span>\n"
+"                <b>\n"
+"                    <u>In partnership with</u>\n"
+"                </b>\n"
+"            </span>"
+msgstr ""
+"<span>\n"
+"                <b>\n"
+"                    <u>En partenariat avec</u>\n"
+"                </b>\n"
+"            </span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_without_price_document
+msgid ""
+"<span>\n"
+"                <strong>Intervention address</strong>\n"
+"                <br/>\n"
+"            </span>"
+msgstr ""
+"<span>\n"
+"                <strong>Adresse d'intervention</strong>\n"
+"                <br/>\n"
+"            </span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+msgid ""
+"<span>** Les primes suivantes sont normalement disponibles.\n"
+"                            Il appartient au client de vérifier s'il y est éligible, sous réserve de disponibilité ou\n"
+"                            compatibilité.\n"
+"                            Heat Me vous accompagnera dans la demande et vous fournira les documents nécessaires,\n"
+"                            mais la demande doit être introduite par le client.\n"
+"\n"
+"                        </span>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+msgid ""
+"<span>** Les primes suivantes sont normalement disponibles.\n"
+"                            Il appartient au client de vérifier s'il y est éligible, sous réserve de disponibilité ou\n"
+"                            compatibilité.\n"
+"                            Heat Me vous accompagnera dans la demande et vous fournira les documents nécessaires,\n"
+"                            mais la demande doit être introduite par le client.\n"
+"                        </span>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_portal_content_inherit1
+msgid ""
+"<span>** Les primes suivantes sont normalement disponibles.\n"
+"                        Il appartient au client de vérifier s'il y est éligible, sous réserve de disponibilité ou\n"
+"                        compatibilité.\n"
+"                        Heat Me vous accompagnera dans la demande et vous fournira les documents nécessaires,\n"
+"                        mais la demande doit être introduite par le client.\n"
+"                    </span>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid "<span>Art</span>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_without_price_document
+msgid "<span>Concerne</span>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid "<span>Conditions d'entreprise</span>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "<span>Disc.(%)</span>"
+msgstr "<span>Rem.(%)</span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document_inherit
+msgid "<span>Discount (%)</span>"
+msgstr "<span>Remise (%)</span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid "<span>Infos tech</span>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3_inherit
+msgid "<span>Name ART</span>"
+msgstr "<span>Nom ART</span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2_inherit
+msgid "<span>New Column</span>"
+msgstr "<span>Nouvelle Colonne</span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2_inherit
+msgid "<span>New Text Block</span>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid "<span>New Title</span>"
+msgstr "<span>Nouveau Titre</span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+msgid "<span>Optional Products</span>"
+msgstr "<span>Articles Optionnels</span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "<span>Optional products</span>"
+msgstr "<span>Articles optionnels</span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2_inherit
+msgid "<span>Options:</span>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "<span>Pro-Forma Invoice #</span>"
+msgstr "<span>Facture pro-forma n°</span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_without_price_document
+msgid "<span>Product</span>"
+msgstr "<span>Article</span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "<span>Sales Description</span>"
+msgstr "<span>Description vente</span>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr "<strong class=\"mr16\">Sous-total</strong>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_portal_content_inherit1
+msgid "<strong style=\"color: green;\">Total des primes disponibles**</strong>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_portal_content_inherit1
+msgid "<strong style=\"color: white;\">Total net primes déduites**</strong>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_portal_content_inherit1
+msgid "<strong tyle=\"color: green;\">Total des primes disponibles**</strong>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document_inherit
+msgid ""
+"<strong>\n"
+"                    <font style=\"color: rgb(8, 82, 148);\">Intervention address:</font>\n"
+"                </strong>"
+msgstr ""
+"<strong>\n"
+"                    <font style=\"color: rgb(8, 82, 148);\">Adresse d'intervention:</font>\n"
+"                </strong>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_work_report_document
+msgid "<strong>Adresse d'intervention:</strong>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+msgid "<strong>Date Ordered:</strong>"
+msgstr "<strong>Date de commande:</strong>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_portal_content_inherit1
+msgid ""
+"<strong>Des primes sont normalement disponibles pour ces travaux:</strong>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "<strong>Expiration Date:</strong>"
+msgstr "<strong>Date d'Expiration:</strong>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+msgid "<strong>Fiscal Position Remark:</strong>"
+msgstr "<strong>Remarque sur le régime fiscal:</strong>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid "<strong>HeatMe Manager:</strong>"
+msgstr "<strong>Gestionnaire HeatMe:</strong>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "<strong>Incoterms :</strong>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+msgid "<strong>Incoterms:</strong>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "<strong>Intervention address:</strong>"
+msgstr "<strong>Adresse d'intervention:</strong>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid "<strong>Intervention date:</strong>"
+msgstr "<strong>Date d'intervention:</strong>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "<strong>Order Date:</strong>"
+msgstr "<strong>Date de commande:</strong>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "<strong>Payment Terms:</strong>"
+msgstr "<strong>Conditions de paiement:</strong>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "<strong>Quotation Date :</strong>"
+msgstr "<strong>Date du devis :</strong>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+msgid "<strong>Quotation Date:</strong>"
+msgstr "<strong>Date du devis:</strong>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "<strong>Remarque sur le régime fiscal :</strong>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "<strong>Salesperson :</strong>"
+msgstr "<strong>Vendeur :</strong>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+msgid "<strong>Salesperson:</strong>"
+msgstr "<strong>Vendeur:</strong>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+msgid "<strong>Shipping address:</strong>"
+msgstr "<strong>Adresse de livraison:</strong>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "<strong>Signature</strong>"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid "<strong>Technician:</strong>"
+msgstr "<strong>Technicien:</strong>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "<strong>Your Reference :</strong>"
+msgstr "<strong>Votre référence :</strong>"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+msgid "<strong>Your Reference:</strong>"
+msgstr "<strong>Votre référence:</strong>"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_closing_deadline_date
+msgid "A clôturer au plus tard le"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,help:hm_sale.field_sale_order_line__hm_product_description_sale
+msgid ""
+"A description of the Product that you want to communicate to your customers."
+" This description will be copied to every Sales Order, Delivery Order and "
+"Customer Invoice/Credit Note."
+msgstr ""
+"Une description du produit que vous souhaitez communiquer à vos clients. "
+"Cette description sera copiée sur chaque bon de commande, bon de livraison "
+"et note de crédit/facture client."
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_organization_deadline_date
+msgid "A organiser au plus tard le"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_line__hm_product_description_sale
+msgid "ART desc"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_stages_maintenance_acts_view_form
+msgid "Actes maintenance étapes"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "Amount"
+msgstr "Montant"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_line__computed_image_art
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Art"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_analyse_custo_ol_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+msgid "Article"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid "Articles"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_special_articles_mo_miscellaneous_descriptive_copy_of_so_on_po
+msgid "Articles spéciaux (MO, divers) > copie descriptif du SO sur PO"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_res_partner__b2b_partner_id
+#: model:ir.model.fields,field_description:hm_sale.field_res_users__b2b_partner_id
+msgid "B2B Partner"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_analyse_custo_ol_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_view_search_inherit_sale
+msgid "Bien immobilier"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_block_auto_mail
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Bloquer mail auto"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid ""
+"Bloqué si: property sans adresse, commande non confirmée, pas de date "
+"d'intervention ou pas de numéro de téléphone pour contact sur place"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Bon de commande"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.report,name:hm_sale.hm_action_technician_work_order
+msgid "Bon de travail Technicien"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_briefing_necessary_tech
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Briefing tech nécessaire"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid ""
+"C'est la personne qui va valider l'offre et être garant de son paiement (le\n"
+"                    client)"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_calculated_margin
+msgid "Calculated margin"
+msgstr "Marge calculée HTVA"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_form_view
+#: model_terms:ir.ui.view,arch_db:hm_sale.whatsapp_wizard_form_view
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_change_so_manager_when_selecting_imputed_technician_on_so
+msgid ""
+"Change Gestionnaire SO as user.id when selecting technicien imputé on SO "
+"MARCHE PAS!"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_change_intervention_date_tech_customer
+msgid "Changement date d'intervention (tech + client)"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.act_window,name:hm_sale.hm_charge_de_gestion
+#: model:ir.ui.menu,name:hm_sale.hm_charge_de_gestion_id
+msgid "Charge de gestion"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_so_manager_theoretical_workload_in_minutes
+msgid "Charge de gestion estimée en minutes"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__check_purchase_ids
+msgid "Check Purchase"
+msgstr "Vérifier l'achat"
+
+#. module: hm_sale
+#: model:ir.model,name:hm_sale.model_whatsapp_wizard
+msgid "Check Supplier"
+msgstr "Vérifier Fournisseur"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.whatsapp_wizard_form_view
+msgid "Choose Vendor Pricelists"
+msgstr "Choisissez les listes de prix des fournisseurs"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_city_intervention
+msgid "City (intervention)"
+msgstr "Ville (intervention)"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_analyse_custo_ol_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+msgid "Client"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_view_inherit_new
+msgid "Cloturé"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.hm_action_check_date_intervention_sent
+msgid "Cocher \"date intervention envoyee\""
+msgstr "Cocher \"date intervention envoyée\""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_commande_lie_count
+msgid "Commande Liée count"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_view_search_inherit_quotation
+msgid "Confirmation Date"
+msgstr "Date de confirmation"
+
+#. module: hm_sale
+#: model:mail.template,name:hm_sale.hm_mail_template_order_confirmation_with_date
+msgid "Confirmation commande AVEC DATE"
+msgstr ""
+
+#. module: hm_sale
+#: model:mail.template,name:hm_sale.mail_template_order_confirmation_without_date_and_vat_certificate_request
+msgid "Confirmation commande SANS DATE + demande attest TVA"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.hm_action_so_order_confirmation_vat_certificate_request
+msgid "Confirmation commande SO + demande attestation TVA"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_confirmation_order_so_with_intervention_date
+msgid "Confirmation commande SO Avec date intervention"
+msgstr ""
+"🔴 Sale Order confirmed ➡️ Send confirmation email to client with "
+"intervention date"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_confirmation_order_so_with_intervention_date_vat
+msgid "Confirmation commande SO Avec date intervention + TVA"
+msgstr "🔴 Confirmation commande SO Avec date intervention + TVA"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.hm_action_order_confirmation_so_without_intervention_date
+msgid "Confirmation commande SO Sans date intervention"
+msgstr ""
+"🟡 Sale Order confirmed ➡️ Send confirmation email to client without "
+"intervention date"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_confirmation_order_so_without_intervention_date_vat
+msgid "Confirmation commande SO Sans date intervention + TVA"
+msgstr "🔴 Confirmation commande SO Sans date intervention + TVA"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.hm_action_confirmation_date_intervention_after_validation
+msgid ""
+"Confirmation date intervention (après validation) REM: doublon avec invit agenda mais là\n"
+"                concerne tout le monde\n"
+"            "
+msgstr ""
+"🟡 Planned intervention ➡️ Send intervention date confirmation to customer by"
+" email"
+
+#. module: hm_sale
+#: model:mail.template,name:hm_sale.hm_mail_template_confirmation_of_sav_intervention_or_sales_visit
+msgid "Confirmation intervention SAV ou visite commerciale"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model,name:hm_sale.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_line__is_variant
+msgid "Copied Variant"
+msgstr "Variante copiée"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_copy_sales_team_in_field_sales_team_ok_for_analysis_if_comes_from_crm
+msgid ""
+"Copy \"equipe de vente\" in field \"equipe de vente ok pour analyse\" SI vient du CRM (equipe\n"
+"                de vente défini)\n"
+"            "
+msgstr ""
+"🟠 [BI?] Copy \"equipe de vente\" in field \"equipe de vente ok pour "
+"analyse\" SI vient du CRM (equipe de vente défini)"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_copy_sales_team_in_field_sales_team_ok_for_analysis_if_does_not_come_from_crm
+msgid ""
+"Copy \"equipe de vente\" in field \"equipe de vente ok pour analyse\" SI vient du PAS du CRM\n"
+"                (equipe de vente non défini)\n"
+"            "
+msgstr ""
+"🟠 [BI?] Copy \"equipe de vente\" in field \"equipe de vente ok pour "
+"analyse\" SI vient du PAS du CRM (equipe de vente non défini)"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_copy_paste_work_object_from_so_template
+msgid "Copy paste Objet_des_travaux from So template"
+msgstr "🟡 [Technical] Copy paste Objet_des_travaux from So template"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+msgid "Create Date"
+msgstr "Date de création"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_hm_so_primes_line__create_uid
+#: model:ir.model.fields,field_description:hm_sale.field_hm_stages_maintenance_acts__create_uid
+#: model:ir.model.fields,field_description:hm_sale.field_order_emergency_degrees__create_uid
+#: model:ir.model.fields,field_description:hm_sale.field_report_excel__create_uid
+#: model:ir.model.fields,field_description:hm_sale.field_resource_calendar_holiday__create_uid
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_report__create_uid
+#: model:ir.model.fields,field_description:hm_sale.field_whatsapp_wizard__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_hm_so_primes_line__create_date
+#: model:ir.model.fields,field_description:hm_sale.field_hm_stages_maintenance_acts__create_date
+#: model:ir.model.fields,field_description:hm_sale.field_order_emergency_degrees__create_date
+#: model:ir.model.fields,field_description:hm_sale.field_report_excel__create_date
+#: model:ir.model.fields,field_description:hm_sale.field_resource_calendar_holiday__create_date
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_report__create_date
+#: model:ir.model.fields,field_description:hm_sale.field_whatsapp_wizard__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_hm_so_primes_line__hm_currency_id
+#: model:ir.model.fields,field_description:hm_sale.field_order_emergency_degrees__currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_report__current_date
+msgid "Current Date"
+msgstr "Date actuelle"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_tree
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_quotation_tree_with_onboarding
+msgid "Customer"
+msgstr "Client"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_customer_3_id
+msgid "Customer 3"
+msgstr "Client 3"
+
+#. module: hm_sale
+#: model:order.emergency.degrees,name:hm_sale.emergency_degrees_3
+msgid "Dans le mois"
+msgstr ""
+
+#. module: hm_sale
+#: model:order.emergency.degrees,name:hm_sale.emergency_degrees_2
+msgid "Dans les 7 jours"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_resource_calendar_holiday__holiday_date
+msgid "Date"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_analyse_custo_ol_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_view_search_inherit_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Date d'intervention"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_analyse_custo_ol_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+msgid "Date de la commande"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_so_invoiced_date
+msgid "Date de passage du SO en statut d'intervention 'Facturé' "
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.hm_action_intervention_date_defined_after_validation
+#: model:ir.actions.server,name:hm_sale.hm_intervention_date_defined_after_validation_action
+msgid "Date intervention définie (après validation)"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.hm_action_intervention_date
+msgid "Date intervention: première définition"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__intervention_deadline_date
+msgid "Date limite d'intervention"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_resource_calendar_holiday__days
+msgid "Days"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_sale_order_cohort
+msgid "Default cohort view for sale.order"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_order_emergency_degrees__delay_to_plan_intervention
+msgid "Delay to schedule the intervention (days)"
+msgstr "Délai pour planifier l'intervention (jours)"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_delivery_datetime
+msgid "Delivery date"
+msgstr "Date de livraison"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_whatsapp_wizard__name
+msgid "Demand"
+msgstr "Demande"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.hm_action_request_for_certificate_following_confirm_SO
+msgid "Demande attestation suite confirm SO"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_request_customer_reviews_on_google
+msgid "Demande avis client sur Google"
+msgstr ""
+
+#. module: hm_sale
+#: model:mail.template,name:hm_sale.hm_mail_template_request_review_on_google_after_execution
+msgid "Demande avis sur Google après exécution"
+msgstr ""
+
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_confirmation_request_written_order_task_creation
+msgid "Demande confirmation commande écrite - création tâche"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_confirmation_request_written_order_send_email
+msgid "Demande confirmation commande écrite - envoi mail"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_confirmation_request_written_order_fake
+msgid "Demande confirmation commande écrite - fake"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_inherit_report5
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_portal_content_inherit1
+msgid "Demande initiale du client"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "Description"
+msgstr ""
+
+#. module: hm_sale
+#. odoo-javascript
+#: code:addons/hm_sale/static/src/xml/templates.xml:0
+#, python-format
+msgid "Description de l'article :"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+msgid "Devis"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.report,name:hm_sale.hm_action_quote_order_without_price
+msgid "Devis / Commande SANS PRIX"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_analyse_custo_ol_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+msgid "Devis et ventes"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_debrief_difficulties
+msgid "Difficultés rencontrées"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Disc. %"
+msgstr "Rem. %"
+
+#. module: hm_sale
+#. odoo-javascript
+#: code:addons/hm_sale/static/src/js/custom_product_discount_field.js:0
+#, python-format
+msgid "Disc.%"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_hm_so_primes_line__display_name
+#: model:ir.model.fields,field_description:hm_sale.field_hm_stages_maintenance_acts__display_name
+#: model:ir.model.fields,field_description:hm_sale.field_order_emergency_degrees__display_name
+#: model:ir.model.fields,field_description:hm_sale.field_report_excel__display_name
+#: model:ir.model.fields,field_description:hm_sale.field_resource_calendar_holiday__display_name
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_report__display_name
+#: model:ir.model.fields,field_description:hm_sale.field_whatsapp_wizard__display_name
+msgid "Display Name"
+msgstr "Afficher Nom"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_display_po
+msgid "Display PO"
+msgstr "Afficher PO"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_form_view
+msgid "Done"
+msgstr "Valider"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_report_excel__file_download
+msgid "Download report"
+msgstr "Télécharger rapport"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Débrief"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_is_debrief_done
+msgid "Débriefing réalisé"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.act_window,name:hm_sale.hm_emergy_dugrees
+#: model:ir.model,name:hm_sale.model_order_emergency_degrees
+#: model:ir.ui.menu,name:hm_sale.hm_emergy_dugrees_id
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_emergy_dugrees_tree_view
+msgid "Emergency Degrees"
+msgstr "Délai d'intervention"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__emergency_degrees_id
+msgid "Emergency degrees"
+msgstr "Délai d'intervention"
+
+#. module: hm_sale
+#: model:ir.model.fields,help:hm_sale.field_order_emergency_degrees__urgency_fee
+msgid ""
+"Emergency fee charged to the customer if the intervention takes place on the"
+" same day before 9 PM for an order placed before 10 AM, otherwise before 5 "
+"PM the next day"
+msgstr ""
+"Supplément d'urgence facturable au client si intervention le jour-même avant"
+" 21h pour une commande passée avant 10h sinon avant 17h le lendemain."
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_res_partner__prevent_auto_email
+#: model:ir.model.fields,field_description:hm_sale.field_res_users__prevent_auto_email
+msgid "Empêcher l'envoi d'e-mail automatique"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_saves_the_expected_margin_at_the_time_of_the_order
+msgid "Enregistre la marge prévue au moment de la commande"
+msgstr "🟠 Confirmed SO ➡️ Store margin forecast"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_sending_technician_work_order
+msgid "Envoi bon de travail Technicien"
+msgstr "🟡 Planned intervention ➡️ Send PO to technician by email"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_sending_work_order_to_the_technician
+msgid "Envoi bon de travail au Technicien"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.hm_action_sending_confirmation_intervention_date
+msgid "Envoi confirmation date intervention"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.hm_action_sending_email_the_day_before_intervention
+msgid "Envoi mail la veille intervention"
+msgstr ""
+
+#. module: hm_sale
+#: model:mail.template,name:hm_sale.hm_mail_template_intervention_report
+msgid "Envoi rapport d'intervention du technicien au client"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+msgid "Equipe de vente validé (pour analyse)"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_sales_teams_valid_for_analysis
+msgid "Equipes de vente > VALIDE (pour analyse)"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model,name:hm_sale.model_report_excel
+msgid "Excel"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_fictive_for_sub_actions
+msgid "FICTIF pour sous actions"
+msgstr "❓ [Technical] FICTIF pour sous actions"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_report_excel__name
+msgid "File Name"
+msgstr "Nom de Fichier"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_certificates_doc_filename
+msgid "Filename for x_studio_attestations_doc"
+msgstr ""
+
+#. module: hm_sale
+#. odoo-javascript
+#: code:addons/hm_sale/static/src/xml/hm_clipboard.xml:0
+#, python-format
+msgid "Generate/Copy Intervention proposal"
+msgstr "Générer/Copier une proposition d'intervention"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_analyse_custo_ol_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_sales_order_filter
+msgid "Gestionnaire SO"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_analyse_custo_ol_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_sales_order_filter
+msgid "Gestionnaire immobilier"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__is_greater
+msgid "Greater than"
+msgstr "Supérieur à"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_analyse_custo_ol_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+msgid "Group By"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_line__hm_product_barcode
+msgid "HM Art"
+msgstr "Art"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_margin
+msgid "HM Margin"
+msgstr "Marge"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_property
+msgid "HM Property"
+msgstr "Bien immobilier"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_line__hm_product_qty
+msgid "HM Quantity"
+msgstr "Quantité"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_technician
+msgid "HM Technician"
+msgstr "Technicien"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_customer_id
+msgid "HM customer"
+msgstr "Client"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_partner
+msgid "HM partner"
+msgstr "Client"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__has_group_sale_manager
+msgid "Has group sale manager"
+msgstr "A le groupe gestionnaire de vente"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__has_group_sale_manager_for_point_of_management
+msgid "Has group sale manager for point of management"
+msgstr ""
+
+#. module: hm_sale
+#: model:mail.template,subject:hm_sale.hm_mail_template_appointment_reminder
+msgid ""
+"Heat Me - Reminder intervention - {{ object.name or 'n/a' }} {{ "
+"object.hm_work_object or '''-''' }} - {{ object.property_id.display_name }}"
+msgstr ""
+"Heat Me - Rappel intervention - {{ object.name or 'n/a' }} {{ "
+"object.hm_work_object or '''-''' }} - {{ object.property_id.display_name }}"
+
+#. module: hm_sale
+#: model:mail.template,subject:hm_sale.hm_mail_template_intervention_report
+msgid ""
+"Heat Me | {{ object.company_id.name }} Intervention report {{ object.state "
+"in ('draft', 'sent') and 'Devis' or 'Commande' }} (Réf {{ object.name or "
+"'n/a' }}) {{ object.property_id.display_name }}"
+msgstr ""
+"Heat Me | {{ object.company_id.name }} Rapport d'intervention {{ "
+"object.state in ('draft', 'sent') and 'Devis' or 'Commande' }} (Réf {{ "
+"object.name or 'n/a' }}) {{ object.property_id.display_name }}"
+
+#. module: hm_sale
+#: model:ir.model,name:hm_sale.model_hm_so_primes_line
+msgid "HeatMe : SO Primes Line"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_premium_ids
+msgid "Hm Premium"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model,name:hm_sale.model_resource_calendar_holiday
+#: model:ir.model.fields,field_description:hm_sale.field_resource_calendar__global_holiday_ids
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_resource_calendar_form
+msgid "Holidays"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_hm_so_primes_line__id
+#: model:ir.model.fields,field_description:hm_sale.field_hm_stages_maintenance_acts__id
+#: model:ir.model.fields,field_description:hm_sale.field_order_emergency_degrees__id
+#: model:ir.model.fields,field_description:hm_sale.field_report_excel__id
+#: model:ir.model.fields,field_description:hm_sale.field_resource_calendar_holiday__id
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_report__id
+#: model:ir.model.fields,field_description:hm_sale.field_whatsapp_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.ir_cron_update_so_state2_ir_actions_server
+#: model:ir.cron,cron_name:hm_sale.ir_cron_update_so_state2
+msgid ""
+"If SO state2 = planned and commitment_date < now then update state2 = "
+"in_progress"
+msgstr ""
+"If SO state2 = planned and commitment_date > now then update state2 = "
+"in_progress"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_portal_content_inherit1
+msgid "Image"
+msgstr ""
+
+#. module: hm_sale
+#. odoo-python
+#: code:addons/hm_sale/models/sale_order.py:0
+#: code:addons/hm_sale/models/sale_order.py:0
+#, python-format
+msgid ""
+"Impossible d'annuler le devis tant que les PO liés ne sont pas brouillons ou"
+" alors annulés."
+msgstr ""
+
+#. module: hm_sale
+#. odoo-python
+#: code:addons/hm_sale/models/sale_order.py:0
+#: code:addons/hm_sale/models/sale_order.py:0
+#, python-format
+msgid ""
+"Impossible de clôturer la commande tant que le statut 2 des PO liés n'est pas "
+"validée."
+msgstr ""
+
+#. module: hm_sale
+#. odoo-python
+#: code:addons/hm_sale/models/sale_order.py:0
+#: code:addons/hm_sale/models/sale_order.py:0
+#, python-format
+msgid ""
+"Impossible de clôturer la commande tant que les PO liés ne sont pas validés ou "
+"alors annulés."
+msgstr ""
+
+#. module: hm_sale
+#. odoo-python
+#: code:addons/hm_sale/models/sale_order.py:0
+#, python-format
+msgid ""
+"Impossible de planifier le devis tant que la date d'intervention et le "
+"technicien ne sont pas définis."
+msgstr ""
+
+#. module: hm_sale
+#. odoo-python
+#: code:addons/hm_sale/models/sale_order.py:0
+#: code:addons/hm_sale/models/sale_order.py:0
+#, python-format
+msgid ""
+"Impossible de valider le devis tant que le statut 2 des PO liés n'est pas "
+"validée."
+msgstr ""
+
+#. module: hm_sale
+#. odoo-python
+#: code:addons/hm_sale/models/sale_order.py:0
+#, python-format
+msgid ""
+"Impossible de valider le devis tant que le total est supérieur au montant "
+"facturé. Diminuer le total ou facturer le solde du SO."
+msgstr ""
+
+#. module: hm_sale
+#. odoo-python
+#: code:addons/hm_sale/models/sale_order.py:0
+#: code:addons/hm_sale/models/sale_order.py:0
+#, python-format
+msgid ""
+"Impossible de valider le devis tant que les PO liés ne sont pas validés ou "
+"alors annulés."
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_define_source_request_lead
+msgid "Imput Activity - Définir la source de la demande (lead)"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_state2_egal_intervention_carried_out_intervention_for_sO_manager
+msgid ""
+"Imput Activity - STATE2 = Intervention_carried_out - Intervention for "
+"SO_manager"
+msgstr ""
+"🟡 Imput Activity - STATE2 = 7 A Cloturer - Intervention (entretien) for "
+"SO_manager >>🟡 Intervention (= boiler maintenance) report received from "
+"technician ➡️ Assign 'Close intervention' activity to intervention manager"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_state2_egal_intervention_carried_out_project_for_so_manager
+msgid ""
+"Imput Activity - STATE2 = Intervention_carried_out - Projet for SO_manager"
+msgstr "🔴 Imput Activity - STATE2 = 7 A cloturer - Projet for SO_manager"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_state2_egal_intervention_carried_out_project_for_salesman
+msgid ""
+"Imput Activity - STATE2 = Intervention_carried_out - Projet for Salesman"
+msgstr "🔴 Imput Activity - STATE2 = 7 A cloturer - Projet for Salesman"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_state2_egal_in_progress_interventions
+msgid "Imput Activity - STATE2 = in_progress - Interventions"
+msgstr ""
+"🟡 Imput Activity - STATE2 = 4 in_progress - Interventions [SUPPRIM QUAND APP"
+" PARTT]"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_state2_egal_in_progress_projects
+msgid "Imput Activity - STATE2 = in_progress - Projets"
+msgstr "🟡 Imput Activity - STATE2 = 4 in_progress - Projets"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_state2_egal_report_sent_intervention_for_sO_manager
+msgid "Imput Activity - STATE2 = report_sent - Intervention for SO_manager"
+msgstr ""
+"🔴 Imput Activity - STATE2 = 7 A cloturer - Intervention [entretiens] for "
+"SO_manager"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_state2_egal_report_sent_project_for_so_manager
+msgid "Imput Activity - STATE2 = report_sent - Projet for SO_manager"
+msgstr "🟡 Imput Activity - STATE2 = 7 A Cloturer - Projet for SO_manager"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_state2_egal_report_sent_project_for_salesman
+msgid "Imput Activity - STATE2 = report_sent - Projet for Salesman"
+msgstr "🟡 Imput Activity - STATE2 = 7 A cloturer - Projet for Salesman"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_state2_egal_to_organize_inf_400€_for_so_manager
+msgid "Imput Activity - STATE2 = to_organize - < 400€ For SO_Manager"
+msgstr ""
+"🟡 Imput Activity - STATE2 = 1 to_organize For SO_Manager - intervention"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_state2_egal_to_organize_sup_400€_for_so_manager
+msgid "Imput Activity - STATE2 = to_organize - >400€ For SO_Manager"
+msgstr ""
+"🟡 Imput Activity - STATE2 = 1 to_organize For SO_Manager - All except PAC"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_state2_egal_to_organize_intervention_for_salesman
+msgid "Imput Activity - STATE2 = to_organize - INTERVENTION For salesman"
+msgstr ""
+"🟡 Imput Activity - STATE2 = 1 to_organize  For salesman - INTERVENTION"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_state2_egal_to_organize_project_for_salesman
+msgid "Imput Activity - STATE2 = to_organize - PROJET For salesman"
+msgstr "🟡 Imput Activity - STATE2 = 1 to_organize  For salesman - PROJET"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_state2_egal_closed_project_for_ol
+msgid "Imput Activity - State2 = Closed - For OL"
+msgstr "🟡 Imput Activity - STATE2 = 8 Closed - For OL"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_state2_egal_closed_project_for_admin
+msgid "Imput Activity - State2 = Closed - Projet for Admin"
+msgstr ""
+"🟢 Installation with premium > 0 € validated ➡️ Assign 'Send premium "
+"documents to client' to Alexis"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_technician_put_in_so_chatter
+msgid "Imput Activity - Technicien mis dans chatteur SO = erreur?"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_organize_intervention
+msgid "Imput Activity - organiser intervention"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_so_manager_when_confirm_so_for_sav_and_visits
+msgid "Imput Gestionnaire_SO when confirm SO for SAV et visites"
+msgstr ""
+"🟠 Sale Order containing 'SAV' or 'Visite' in SO template confirmed ➡️ Assign"
+" user who created the SO as intervention manager"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.hm_action_imput_activity_briefing_technician_necess
+msgid "Imput activity - Briefing technicien nécess"
+msgstr ""
+"🟢 Tech briefing required for intervention ➡️ Assign 'Tech briefing' activity"
+" to intervention manager"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_correct_offer_following_technical_commercial_visit_in_offer_so
+msgid ""
+"Imput activity - Corriger offre suite visite technico-commerciale [dans SO offre >\n"
+"                visite technique]\n"
+"            "
+msgstr ""
+"🔴 Imput activity - Corriger offre suite visite technico-commerciale [dans SO"
+" offre > visite technique]"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_quotation_to_be_established_following_visit
+msgid "Imput activity - Devis à établir suite visite"
+msgstr ""
+"🟢 One hour before intervention with Article = 'Info devis' ➡️ Assign "
+"activity to intervention manager"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_onss_declaration
+msgid "Imput activity - Déclaration ONSS"
+msgstr ""
+"🟢 Technician assigned on intervention >= 10.000€ ➡️ Assign 'Déclaration "
+"ONSS' activity to Olivier  DESACTIVEE PROVISOIREMENT"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_organize_prior_intervention_fernox
+msgid "Imput activity - Organiser intervention préalable Fernox"
+msgstr ""
+"🟢 Sale Order containing 'Fernox cleaning of circuit' confirmed ➡ Assign "
+"'Plan Fernox pre-intervention' to user that created the SO"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_imput_activity_specify_sales_team_for_analysis
+msgid "Imput activity - Préciser équipe de vente pour analyse"
+msgstr "🔴 Imput activity - Préciser équipe de vente pour analyse"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_view_inherit_new
+msgid "In Progress"
+msgstr "En cours"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__customer_availability
+msgid "Info disponibilités client"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Infos tech"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,help:hm_sale.field_sale_order_line__hm_product_barcode
+msgid "International Article Number used for product identification."
+msgstr ""
+"Numéro d'article international (IAN) utilisé pour identifier cet article."
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_report__date_intervention
+msgid "Intervention Date"
+msgstr "Date d'intervention"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__commitment_date
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_line__hm_intervention_date
+msgid "Intervention date"
+msgstr "Date d'intervention"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.hm_action_send_request_review_google_rating_automation
+msgid "Intervention invoiced 2 days ago ➡️ Ask customer feedback via e-mail"
+msgstr "Intervention invoiced 7 days ago ➡️ Ask customer feedback via e-mail"
+
+#. module: hm_sale
+#: model:ir.actions.act_window,name:hm_sale.action_whatsapp_wizard
+msgid "Intervention proposal"
+msgstr ""
+
+#. module: hm_sale
+#: model:mail.template,report_name:hm_sale.hm_mail_template_intervention_report
+msgid "Intervention report {(object.name or '')}.pdf            "
+msgstr "Rapport d'intervention {{ object.name or '' }}.pdf"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_view_inherit_new
+msgid "Intervention réalisée"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "Invoice Address :"
+msgstr "Adresse de facturation :"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document_inherit
+msgid "Invoice Address:"
+msgstr "Adresse de facturation:"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "Invoice and shipping address :"
+msgstr "Adresse de facturation et de livraison :"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+msgid "Invoicing address:"
+msgstr "Adresse de facturation:"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+msgid ""
+"Invoicing and shipping\n"
+"                            address:"
+msgstr ""
+"Adresse de facturation et de\n"
+"                            livraison:"
+
+#. module: hm_sale
+#: model:ir.model.fields,help:hm_sale.field_sale_order__hm_margin
+msgid ""
+"It gives profitability by calculating the difference between the Unit Price "
+"and the cost."
+msgstr ""
+"Il donne la rentabilité en calculant la différence entre le prix unitaire et"
+" le coût."
+
+#. module: hm_sale
+#: model:ir.model,name:hm_sale.model_account_move_line
+msgid "Journal Item"
+msgstr "Écriture comptable"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_hm_so_primes_line____last_update
+#: model:ir.model.fields,field_description:hm_sale.field_hm_stages_maintenance_acts____last_update
+#: model:ir.model.fields,field_description:hm_sale.field_order_emergency_degrees____last_update
+#: model:ir.model.fields,field_description:hm_sale.field_report_excel____last_update
+#: model:ir.model.fields,field_description:hm_sale.field_resource_calendar_holiday____last_update
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_report____last_update
+#: model:ir.model.fields,field_description:hm_sale.field_whatsapp_wizard____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_hm_so_primes_line__write_uid
+#: model:ir.model.fields,field_description:hm_sale.field_hm_stages_maintenance_acts__write_uid
+#: model:ir.model.fields,field_description:hm_sale.field_order_emergency_degrees__write_uid
+#: model:ir.model.fields,field_description:hm_sale.field_report_excel__write_uid
+#: model:ir.model.fields,field_description:hm_sale.field_resource_calendar_holiday__write_uid
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_report__write_uid
+#: model:ir.model.fields,field_description:hm_sale.field_whatsapp_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_hm_so_primes_line__write_date
+#: model:ir.model.fields,field_description:hm_sale.field_hm_stages_maintenance_acts__write_date
+#: model:ir.model.fields,field_description:hm_sale.field_order_emergency_degrees__write_date
+#: model:ir.model.fields,field_description:hm_sale.field_report_excel__write_date
+#: model:ir.model.fields,field_description:hm_sale.field_resource_calendar_holiday__write_date
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_report__write_date
+#: model:ir.model.fields,field_description:hm_sale.field_whatsapp_wizard__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_res_partner__hm_last_customer_review_request_on
+#: model:ir.model.fields,field_description:hm_sale.field_res_users__hm_last_customer_review_request_on
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_res_partner_view_inherit
+msgid "Last customer review request"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid ""
+"Le client, ou si le bien appartien à un propriétaire qui n'est pas notre contact\n"
+"                    c'est le propriétaire"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid ""
+"Les travaux et matériaux mentionnées dans ce document ou via tout autre canal sont à considérer\n"
+"                        comme informels. il s'agit d'une solution technique proposée au client mais qui doit être\n"
+"                        validée techniquement par le technicien lors de son arrivée sur chantier.\n"
+"                        <br/>\n"
+"                        <br/>Le technicien qui réalise l'intervention est tenu prioritairement de respecter toutes les\n"
+"                        prescriptions et normes nationales et locales, ainsi que les règles techniques et directives. La\n"
+"                        sécurité du client doit rester la priorité."
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid ""
+"Les travaux et matériaux mentionnées dans ce document ou via tout autre canal sont à considérer comme\n"
+"                    informels. il s'agit d'une solution technique proposée au client mais qui doit être validée\n"
+"                    techniquement par le technicien lors de son arrivée sur chantier.\n"
+"                    <br/>\n"
+"                    <br/>Le technicien qui réalise l'intervention est seul responsable de respecter toutes les\n"
+"                    prescriptions et normes nationales et locales, ainsi que les règles techniques et directives. La\n"
+"                    sécurité du client doit rester la priorité."
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Marchandises"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_view_inherit_new
+msgid "Marge théorique"
+msgstr ""
+
+#. module: hm_sale
+#. odoo-python
+#: code:addons/hm_sale/models/sale_order_report.py:0
+#, python-format
+msgid "Marges report.xlsx"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_tree
+msgid "Margin"
+msgstr "Marge"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__margin_rate
+msgid "Margin Rate"
+msgstr "Prev"
+
+#. module: hm_sale
+#: model:ir.model.fields,help:hm_sale.field_order_emergency_degrees__delay_to_plan_intervention
+msgid ""
+"Maximum number of days to schedule the intervention from the date the "
+"service order manager will organize their intervention"
+msgstr ""
+"Nombre de jours maximum pour planifier l'intervention à partir de la date à "
+"laquelle le gestionnaire SO organisera son intervention"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_analyse_custo_ol_search
+msgid "Mes commandes"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_customer_date_modification
+msgid "Modification date client"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_tech_date_modification
+msgid "Modification date tech"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_analyse_custo_ol_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_sales_order_filter
+msgid "Modèle de devis"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_portal_content_inherit1
+msgid "Montant"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_res_partner__min_amount_to_ask_deposit
+#: model:ir.model.fields,field_description:hm_sale.field_res_users__min_amount_to_ask_deposit
+msgid "Montant TVAC à partir duquel exiger un acompte"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+msgid "My Quotations"
+msgstr "Mes Devis"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_hm_so_primes_line__name
+#: model:ir.model.fields,field_description:hm_sale.field_hm_stages_maintenance_acts__name
+#: model:ir.model.fields,field_description:hm_sale.field_order_emergency_degrees__name
+#: model:ir.model.fields,field_description:hm_sale.field_resource_calendar_holiday__name
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_report__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: hm_sale
+#: model:ir.actions.act_window,name:hm_sale.action_hm_new_button_sale_order
+#: model:ir.actions.act_window,name:hm_sale.hm_new_button_sale_order_action
+msgid "New Button"
+msgstr "Nouveau bouton"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_related_field
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_line__hm_purchase_line_ids
+msgid "New Champ lié"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_line__hm_purchase_line
+msgid "New Champ lié POL HM"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_order_line_technician_name
+msgid "New Champ lié POL Tech."
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_property_manager_name
+msgid "New Champ lié Prop. manager"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_line__hm_nr_po
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Nr PO"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_analyse_custo_ol_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_sales_order_filter
+msgid "Numéro de SO"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_inherit_report0
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_inherit_report1
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_inherit_report4
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_inherit_report5
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_inherit_report6
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_portal_content_inherit1
+msgid "OPTION -"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_work_object
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_quotation_tree_with_onboarding
+msgid "Object"
+msgstr "Objet"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Objet des travaux"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_hm_stages_maintenance_acts__old_object_id
+msgid "Old object ID"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_crm_opportunity_id
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Opportunité CRM"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "Order #"
+msgstr "Commande n°"
+
+#. module: hm_sale
+#: model:ir.actions.act_window,name:hm_sale.hm_action_order_line
+#: model:ir.ui.menu,name:hm_sale.hm_view_sale_order_line_menu
+msgid "Order Lines"
+msgstr "Ligne du bon de commande"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "PO"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_technician_po_id
+msgid "PO Technician"
+msgstr "PO Technicien"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_po_lines_count
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "PO lines"
+msgstr "Lignes PO"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_change_the_status_of_quotation_to_quotation_sent
+msgid "Passer le status de devis à devis envoyé"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_pass_state2_to_validated_when_check_closed_and_invoiced_intervention
+msgid ""
+"Passer state2 en Validé quand on coche intervention cloturée et facturée"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_so_manager_workload_points
+msgid "Points de gestion"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_fiscal_position_so
+msgid "Position fiscale SO = Position fiscale template forcé si existe"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_hm_so_primes_line__hm_prime_id
+msgid "Prime"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_primes_ids
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Primes"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_portal_content_inherit1
+msgid "Primes normalement disponibles"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Prix U"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_product_search
+msgid "Product Category"
+msgstr "Catégorie d'articles"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_line__hm_product_name
+msgid "Product Name"
+msgstr "Nom de l'article"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_tree
+msgid "Property"
+msgstr "Bien immobilier"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+msgid "Proposition de radiateurs"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.report,name:hm_sale.hm_action_proposal_radiators_with_price
+msgid "Proposition radiateurs AVEC PRIX"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.report,name:hm_sale.hm_action_proposal_radiators_without_price
+msgid "Proposition radiateurs SANS PRIX"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_initial_margin_forecast
+msgid "Prévision marge initiale"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_line__hm_radiator_power
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Puissance radiateur"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,help:hm_sale.field_sale_order_line__hm_purchase_line_ids
+msgid ""
+"Purchase line generated by this Sales item on order confirmation, or when "
+"the quantity was increased."
+msgstr ""
+"Ligne d'achat générée par la confirmation de l'ordre de vente pour cet "
+"article, ou quand la quantité a été augmentée."
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_sale_order_line_tree
+msgid "Qty"
+msgstr "Qté"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Qty Fact"
+msgstr "Qté Fact"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Qty Livr"
+msgstr "Qté Livr"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_hm_so_primes_line__hm_qty_prime
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_portal_content_inherit1
+msgid "Quantité"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "Quotation #"
+msgstr "Devis N°"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Quotation Date"
+msgstr "Date du devis"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_sales_order_filter
+msgid "Quotations and Sales"
+msgstr "Devis et ventes"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.hm_action_customer_reminder_before_intervention
+msgid "Rappel client veille intervention"
+msgstr "🟡 Email reminder to customer one day before the intervention"
+
+#. module: hm_sale
+#: model:mail.template,name:hm_sale.hm_mail_template_appointment_reminder
+msgid "Rappel du rendez-vous"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_technician_callback_5_days_before_intervention_date
+msgid "Rappel technicien 5 jours avant date intervention"
+msgstr "🟡 Email reminder to technician 5 days before the intervention"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_technician_reminder_before_intervention_date
+msgid "Rappel technicien veille date intervention"
+msgstr "🟡 Email reminder to technician one day before the intervention"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_work_report_document
+msgid "Rapport d'intervention du technicien"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_work_report_document
+msgid ""
+"Recommandation à adresser: Néant\n"
+"                                    <br/>\n"
+"                                    Danger à signaler: Néant"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_hm_so_primes_line__country_id
+msgid "Region"
+msgstr "Région"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_form_view
+msgid "Report Excel"
+msgstr "Rapport Excel"
+
+#. module: hm_sale
+#: model:ir.model,name:hm_sale.model_resource_calendar
+msgid "Resource Working Time"
+msgstr "Temps de travail de la ressource"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_responsible_id
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+msgid "Responsable SO"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_street_delivery_address
+msgid "Rue adresse de livraison"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__so_invoice_count
+msgid "SO Invoice Count"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "SO Manager"
+msgstr "Gestionnaire SO"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_hm_so_primes_line__sale_order_id
+msgid "Sale Order"
+msgstr "Bon de commande"
+
+#. module: hm_sale
+#: model:ir.ui.menu,name:hm_sale.menu_sale_order_line
+msgid "Sale Order Line"
+msgstr "Ligne de commande"
+
+#. module: hm_sale
+#: model:ir.model,name:hm_sale.model_sale_order_report
+msgid "Sale Order Report"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model,name:hm_sale.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "Facture de paiement d'avance"
+
+#. module: hm_sale
+#: model:ir.model,name:hm_sale.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: hm_sale
+#: model:ir.model,name:hm_sale.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Ligne du bon de commande"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_sale_order_line_tree
+msgid "Sales Order Lines"
+msgstr "Lignes de bons de commande"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+msgid "Sales Orders"
+msgstr "Bons de commandes"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_sales_team_from_opportunity_crm_id
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Sales team from opportunity CRM"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_hm_so_primes_line__sequence
+#: model:ir.model.fields,field_description:hm_sale.field_order_emergency_degrees__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: hm_sale
+#: model:res.groups,name:hm_sale.group_show_workload_points_in_minutes
+msgid "Show workload points in minutes"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid ""
+"Si le technicien l'estime nécessaire, il est libre de retourner la marchandise livrée au\n"
+"                        fournisseur et d'emporter d'autres éléments qu'il jugerait nécessaire. Ceci après validation\n"
+"                        financière de la part de Heat Me."
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid ""
+"Si le technicien l'estime nécessaire, il est libre de retourner la marchandise livrée au fournisseur\n"
+"                    et d'emporter d'autres éléments qu'il jugerait nécessaire. Il est également libre d'adapter les\n"
+"                    actes techniques à réaliser. Ceci après validation financière de la part de Heat Me."
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_customer_source_id
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Source client"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_so_customer_source_invoicing
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_analyse_custo_ol_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_sales_order_filter
+msgid "Source client SO (facturation)"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_source_demand_id
+msgid "Source de la demande"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_account_move_line__spec
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_line__spec
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Spec"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model,name:hm_sale.model_hm_stages_maintenance_acts
+msgid "Stages Maintenance Acts"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document_inherit
+msgid "Tarif"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_view_inherit_new
+msgid "Taux de marge"
+msgstr "Prev"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Taxe"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "Taxes"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Tech"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_line__hm_technician
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_tree
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_quotation_tree_with_onboarding
+msgid "Technician"
+msgstr "Technicien"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_technician_1_id
+msgid "Technician 1"
+msgstr "Technicien 1"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_analyse_custo_ol_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_sales_order_filter
+msgid "Technicien"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_tel_partner
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Tel client"
+msgstr "Tél client"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_phone_contact_on_site
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "Tel contact sur place"
+msgstr "Tél contact sur place"
+
+#. module: hm_sale
+#: model:ir.model.fields,help:hm_sale.field_sale_order__commitment_date
+#: model:ir.model.fields,help:hm_sale.field_sale_order_line__hm_intervention_date
+msgid ""
+"This is the delivery date promised to the customer. If set, the delivery "
+"order will be scheduled based on this date rather than product lead times."
+msgstr ""
+"C'est la date de livraison promise au client. Si elle est définie, le bon de"
+" livraison se basera sur cette date plutôt que celle définié grâce au délai "
+"indiqué sur l'article. "
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_quote_order_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_tree
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_sale_order_line_tree
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_portal_content_inherit1
+msgid "Total"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "Total Price"
+msgstr "Prix total"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_hm_so_primes_line__hm_subtotal_prime
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_sum_premium_total
+msgid "Total des primes disponibles"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_quotation_tree_with_onboarding
+msgid "Total marge"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_amount_total_with_premium
+msgid "Total net primes déduites"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_amount_total_line_premium
+msgid "Total prime SO"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_type
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_tree
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_quotation_tree_with_onboarding
+msgid "Type"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_type_1
+msgid "Type 1"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_reminder_task_request_down_payment_if_sup_400_euro
+msgid "Tâche rappel demander un acompte si > 400€"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_hm_so_primes_line__hm_unit_price_prime
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_proposal_radiators_with_price_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_3
+msgid "Unit Price"
+msgstr "Prix unitaire"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_sale_order_line_tree
+msgid "Unit of Measure"
+msgstr "Unité de mesure"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__amount_untaxed_at_signature
+msgid "Untaxed Amount at signature"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_order_emergency_degrees__urgency_fee
+msgid "Urgency fee for intervention within 24 hours"
+msgstr "Supplément urgence pour intervention dans les 24 heures"
+
+#. module: hm_sale
+#: model:order.emergency.degrees,name:hm_sale.emergency_degrees_1
+msgid "Urgent!"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,help:hm_sale.field_order_emergency_degrees__sequence
+msgid "Used to order stages."
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.report_saleorder_document_copy_2_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_inherit_report0
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_inherit_report1
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_inherit_report4
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_inherit_report5
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_inherit_report6
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_order_portal_content_inherit1
+msgid "VARIANTE -"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_order_emergency_degrees__technical_value
+msgid "Valeur technique"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_partner_do_not_ask_customer_opinions
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_line__hm_sale_order_id
+#: model_terms:ir.ui.view,arch_db:hm_sale.sale_view_inherit_new
+msgid "Validated"
+msgstr "Validé"
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_validity_date_state2
+msgid "Validity date"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_line__hm_purchase_line_order_id
+msgid "Validé"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_analyse_custo_ol_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+msgid "Vendeur"
+msgstr ""
+
+#. module: hm_sale
+#. odoo-python
+#: code:addons/hm_sale/models/so_primes_line.py:0
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+#, python-format
+msgid "View prime"
+msgstr ""
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid "WORK ORDER nr"
+msgstr "BON DE TRAVAIL nr"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid "WORK ORDER. Concerns sales order order nr"
+msgstr "BON DE TRAVAIL. Concerne commande client nr"
+
+#. module: hm_sale
+#: model:ir.model.fields,help:hm_sale.field_sale_order__hm_sales_team_from_opportunity_crm_id
+msgid ""
+"When sending mails, the default email address is taken from the Sales Team."
+msgstr ""
+"Lors de l'envoi d'un email, l'email utilisé par défaut est celui de l'équipe"
+" de vente."
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid "Work order #"
+msgstr "Bon de travail #"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid "Work order n°"
+msgstr "Bon de travail n°"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid "Work order. #"
+msgstr "Bon de travail. #"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_report_technician_work_order_document_inherit
+msgid "Work order. Concerns sales order order nr"
+msgstr "Bon de travail. Concerne commande client nr"
+
+#. module: hm_sale
+#: model:ir.actions.report,name:hm_sale.hm_action_work_report
+msgid "Work report"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_resource_calendar_holiday__calendar_id
+msgid "Working Hours"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,help:hm_sale.field_sale_order_line__hm_technician
+msgid "You can find a vendor by its Name, TIN, Email or Internal Reference."
+msgstr ""
+"Vous pouvez trouver un fournisseur par son nom, numéro de TVA, email ou sa "
+"référence interne."
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_so_create_downpayment
+msgid "[Technical] SO - create downpayment"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__hm_partner_id
+msgid "adresse de livr"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order__purchase_ids
+msgid "purchases"
+msgstr "achats"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_analyse_custo_ol_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_view_search_inherit_sale
+msgid "state"
+msgstr "Etat"
+
+#. module: hm_sale
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_analyse_custo_ol_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_search
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_sale_order_view_search_inherit_sale
+msgid "state2"
+msgstr "Statut intervention"
+
+#. module: hm_sale
+#: model:ir.actions.server,name:hm_sale.action_test_validates_order_confirmed_technical_checkbox_for_po
+msgid "test - valide la checkbox technique \"commande confirmée\", pour PO"
+msgstr ""
+
+#. module: hm_sale
+#: model:mail.template,report_name:hm_sale.hm_mail_template_order_confirmation_with_date
+msgid ""
+"{( object.name or '').replace('/','_') }} {{ object.state == 'draft' and '' "
+"or '' }}"
+msgstr ""
+
+#. module: hm_sale
+#: model:mail.template,subject:hm_sale.hm_mail_template_request_review_on_google_after_execution
+msgid ""
+"{{ object.company_id.name }} - Let us know your opinion on Google or "
+"Facebook"
+msgstr ""
+"{{ object.company_id.name }} - Faites nous part de votre avis sur Google ou "
+"Facebook            "
+
+#. module: hm_sale
+#: model:mail.template,subject:hm_sale.hm_mail_template_confirmation_of_sav_intervention_or_sales_visit
+msgid ""
+"{{ object.company_id.name }} - Technician visit {{ object.name or 'n/a' }} "
+"{{object.property_id.display_name }}"
+msgstr ""
+"{{ object.company_id.name }} - Visite technicien {{ object.name or 'n/a' }} "
+"{{object.property_id.display_name }}"
+
+#. module: hm_sale
+#: model:mail.template,subject:hm_sale.hm_mail_template_order_confirmation_with_date
+msgid ""
+"{{ object.company_id.name }} - {{ object.state in ('draft', 'sent') and "
+"'Quotation' or 'Order' }} (Ref {{ object.name or 'n/a' }}) {{ "
+"object.property_id.display_name }}"
+msgstr ""
+"{{ object.company_id.name }} - {{ object.state in ('draft', 'sent') and "
+"'Quotation' or 'Order' }} (Réf {{ object.name or 'n/a' }}) {{ "
+"object.property_id.display_name }}"
+
+#. module: hm_sale
+#: model:mail.template,subject:hm_sale.mail_template_order_confirmation_without_date_and_vat_certificate_request
+msgid ""
+"{{ object.company_id.name }} - {{ object.state in ('draft', 'sent') and "
+"'Quotation' or 'Order' }} (Réf {{ object.name or 'n/a' }}) {{ "
+"object.property_id.display_name }}"
+msgstr ""
+
+#. module: hm_sale
+#: model:ir.model.fields,field_description:hm_sale.field_sale_order_line__hm_so_invoice_status
+#: model_terms:ir.ui.view,arch_db:hm_sale.hm_view_order_form
+msgid "État de la facture SO"
+msgstr ""

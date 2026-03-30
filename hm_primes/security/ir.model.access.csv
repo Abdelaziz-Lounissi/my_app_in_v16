@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hm_primes_system,Primes group_system,model_hm_primes,base.group_system,1,1,1,1
+access_hm_primes_user,Primes group_user,model_hm_primes,hm_primes.group_primes_user,1,1,1,0
+access_hm_primes_default_user,Primes default_group_user,model_hm_primes,base.group_user,1,0,0,0
+

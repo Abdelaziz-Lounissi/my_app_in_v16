@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <record id="hm_work_type_form_view" model="ir.ui.view">
+            <field name="name">hm.work.type.form</field>
+            <field name="model">hm.work.type</field>
+            <field name="arch" type="xml">
+                <form string="Work type">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="hm_access_profession_id" required="1" help="Utilisé dans le classement des types d'interventions que le technicien accepte d'entreprendre"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hm_work_type_list_view" model="ir.ui.view">
+            <field name="name">hm.work.type.tree</field>
+            <field name="model">hm.work.type</field>
+            <field name="arch" type="xml">
+                <tree string="Work type">
+                    <field name="name" string="Name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hm_work_type_action" model="ir.actions.act_window">
+            <field name="name">Work type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hm.work.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_hm_work_type_action" parent="sale.menu_sales_config" name="Work type" sequence="20"
+                  action="hm_work_type_action"/>
+
+        <menuitem id="hm_work_type_menu"
+                  name="Type d'intervention"
+                  action="hm_sales_technicien_info.hm_work_type_action"
+                  parent="hm_base_setup.hm_config_technicians_menu"/>
+
+    </data>
+
+</odoo>

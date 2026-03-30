@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--    Merge module sale_custom-->
+
+    <record id="sale_order_template_view_form" model="ir.ui.view">
+        <field name="name">sale.order.template.form</field>
+        <field name="model">sale.order.template</field>
+        <field name="inherit_id" ref="sale_management.sale_order_template_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page/field/tree/field[@name='product_id']" position="replace">
+                <field name="product_id" style="width: 100%; white-space: pre-wrap;"
+                       attrs="{'required': [('display_type', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='number_of_days']" position="after">
+                <field name="product_ids" invisible="1"/>
+            </xpath>
+            <xpath expr="//notebook" position="before">
+                <group>
+                    <group>
+                        <field name="hm_so_manager_theoretical_workload_in_minutes"/>
+                        <field name="hm_so_manager_workload_points"/>
+                    </group>
+                </group>
+
+            </xpath>
+            <xpath expr="//notebook/page/field[@name='sale_order_template_line_ids']/tree" position="attributes">
+                <attribute name="limit">200</attribute>
+            </xpath>
+            <xpath expr="//notebook/page/field/tree/field[@name='product_id']" position="after">
+                <field name="computed_image_art" readonly="1" widget="show_description"/>
+                <field name="spec" attrs="{}" widget="section_and_note_text"/>
+                <field name="hm_sol_state"/>
+            </xpath>
+
+            <xpath expr="//notebook/page/field/tree/field[@name='product_uom_id']" position="after">
+                <field name="hm_sol_state" invisible="1" />
+                <button string="OP" help="Option" name="run_option_process" type="object"  colspan="2"/>
+                <button string="VA" help="Variant" name="run_variant_process" class="bg-success" type="object"  colspan="2"/>
+            </xpath>
+
+            <xpath expr="//notebook/page/field/tree" position="attributes">
+                <attribute name="decoration-muted">hm_sol_state and hm_sol_state == 'option'</attribute>
+                <attribute name="decoration-success">hm_sol_state and hm_sol_state == 'variant'</attribute>
+            </xpath>
+            <xpath expr="//sheet" position="after">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </xpath>
+            <xpath expr="//notebook/page/field/tree/field[@name='name']" position="attributes">
+                <attribute name="required">0</attribute>
+                <attribute name="attrs">{'readonly': [('display_type', 'not in', ('line_note', 'line_section') )]}</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+
+            <xpath expr="//notebook/page/field/tree/field[@name='product_uom_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hm_sale_order_template_view_search" model="ir.ui.view">
+        <field name="name">sale.order.template.search</field>
+        <field name="model">sale.order.template</field>
+        <field name="inherit_id" ref="sale_management.sale_order_template_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search/field[@name='name']" position="after">
+                <field name="product_ids" string="Product"
+                       filter_domain="[('product_ids','ilike',self)]"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="hm_sale_order_template_search_view" model="ir.ui.view">
+        <field name="name">sale.order.template.search.view</field>
+        <field name="model">sale.order.template</field>
+        <field name="inherit_id" ref="sale_management.sale_order_template_view_search"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="after">
+                <field name="name"/>
+                <field name="sale_order_template_line_ids"/>
+                <field name="work_type"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="hm_sale_order_template_form_view" model="ir.ui.view">
+        <field name="name">sale.order.template.form.view</field>
+        <field name="model">sale.order.template</field>
+        <field name="inherit_id" ref="sale_management.sale_order_template_view_form"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//form[1]/header[1]" position="after">
+                <header>
+                    <field name="hm_status" options="{'clickable': '1'}" widget="statusbar"/>
+                </header>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/label[1]" position="before">
+                <xpath expr="//field[@name='active']" position="move"/>
+                <field name="ask_qr_code"/>
+                <field name="hm_work_category" string="Catégorie de travaux" attrs="{}" required="1"/>
+                <field name="work_type" string="Type d'intervention pour technicien"
+                       help="Le technicien doit avoir accepté le type d'intervention pour apparaître dans la liste des techniciens imputés potentiels."/>
+                <field name="hm_work_object"/>
+                <field name="hm_access_to_the_necessary_profession_id" string="Acces à la profession nécessaire"/>
+                <field name="hm_forced_fiscal_position_for_model" string="Position fiscale forcée pour modéle"
+                       help="Remplir uniquement si on facture toujours selon cette position fiscale"/>
+                <field name="hm_display_proprio_on_work_order"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/div[1]" position="inside">
+                <xpath expr="//field[@name='product_ids']" position="move"/>
+                <xpath expr="//field[@name='number_of_days']" position="move"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[2]" position="inside">
+                <xpath expr="//field[@name='company_id']" position="move"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="hm_sale_order_template_tree_view" model="ir.ui.view">
+        <field name="name">sale.order.template.tree.view</field>
+        <field name="model">sale.order.template</field>
+        <field name="inherit_id" ref="sale_management.sale_order_template_view_tree"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree[1]/field[@name='name']" position="after">
+                <field name="hm_work_type" string="Work Type"/>
+                <field name="hm_work_category"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="hm_sale_order_template_kanban_view" model="ir.ui.view">
+        <field name="name">sale.order.template.kanban</field>
+        <field name="model">sale.order.template</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <kanban string="Quotation Template">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_card_content">
+                                <field name="name" modifiers="{'required': true}"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="sale_management.sale_order_template_action" model="ir.actions.act_window">
+        <field name="name">Quotation Templates</field>
+        <field name="res_model">sale.order.template</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your quotation template
+            </p>
+            <p>
+                Use templates to create polished, professional quotes in minutes.
+                Send these quotes by email and let your customers sign online.
+                Use cross-selling and discounts to push and boost your sales.
+            </p>
+        </field>
+    </record>
+
+
+    <record id="category_sale_order_template_action" model="ir.actions.act_window">
+        <field name="name">Category</field>
+        <field name="res_model">sale.order.template</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_hm_work_category': active_id,'default_hm_work_category': active_id}
+        </field>
+        <field name="domain">[('hm_work_category', '=', active_id)]</field>
+    </record>
+
+</odoo>

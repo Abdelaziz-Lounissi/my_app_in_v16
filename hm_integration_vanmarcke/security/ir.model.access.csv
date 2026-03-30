@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hm_product_vanmarcke,hm.product.vanmarcke,model_hm_product_vanmarcke,base.group_user,1,1,1,1
+access_hm_product_vanmarcke_import,hm_product_vanmarcke_import,model_hm_product_vanmarcke_import,base.group_user,1,1,1,1

@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hm_spoken_language_system,Langue parlée group_system,model_hm_spoken_language,base.group_system,1,1,1,1
+access_hm_spoken_language_user,Langue parlée group_user,model_hm_spoken_language,base.group_user,1,0,0,0
+access_hm_marque_chaudiere_system,Marque chaudière group_system,model_hm_marque_chaudiere,base.group_system,1,1,1,1
+access_hm_marque_chaudiere_user,Marque chaudière group_user,model_hm_marque_chaudiere,base.group_user,1,0,0,0
+access_hm_access_profession_system,Accès à la profession group_system,model_hm_access_profession,base.group_system,1,1,1,1
+access_hm_access_profession_user,Accès à la profession group_user,model_hm_access_profession,base.group_user,1,0,0,0
+access_zip_code,access_zip_code,model_zip_code,base.group_user,1,1,1,1
+access_sub_province,access_sub_province,model_sub_province,base.group_user,1,1,1,1
+access_region_code,access_region_code,model_region_code,base.group_user,1,1,1,1
+access_technician_availability_group_system,Technician availability group_system,model_technician_availability,base.group_system,1,1,1,1
+access_technician_availability_group_user,Technician availability group_user,model_technician_availability,base.group_user,1,0,0,0
+access_customer_source_group_system,Customer source group_system,model_customer_source,base.group_system,1,1,1,1
+access_customer_source_group_user,Customer source group_user,model_customer_source,base.group_user,1,0,0,0
+access_ir_actions_act_window_all,ir_actions_act_window_all,base.model_ir_actions_act_window,,1,0,0,0
+access_ir_actions_act_window_view_all,ir_actions_act_window_view_all,base.model_ir_actions_act_window_view,,1,0,0,0

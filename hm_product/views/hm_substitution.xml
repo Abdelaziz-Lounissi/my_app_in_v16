@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hm_substitution_view_form" model="ir.ui.view">
+        <field name="name">hm.substitution.view.form</field>
+        <field name="model">hm.substitution</field>
+        <field name="priority">16</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <form string="Substitution">
+                <header>
+                    <button name="action_substitution" type="object" string="Substituer" class="oe_highlight"
+                            attrs="{'invisible': [('substitution_date', '!=', False)]}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="old_product" required="1" attrs="{'readonly': [('substitution_date', '!=', False)]}"/>
+                            <field name="new_product" required="1" attrs="{'readonly': [('substitution_date', '!=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="archive" attrs="{'readonly': [('substitution_date', '!=', False)]}"/>
+                            <field name="substitution_date" readonly="1"/>
+                        </group>
+                    </group>
+                    <separator string="Log"/>
+                    <field name="log" nolabel="1" readonly="1"/>
+                </sheet>
+                <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+            </form>
+
+        </field>
+    </record>
+
+    <record id="hm_substitution_view_tree" model="ir.ui.view">
+        <field name="name">hm.substitution.view.tree</field>
+        <field name="model">hm.substitution</field>
+        <field name="arch" type="xml">
+            <tree string="Substitution">
+                <field name="old_product"/>
+                <field name="new_product"/>
+                <field name="substitution_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hm_substitution_action" model="ir.actions.act_window">
+        <field name="name">Substitution</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hm.substitution</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="hm_substitution_menu"
+              name="Substitution"
+              action="hm_substitution_action"
+              parent="sale.product_menu_catalog" sequence="55"/>
+</odoo>

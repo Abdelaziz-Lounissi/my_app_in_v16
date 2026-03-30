@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_sale_order_search_inherit_purchase_order_emport" model="ir.ui.view">
+        <field name="name">view.sale.order.search.inherit.purchase.order.emport</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="priority">5000</field>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="hm_imputed_technician_id" string="Technicien" filter_domain="[('hm_imputed_technician_id', 'ilike', self)]"/>
+            </field>
+        </field>
+    </record>
+    <record id="view_sale_order_form_inherit_purchase_order_emport" model="ir.ui.view">
+        <field name="name">view.sale.order.form.inherit.purchase.order.emport</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="priority">5000</field>
+        <field name="arch" type="xml">
+            <field name="payment_term_id" position="after">
+                <field name="amount_budget" widget="monetary"/>
+                <field name="amount_budget_remaining" widget="monetary"/>
+                <field name="amount_labor_budget" widget="monetary" />
+            </field>
+            <field name="order_line" position="before">
+                <button name="action_open_lines" type="object" class="btn btn-light" string="Open Grouped Lines"/>
+            </field>
+            <xpath expr="//field[@name='order_line']/tree" position="inside">
+                <field name="is_po_emport" invisible="1"/>
+                <field name="line_label_section" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='tax_id']" position="before">
+                <field name="amount_budget" widget="monetary" optional="hide"/>
+                <field name="amount_labor" widget="monetary" optional="hide"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree" position="attributes">
+                <attribute name="decoration-success">is_po_emport==True</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template id="template" xml:space="preserve">
+
+    <div class="hm_tree_clipboards" t-name="hm_sale.clipboards">
+         <t t-set="record" t-value="widget.record"/>
+
+             <button
+                     data-toggle="buttons" data-placement="top"
+                     t-attf-class="btn btn-primary oe_highlight clipboard_click" style="padding:3px!important;min-height: 25px;margin: 4px 3px 4px 0;padding-top: 2px;padding-bottom: 2px">
+
+                 Generate/Copy Intervention proposal </button>
+
+
+    </div>
+
+</template>

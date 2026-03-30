@@ -1,0 +1,32 @@
+.o_field_google_map_drawing {
+    width: 100%;
+
+    .o_google_map_renderer {
+        min-height: 600px;
+
+        .o_google_map_view {
+            border: 1px solid $o-view-background-color;
+
+            .animate {
+                animation: notification 1.5s infinite;
+                color: white;
+            }
+
+            @keyframes notification {
+                5% {
+                    transform:rotate(10deg);
+                }
+                10% {
+                    transform:rotate(-10deg);
+                }
+                15% {
+                    transform:rotate(10deg);
+                }
+                20% {
+                    transform:rotate(0deg);
+                }
+            }
+        }
+    }
+
+}

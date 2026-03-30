@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_sale_purchase_order_requisition_template_form_view" model="ir.ui.view">
+        <field name="name">sale.order.template.form.view</field>
+        <field name="model">sale.order.template</field>
+        <field name="inherit_id" ref="sale_management.sale_order_template_view_form"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[@name='sale_info2']/field[@name='recurrence_id']"
+                   position="after">
+                <field name="requisition_id"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--  <record id="studio_customization.default_form_view_fo_8e60a16c-e331-47e9-b9dc-5977ed8acc78" model="ir.ui.view">-->
+    <record id="hm_access_profession_view_form" model="ir.ui.view">
+        <field name="name">hm.access.profession.view.form</field>
+        <field name="model">hm.access.profession</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet string="Access to the profession">
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" required="1"/>
+                        </h1>
+                    </div>
+                    <group name="studio_group_0dede7">
+                        <group name="studio_group_0dede7_left"/>
+                        <group name="studio_group_0dede7_right"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--      <record id="studio_customization.zone_intervention_2e36e3fa-222f-4ef1-b3dc-76f7343f0a9f" model="ir.actions.act_window">-->
+    <record id="hm_action_access_profession" model="ir.actions.act_window">
+        <field name="name">Zone intervention</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hm.access.profession</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--    <menuitem id="studio_customization.contacts_zone_interv_3252f6b3-c83f-4c63-8fb1-63e937a4c22b"-->
+    <menuitem id="hm_access_to_profession_menu"
+              name="Access to the profession"
+              action="hm_base_setup.hm_action_access_profession"
+              parent="hm_base_setup.hm_config_technicians_menu"
+              sequence="2"/>
+
+</odoo>

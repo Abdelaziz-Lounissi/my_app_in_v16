@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hm_account_payment_register_form_inherit_payment" model="ir.ui.view">
+        <field name="name">hm.account.payment.register.form.inherit.payment</field>
+        <field name="model">account.payment.register</field>
+        <field name="inherit_id" ref="account.view_account_payment_register_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div" position="before">
+                <field name="has_negative_po_balance" invisible="1"/>
+                <div role="alert" class="alert alert-warning" attrs="{'invisible': [('has_negative_po_balance', '=', False)]}">
+                    <div class="d-flex align-items-center">
+                        <i class="fa fa-exclamation-triangle me-2" aria-hidden="true"></i>
+                         <strong>⚠️ Attention: Solde négatif détecté pour ce fournisseur.</strong>
+                    </div>
+                    <p class="mt-2 mb-0">
+                        Le total des lignes de commande à facturer est négatif pour ce fournisseur, vous devez
+                        d'abord réclamer les notes de crédit.
+                    </p>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

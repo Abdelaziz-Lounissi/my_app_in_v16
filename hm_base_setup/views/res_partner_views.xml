@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_view_res_partner_filter2" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search/field[@name='name']" position="after">
+                <filter string="Property address" name="partner_from_property" domain="[('from_property', '=', True)]"/>
+                <filter string="Contacts" name="exclude_from_property" domain="[('from_property', '=', False)]"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="contacts.action_contacts" model="ir.actions.act_window">
+        <field name="context">{'default_is_company': True, 'search_default_exclude_from_property': True}</field>
+    </record>
+
+    <!-- <record id="studio_customization.default_graph_view_f_e771aade-c2fa-44bf-b13b-57a82e4c606c" model="ir.ui.view">-->
+    <record id="hm_view_partner_graph" model="ir.ui.view">
+        <field name="name">res.partner.graph</field>
+        <field name="model">res.partner</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <graph string="Contact">
+                <field name="name" modifiers="{}"/>
+            </graph>
+        </field>
+    </record>
+
+    <!--    <record id="studio_customization.default_pivot_view_f_92be0fa6-836c-4a8b-a4d5-c68dd00b847d" model="ir.ui.view">-->
+    <record id="hm_view_partner_pivot" model="ir.ui.view">
+        <field name="name">res.partner.pivot</field>
+        <field name="model">res.partner</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <pivot string="Contact"/>
+        </field>
+    </record>
+
+    <!--    <record id="studio_customization.odoo_studio_res_part_aca765e4-9430-4e68-b3ef-0f9ba9f47958" model="ir.ui.view">-->
+    <record id="hm_res_partner_kanban_view" model="ir.ui.view">
+        <field name="name">res.partner.kanban.customization</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[1]/ul[1]/li[4]/field[@name='city']" position="after">
+                <field name="hm_technician" attrs="{}" invisible="1"/>
+                <field name="hm_access_to_the_profession_ids" bold="True" attrs="{'invisible': [('hm_technician','=',False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!--    <record id="studio_customization.odoo_studio_res_part_124a6810-9746-4450-88e0-12b5c81116e8" model="ir.ui.view">-->
+    <record id="hm_view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form.customization</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority">9999999</field>
+        <field name="arch" type="xml">
+
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='function']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='website']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='website']" position="after">
+                <field name="hm_customer_source_id" required="1"/>
+            </xpath>
+            <xpath expr="//field[@name='lang']" position="after">
+                <field name="from_property"  />
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='title']" position="attributes">
+                <attribute name="attrs">{"invisible": True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='user_id']"
+                   position="before">
+                <field name="hm_do_not_ask_customer_opinions" attrs="{}" invisible="1"/>
+            </xpath>
+            <xpath expr="//page[@name='sales_purchases']/group" position="inside">
+               <group name="container_invoice_notification" priority="7">
+                    <group string="Notification Facture" name="NotificationFacture" colspan="2">
+                        <field name="is_print_partner"/>
+                        <field name="is_letter"/>
+                        <field name="is_email_partner"/>
+                    </group>
+                </group>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+                <page name="studio_page_UfVGP" string="Technician">
+                    <group name="studio_group_UfVGP">
+                        <group name="studio_group_UfVGP_left">
+                            <field name="hm_technician"/>
+                            <field name="hm_status" attrs="{'required': [('hm_technician','=',True)]}"/>
+                            <field name="property_account_position_id"/>
+                            <field name="show_technician_in_search"/>
+                            <field name="hm_technician_availability_id" attrs="{'invisible': [('hm_technician','=',False)], 'required': ['|','|',('hm_status','=','Actif - Phase test'),('hm_status','=','Actif'),('hm_status','=','Actif mais peu dispo')]}"/>
+                            <field name="tech_unavailability_start_date"/>
+                            <field name="tech_unavailability_end_date"/>
+                            <field name="hm_surnom_heat_me" attrs="{'required': [('hm_technician','=',True)]}"/>
+                            <field name="hm_vam_privileged_technics_store" domain="['&amp;',('from_property','=',False),('display_name','ilike','Marcke')]"/>
+                            <field name="hm_privileged_sanicenter_store_facq" domain="['&amp;',('from_property','=',False),('display_name','ilike','facq')]"/>
+                        </group>
+                    </group>
+                    <group name="studio_group_eflEz">
+                        <group name="studio_group_eflEz_left" string="Compétences">
+                            <field name="hm_start_activity"/>
+                            <field name="hm_work_at_2" string="Travaille toujours à 2"/>
+                            <field name="hm_to_an_intern"/>
+                            <field name="hm_know_how_to_find_a_colleague"/>
+                            <field name="hm_technician_colleague_ids" widget="many2many_tags" string="Collègue technicien HeatMe"/>
+                            <field name="hm_access_to_the_profession_ids" widget="many2many_tags"/>
+                            <field name="hm_privileged_boiler_brand" widget="many2many_tags"/>
+                            <field name="hm_spoken_language_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <group name="studio_group_ZLz3d">
+                        <group name="studio_group_ZLz3d_left" string="Admin">
+                            <field name="hm_do_not_send_reminder_before_intervention" string="Ne pas envoyer de rappel avant intervention"/>
+                            <field name="hm_mobile_payment_terminal"/>
+                            <field name="hm_connected_testo"/>
+                        </group>
+                        <group name="studio_group_ZLz3d_right" string="Type de missions">
+                            <field name="hm_remarks"/>
+                        </group>
+                    </group>
+                    <group name="studio_group_kGN1X">
+                        <group name="studio_group_kGN1X_left" string="Onboarding">
+                            <field name="hm_check_profession_access"/>
+                            <field name="hm_assurance_rc"/>
+                            <field name="hm_assurance_policy"/>
+                            <field name="hm_carte_facq" string="Carte Facq"/>
+                            <field name="numero_carte_facq"/>
+                            <field name="hm_carte_vam" string="Carte VAM"/>
+                            <field name="numero_carte_vam"/>
+                        </group>
+                    </group>
+                    <field name="zip_code" context="{'search_default_groupby_sous_province': 1, 'search_default_commune_principale':1}">
+                        <tree limit="40">
+                            <field name="zip"/>
+                            <field name="local"/>
+                            <field name="state_id"/>
+                            <field name="sous_province"/>
+                            <field name="code_pays"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            <field name="mobile" position="attributes">
+                <attribute name="attrs">{'readonly': [('phone', '=', False)]}</attribute>
+                <attribute name="string">2e téléphone</attribute>
+            </field>
+        </field>
+    </record>
+
+    <!--    <record id="studio_customization.electriciens_2dcd770d-8421-4f0d-8d7b-6407ce061691" model="ir.actions.act_window">-->
+    <record id="hm_action_electricians" model="ir.actions.act_window">
+        <field name="name">Electriciens</field>
+        <field name="res_model">res.partner</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- <record id="studio_customization.sources_clients_ef993648-fa57-450c-a572-c2c03b66cc4e" model="ir.actions.act_window">-->
+    <record id="hm_action_customer_sources" model="ir.actions.act_window">
+        <field name="name">Sources clients</field>
+        <field name="res_model">res.partner</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form,graph,pivot</field>
+    </record>
+
+    <!-- <record id="studio_customization.techniciens_51a013fb-701e-4f5d-ba8a-63942eb164ce" model="ir.actions.act_window">-->
+    <record id="hm_action_technicians" model="ir.actions.act_window">
+        <field name="name">Technicians</field>
+        <field name="res_model">res.partner</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+
+    <!--  <record id="studio_customization.technic_8f7b067a-3c73-4ae1-84fe-10c9ecca01a4" model="ir.filters">-->
+    <record id="hm_technic_filters_view" model="ir.filters">
+        <field name="name">Technic</field>
+        <field name="model_id">res.partner</field>
+        <field name="is_default" eval="True"/>
+        <field name="active" eval="True"/>
+        <field name="context">{'orderedBy': [], 'group_by': ['hm_status']}</field>
+        <field name="domain">[('hm_technician', '=', True)]</field>
+        <field name="sort">[]</field>
+        <field name="action_id" ref="hm_base_setup.hm_action_technicians"/>
+    </record>
+
+    <!--    <record id="studio_customization.technicien_actif_1f4c83ab-fa0d-4ca2-b1d9-6b0b177cb61e" model="ir.filters">-->
+    <record id="hm_technic_dispos_chauffage_filters_view" model="ir.filters">
+        <field name="name">Technicien dispos - Chauffage</field>
+        <field name="model_id">res.partner</field>
+        <field name="active" eval="True"/>
+        <field name="context">{'orderedBy': [], 'group_by': []}</field>
+        <field name="domain" eval="['&amp;','&amp;','&amp;','&amp;',('hm_technician','=',True),('hm_access_to_the_profession_ids.name','ilike','chauffagiste'),('hm_technician_availability_id','!=',ref('hm_base_setup.currently_unavailable')),('hm_technician_availability_id','!=',ref('hm_base_setup.corona_stop_total')),'|',('hm_status','=','Actif - Phase test'),('hm_status','=','Actif')]"></field>
+        <field name="is_default" eval="True"/>
+        <field name="sort">[]</field>
+    </record>
+
+    <!--    <record id="studio_customization.technicien_dispos_ch_14546a11-5b85-4004-89ac-514456f30cfa" model="ir.filters">-->
+    <record id="hm_technic_dispos_frigoriste_filters_view" model="ir.filters">
+        <field name="name">Technicien dispos - Frigoriste</field>
+        <field name="model_id">res.partner</field>
+        <field name="active" eval="True"/>
+        <field name="context">{'orderedBy': []}</field>
+        <field name="domain" eval="['&amp;','&amp;','&amp;',('hm_technician','=',True),('hm_access_to_the_profession_ids.name','ilike','frigoriste'),('hm_technician_availability_id','!=',ref('hm_base_setup.currently_unavailable')),'|',('hm_status','=','Actif - Phase test'),('hm_status','=','Actif')]"></field>
+        <field name="is_default" eval="False"/>
+        <field name="sort">[]</field>
+        <field name="action_id" ref="contacts.action_contacts"/>
+    </record>
+
+    <!--    <record id="studio_customization.technicien_dispos_fr_e1567ffc-83d5-4f3e-aed9-13e8515ceb6f" model="ir.filters">-->
+    <record id="hm_technic_dispos_electricien_filters_view" model="ir.filters">
+        <field name="name">Technicien dispos - Electricien</field>
+        <field name="model_id">res.partner</field>
+        <field name="active" eval="True"/>
+        <field name="context">{'orderedBy': []}</field>
+        <field name="domain" eval="['&amp;','&amp;','&amp;',('hm_technician','=',True),('hm_access_to_the_profession_ids.name','ilike','electricien'),('hm_technician_availability_id','!=',ref('hm_base_setup.currently_unavailable')),'|',('hm_status','=','Actif - Phase test'),('hm_status','=','Actif')]"></field>
+        <field name="is_default" eval="True"/>
+        <field name="sort">[]</field>
+        <field name="action_id" ref="hm_base_setup.hm_action_electricians"/>
+    </record>
+
+    <!--    <record id="studio_customization.technicien_dispos_el_58b841b7-3141-434d-b944-ba9ba25e55fc" model="ir.filters">-->
+    <record id="hm_technic_dispos_toiturier_filters_view" model="ir.filters">
+        <field name="name">Technicien dispos - Toiturier</field>
+        <field name="model_id">res.partner</field>
+        <field name="active" eval="True"/>
+        <field name="context">{'orderedBy': []}</field>
+        <field name="domain" eval="['&amp;','&amp;','&amp;',('hm_technician','=',True),('hm_access_to_the_profession_ids.name','ilike','toiturier'),('hm_technician_availability_id','!=',ref('hm_base_setup.currently_unavailable')),'|',('hm_status','=','Actif - Phase test'),('hm_status','=','Actif')]"></field>
+        <field name="is_default" eval="False"/>
+        <field name="sort">[]</field>
+        <field name="action_id" ref="contacts.action_contacts"/>
+    </record>
+
+</odoo>

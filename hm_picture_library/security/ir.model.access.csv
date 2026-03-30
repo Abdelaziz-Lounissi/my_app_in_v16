@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hm_picture_library_public,hm.picture.library public,model_hm_picture_library,,1,1,1,1
+access_hm_template_lead_info_public,hm.picture.library.lead.info public,model_hm_picture_lead_info,,1,1,1,1
+access_hm_template_so_info_public,hm.picture.library.so.info public,model_hm_picture_so_info,,1,1,1,1

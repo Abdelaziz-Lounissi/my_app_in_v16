@@ -1,0 +1,118 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <record id="account.email_template_edi_invoice" model="mail.template">
+            <field name="subject">{{object.get_template_subject()}}</field>
+            <field name="body_html" type="html">
+                <t t-set="template" t-value="object.get_report_template()"></t>
+                <div style="margin: 0px; padding: 0px;">
+                    <t t-if="template">
+                        <p t-if="template == 5" style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">
+                            <i>
+                                <font style="font-size:12px;">
+                                    Pour toutes questions concernant l'organisation de votre chantier, veuillez ne
+                                    pas répondre à cet e-mail et contacter directement le responsable technique via le lien
+                                </font>
+                                <a style="text-decoration:none;background-color:transparent;color:rgb(0, 135, 132);" t-attf-href="{{ object.sale_order_id.get_portal_url() }} "><font style="font-size:12px;"><t t-out="object.sale_order_id.name">SO12345</t>.</font> </a></i><br/>
+                            <br/>
+                        </p>
+
+                        <p style="margin-bottom: 0px;">
+                            Cher·ère <t t-out="object.partner_id.display_name or '''client·e'''">client·e</t>,
+                            <br/>
+                            <br/>
+                        </p>
+
+                        <p t-if="template == 1" style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">
+                            Veuillez trouver en pièce jointe la facture <strong><t t-out="object.name">FAC/2024/123</t></strong>
+                            d'un montant de <strong><t t-out="format_amount(object.amount_total, object.currency_id)">50,00 €</t></strong>
+                             pour l'intervention <strong><t t-out="object.sale_order_id.name">SOXXX</t></strong>.
+                            <br/>
+
+                            La facture est à payer sur le compte <strong><t t-out="object.partner_bank_id.display_name or 'Belfius - BE86 0689 4661 5650'">[Compte bancaire destinataire] </t></strong> en indiquant la communication suivante : <strong><t t-out="object.name">FAC/2024/123</t></strong>
+                            <br/>
+                            Nous vous remercions d'avance de bien vouloir la payer avant son échéance le <strong><t t-out="object.invoice_date_due.strftime('%d/%m/%Y')">dd/mm/yyyy</t></strong>.
+                            <br/>
+                            <br/>
+                        </p>
+
+                        <p t-elif="template == 5" style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">
+                            Veuillez trouver en pièce jointe la facture d'acompte <strong><t t-out="object.name">FAC/2024/123</t></strong>
+                            d'un montant de <strong><t t-out="format_amount(object.amount_total, object.currency_id)">50,00 €</t></strong>.
+                            <br/>
+                            <br/>
+                            Nous vous remercions d'avance de payer la facture au plus vite afin que nous
+                            puissions organiser le chantier rapidement.
+                            <br/>
+                            <br/>
+                            S'il s'agit d'une intervention urgente, veuillez nous renvoyer la preuve de
+                            paiement en réponse à cet e-mail.
+                            <br/>
+                            <br/>
+                        </p>
+
+                        <p t-elif="template == 6" style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">
+                            Veuillez trouver en pièce jointe la note de crédit <strong><t t-out="object.name">NC/2024/123</t></strong>
+                            d'un montant de <strong><t t-out="format_amount(object.amount_total, object.currency_id)">50,00 €</t></strong>.
+                            <br/>
+                            <br/>
+                            Vous pouvez déduire ce montant de votre prochain paiement ou nous indiquer sur
+                            quel numéro de compte en banque vous souhaitez être remboursé en répondant à cet
+                            e-mail.
+                            <br/>
+                            <br/>
+                        </p>
+                    </t>
+
+                    <t t-else="">
+                        <p style="margin:0px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding:0px;font-size: 13px;">
+                            Cher·ère
+                            <t t-if="object.partner_id.parent_id">
+                                <t t-out="object.partner_id.name"></t>
+                                (<t t-out="object.partner_id.parent_id.name"></t>),
+                            </t>
+                            <t t-else="">
+                                <t t-out="object.partner_id.name"></t>,
+                            </t>
+                            <br/>
+                            <br/>
+                            Voici votre
+                            <t t-if="object.name">
+                                facture <strong><t t-out="object.name">FAC/2024/123</t></strong>
+                            </t>
+                            <t t-else="">
+                                facture
+                            </t>
+                            <t t-if="object.invoice_origin">
+                                (avec la référence: <t t-out="object.invoice_origin">Réf facture</t>)
+                            </t>
+                            s'élevant à <strong><t t-out="format_amount(object.amount_total, object.currency_id)">50,00 €</t></strong>
+                            de <t t-out="object.company_id.name">Heat Me</t>.
+                            <br/>
+                            <br/>
+                            Nous vous remercions d'avance de veiller à son règlement.
+                            <br/>
+                            <br/>
+                        </p>
+                    </t>
+
+                    <div id="qrcode" t-if="object.display_qr_code and object.amount_residual > 0">
+                        <t t-set="qr_code_url" t-value="object._generate_qr_code(silent_errors=True)"/>
+                        <p t-if="qr_code_url">
+                            <strong class="text-center">Scannez-moi avec votre application bancaire.</strong><br/><br/>
+                            <img class="border border-dark rounded" t-att-src="qr_code_url"/>
+                        </p>
+                    </div>
+
+                    <p style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">
+                        N'hésitez pas à nous contacter si vous avez des questions.
+                        <br/>
+                        <br/>
+                        Chaleureusement,<br/>
+                        Le service comptabilité
+                    </p>
+                </div>                
+            </field>
+        </record>
+    </data>
+</odoo>

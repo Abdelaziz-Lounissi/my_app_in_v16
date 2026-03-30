@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data noupdate="1">
+
+        <!--    <record id="studio_customization.remplir_le_champ_adr_b34352e2-dca9-45ec-8f18-19072ffe5c20" model="base.automation">-->
+        <record id="hm_action_fill_delivery_address_field_according_to_preferred_address" model="base.automation">
+            <field name="action_server_id" ref="hm_purchase.hm_fill_delivery_address_field_according_to_preferred_address"/>
+            <field name="active" eval="True"/>
+            <field name="filter_domain">["&amp;",("hm_delivery_address_id","!=",False),("partner_id.display_name","ilike","Marcke")]</field>
+            <field name="filter_pre_domain">["&amp;","&amp;","&amp;",("hm_delivery_address_id","=",False),("po_type","!=","po_technicien"),("state","!=","purchase"),("hm_delivery_address","=",False)]</field>
+            <field name="last_run" eval="False"/>
+            <field name="trg_date_id" eval="False"/>
+            <field name="trg_date_range" eval="False"/>
+            <field name="trg_date_range_type" eval="False"/>
+            <field name="trigger">on_write</field>
+        </record>
+
+        <!--  <record id="studio_customization.articles_divers_mett_a60f7a49-1a93-4f74-a5bf-2a6a648cabe3" model="base.automation">-->
+        <record id="hm_action_miscellaneous_produts_put_budget_in_po_purchase_price_to_so_confirm" model="base.automation">
+            <field name="action_server_id"
+                   ref="hm_purchase.hm_miscellaneous_produts_put_budget_in_po_purchase_price_to_so_confirm"/>
+            <field name="active" eval="True"/>
+            <field name="filter_domain">["&amp;",("product_id.name","ilike","Divers"),("hm_description_from_so","!=",False)]</field>
+            <field name="filter_pre_domain" eval="False"/>
+            <field name="last_run" eval="False"/>
+            <field name="trg_date_id" eval="False"/>
+            <field name="trg_date_range" eval="False"/>
+            <field name="trg_date_range_type" eval="False"/>
+            <field name="trigger">on_create</field>
+        </record>
+
+        <!--  <record id="studio_customization.articles_speciaux_mo_2f459354-421a-45c5-a13a-27c0c9f87c97" model="base.automation">-->
+        <record id="hm_action_special_products_mo_miscellaneous_copy_descriptive_of_so_on_po" model="base.automation">
+            <field name="action_server_id"
+                   ref="hm_purchase.hm_special_products_mo_miscellaneous_copy_descriptive_of_so_on_po"/>
+            <field name="active" eval="True"/>
+            <field name="filter_domain">["&amp;",("sale_line_id.spec","!=",False),("sale_order_id","!=",False)]</field>
+            <field name="filter_pre_domain" eval="False"/>
+            <field name="last_run" eval="False"/>
+            <field name="trg_date_id" eval="False"/>
+            <field name="trg_date_range" eval="False"/>
+            <field name="trg_date_range_type" eval="False"/>
+            <field name="trigger">on_create</field>
+        </record>
+
+        <!--    <record id="studio_customization.vrac_sous_action_fic_b0a091ce-823d-4ea0-bf1c-0ac4ce5ce495" model="base.automation">-->
+        <record id="hm_action_bulk_under_action_fictitious" model="base.automation">
+            <field name="action_server_id" ref="hm_purchase.hm_bulk_under_action_fictitious"/>
+            <field name="active" eval="True"/>
+            <field name="filter_domain">[("id","=",0)]</field>
+            <field name="filter_pre_domain" eval="False"/>
+            <field name="last_run">2021-09-06 10:08:50</field>
+            <field name="trg_date_id" ref="purchase.field_purchase_order__create_date"/>
+            <field name="trg_date_range">-100</field>
+            <field name="trg_date_range_type">day</field>
+            <field name="trigger">on_time</field>
+        </record>
+
+        <!--  <record id="studio_customization.envoi_rapport_techni_946f39b0-224f-4a12-9019-588558e9fb86" model="base.automation">-->
+        <record id="hm_action_sending_technician_billing_slip_after_exe" model="base.automation">
+            <field name="action_server_id" ref="hm_purchase.hm_sending_technician_billing_slip_after_exe"/>
+            <field name="active" eval="True"/>
+            <field name="filter_domain">["&amp;", ("po_type", "=", "po_technicien"), "&amp;", ("stage2_id", "=", 9), "&amp;", ("hm_po_deleted_from_portal", "=", False), "&amp;", ("block_auto_send_to_technician", "=", False), ("partner_id.name", "not ilike", "Ajusto")]</field>
+            <field name="filter_pre_domain">[("po_type","!=","po_technicien")]</field>
+            <field name="last_run" eval="False"/>
+            <field name="trg_date_id" eval="False"/>
+            <field name="trg_date_range" eval="False"/>
+            <field name="trg_date_range_type" eval="False"/>
+            <field name="trigger">on_write</field>
+        </record>
+
+        <!--    <record id="studio_customization.intervention_changem_1bf78ad0-91b5-4d12-9731-19e57d125dae" model="base.automation">-->
+        <record id="hm_action_merchandise_purchases_change_technician_who_will_take_merchandise_po_for_imputed_technician"
+                model="base.automation">
+            <field name="action_server_id"
+                   ref="hm_purchase.hm_merchandise_purchases_change_technician_who_will_take_merchandise_po_for_imputed_technician"/>
+            <field name="active" eval="True"/>
+            <field name="filter_domain">["&amp;","&amp;",["state","=","draft"],["po_type","!=","po_technicien"],["hm_imputed_technician_id","!=",False]]</field>
+            <field name="filter_pre_domain">[("hm_imputed_technician_id","=",False)]</field>
+            <field name="last_run" eval="False"/>
+            <field name="trg_date_id" eval="False"/>
+            <field name="trg_date_range" eval="False"/>
+            <field name="trg_date_range_type" eval="False"/>
+            <field name="trigger">on_write</field>
+        </record>
+
+        <!--    <record id="studio_customization.activity_order_stock_9041c94e-5c6e-4dd7-bf97-5bd670d72540" model="base.automation">-->
+        <record id="hm_action_imput_activity_order_storable_products" model="base.automation">
+            <field name="action_server_id" ref="hm_purchase.hm_imput_activity_order_storable_products"/>
+            <field name="active" eval="True"/>
+            <field name="filter_domain">[("product_id.type","=","product")]</field>
+            <field name="filter_pre_domain" eval="False"/>
+            <field name="last_run" eval="False"/>
+            <field name="trg_date_id" eval="False"/>
+            <field name="trg_date_range" eval="False"/>
+            <field name="trg_date_range_type" eval="False"/>
+            <field name="trigger">on_create</field>
+        </record>
+
+        <!--    <record id="studio_customization.imput_activity_po_to_92fb5bf1-363b-4aca-9796-f0b87fb181ba" model="base.automation">-->
+        <record id="hm_action_imput_activity_po_to_send_to_supplier_2h_after_defining_tech_imputed" model="base.automation">
+            <field name="action_server_id"
+                   ref="hm_purchase.hm_imput_activity_po_to_send_to_supplier_2h_after_defining_tech_imputed"/>
+            <field name="active" eval="True"/>
+            <field name="filter_domain" eval="['&amp;','&amp;','&amp;','&amp;','&amp;','&amp;','&amp;','&amp;','&amp;',('partner_id.display_name','not ilike','emport'),('partner_id.hm_technician','=',False),('order_line','not ilike','commission'),('hm_imputed_technician_id','!=',False),('hm_so_lie.date_order','&gt;','2021-05-17 00:00:00'),('state','!=','cancel'),('stage2_id','!=',ref('hm_purchase.purchase_stage2_po_marchandise')),('stage2_id','!=',ref('hm_purchase.purchase_stage3_po_marchandise')),('is_po_emport','=',False),('state2','=','planned')]"></field>
+            <field name="filter_pre_domain" eval="False"/>
+            <field name="last_run">2021-09-06 10:08:50</field>
+            <field name="trg_date_id" ref="purchase.field_purchase_order____last_update"/>
+            <field name="trg_date_range">10</field>
+            <field name="trg_date_range_type">minutes</field>
+            <field name="trigger">on_time</field>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_suppl_fd80a72c-35b0-4ef4-a227-7b5f4c96a79f" model="base.automation">-->
+        <record id="hm_action_imput_activity_supplier_order_confirm_missing" model="base.automation">
+            <field name="action_server_id" ref="hm_purchase.hm_imput_activity_supplier_order_confirm_missing"/>
+            <field name="active" eval="True"/>
+            <field name="filter_domain" eval="['&amp;',('stage2_id','=',ref('hm_purchase.purchase_stage2_po_marchandise')),('partner_id.hm_technician','=',False)]"></field>
+            <field name="filter_pre_domain" eval="False"/>
+            <field name="last_run">2021-09-06 10:08:51</field>
+            <field name="trg_date_id" ref="hm_purchase.field_purchase_order__date_confirm"/>
+            <field name="trg_date_range">2</field>
+            <field name="trg_date_range_type">day</field>
+            <field name="trigger">on_time</field>
+            <field name="trg_date_calendar_id" ref="resource.resource_calendar_std"/>
+        </record>
+
+        <!--  <record id="studio_customization.change_state_envoye__d68466a5-4671-44f2-bfe7-3fc95d1e19ef" model="base.automation">-->
+        <record id="hm_action_change_state_sent_supplier_confirmed_when_filling_ref_supplier" model="base.automation">
+            <field name="action_server_id"
+                   ref="hm_purchase.hm_change_state_sent_supplier_confirmed_when_filling_ref_supplier"/>
+            <field name="active" eval="True"/>
+            <field name="filter_domain">[("partner_ref","!=",False)]</field>
+            <field name="filter_pre_domain">["&amp;","&amp;","&amp;",("partner_ref","=",False),("state","!=","draft"),("state","!=","sent"),("state","!=","to approve")]</field>
+            <field name="last_run" eval="False"/>
+            <field name="trg_date_id" eval="False"/>
+            <field name="trg_date_range" eval="False"/>
+            <field name="trg_date_range_type" eval="False"/>
+            <field name="trigger">on_write</field>
+            <field name="trigger_field_ids" eval="[(4,ref('purchase.field_purchase_order__partner_ref'))]"/>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_new_p_3a166428-4c46-4317-8cc3-4c6b57c8d5a2" model="base.automation">-->
+        <record id="hm_action_imput_activity_new_po_emport_to_manage" model="base.automation">
+            <field name="action_server_id" ref="hm_purchase.hm_imput_activity_new_po_emport_to_manage"/>
+            <field name="active" eval="True"/>
+            <field name="filter_domain">["&amp;","&amp;","&amp;",["so_manager","!=",False],["po_type","=","po_emport_marchandise"],["state","=","purchase"],"|",["hm_so_lie.id","=",3002],["so_manager","not ilike","Olivier"]]</field>
+            <field name="filter_pre_domain">[("state","!=","purchase")]</field>
+            <field name="last_run" eval="False"/>
+            <field name="trg_date_id" eval="False"/>
+            <field name="trg_date_range" eval="False"/>
+            <field name="trg_date_range_type" eval="False"/>
+            <field name="trigger">on_write</field>
+        </record>
+
+    </data>
+
+</odoo>

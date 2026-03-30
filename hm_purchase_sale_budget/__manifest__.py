@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'HeatMe : Purchase and Sales Order Budget',
+    'version': '16.0.1.0.0',
+    'author': 'Aziz, Netskill Group(NSG)',
+    'category': 'Purchases & Sales',
+    'summary': 'Purchases & Sales Budget Management',
+    'website': 'https://netskill.be/',
+    'depends': [
+        'sale_purchase',
+        'sale_stock',
+        'purchase_stock',
+        'mrp',
+        'sale_margin',
+        'hm_sales_technicien_info',
+        'hm_purchase',
+    ],
+    'sequence': 5000,
+    'website': '',
+    'data': [
+        'security/ir.model.access.csv',
+        'views/purchase_order.xml',
+        'views/sale_order.xml',
+        'views/sale_order_line.xml',
+        'views/product_template.xml',
+        'views/mrp_bom.xml',
+        'views/purchase_order_line.xml',
+        'wizard/linked_purchase_order_lines.xml',
+    ],
+    'installable': True,
+    'application': True,
+    'license': 'LGPL-3',
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hm_property_popup_wizard" model="ir.ui.view">
+            <field name="name">hm.property.popup.wizard</field>
+            <field name="model">hm.property.popup</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <div colspan="2" class="oe_form_box_info bg-info oe_text_center">
+                        <h4>
+                          Quelle adresse devons nous mettre à jour pour correspondre à celle du bien immobilier?
+                        </h4>
+                    </div>
+                    <group context="{'default_property_id': 'property_id', 'default_landlord': 'landlord_id', 'default_tanent': 'tenant_id'}">
+
+                        <field name="tanent_address" attrs="{'invisible': [('tanent', '=', False)]}"/>
+                        <field name="landlord_address" attrs="{'invisible': [('landlord', '=', False)]}"/>
+                        <field name="property_id" invisible="1"/>
+                        <field name="tanent" invisible="1"/>
+                        <field name="landlord" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button name="action_change_address" type="object" string="Sauvegarder"
+                                class="btn btn-primary"/>
+                        <button string="Cancel" special="cancel" class="btn btn-default"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

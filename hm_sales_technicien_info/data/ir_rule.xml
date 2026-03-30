@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ir_rule_technician_intervention_proposals" model="ir.rule">
+        <field name="name">Technicians can only access their own intervention proposals</field>
+        <field name="model_id" ref="hm_sales_technicien_info.model_hm_technician_intervention_proposal"/>
+        <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+        <field name="domain_force">[('partner_id','=',user.partner_id.id)]</field>
+    </record>
+</odoo>

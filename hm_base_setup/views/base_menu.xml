@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <menuitem id="contacts.res_partner_menu_contacts" name="Contacts" parent="contacts.menu_contacts"
+              action="contacts.action_contacts"/>
+
+    <menuitem id="contacts.res_partner_menu_config" sequence="2"
+              groups="base.group_system,sales_team.group_sale_manager"
+              name="Configuration" parent="contacts.menu_contacts"/>
+
+    <menuitem id="contacts.menu_partner_category_form" action="base.action_partner_category_form"
+              name="Étiquettes de contact" parent="contacts.res_partner_menu_config"/>
+
+    <menuitem id="contacts.menu_partner_title_contact" sequence="1" action="base.action_partner_title_contact"
+              name="Civilités" parent="contacts.res_partner_menu_config"/>
+
+    <menuitem id="contacts.res_partner_industry_menu" sequence="2" action="base.res_partner_industry_action"
+              name="Secteurs d'activité" parent="contacts.res_partner_menu_config"/>
+
+    <menuitem id="contacts.menu_localisation" sequence="3" name="Localisation"
+              parent="contacts.res_partner_menu_config"/>
+
+    <menuitem id="contacts.menu_config_bank_accounts" sequence="5" name="Comptes bancaires"
+              parent="contacts.res_partner_menu_config"/>
+
+    <!-- <menuitem id="studio_customization.contacts_config_tech_49d05be1-4a1b-4c43-b8a8-6fdbef6e8b56"-->
+    <menuitem id="hm_config_technicians_menu"
+              name="Config techniciens"
+              action="base.action_open_website"
+              parent="contacts.menu_contacts"
+              sequence="3"/>
+
+</odoo>

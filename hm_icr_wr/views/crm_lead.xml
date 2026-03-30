@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="action_icr_for_crm_lead" model="ir.actions.act_window">
+        <field name="name">ICR</field>
+        <field name="res_model">hm.icr</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('hm_related_lead_id', '=', active_id)]</field>
+        <field name="context">{'default_hm_related_lead_id' : active_id}</field>
+    </record>
+
+    <record id="hm_icr_wr_crm_lead_form_view_inherit" model="ir.ui.view">
+        <field name="name">view.crm.lead.form.icr.wr.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="priority">1000</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']/button[@name='action_schedule_meeting']" position="before">
+                <button name="action_view_icr" type="object" class="oe_stat_button" context="{'default_hm_related_lead_id': active_id}" icon="fa-question">
+                    <div class="o_stat_info">
+                        <field name="total_icr" class="o_stat_value"/>
+                        <span class="o_stat_text">ICR</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

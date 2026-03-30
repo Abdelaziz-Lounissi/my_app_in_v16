@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hm_mobile_token_tree_view" model="ir.ui.view">
+        <field name="name">hm.mobile.token.tree</field>
+        <field name="model">hm.mobile.token</field>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="create_date"/>
+                <field name="last_app_call" readonly="1" force_save="1"/>
+                <field name="firebase_registration_token"/>
+                <field name="user_id"/>
+                <field name="app_version"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hm_mobile_token_form_view" model="ir.ui.view">
+        <field name="name">res.technician.app.document.form</field>
+        <field name="model">hm.mobile.token</field>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="firebase_registration_token"/>
+                            <field name="create_date"/>
+                            <field name="app_version"/>
+                            <field name="last_app_call" readonly="1" force_save="1"/>
+                        </group>
+                        <group>
+                            <field name="user_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="hm_mobile_token_act_window" model="ir.actions.act_window">
+        <field name="name">Mobile Token</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hm.mobile.token</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="hm_mobile_token_menu_home" name="Token"
+              parent="hm_technician_app_sync_menu_root" action="hm_mobile_token_act_window"/>
+
+</odoo>

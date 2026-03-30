@@ -1,0 +1,6 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_group_user_hm_property_type,access_group_user_hm_property_type,model_hm_property_type,base.group_user,1,0,0,0
+access_group_system_hm_property_type,access_group_system_hm_property_type,model_hm_property_type,base.group_system,1,1,1,1
+access_hm_property,access_hm_property,model_hm_property,base.group_user,1,1,1,1
+access_hm_property_tenant,access_hm_property_tenant,model_hm_property_tenant,base.group_user,1,1,1,1
+access_sms_hm_manager,access.sms.template.hm.manager,sms.model_sms_template,base.group_user,1,1,1,1

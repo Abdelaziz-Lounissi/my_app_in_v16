@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'HeatMe : Property Management',
+    'version': '16.0.1.0.0',
+    'author': 'Aziz, Netskill Group(NSG)',
+    'category': 'Property',
+    'summary': 'Property Management',
+    'website': 'https://netskill.be/',
+    "depends": [
+        "hm_base_setup",
+        "sale_management",
+        "sms",
+    ],
+    "data": [
+        "data/maintenance.xml",
+        "data/res_country_state_data.xml",
+        "security/ir.model.access.csv",
+        "security/sms_security.xml",
+        "data/mail_data.xml",
+        "security/security.xml",
+        "views/hm_property_view.xml",
+        "views/hm_property_type_view.xml",
+        "views/sale_order.xml",
+        "views/crm_lead_views.xml",
+        "views/cron_create_partner.xml",
+        "wizard/hm_property_popup_view.xml",
+        # "views/templates.xml",
+        # "views/res_config_settings.xml",
+    ],
+    'installable': True,
+    'application': True,
+    'license': 'LGPL-3',
+}

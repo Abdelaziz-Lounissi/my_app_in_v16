@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'HeatMe : Crm',
+    'version': '16.0.1.0.0',
+    'author': 'Aziz, Netskill Group(NSG)',
+    'category': 'CRM',
+    'summary': 'CRM Management',
+    'website': 'https://netskill.be/',
+    "depends": ['base', 'sale_crm', 'hm_sale_crm'],
+    "data": [
+        "security/ir.model.access.csv",
+        "data/ir_actions_server.xml",
+        "data/base_automation.xml",
+        "data/mail_template.xml",
+        "views/crm_menu.xml",
+        "views/crm_lead_views.xml",
+        "views/crm_stage_view.xml",
+        "views/crm_team_view.xml",
+        "views/crm_lead_lost_views.xml",
+        "views/sale_views.xml",
+    ],
+    'installable': True,
+    'application': True,
+    'license': 'LGPL-3',
+}

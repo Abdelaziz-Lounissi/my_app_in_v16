@@ -1,0 +1,769 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_purchase_sale_budget
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-04 11:28+0000\n"
+"PO-Revision-Date: 2021-11-04 11:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,help:hm_purchase_sale_budget.field_linked_purchase_order_lines__product_type
+msgid ""
+"A storable product is a product for which you manage stock. The Inventory app has to be installed.\n"
+"A consumable product is a product for which stock is not managed.\n"
+"A service is a non-material product you provide."
+msgstr ""
+"Un produit stockable est un produit dont on gère le stock. L'application \"Inventaire\" doit être installée. \n"
+"Un produit consommable, d'un autre côté, est un produit pour lequel le stock n'est pas géré.\n"
+"Un service est un produit immatériel que vous fournissez."
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,help:hm_purchase_sale_budget.field_linked_purchase_order_lines__qty_received_method
+msgid ""
+"According to product configuration, the recieved quantity can be automatically computed by mechanism :\n"
+"  - Manual: the quantity is set manually on the line\n"
+"  - Stock Moves: the quantity comes from confirmed pickings\n"
+msgstr ""
+"Selon la configuration du produit, la quantité reçue peut être automatiquement calculée :\n"
+"  - Manuel: la quantité est indiquée manuellement sur la ligne\n"
+"  - Mouvements de stock: la quantité provient de transferts confirmés\n"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_mrp_bom_line__amount_budget
+msgid "Amount Budget"
+msgstr ""
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_mrp_bom_line__amount_labor
+msgid "Amount Labor"
+msgstr ""
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__account_analytic_id
+msgid "Analytic Account"
+msgstr "Compte analytique"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__analytic_tag_ids
+msgid "Analytic Tags"
+msgstr "Étiquettes analytiques"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.hm_purchase_budget_form_view
+msgid "Append line to Sale Order"
+msgstr "Ajouter une ligne à la commande de vente"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.hm_purchase_budget_form_view
+msgid "Are you sure you want to delete this line on Sale Order line?"
+msgstr "Voulez-vous vraiment supprimer cette ligne sur la ligne de commande?"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__computed_image_art
+msgid "Art"
+msgstr ""
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_product_template_search_view_inherit_budget
+msgid "Article Budget"
+msgstr ""
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_product_product__is_product_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_product_template__is_product_budget
+msgid "Article budget?"
+msgstr ""
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__invoice_lines
+msgid "Bill Lines"
+msgstr "Lignes de facturation"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model,name:hm_purchase_sale_budget.model_mrp_bom
+msgid "Bill of Material"
+msgstr "Nomenclature"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model,name:hm_purchase_sale_budget.model_mrp_bom_line
+msgid "Bill of Material Line"
+msgstr "Ligne de nomenclature"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__qty_invoiced
+msgid "Billed Qty"
+msgstr "Qté Facturé"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__hm_sale_order
+msgid "Bon de commande"
+msgstr ""
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__hm_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_linked_purchase_order_lines_tree
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_sale_order_line_filter_inherit_sale_budget
+msgid "Budget"
+msgstr "Budget"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_sale_order_line_filter_inherit_sale_budget
+msgid "Budget & Labor"
+msgstr "Budget & Main d'oeuvre"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_product_product__budget_price
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_product_template__budget_price
+msgid "Budget BOM"
+msgstr "Budget emport BOM"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_mrp_bom__budget_standard_price
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_sale_order_line__amount_budget
+msgid "Budget Cost"
+msgstr "Budget Marchandise"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_sale_order_line__amount_labor
+msgid "Budget Labor"
+msgstr "Budget main d'oeuvre"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_product_product__budget_labor
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_product_template__budget_labor
+msgid "Budget labor"
+msgstr "Budget main d'oeuvre"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__product_uom_category_id
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,help:hm_purchase_sale_budget.field_linked_purchase_order_lines__product_uom_category_id
+msgid ""
+"Conversion between Units of Measure can only occur if they belong to the "
+"same category. The conversion will be made based on the ratios."
+msgstr ""
+"Il est possible de convertir deux unités de mesures si elles appartiennent à"
+" la même catégorie. Cette conversion utilise les rapports définis pour ces "
+"unités."
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_mrp_bom_line__hm_standard_price
+msgid "Cost"
+msgstr "Coût"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_purchase_order__picking_type_id
+msgid "Deliver To"
+msgstr "Livrer à"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__qty_delivered
+msgid "Delivered Qty"
+msgstr "Qté livrée"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,help:hm_purchase_sale_budget.field_linked_purchase_order_lines__date_order
+msgid ""
+"Depicts the date where the Quotation should be validated and converted into "
+"a purchase order."
+msgstr ""
+"Représente la date où le devis devrait être validé et le converti en bon "
+"d'achat."
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__name
+msgid "Description"
+msgstr "Description"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__hm_description_from_so
+msgid "Description from SO"
+msgstr ""
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__display_name
+msgid "Display Name"
+msgstr "Afficher Nom"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__display_type
+msgid "Display Type"
+msgstr "Type d'affichage
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__move_dest_ids
+msgid "Downstream Moves"
+msgstr "Mouvements en aval"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_purchase_order_kanban_inherit_po_emport
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_purchase_order_line_kanban
+msgid "Emport"
+msgstr ""
+
+#. module: hm_purchase_sale_budget
+#: code:addons/hm_purchase_sale_budget/models/purchase_order_line.py:0
+#, python-format
+msgid "Existing lines found on other Purchase Order"
+msgstr "Lignes existantes trouvées sur d'autres bons de commande d'achat"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__id
+msgid "ID"
+msgstr ""
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,help:hm_purchase_sale_budget.field_mrp_bom_line__hm_standard_price
+msgid ""
+"In Standard Price & AVCO: value of the product (automatically computed in "
+"AVCO In FIFO: value of the last unit that left the stock (automatically "
+"computed).Used to value the product when the purchase cost is not known "
+"(e.g. inventory adjustment).Used to compute margins on sale orders."
+msgstr ""
+"En prix standard et AVCO: valeur du produit (calculée automatiquement en AVCO).\n"
+"       En FIFO: valeur de la dernière unité qui a quitté le stock (calculée automatiquement).\n"
+"         Utilisé pour évaluer le produit lorsque le coût d'achat n'est pas connu (par exemple, ajustement des stocks).\n"
+"        Utilisé pour calculer les marges sur les commandes de vente."
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__hm_technical_info
+msgid "Infos tech"
+msgstr ""
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__hm_technical_information
+msgid "Infos techniques"
+msgstr ""
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,help:hm_purchase_sale_budget.field_linked_purchase_order_lines__hm_supplier_reference
+msgid "International Article Number used for product identification."
+msgstr "Numéro d'article international (IAN) utilisé pour identifier cet article."
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.hm_purchase_budget_form_view
+msgid "Intervention address"
+msgstr "Adresse d'intervention"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_purchase_order__is_emport_sale_order_readonly
+msgid "Is Emport Sale Order Readonly"
+msgstr ""
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__is_po_emport
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_purchase_order__is_po_emport
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_purchase_order_line__is_po_emport
+msgid "Is Purchase Order Emport?"
+msgstr "Le bon de commande est-il Emport?"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_product_product__label_section
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_product_template__label_section
+msgid "Label Section"
+msgstr ""
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_sale_order_line_filter_inherit_sale_budget
+msgid "Labor"
+msgstr "Main d'oeuvre"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_product_product__is_labor_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_product_template__is_labor_budget
+msgid "Labor Budget?"
+msgstr "Main d'oeuvre budget ?"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_mrp_bom__labor_standard_price
+msgid "Labor Cost"
+msgstr "Coût de la main d'oeuvre"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model,name:hm_purchase_sale_budget.model_linked_purchase_order_lines
+msgid "Linked Purchase order line"
+msgstr "Ligne de commande d'achat liée"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__qty_received_manual
+msgid "Manual Received Qty"
+msgstr "Qté manuellement reçue"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__hm_new_name
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__hm_product_supplier_category
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__x_studio_field_B3Y8T
+msgid "New Champ lié"
+msgstr ""
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__line_id
+msgid "New Purchase Order line"
+msgstr "Nouvelle ligne de commande d'achat"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__potential_match_line_count
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_purchase_order_line__potential_match_line_count
+msgid "Number of potential duplicates"
+msgstr "Nombre de doublons potentiels"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_sale_order_form_inherit_purchase_order_emport
+msgid "Open Grouped Lines"
+msgstr "Ouvrir les lignes groupées"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.hm_purchase_budget_form_view
+msgid "Open Potential duplicates"
+msgstr "Ouvrir les doublons potentiels"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_linked_purchase_order_lines_tree
+msgid "Open Purchase Order"
+msgstr "Ouvrir le bon de commande"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__date_order
+msgid "Order Date"
+msgstr "Date de la commande"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.actions.act_window,name:hm_purchase_sale_budget.action_order_line_sections
+msgid "Order Lines Section"
+msgstr ""
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__order_id
+msgid "Order Reference"
+msgstr "Référence de l'achat"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__orderpoint_id
+msgid "Orderpoint"
+msgstr "Point de commande"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__sale_line_id
+msgid "Origin Sale Item"
+msgstr "Objet de vente d'origine"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_purchase_order_tree_other_pos_budget
+msgid "Other Purchase Order Related"
+msgstr "Autre bon de commande lié"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_sale_order_line__is_po_emport
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_sale_order_line_filter_inherit_sale_budget
+msgid "PO Emport"
+msgstr "Bon de commande emport"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_sale_order_line_filter_inherit_sale_budget
+msgid "PO Emport Budget"
+msgstr ""
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__potential_match_line
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_purchase_order_line__potential_match_line
+msgid "Potential Match Line"
+msgstr "Ligne de correspondance potentielle"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model,name:hm_purchase_sale_budget.model_product_product
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__new_product_id
+msgid "Product New"
+msgstr "Produit"
+
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model,name:hm_purchase_sale_budget.model_product_template
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__product_tmpl_id
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__product_type
+msgid "Product Type"
+msgstr "Type d'article"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__propagate_date
+msgid "Propagate Rescheduling"
+msgstr "Propager la replanification"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__propagate_cancel
+msgid "Propagate cancellation"
+msgstr "Propager l'annulation"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__new_name
+msgid "Proposed Description"
+msgstr "Description proposée"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__new_product_uom_qty
+msgid "Proposed Qty"
+msgstr "Qté proposée"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_mrp_bom_line__hm_lst_price
+msgid "Public Price"
+msgstr "Prix public"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model,name:hm_purchase_sale_budget.model_purchase_order
+msgid "Purchase Order"
+msgstr "Commande fournisseur"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model,name:hm_purchase_sale_budget.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Ligne de commande d'achat"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_linked_purchase_order_lines_tree
+msgid "Purchase Order Reference"
+msgstr "Référence du bon de commande"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__po_line_id
+msgid "Purchase Order line"
+msgstr "Ligne de commande d'achat"
+
+#. module: hm_purchase_sale_budget
+#: code:addons/hm_purchase_sale_budget/models/purchase_order.py:0
+#, python-format
+msgid "Purchase order related"
+msgstr "Commande d'achat liée"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,help:hm_purchase_sale_budget.field_linked_purchase_order_lines__x_studio_field_B3Y8T
+msgid ""
+"Put an address if you want to deliver directly from the vendor to the "
+"customer. Otherwise, keep empty to deliver to your own company."
+msgstr ""
+"Ajoutez une adresse si vous voulez livrer directement du fournisseur au "
+"client. Sinon, laissez vide pour vous faire livrer à votre société."
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_linked_purchase_order_lines_tree
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_sale_order_line_tree_grouping
+msgid "Qty"
+msgstr "Qté"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__product_qty
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__qty_received
+msgid "Received Qty"
+msgstr "Qté reçue"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__qty_received_method
+msgid "Received Qty Method"
+msgstr "Méthode Qté reçue"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_purchase_order_tree_other_pos_budget
+msgid "Reference"
+msgstr "Référence"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_purchase_order__total_budget_left
+msgid "Remaining budget"
+msgstr "Budget qui reste"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.hm_purchase_budget_form_view
+msgid "Remove line from Sale Order"
+msgstr "Supprimer la ligne de la commande client"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__propagate_date_minimum_delta
+msgid "Reschedule if Higher Than"
+msgstr "Replanifier si plus de"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__move_ids
+msgid "Reservation"
+msgstr "Réservation"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__hm_sale_order_line_id
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.hm_purchase_budget_form_view
+msgid "Sale Line ID"
+msgstr "ID ligne de vente"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__sale_order_id
+msgid "Sale Order"
+msgstr "Bon de commande"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model,name:hm_purchase_sale_budget.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model,name:hm_purchase_sale_budget.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Ligne du bon de commande"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_sale_order_line_tree_grouping
+msgid "Sales Order Lines"
+msgstr "Lignes de bons de commande"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__date_planned
+msgid "Scheduled Date"
+msgstr "Date prévue"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_sale_order_line__line_label_section
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_sale_order_line_filter_inherit_sale_budget
+msgid "Section"
+msgstr "Section"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: hm_purchase_sale_budget
+#: code:addons/hm_purchase_sale_budget/models/purchase_order_line.py:0
+#, python-format
+msgid ""
+"Some of the lines selected does not fulfill the criteria required.\n"
+"Please check quantity delivered and make sure the line is not linked to sale order yet"
+msgstr ""
+"Certaines des lignes sélectionnées ne remplissent pas les critères requis.\n"
+"Veuillez vérifier la quantité livrée et assurez-vous que la ligne n'est pas encore liée à la commande client"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__hm_stage_id
+msgid "Stage"
+msgstr "Étape"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__state2
+msgid "State2 SO"
+msgstr "Status2 SO"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__state
+msgid "Status"
+msgstr "État"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__price_subtotal
+msgid "Subtotal"
+msgstr "Sous-total"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__supplier_choice
+msgid "Supplier Choice"
+msgstr "Choix du fournisseur"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__price_tax
+msgid "Tax"
+msgstr "Taxe"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__taxes_id
+msgid "Taxes"
+msgstr "Taxes"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,help:hm_purchase_sale_budget.field_linked_purchase_order_lines__display_type
+msgid "Technical field for UX purpose."
+msgstr "Champ technique utilisé à des fins ergonomiques"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_sale_order_search_inherit_purchase_order_emport
+msgid "Technicien imputé"
+msgstr ""
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,help:hm_purchase_sale_budget.field_linked_purchase_order_lines__propagate_date_minimum_delta
+msgid "The change must be higher than this value to be propagated"
+msgstr "La modification doit être plus importante que cette valeur pour être propagée"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,help:hm_purchase_sale_budget.field_linked_purchase_order_lines__propagate_date
+msgid "The rescheduling is propagated to the next move."
+msgstr "La replanification est propagée au mouvement suivant."
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,help:hm_purchase_sale_budget.field_mrp_bom_line__hm_lst_price
+msgid ""
+"The sale price is managed from the product template. Click on the 'Configure"
+" Variants' button to set the extra attribute prices."
+msgstr ""
+"Le prix de vente est géré à partir du modèle de produit. Cliquez sur le "
+"bouton «Configurer les variantes» pour définir les prix des attributs "
+"supplémentaires."
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,help:hm_purchase_sale_budget.field_purchase_order__picking_type_id
+msgid "This will determine operation type of incoming shipment"
+msgstr "Cela déterminera le type d'opération des réceptions"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__price_total
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_sale_order_line_tree_grouping
+msgid "Total"
+msgstr "Total"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_linked_purchase_order_lines_tree
+msgid "Total Qty"
+msgstr "Quantité totale"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_linked_purchase_order_lines_tree
+msgid "Total Qty New"
+msgstr "Quantité totale neuve"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_linked_purchase_order_lines_tree
+msgid "Total Qty delivered"
+msgstr "Quantité totale livrée"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_linked_purchase_order_lines_tree
+msgid "Total Qty invoiced"
+msgstr "Quantité totale facturée"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__product_uom_qty
+msgid "Total Quantity"
+msgstr "Quantité totale"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_purchase_order_tree_other_pos_budget
+msgid "Total Untaxed amount"
+msgstr "Montant total hors taxe"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_purchase_order_tree_other_pos_budget
+msgid "Total amount"
+msgstr "Montant total"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_purchase_order__sale_order_total_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_sale_order__amount_budget
+msgid "Total budget"
+msgstr "Budget emport total"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_sale_order__amount_budget_remaining
+msgid "Total budget remaining"
+msgstr "Budget emport total restant"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_purchase_order__total_used_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_purchase_order_tree_inherit_studio_emport
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_purchase_order_tree_other_pos_budget
+msgid "Total budget used"
+msgstr "Budget utilisé de ce PO"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_sale_order__amount_labor_budget
+msgid "Total labor budget"
+msgstr "Main d'oeuvre total budget "
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__price_unit
+msgid "Unit Price"
+msgstr "Prix unitaire"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__product_uom
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_sale_order_line_tree_grouping
+msgid "Unit of Measure"
+msgstr "Unité de mesure"
+
+#. module: hm_purchase_sale_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase_sale_budget.view_purchase_order_tree_other_pos_budget
+msgid "Untaxed"
+msgstr "Hors taxe"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__hm_purchase_price
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__hm_sale_line_id
+msgid "Validated"
+msgstr "Validé"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,field_description:hm_purchase_sale_budget.field_linked_purchase_order_lines__hm_supplier_reference
+msgid "Vendor Reference"
+msgstr "Référence fournisseur"
+
+#. module: hm_purchase_sale_budget
+#: model:ir.model.fields,help:hm_purchase_sale_budget.field_linked_purchase_order_lines__partner_id
+msgid "You can find a vendor by its Name, TIN, Email or Internal Reference."
+msgstr "Vous pouvez trouver un fournisseur par son nom, numéro de TVA, email ou sa référence interne."

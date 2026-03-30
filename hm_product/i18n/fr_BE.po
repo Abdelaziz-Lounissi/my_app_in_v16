@@ -1,0 +1,1219 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_product
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-01 10:51+0000\n"
+"PO-Revision-Date: 2024-09-01 10:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_product
+#: model:ir.actions.report,print_report_name:hm_product.action_report_technical_sheets
+msgid "'Fiche technique - %s' % (object.name)"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__product_template_export__list__10
+msgid "10"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__product_template_export__list__11
+msgid "11"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__product_template_export__list__12
+msgid "12"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__product_template_export__list__13
+msgid "13"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__product_template_export__list__14
+msgid "14"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__product_template_export__list__15
+msgid "15"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__product_template_export__list__16
+msgid "16"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__product_template_export__list__17
+msgid "17"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__product_template_export__list__18
+msgid "18"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__product_template_export__list__19
+msgid "19"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__product_template_export__list__20
+msgid "20"
+msgstr ""
+
+#. module: hm_product
+#. odoo-python
+#: code:addons/hm_product/models/product_template.py:0
+#, python-format
+msgid ""
+"<div class=\"o_thread_message_content\">\n"
+"                                                                                <ul class=\"o_mail_thread_message_tracking\">\n"
+"                                                                                    <li> Sales Price:\n"
+"                                                                                        <span> %.2f %s </span>\n"
+"                                                                                            <span class=\"fa fa-long-arrow-right\" role=\"img\" aria-label=\"Changed\" title=\"Changed\"></span>\n"
+"                                                                                                <span> %s %s </span>\n"
+"                                                                                    </li>\n"
+"                                                                                </ul>\n"
+"                                                                            </div>"
+msgstr ""
+"<div class=\"o_thread_message_content\">\n"
+"                                                                                <ul class=\"o_mail_thread_message_tracking\">\n"
+"                                                                                    <li> Prix de vente:\n"
+"                                                                                        <span> %.2f %s </span>\n"
+"                                                                                            <span class=\"fa fa-long-arrow-right\" role=\"img\" aria-label=\"Changed\" title=\"Changed\"></span>\n"
+"                                                                                                <span> %s %s </span>\n"
+"                                                                                    </li>\n"
+"                                                                                </ul>\n"
+"                                                                            </div>"
+
+#. module: hm_product
+#. odoo-python
+#: code:addons/hm_product/models/product_product.py:0
+#, python-format
+msgid ""
+"<div class=\"o_thread_message_content\">\n"
+"                                                                        <ul class=\"o_mail_thread_message_tracking\">\n"
+"                                                                            <li> Cost:\n"
+"                                                                                <span> %.2f %s </span>\n"
+"                                                                                    <span class=\"fa fa-long-arrow-right\" role=\"img\" aria-label=\"Changed\" title=\"Changed\"></span>\n"
+"                                                                                        <span> %s %s </span>\n"
+"                                                                            </li>\n"
+"                                                                        </ul>\n"
+"                                                                    </div>"
+msgstr ""
+"<div class=\"o_thread_message_content\">\n"
+"                                                                        <ul class=\"o_mail_thread_message_tracking\">\n"
+"                                                                            <li> Coût:\n"
+"                                                                                <span> %.2f %s </span>\n"
+"                                                                                    <span class=\"fa fa-long-arrow-right\" role=\"img\" aria-label=\"Changed\" title=\"Changed\"></span>\n"
+"                                                                                        <span> %s %s </span>\n"
+"                                                                            </li>\n"
+"                                                                        </ul>\n"
+"                                                                    </div>"
+
+#. module: hm_product
+#. odoo-python
+#: code:addons/hm_product/models/product_attribute.py:0
+#, python-format
+msgid ""
+"<div class=\"o_thread_message_content\">\n"
+"                                                            <ul class=\"o_mail_thread_message_tracking\">\n"
+"                                                                <li> Sales Price:\n"
+"                                                                    <span> %.2f %s </span>\n"
+"                                                                        <span class=\"fa fa-long-arrow-right\" role=\"img\" aria-label=\"Changed\" title=\"Changed\"></span>\n"
+"                                                                            <span> %.2f %s </span>\n"
+"                                                                </li>\n"
+"                                                            </ul>\n"
+"                                                        </div>"
+msgstr ""
+"<div class=\"o_thread_message_content\">\n"
+"                                                            <ul class=\"o_mail_thread_message_tracking\">\n"
+"                                                                <li> Prix de vente:\n"
+"                                                                    <span> %.2f %s </span>\n"
+"                                                                        <span class=\"fa fa-long-arrow-right\" role=\"img\" aria-label=\"Changed\" title=\"Changed\"></span>\n"
+"                                                                            <span> %.2f %s </span>\n"
+"                                                                </li>\n"
+"                                                            </ul>\n"
+"                                                        </div>"
+
+#. module: hm_product
+#. odoo-python
+#: code:addons/hm_product/models/product_product.py:0
+#: code:addons/hm_product/models/product_product.py:0
+#, python-format
+msgid ""
+"<div class=\"o_thread_message_content\">\n"
+"                                                        <ul class=\"o_mail_thread_message_tracking\">\n"
+"                                                            <li> Cost:\n"
+"                                                                <span> %.2f %s </span>\n"
+"                                                                    <span class=\"fa fa-long-arrow-right\" role=\"img\" aria-label=\"Changed\" title=\"Changed\"></span>\n"
+"                                                                        <span> %s %s </span>\n"
+"                                                            </li>\n"
+"                                                        </ul>\n"
+"                                                    </div>"
+msgstr ""
+"<div class=\"o_thread_message_content\">\n"
+"                                                        <ul class=\"o_mail_thread_message_tracking\">\n"
+"                                                            <li> Coût:\n"
+"                                                                <span> %.2f %s </span>\n"
+"                                                                    <span class=\"fa fa-long-arrow-right\" role=\"img\" aria-label=\"Changed\" title=\"Changed\"></span>\n"
+"                                                                        <span> %s %s </span>\n"
+"                                                            </li>\n"
+"                                                        </ul>\n"
+"                                                    </div>"
+
+#. module: hm_product
+#. odoo-python
+#: code:addons/hm_product/models/product_template.py:0
+#, python-format
+msgid ""
+"<div class=\"o_thread_message_content\">\n"
+"                                                        <ul class=\"o_mail_thread_message_tracking\">\n"
+"                                                            <li> Sales Price:\n"
+"                                                                <span> %.2f %s </span>\n"
+"                                                                    <span class=\"fa fa-long-arrow-right\" role=\"img\" aria-label=\"Changed\" title=\"Changed\"></span>\n"
+"                                                                        <span> %s %s </span>\n"
+"                                                            </li>\n"
+"                                                        </ul>\n"
+"                                                    </div>"
+msgstr ""
+"<div class=\"o_thread_message_content\">\n"
+"                                                        <ul class=\"o_mail_thread_message_tracking\">\n"
+"                                                            <li> Prix de vente:\n"
+"                                                                <span> %.2f %s </span>\n"
+"                                                                    <span class=\"fa fa-long-arrow-right\" role=\"img\" aria-label=\"Changed\" title=\"Changed\"></span>\n"
+"                                                                        <span> %s %s </span>\n"
+"                                                            </li>\n"
+"                                                        </ul>\n"
+"                                                    </div>"
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+msgid "<span class=\"o_stat_text\">Bons de commande</span>"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+msgid "<span class=\"o_stat_text\">POs</span>"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.report_technical_sheets
+msgid "<strong>Catégorie fiche technique:</strong>"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,help:hm_product.field_product_product__hm_is_real_picture
+#: model:ir.model.fields,help:hm_product.field_product_template__hm_is_real_picture
+msgid "A real picture?"
+msgstr "Image réelle?"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__message_needaction
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__message_needaction
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__active
+msgid "Active"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__activity_ids
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__activity_ids
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__activity_exception_decoration
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__activity_exception_decoration
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__activity_state
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__activity_state
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__activity_type_icon
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__activity_type_icon
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__can_add_equivalent
+#: model:ir.model.fields,field_description:hm_product.field_product_template__can_add_equivalent
+msgid "Add Equivalent"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_export_form_view
+msgid "Archive"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__archive
+msgid "Archiver l'article à substituer"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__new_product
+msgid "Article remplaçant"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__old_product
+msgid "Article à substituer"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__message_attachment_count
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__message_attachment_count
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model,name:hm_product.model_product_attribute_value
+msgid "Attribute Value"
+msgstr "Valeur de la caractéristique"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_attribute_value__attribute_values_name
+msgid "Attribute Values Name"
+msgstr ""
+
+#. module: hm_product
+#. odoo-python
+#: code:addons/hm_product/models/hm_substitution.py:0
+#, python-format
+msgid "Aucun article à substituer."
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__product_template__origin__buderus
+msgid "Buderus"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_template__can_image_1024_be_zoomed
+msgid "Can Image 1024 be zoomed"
+msgstr "L'Image 1024 peut être agrandie"
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_export_form_view
+msgid "Cancel"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_supplier_category
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_supplier_category
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+msgid "Catégorie Fournisseur"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_product_category_supplier_id
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_product_category_supplier_id
+msgid "Catégorie d'article Fournisseur"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__hm_technical_sheet_category
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_technical_sheets_view_form
+msgid "Catégorie fiche technique"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_normal_form_view
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+msgid "Code EAN"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__hm_technical_sheets__hm_technical_sheet_category__commercial
+msgid "Commercial"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_contact_id
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_contact_id
+msgid "Contact"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_product_equivalent__create_uid
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__create_uid
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__create_uid
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets_stages__create_uid
+#: model:ir.model.fields,field_description:hm_product.field_product_template_export__create_uid
+#: model:ir.model.fields,field_description:hm_product.field_report_excel__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_product_equivalent__create_date
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__create_date
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__create_date
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets_stages__create_date
+#: model:ir.model.fields,field_description:hm_product.field_product_template_export__create_date
+#: model:ir.model.fields,field_description:hm_product.field_report_excel__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_current_discount
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_current_discount
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+msgid "Current discount"
+msgstr "Remise actuelle"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__substitution_date
+msgid "Date de substitution"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+msgid "Description du site Web"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__hm_technical_sheets__hm_technical_sheet_category__dimensionnement
+msgid "Dimensionnement"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_product_equivalent__display_name
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__display_name
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__display_name
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets_stages__display_name
+#: model:ir.model.fields,field_description:hm_product.field_product_template_export__display_name
+#: model:ir.model.fields,field_description:hm_product.field_report_excel__display_name
+msgid "Display Name"
+msgstr "Afficher Nom"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__hm_doc_1
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_technical_sheets_view_form
+msgid "Doc 1"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__hm_doc_2_pdf
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_technical_sheets_view_form
+msgid "Doc 2 (PDF)"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__hm_doc_3_pdf
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_technical_sheets_view_form
+msgid "Doc 3 (PDF)"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_export_form_view
+msgid "Done"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_report_excel__file_download
+msgid "Download report"
+msgstr "Télécharger rapport"
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_equivalent_form_view
+msgid "Edit equivalents"
+msgstr "Modifier les équivalents"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_product_equivalent__name
+#: model:ir.model.fields,field_description:hm_product.field_product_product__equivalent_id
+#: model:ir.model.fields,field_description:hm_product.field_product_template__equivalent_id
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_equivalent_form_view
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_normal_form_view
+msgid "Equivalent"
+msgstr "Produits équivalents"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__equivalent_product_ids
+#: model:ir.model.fields,field_description:hm_product.field_product_template__equivalent_product_ids
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_equivalent_tree_view
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_select_equivalent_tree_view
+msgid "Equivalent Products"
+msgstr "Produits équivalents"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__equivalent_filter
+#: model:ir.model.fields,field_description:hm_product.field_product_template__equivalent_filter
+msgid "Equivalent filter"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_search_view
+msgid "Equivalent product"
+msgstr "Cacher équivalences interdites"
+
+#. module: hm_product
+#. odoo-python
+#: code:addons/hm_product/models/hm_substitution.py:0
+#, python-format
+msgid "Erreur, L'article remplaçant à des articles équivalents!"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model,name:hm_product.model_report_excel
+msgid "Excel"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__executed
+#: model:ir.model.fields,field_description:hm_product.field_product_template__executed
+msgid "Executed"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_export_form_view
+msgid "Export Products variants"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__external_id
+#: model:ir.model.fields,field_description:hm_product.field_product_template__external_id
+msgid "External ID"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__product_template__origin__facq
+msgid "Facq"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_search_view
+msgid "Facq + VM"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__facq_vm_filter
+#: model:ir.model.fields,field_description:hm_product.field_product_template__facq_vm_filter
+msgid "Facq VM"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_technical_sheet
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_technical_sheet
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+msgid "Fiche technique"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_technical_sheet_1
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_technical_sheet_1
+msgid "Fiche technique 1"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_technical_sheet_2
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_technical_sheet_2
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+msgid "Fiche technique 2"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.actions.act_window,name:hm_product.hm_technical_sheets_action
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_technical_sheets_ids
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_technical_sheets_ids
+#: model:ir.ui.menu,name:hm_product.hm_technical_sheets_menu
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_technical_sheets_view_form
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_technical_sheets_view_kanban
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_technical_sheets_view_search
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_technical_sheets_view_tree
+msgid "Fiches techniques"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_technical_sheets_stages_view_form
+msgid "Fiches techniques étapes"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_template_export__file
+msgid "File"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_report_excel__name
+msgid "File Name"
+msgstr "Nom de Fichier"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__hm_doc_1_filename
+msgid "Filename for hm_doc_1"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__hm_doc_2_filename
+msgid "Filename for hm_doc_2_pdf"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__hm_doc_3_filename
+msgid "Filename for hm_doc_3_pdf"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__hm_0nYDt_filename
+msgid "Filename for x_studio_field_0nYDt"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__hm_9VYcJ_filename
+msgid "Filename for x_studio_field_9VYcJ"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__hm_KN59I_filename
+msgid "Filename for x_studio_field_KN59I"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__message_follower_ids
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__message_follower_ids
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__message_partner_ids
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__message_partner_ids
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,help:hm_product.field_hm_substitution__activity_type_icon
+#: model:ir.model.fields,help:hm_product.field_hm_technical_sheets__activity_type_icon
+#: model:ir.model.fields,help:hm_product.field_product_supplierinfo__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__equivalent_green_color
+#: model:ir.model.fields,field_description:hm_product.field_product_template__equivalent_green_color
+msgid "Green"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.actions.report,name:hm_product.action_report_technical_sheets
+msgid "Générer un pdf sur les infos techniques"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__has_message
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__has_message
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__supplier_count
+#: model:ir.model.fields,field_description:hm_product.field_product_template__supplier_count
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_search_view
+msgid "Has more than one supplier"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_search_view
+msgid "Has one supplier"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model,name:hm_product.model_hm_substitution
+msgid "Hm Substitution"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_product_equivalent__id
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__id
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__id
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets_stages__id
+#: model:ir.model.fields,field_description:hm_product.field_product_template_export__id
+#: model:ir.model.fields,field_description:hm_product.field_report_excel__id
+msgid "ID"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__activity_exception_icon
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__activity_exception_icon
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,help:hm_product.field_hm_substitution__activity_exception_icon
+#: model:ir.model.fields,help:hm_product.field_hm_technical_sheets__activity_exception_icon
+#: model:ir.model.fields,help:hm_product.field_product_supplierinfo__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,help:hm_product.field_hm_substitution__message_needaction
+#: model:ir.model.fields,help:hm_product.field_hm_technical_sheets__message_needaction
+#: model:ir.model.fields,help:hm_product.field_product_supplierinfo__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,help:hm_product.field_hm_substitution__message_has_error
+#: model:ir.model.fields,help:hm_product.field_hm_substitution__message_has_sms_error
+#: model:ir.model.fields,help:hm_product.field_hm_technical_sheets__message_has_error
+#: model:ir.model.fields,help:hm_product.field_hm_technical_sheets__message_has_sms_error
+#: model:ir.model.fields,help:hm_product.field_product_supplierinfo__message_has_error
+#: model:ir.model.fields,help:hm_product.field_product_supplierinfo__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,help:hm_product.field_product_product__active
+msgid ""
+"If unchecked, it will allow you to hide the product without removing it."
+msgstr ""
+"En décochant cette case, il est possible de masquer l'article sans le "
+"supprimer."
+
+#. module: hm_product
+#: model:ir.actions.server,name:hm_product.hm_image_auto_mo_logo_on_subcontractor_mo_cat_products
+msgid "Image = Logo MO auto sur articles cat MO sous-traitant"
+msgstr ""
+"🟠 When product.template in category 'MO sous-traitant' is created or updated"
+" ➡️ Update logo"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_image_url
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_image_url
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+msgid "Image URL 1"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_image_url_2
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_image_url_2
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+msgid "Image URL 2"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_image_url_3
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_image_url_3
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+msgid "Image URL 3"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_technical_sheets_view_form
+msgid "Informations tech vrac (chatter)"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.ui.menu,name:hm_product.hm_technical_info_menu
+msgid "Infos techniques"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__message_is_follower
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__message_is_follower
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__product_template_export__type__is_used
+msgid "Is used"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_product_equivalent____last_update
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution____last_update
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets____last_update
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets_stages____last_update
+#: model:ir.model.fields,field_description:hm_product.field_product_template_export____last_update
+#: model:ir.model.fields,field_description:hm_product.field_report_excel____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_product_equivalent__write_uid
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__write_uid
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__write_uid
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets_stages__write_uid
+#: model:ir.model.fields,field_description:hm_product.field_product_template_export__write_uid
+#: model:ir.model.fields,field_description:hm_product.field_report_excel__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_product_equivalent__write_date
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__write_date
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__write_date
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets_stages__write_date
+#: model:ir.model.fields,field_description:hm_product.field_product_template_export__write_date
+#: model:ir.model.fields,field_description:hm_product.field_report_excel__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_template_export__list
+msgid "List"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__log
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_substitution_view_form
+msgid "Log"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__message_main_attachment_id
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__message_main_attachment_id
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_maintain_SO_desc_and_cost_on_PO
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_maintain_SO_desc_and_cost_on_PO
+msgid "Maintenir la description et le coût du SO sur le PO"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_brand
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_brand
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+msgid "Marque"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__hm_technical_sheets__hm_technical_sheet_category__matériel_chauffage
+msgid "Matériel chauffage"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__hm_technical_sheets__hm_technical_sheet_category__matériel_sanitaire
+msgid "Matériel sanitaire"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__hm_max_obtained_discount
+msgid "Maximum obtained discount(%)"
+msgstr "Remise maximale obtenue (%)"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__message_has_error
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__message_has_error
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__message_ids
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__message_ids
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_normal_form_view
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+msgid "Mettre à jour la description dans le modèle de devis"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_account_tax_template_ids
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_account_tax_template_ids
+msgid "Modèles pour les taxes"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__my_activity_date_deadline
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__my_activity_date_deadline
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__name
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets_stages__name
+msgid "Name"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_normal_form_view
+msgid "Navigate to article template"
+msgstr "Naviguer vers le template d'article"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__activity_calendar_event_id
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__activity_calendar_event_id
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__activity_date_deadline
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__activity_date_deadline
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__activity_summary
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__activity_summary
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__activity_type_id
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__activity_type_id
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__message_needaction_counter
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__message_needaction_counter
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__message_has_error_counter
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__message_has_error_counter
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,help:hm_product.field_hm_substitution__message_needaction_counter
+#: model:ir.model.fields,help:hm_product.field_hm_technical_sheets__message_needaction_counter
+#: model:ir.model.fields,help:hm_product.field_product_supplierinfo__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,help:hm_product.field_hm_substitution__message_has_error_counter
+#: model:ir.model.fields,help:hm_product.field_hm_technical_sheets__message_has_error_counter
+#: model:ir.model.fields,help:hm_product.field_product_supplierinfo__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__old_object_id
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets_stages__old_object_id
+msgid "Old object ID"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__origin
+#: model:ir.model.fields,field_description:hm_product.field_product_template__origin
+msgid "Origin"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__hm_technical_sheets__hm_technical_sheet_category__primes
+msgid "Primes"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_modified_price
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_modified_price
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+msgid "Prix modifié"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model,name:hm_product.model_product_template
+#: model:ir.model.fields,field_description:hm_product.field_product_template_export__type
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_search_view
+msgid "Product"
+msgstr "Modèle d'article"
+
+#. module: hm_product
+#: model:ir.model,name:hm_product.model_hm_product_equivalent
+msgid "Product Equivalent"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model,name:hm_product.model_product_template_attribute_value
+msgid "Product Template Attribute Value"
+msgstr "Valeur de caractéristique d'article"
+
+#. module: hm_product
+#: model:ir.model,name:hm_product.model_product_template_export
+msgid "Product Template Export"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model,name:hm_product.model_product_product
+msgid "Product Variant"
+msgstr "Produit"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_radiator_power_kw
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_radiator_power_kw
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+msgid "Puissance radiateur (W)"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__purchase_order_confirmed_count
+#: model:ir.model.fields,field_description:hm_product.field_product_template__purchase_order_confirmed_count
+msgid "Purchase Order Confirmed Count"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_is_real_picture
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_is_real_picture
+msgid "Real picture?"
+msgstr "Image réelle?"
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__hm_technical_sheets__hm_technical_sheet_category__reglementation
+msgid "Reglementation"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__can_remove_equivalent
+#: model:ir.model.fields,field_description:hm_product.field_product_template__can_remove_equivalent
+msgid "Remove Equivalent"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__activity_user_id
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__activity_user_id
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_manufacturer_reference
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_manufacturer_reference
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+msgid "Référence fabricant"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__hm_technical_sheets__hm_technical_sheet_category__régulation
+msgid "Régulation"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__sku
+#: model:ir.model.fields,field_description:hm_product.field_product_template__sku
+msgid "SKU"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__message_has_sms_error
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__message_has_sms_error
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__sale_order_confirmed_count
+#: model:ir.model.fields,field_description:hm_product.field_product_template__sale_order_confirmed_count
+msgid "Sale Order Confirmed Count"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__hm_stage_id
+msgid "Stage"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,help:hm_product.field_hm_substitution__activity_state
+#: model:ir.model.fields,help:hm_product.field_hm_technical_sheets__activity_state
+#: model:ir.model.fields,help:hm_product.field_product_supplierinfo__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_technical_sheets_view_form
+msgid "Subject"
+msgstr "Sujet"
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_substitution_view_form
+msgid "Substituer"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.actions.act_window,name:hm_product.hm_substitution_action
+#: model:ir.ui.menu,name:hm_product.hm_substitution_menu
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_substitution_view_form
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_substitution_view_tree
+msgid "Substitution"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_supplier_discount_product
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_supplier_discount_product
+msgid "Supplier Discount"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model,name:hm_product.model_product_supplierinfo
+msgid "Supplier Pricelist"
+msgstr "Liste de prix du fournisseur"
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_product_product__hm_tax_ids
+#: model:ir.model.fields,field_description:hm_product.field_product_template__hm_tax_ids
+msgid "Taxe"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model,name:hm_product.model_hm_technical_sheets
+msgid "Technical Sheets"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model,name:hm_product.model_hm_technical_sheets_stages
+msgid "Technical Sheets Stages"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__hm_text_technical_info
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_technical_sheets_view_search
+msgid "Texte info technique"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.actions.server,name:hm_product.track_products_fields_extra_price_ir_actions_server
+msgid "Track Products Fields (Extra Price)"
+msgstr "🟢 [Technical] Track Products Fields (Extra Price)"
+
+#. module: hm_product
+#: model:ir.actions.server,name:hm_product.track_products_fields_list_price_ir_actions_server
+msgid "Track Products Templates Fields (Sales Price)"
+msgstr "🟢 [Technical] Track Products Templates Fields (Sales Price)"
+
+#. module: hm_product
+#: model:ir.actions.server,name:hm_product.track_products_fields_standard_price_ir_actions_server
+msgid "Track Products fields (Cost)"
+msgstr "🟢 [Technical] Track Products fields (Cost)"
+
+#. module: hm_product
+#: model:ir.model.fields,help:hm_product.field_hm_substitution__activity_exception_decoration
+#: model:ir.model.fields,help:hm_product.field_hm_technical_sheets__activity_exception_decoration
+#: model:ir.model.fields,help:hm_product.field_product_supplierinfo__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__product_template__origin__vam
+msgid "VAM"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_equivalent_form_view
+msgid "View Equivalents"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,field_description:hm_product.field_hm_substitution__website_message_ids
+#: model:ir.model.fields,field_description:hm_product.field_hm_technical_sheets__website_message_ids
+#: model:ir.model.fields,field_description:hm_product.field_product_supplierinfo__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields,help:hm_product.field_hm_substitution__website_message_ids
+#: model:ir.model.fields,help:hm_product.field_hm_technical_sheets__website_message_ids
+#: model:ir.model.fields,help:hm_product.field_product_supplierinfo__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_search_view
+msgid "Without supplier"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_normal_form_view
+msgid "You cannot edit equivalent products from an item variant"
+msgstr ""
+"Vous ne pouvez pas modifier les produits équivalents depuis une variante "
+"d'article"
+
+#. module: hm_product
+#: model:ir.actions.server,name:hm_product.hm_update_field_so_line_description_sale
+msgid "[Technical] Update the order template line description"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.actions.server,name:hm_product.hm_update_product_price_for_related_boms_act_automation_ir_actions_server
+#: model:ir.actions.server,name:hm_product.hm_update_template_price_for_variants_related_boms
+msgid ""
+"[Technical] Update the sales and cost price template based on the BOM "
+"components"
+msgstr ""
+
+#. module: hm_product
+#. odoo-python
+#: code:addons/hm_product/models/export_products.py:0
+#, python-format
+msgid "export_product_variants.xlsx"
+msgstr ""
+
+#. module: hm_product
+#. odoo-python
+#: code:addons/hm_product/models/export_products.py:0
+#, python-format
+msgid "export_supplier_info.xlsx"
+msgstr ""
+
+#. module: hm_product
+#: model:ir.model.fields.selection,name:hm_product.selection__product_template_export__type__not_used
+msgid "is not used"
+msgstr ""
+
+#. module: hm_product
+#: model_terms:ir.ui.view,arch_db:hm_product.hm_product_template_only_form_view
+msgid ""
+"mettre référence fournisseur de l'article dont on prend le prix de vente. Ou"
+" directement le prix de vente si pas de ref."
+msgstr ""
+
+#. module: hm_product
+#: model:ir.actions.server,name:hm_product.hm_test_image_action
+msgid "test image"
+msgstr ""

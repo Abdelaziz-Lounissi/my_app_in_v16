@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--        hm_report_purchase_order_without_price_document -->
+        <template id="hm_report_po_without_price_document">
+            <t t-call="web.external_layout">
+                <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+                <t t-set="address">
+                    <div t-field="o.partner_id"
+                         t-options="{'widget': 'contact', 'fields': ['name'], 'no_marker': True, 'phone_icons': True}"/>
+                    <p t-if="o.partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>:
+                        <span t-field="o.partner_id.vat"/>
+                    </p>
+                </t>
+                <t t-if="o.dest_address_id">
+                    <t t-set="information_block">
+                        <strong t-if="o.hm_delivery_address is False">
+                            <p>Delivery Address:
+                                <br/>
+                                <br/>
+                            </p>
+                        </strong>
+                        <div t-if="o.dest_address_id">
+                            <div t-field="o.hm_delivery_address_id"
+                                 t-options="{'widget': 'contact', 'fields': ['address', 'name', 'phone'], 'no_marker': True, 'phone_icons': True}"
+                                 name="purchase_shipping_address" t-options-no_marker="True"
+                                 t-if="o.hm_delivery_address is False"/>
+                            <div t-if="not o.dest_address_id and o.picking_type_id and o.picking_type_id.warehouse_id">
+                                <span t-field="o.picking_type_id.warehouse_id.name"/>
+                                <div t-field="o.picking_type_id.warehouse_id.partner_id"
+                                     t-options="{'widget': 'contact', 'fields': ['address', 'phone'], 'no_marker': True, 'phone_icons': True}"/>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div class="row">
+                        <div class="col">
+                            <span>
+                                <b>Delivery Address:</b>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row address">
+                        <div class="col-5">
+                            <div t-field="o.hm_delivery_address" t-options-widget="'contact'"
+                                 t-options-fields="['name', 'address', 'phone', 'mobile']"/>
+                        </div>
+                        <div class="col-5 offset-2"/>
+                    </div>
+                    <h2 t-if="o.state == 'draft'">Demande d'intervention #
+                        <span t-field="o.name"/>
+                    </h2>
+                    <h2 t-if="o.state in ['sent', 'to approve']">Purchase Order #
+                        <span t-field="o.name"/>
+                    </h2>
+                    <h2 t-if="o.state in ['purchase', 'done']"> Bon de commande #
+                        <span t-field="o.name"/>
+                    </h2>
+                    <h2 t-if="o.state == 'cancel'">Cancelled Purchase Order #
+                        <span t-field="o.name"/>
+                    </h2>
+                    <div id="informations" class="row mt32 mb32">
+                        <div t-if="o.name" class="bm-2 col-6">
+                            <strong>
+                                <p>Notre Référence de Commande
+                                    <br/>
+                                    <br/>
+                                </p>
+                            </strong>
+                            <span t-field="o.dest_address_id.name" style="color:#0000FF"/>
+                            <p t-field="o.name" class="m-0 o_bold" style="color:#0000FF"/>
+                        </div>
+                        <!--                        hm_purchase_order_report_1 -->
+                        <div t-if="o.partner_ref" class="col-3 bm-2">
+                            <strong>
+                                <p style="color:#0000FF">Référence du fournisseur:
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <span t-field="o.partner_ref"/>
+                                </p>
+                            </strong>
+                        </div>
+                        <div t-if="o.hm_delivery_date" class="col-3 bm-2">
+                            <strong>
+                                <font style="color: rgb(255, 0, 0);">Delivery Date:</font>
+                            </strong>
+                            <p t-field="o.hm_delivery_date" class="m-0" style="color:#FF0000"
+                               t-options-widget="'date'"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="offset-0 col-6">
+                            <span t-if="o.hm_person_who_will_do_the_kidnapping_id" style="color:#FF0000" class="o_bold">
+                                <strong>Personne qui réceptionnera la marchandise:</strong>
+                                <br/>
+                            </span>
+                            <span t-field="o.hm_person_who_will_do_the_kidnapping_id.name" class="o_bold"
+                                  style="color:#FF0000"/>
+                        </div>
+                        <div class="col-3"/>
+                        <div class="col-3"/>
+                        <div class="col-3">
+                            <span t-field="o.hm_person_who_will_do_the_kidnapping_id.phone" class="o_bold"
+                                  style="color:#FF0000"/>
+                        </div>
+                    </div>
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <span>Ref fourn.</span>
+                                </th>
+                                <th>
+                                    <strong>Description</strong>
+                                </th>
+                                <th class="text-right">
+                                    <strong>Qté</strong>
+                                </th>
+                                <th class="text-right" t-if="o.hm_person_who_will_do_the_kidnapping_id is False">
+                                    <strong>Unit Price</strong>
+                                </th>
+                                <th class="text-right" t-if="o.hm_person_who_will_do_the_kidnapping_id is False">
+                                    <strong>Amount</strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="o.order_line" t-as="line">
+                                <t t-if="line.sku">
+                                    <td>
+                                        <span t-field="line.sku"/>
+                                    </td>
+                                </t>
+                                <t t-else="">
+                                    <td>
+                                        <span>Divers</span>
+                                    </td>
+                                </t>
+                                <td>
+                                    <span t-field="line.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.product_qty"/>
+                                    <span t-field="line.product_uom.name" groups="uom.group_uom"/>
+                                </td>
+                                <td class="text-right" t-if="o.hm_person_who_will_do_the_kidnapping_id is False">
+                                    <span t-field="line.price_unit"/>
+                                </td>
+                                <td class="text-right" t-if="o.hm_person_who_will_do_the_kidnapping_id is False">
+                                    <span t-field="line.price_subtotal"
+                                          t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <div class="col">
+                            <span style="color:#FF0000">
+                                <font style="font-size: 11px;">Merci de nous prévenir directement si la date de
+                                    livraison demandée ne peut être respectée pour l'intégralité de la commande.
+                                </font>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                        </div>
+                    </div>
+                    <div id="total" class="row justify-content-end">
+                        <div class="col-4" t-if="o.hm_person_who_will_do_the_kidnapping_id is False">
+                            <table class="table table-sm">
+                                <tr class="border-black">
+                                    <td>
+                                        <strong>Subtotal</strong>
+                                    </td>
+                                    <td class="text-right" t-if="o.hm_person_who_will_do_the_kidnapping_id is False">
+                                        <span t-field="o.amount_untaxed"
+                                              t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Taxes</td>
+                                    <td class="text-right">
+                                        <span t-field="o.amount_tax"
+                                              t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"
+                                              t-if="o.hm_person_who_will_do_the_kidnapping_id is False"/>
+                                    </td>
+                                </tr>
+                                <tr class="border-black o_total">
+                                    <td>
+                                        <strong>Total</strong>
+                                    </td>
+                                    <td class="text-right" t-if="o.hm_person_who_will_do_the_kidnapping_id is False">
+                                        <span t-field="o.amount_total"
+                                              t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <p t-field="o.notes"/>
+                    <div class="oe_structure"/>
+                </div>
+            </t>
+        </template>
+
+        <!-- Commande fournisseur SANS PRIX (bon enlevement)-->
+        <template id="hm_report_po_without_price">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="hm_purchase.hm_report_po_without_price_document" t-lang="o.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

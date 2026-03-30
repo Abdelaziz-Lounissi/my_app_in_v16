@@ -1,0 +1,124 @@
+<odoo>
+
+    <!--Tree view-->
+    <record id="hm_icr_tree_view" model="ir.ui.view">
+        <field name="name">hm.icr.tree</field>
+        <field name="model">hm.icr</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="hm_related_lead_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Form view-->
+    <record id="hm_icr_form_view" model="ir.ui.view">
+        <field name="name">hm.icr.form</field>
+        <field name="model">hm.icr</field>
+        <field name="arch" type="xml">
+            <form>
+                <header modifiers="{}">
+                    <button string="New Quotation" name="action_new_quotation" type="object" class="oe_highlight"/>
+                    <button string="Copier la description du lead" name="copy_lead_description" type="object"
+                            class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box" modifiers="{}">
+                        <button class="oe_stat_button" type="object" name="action_view_sale_order"
+                                icon="fa-pencil-square-o" options="{}">
+                            <div class="o_field_widget o_stat_info" modifiers="{}">
+                                <span class="o_stat_text" modifiers="{}">
+                                    Devis
+                                </span>
+                                <field name="sale_order_count"/>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="oe_title">
+                        <h1 modifiers="{}">
+                            <field name="name" modifiers="{'readonly':true}"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="hm_related_lead_id"/>
+                            <field name="body_text"/>
+
+                        </group>
+
+                        <group>
+                            <field name="active" invisible="1"/>
+                            <field name="search_pictures_ids" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Infos" autofocus="autofocus">
+                            <group name="Infos">
+                                <field name="picture_icr_info_ids" string="">
+                                    <tree create="0" editable="bottom">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="name" invisible="1"/>
+                                        <field name="hm_picture_library_id" readonly="1" force_save="1"/>
+                                        <field name="image_1920" widget='image' class="oe_avatar" options='{"zoom": true, "preview_image":"image_1024"}'/>
+                                        <field name="external_image_preview_html" optional="show" class="o_list_thumbnail"/>
+                                        <field name="caption"/>
+                                    </tree>
+                                </field>
+                            </group>
+                            <group name="product_template_images">
+                                <field name="picture_lib_ids" class="oe_edit_only o_website_sale_image_list"
+                                       mode="kanban"
+                                       context="{'default_name': name,'search_default_groupby_sale_order': 1}"
+                                       domain="[('id', 'in', search_pictures_ids)]"
+                                       colspan="2" options="{'create_text':'Ajouter des photos', 'no_create': True}"
+                                       nolabel="1"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <!--        search view-->
+
+    <record id="hm_icr_search_view" model="ir.ui.view">
+        <field name="name">hm.icr.search</field>
+        <field name="model">hm.icr</field>
+        <field name="arch" type="xml">
+            <search string="Search ">
+                <field name="name"/>
+                <field name="hm_related_lead_id"/>
+                <field name="body_text"/>
+                <field name="create_date"/>
+                <field name="create_uid"/>
+
+                <group string="Group By" name="groupby">
+                    <filter
+                            name="hm_related_lead_id"
+                            string="Lead"
+                            context="{'group_by': 'hm_related_lead_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!--Action-->
+    <record id="hm_icr_action" model="ir.actions.act_window">
+        <field name="name">ICR</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hm.icr</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="hm_icr_wr.hm_icr_search_view"/>
+        <field name="view_ids"
+               eval="[(5, 0, 0),
+                                  (0, 0, {'view_mode': 'tree', 'view_id': ref('hm_icr_tree_view')}),
+                                  (0, 0, {'view_mode': 'form', 'view_id': ref('hm_icr_form_view')})]"/>
+    </record>
+
+
+</odoo>

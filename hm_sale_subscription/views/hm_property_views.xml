@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="hm_property_sale_subscription_action" model="ir.actions.act_window">
+        <field name="context">
+            {'search_default_property_id': [active_id], 'default_property_id': active_id}
+        </field>
+        <field name="domain">[('is_subscription','=', True)]</field>
+        <field name="name">Subscriptions</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <record id="hm_property_sale_subscription_kanban" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="sale_subscription.sale_subscription_view_kanban"/>
+        <field name="act_window_id" ref="hm_sale_subscription.hm_property_sale_subscription_action"/>
+    </record>
+
+    <record id="hm_property_sale_subscription_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="sale_subscription.sale_subscription_view_tree"/>
+        <field name="act_window_id" ref="hm_sale_subscription.hm_property_sale_subscription_action"/>
+    </record>
+
+    <record id="hm_property_sale_subscription_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="sale_subscription.sale_subscription_primary_form_view"/>
+        <field name="act_window_id" ref="hm_sale_subscription.hm_property_sale_subscription_action"/>
+    </record>
+
+
+
+
+    <record id="hm_crm_lead_subscription_property_form_view_form" model="ir.ui.view">
+        <field name="name">hm.property.form.opportunity</field>
+        <field name="model">hm.property</field>
+        <field name="inherit_id" ref="hm_property.hm_property_form_view"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button class="oe_stat_button" type="action" name="%(hm_sale_subscription.hm_property_sale_subscription_action)d" icon="fa-refresh">
+                    <field string="Subscriptions" name="subscription_count" widget="statinfo"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

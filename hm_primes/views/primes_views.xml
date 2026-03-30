@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--  <record id="studio_customization.default_form_view_fo_d4289bec-c28d-4fb4-b083-4d8b774c9db4" model="ir.ui.view">-->
+    <record id="hm_primes_view_form" model="ir.ui.view">
+        <field name="name">hm.primes.view.form</field>
+        <field name="model">hm.primes</field>
+        <field name="priority">16</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet string="Primes">
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options="{'terminology': 'archive'}"/>
+                        </button>
+                    </div>
+
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" required="1"/>
+                        </h1>
+                    </div>
+                    <field name="hm_conditions_prime" string="Conditions prime"/>
+                    <group name="studio_group_698ba7">
+                        <group name="studio_group_698ba7_left">
+                            <field name="hm_qty_premium" invisible="1"/>
+                            <field name="hm_basic_amount_of_the_premium"/>
+                            <field name="hm_premium_total" widget="monetary" invisible="1"/>
+                            <field name="hm_region" string="Region"/>
+                            <field name="hm_description_of_the_premium_for_the_customer"
+                                   string="Descriptif de la prime pour le client"/>
+                            <field name="hm_web_link_infos" string="Lien web infos" widget="url"/>
+                            <field name="hm_procedure_text_to_send_to_the_customer"
+                                   string="Texte procédure à envoyer au client"
+                                   help="Ceci sera envoyé au client une fois l'intervention terminée"/>
+                        </group>
+                        <group name="studio_group_698ba7_right">
+                            <field filename="hm_document_to_be_completed_by_the_customer_filename"
+                                   name="hm_document_to_be_completed_by_the_customer"
+                                   string="Document à compléter par le client">
+                            </field>
+                            <field name="hm_document_to_be_completed_by_the_customer_filename" invisible="1"/>
+                            <field filename="hm_document_to_be_completed_by_hm_filename"
+                                   name="hm_document_to_be_completed_by_hm" string="Document à compléter par HM">
+                            </field>
+                            <field name="hm_document_to_be_completed_by_hm_filename" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hm_primes_view_tree" model="ir.ui.view">
+        <field name="name">hm.primes.view.tree</field>
+        <field name="model">hm.primes</field>
+        <field name="arch" type="xml">
+            <tree string="Primes" expand="1" default_order="hm_region_name, name">
+
+                <field name="name" string="Prime"/>
+                <field name="hm_region" string="Région"/>
+                <field name="hm_region_name" string="Région name" invisible="1"/>
+                <field name="hm_description_of_the_premium_for_the_customer" string="Descriptif client"/>
+                <field name="hm_basic_amount_of_the_premium" string="Amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hm_primes_view_search" model="ir.ui.view">
+        <field name="name">hm.primes.view.search</field>
+        <field name="model">hm.primes</field>
+        <field name="arch" type="xml">
+            <search string="Primes">
+                <field name="hm_region"/>
+                <filter name="state" string="Région n’est pas défini"
+                        domain="['|', ('hm_region', '=', context.get('default_hm_region')), ('hm_region', '=', False)]"/>
+                <group expand="1" string="Group By">
+                    <filter string="Région" name="group_by_hm_region_name" context="{'group_by': 'hm_region'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="hm_primes_action" model="ir.actions.act_window">
+        <field name="name">Primes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hm.primes</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="hm_primes_view_search"/>
+        <field name="context">{'search_default_group_by_hm_region_name': 1}</field>
+
+    </record>
+
+    <menuitem id="hm_primes_menu"
+              name="Primes"
+              action="hm_primes_action"
+              sequence="46"
+              parent="sale.sale_menu_root"/>
+
+</odoo>

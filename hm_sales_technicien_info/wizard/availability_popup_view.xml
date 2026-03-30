@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hm_resource_availability_popup_form_view" model="ir.ui.view">
+            <field name="name">hm.resource.availability.calendar.tree</field>
+            <field name="model">hm.resource.availability.calendar</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false" delete="false" default_order="date_from"
+                      decoration-success="availability_color == 'green' "
+                      decoration-info="availability_color == 'blue'"
+                      decoration-danger="availability_color == 'red'"
+                      string="Technicien Availabilities">
+                    <field name="availability_color" invisible="1"/>
+                    <field name="date"/>
+                    <field name="date_from" invisible="1"/>
+                    <field name="date_to" invisible="1"/>
+                    <field name="name" invisible="1"/>
+                    <field name="dayofweek" readonly="1" force_save="1"/>
+                    <field name="availability"/>
+                    <field name="hour_from" widget="float_time"/>
+                    <field name="hour_to" widget="float_time"/>
+
+                    <button name="select_tech_availability" attrs="{'invisible': [('availability_color', '=', 'red')]}" type="object" icon="fa-check"  class="btn-link" title="Select"/>
+
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>

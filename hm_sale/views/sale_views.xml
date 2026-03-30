@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- *** Form views *** -->
+    <record id="sale_crm.sale_view_inherit123" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+
+    <record id="hm_view_order_form_initial_margin_forecast" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_margin.sale_margin_sale_order"/>
+        <field name="priority">9999991</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('text-nowrap')]" position="after">
+                <field name="can_edit_initial_margin_forecast" invisible="1"/>
+                <field name="amount_untaxed_at_signature" attrs="{'readonly': [('can_edit_initial_margin_forecast', '=', False)]}" options="{'currency_field': 'currency_id'}"/>
+                <field name="hm_initial_margin_forecast" attrs="{'readonly': [('can_edit_initial_margin_forecast', '=', False)]}" options="{'currency_field': 'currency_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hm_view_order_form" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="priority">999999</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='tax_totals']" position="after">
+                <field name="margin_rate" widget="percentage" string="Taux de marge"/>
+            </xpath>
+            <field name="margin" position="attributes">
+                <attribute name="string">Marge théorique</attribute>
+            </field>
+            <field name="sale_order_template_id" position="replace"/>
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="sale_order_template_id"
+                       options="{'no_create': True}"
+                       groups="sale_management.group_sale_order_template"
+                />
+                <field name="allow_closing_without_report"/>
+
+            </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="is_greater" invisible="1"/>
+                <field name="has_group_sale_manager" invisible="1"/>
+                <field name="has_group_sale_manager_for_point_of_management" invisible="1"/>
+            </xpath>
+            <xpath expr="//form/header" position="after">
+                <header>
+                    <field name="state2" widget="statusbar" force_save="1"
+                           attrs="{'invisible': [('state', '!=', 'sale')]}" options="{'clickable': '1'}"/>
+                </header>
+            </xpath>
+            <xpath expr="//field[@name='order_line']" position="attributes">
+                <attribute name="attrs">{'readonly': [('has_group_sale_manager', '=', False)]}
+                </attribute>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="so_invoice_count"/>
+                <field name="purchase_ids" invisible="0"
+                       attrs="{'readonly': [('has_group_sale_manager', '=', False)]}"/>
+                <field name="check_purchase_ids" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="context">
+                    {'search_default_exclude_from_property': True}
+                </attribute>
+            </xpath>
+            <xpath expr="//notebook/page[@name='order_lines']/field/tree/field[@name='product_template_id']"
+                   position="after">
+                <field name="computed_image_art" readonly="1" widget="show_description"/>
+                <field name="is_variant" invisible="1"/>
+            </xpath>
+            <xpath expr="//notebook/page[@name='order_lines']/field/tree" position="attributes">
+                <attribute name="limit">200</attribute>
+                <attribute name="decoration-danger">is_variant==True</attribute>
+            </xpath>
+            <field name="payment_term_id" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+
+
+            <!--            ****** -->
+            <xpath expr="//button[@name='action_view_invoice']" position="after">
+                <button class="oe_stat_button" icon="fa-shopping-basket" type="action" invisible="1"
+                        name="%(hm_purchase.hm_purchase_line_action)d">
+                    <field name="hm_po_lines_count" string="PO lines" widget="statinfo"/>
+                </button>
+                <button class="oe_stat_button" icon="fa-sitemap" type="action" name="%(hm_purchase.hm_po_action)d">
+                    <field name="hm_commande_lie_count" string="PO" widget="statinfo"/>
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='property_id']" position="attributes">
+                <attribute name="attrs">{"required": [("id",">",1104)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='sale_order_template_id']" position="attributes">
+                <attribute name="attrs">{"readonly": ["|","|",("state","not in",["draft","sent"]),("property_id","=",False),("partner_id","=",False)]}
+                </attribute>
+                <attribute name="options">{'no_create': True}</attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/field[@name='partner_id']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="help">C'est la personne qui va valider l'offre et être garant de son paiement (le
+                    client)
+                </attribute>
+                <attribute name="options"/>
+                <attribute name="widget">many2one</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_onsite_id']" position="attributes">
+                <attribute name="attrs">{"required": [("id","&gt;",1100)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_invoice_id']" position="attributes">
+                <attribute name="help">Le client, ou si le bien appartien à un propriétaire qui n'est pas notre contact
+                    c'est le propriétaire
+                </attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_shipping_id']" position="attributes">
+                <attribute name="attrs">{"readonly": [("state","not in",["draft","sent","sale"])], "invisible":
+                    [("date_order","&gt;","2020-12-01 00:00:00")]}
+                </attribute>
+                <attribute name="options"/>
+            </xpath>
+            <xpath expr="//field[@name='manager_id']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="readonly"/>
+            </xpath>
+            <xpath expr="//field[@name='manager_id']" position="after">
+                <field name="hm_organization_deadline_date"/>
+                <xpath expr="//field[@name='commitment_date']" position="move"/>
+                <field name="hm_closing_deadline_date"/>
+                <field name="hm_imputed_technician_id" string="Technicien" force_save="1"
+                       domain="['|','|','|','|',('hm_status','=','actif_app'),('hm_status','=','Actif - Phase test'),('hm_status','=','Actif'),('hm_status','=','Actif mais peu dispo'),('hm_status','=','Entreprise autonome (Vincotte,..)')]"
+                       attrs="{'readonly': ['|', ('state2','in',['deposit_to_receive', 'to_invoice', 'invoiced']), ('state','!=','sale')], 'invisible': [('state', 'not in', ['sale','done'])], 'required': [('commitment_date','!=',False),'|',('state','=','sale'), ('state2','not in',('deposit_to_receive' ,'to_organize'))]}"
+                       help="Bloqué si: property sans adresse, commande non confirmée, pas de date d'intervention ou pas de numéro de téléphone pour contact sur place"/>
+
+                <field name="has_group_sale_manager_for_point_of_management" invisible="1"/>
+
+                <field name="hm_so_manager_theoretical_workload_in_minutes"
+                       groups="hm_sale.group_show_workload_points_in_minutes"
+                       attrs="{'invisible': [('state', 'not in', ['sale','done'])], 'readonly': [('has_group_sale_manager_for_point_of_management', '=', False)]}"/>
+                <field name="hm_so_manager_workload_points"
+                       attrs="{'invisible': [('state', 'not in', ['sale','done'])], 'readonly': [('has_group_sale_manager_for_point_of_management', '=', False)]}"/>
+                <field name="hm_validity_date_state2" invisible="1"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='date_order']" position="attributes">
+                <attribute name="string">Quotation Date</attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='date_order'][2]" position="after">
+                <field name="opportunity_id" required="True" string="Opportunité CRM"/>
+                <field name="hm_sales_team_from_opportunity_crm_id" string="Sales team from opportunity CRM"
+                       attrs="{}" invisible="1"/>
+                <xpath expr="//field[@name='user_id']" position="move"/>
+                <field name="hm_so_manager_id" string="SO Manager" domain="[('share', '=', False)]"
+                       attrs="{'required': [('hm_imputed_technician_id','!=',False)]}"/>
+                <field name="hm_tel_partner" string="Tel client" widget="phone"/>
+                <field name="hm_phone_contact_on_site" string="Tel contact sur place" widget="phone"
+                       attrs="{'required': [('hm_imputed_technician_id','!=',False)]}"/>
+            </xpath>
+
+
+            <xpath expr="//page[@name='other_information']/group/group" position="inside">
+                <field name="hm_responsible_id"/>
+            </xpath>
+
+            <xpath expr="//field[@name='pricelist_id']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='currency_id']" position="after">
+                <field name="hm_briefing_necessary_tech" string="Briefing tech nécessaire"/>
+                <field name="hm_block_auto_mail" string="Bloquer mail auto"/>
+            </xpath>
+
+            <xpath expr="//notebook" position="before">
+                <group>
+                    <field name="hm_work_object" string="Objet des travaux"
+                           attrs="{'required': [('id','>',2208)]}"/>
+                </group>
+            </xpath>
+
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='sequence']"
+                   position="after">
+
+                <field name="hm_product_barcode" attrs="{}" readonly="1" string="Art" invisible="1"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='name']"
+                   position="after">
+                <field name="spec" attrs="{}" string="Spec"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='purchase_price']"
+                   position="attributes">
+                <attribute name="optional">show</attribute>
+                <!--                <attribute name="groups">hm_purchase_sale_budget.client_facing_mode_group</attribute>-->
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='product_uom_qty']"
+                   position="attributes">
+                <attribute name="string">Qty</attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='product_uom_qty']"
+                   position="after">
+                <field name="hm_technical_info" string="Infos tech" attrs="{}"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='qty_delivered']"
+                   position="attributes">
+                <attribute name="attrs">{"readonly": [("qty_delivered_method","!=","manual")], "column_invisible":
+                    [("parent.state","not in",["sale","done"])]}
+                </attribute>
+                <attribute name="string">Qty Livr</attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='qty_invoiced']"
+                   position="attributes">
+                <attribute name="string">Qty Fact</attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='product_uom']"
+                   position="attributes">
+                <attribute name="attrs">{"readonly": [("state","in",["sale","done","cancel"])], "required": [("display_type","=",False)]}
+                </attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='product_uom']"
+                   position="after">
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='route_id']"
+                       position="move"/>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='price_unit']"
+                       position="move"/>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='purchase_price']"
+                       position="move"/>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='discount']"
+                       position="move"/>
+                <!-- <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='price_subtotal']" position="move"/> -->
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='tax_id']"
+                       position="move"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='price_subtotal']"
+                   position="attributes">
+                <attribute name="widget"/>
+                <attribute name="string">Total</attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='price_subtotal']"
+                   position="after">
+                <field name="hm_so_invoice_status" string="État de la facture SO" attrs="{}" invisible="1"/>
+                <field name="hm_technician" string="Tech" attrs="{}" readonly="1" invisible="1"/>
+                <field name="hm_nr_po" attrs="{}" string="Nr PO" widget="integer" readonly="1" invisible="1"/>
+                <field name="hm_purchase_line_order_id" string="Nr PO" attrs="{}" readonly="1" invisible="1"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='price_tax']"
+                   position="after">
+                <field name="hm_radiator_power" string="Puissance radiateur" attrs="{}" invisible="1"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='company_id']"
+                   position="after">
+                <field name="hm_intervention_date" string="Date d'intervention" attrs="{}" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='note']" position="before">
+                <field name="hm_premium_ids" string="Primes">
+                    <form>
+                        <group>
+                            <group>
+                                <field name="hm_prime_id"/>
+                                <field name="hm_qty_prime"/>
+                                <field name="sale_order_id" string="Bon de commande"/>
+                            </group>
+                            <group>
+                                <label for="hm_unit_price_prime"/>
+                                <div name="unit_price_prime">
+                                    <field name="hm_unit_price_prime" class="oe_inline"/>
+                                </div>
+                                <field name="hm_subtotal_prime"/>
+                            </group>
+                        </group>
+                    </form>
+                    <tree editable="bottom">
+                        <field name="sequence" widget="handle"/>
+                        <field name="country_id" invisible="1"/>
+                        <field name="sale_order_id" invisible="1"/>
+                        <field name="hm_prime_id"
+                               context="{'state_property': True, 'search_default_state': 1, 'default_hm_region': country_id}"/>
+                        <field name="hm_qty_prime"/>
+                        <field name="hm_unit_price_prime"/>
+                        <field name="hm_subtotal_prime"/>
+                        <button type="object" name="action_view_prime" icon="fa-external-link" aria-label="View prime"
+                                title="View prime"/>
+                    </tree>
+                </field>
+                <group name="prime_group" col="6"/>
+                <group name="prime_group" col="6">
+                    <group class="oe_subtotal_footer oe_right" colspan="2" name="prime_total">
+                        <field name="hm_sum_premium_total" widget="monetary"/>
+
+                        <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                            <label for="hm_amount_total_with_premium"/>
+                        </div>
+
+                        <field name="hm_amount_total_with_premium" nolabel="1" class="oe_subtotal_footer_separator"
+                               widget="monetary"/>
+                    </group>
+                    <div class="oe_clear"/>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="hm_so_manager_phone"/>
+            </xpath>
+            <xpath expr="//field[@name='analytic_account_id']" position="after">
+                <field name="x_commitment_date_tracking"/>
+                <field name="hm_so_invoiced_date" force_save="1" readonly="1"/>
+            </xpath>
+            <xpath expr="//field[@name='expected_date']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='effective_date']" position="after">
+                <field name="hm_customer_source_id" string="Source client"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/field[@name='fiscal_position_id']" position="move"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+                <page name="debriefing" string="Débrief" attrs="{'invisible': [('state', 'not in', ['sale','done'])]}">
+                    <group name="group_1">
+                        <field name="hm_is_debrief_done"/>
+                        <field name="hm_debrief_difficulties"/>
+                    </group>
+                </page>
+
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='price_unit']"
+                   position="attributes">
+                <attribute name="attrs">{"readonly": [("qty_invoiced",">",0)]}</attribute>
+                <attribute name="string">Prix U</attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='tax_id']"
+                   position="attributes">
+                <attribute name="string">Taxe</attribute>
+                <attribute name="optional">hide</attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='discount']"
+                   position="attributes">
+                <attribute name="string">Disc. %</attribute>
+                <attribute name="optional">hide</attribute>
+            </xpath>
+            <xpath expr="//field[@name='commitment_date']" position="attributes">
+                <attribute name="attrs">{
+                    'readonly': ['|', ('state2','in',['deposit_to_receive', 'to_invoice', 'invoiced']), ("state","!=","sale")],
+                    'invisible': [('state','not in',['sale','done'])],
+                    'required': [('state','=','sale'), ('state2','not in',('deposit_to_receive' ,'to_organize'))]
+                    }
+                </attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='purchase_price']"
+                   position="after">
+                <field name="bom_count" optional="show" invisible="0"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='purchase_price']"
+                   position="attributes">
+                <attribute name="attrs">{"readonly": [("bom_count",">", 0)]}</attribute>
+                <attribute name="force_save">1</attribute>
+                <attribute name="optional">hide</attribute>
+            </xpath>
+            <xpath expr="//field[@name='date_order']" position="after">
+                <field name="emergency_degrees_id"/>
+                <field name="intervention_deadline_date"/>
+                <field name="customer_availability" readonly="1" force_save="1"/>
+            </xpath>
+
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='sequence']"
+                   position="after">
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='name']"
+                       position="move"/>
+                <widget name="show_description_in_sol_widget" class="show-description-widget"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='name']"
+                   position="attributes">
+                <attribute name="attrs">{'invisible': [('display_type', 'not in', ('line_note', 'line_section') )]}
+                </attribute>
+                <attribute name="optional"></attribute>
+                <attribute name="string"></attribute>
+            </xpath>
+            <xpath expr="//page[@name='notes']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='tax_totals']" position="after">
+                <field name="amount_total_invoiced" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                <field name="amount_total_remaining_to_invoice" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+            </xpath>
+
+            <xpath expr="//button[@name='action_update_taxes']" position="attributes">
+                <attribute name="attrs">{'invisible': [('state2', '!=', 'invoiced'),'|', ('show_update_fpos', '=', False), ('state', 'in', ['done','cancel'])]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+
+    <!--  ***  Tree views ***-->
+    <record id="hm_view_order_tree" model="ir.ui.view">
+        <field name="name">sale.order.tree.customization</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='commitment_date']" position="after">
+                <field name="property_id" string="Property"/>
+                <field name="partner_id" string="Customer"/>
+                <field name="hm_so_manager_id"/>
+                <field name="hm_so_manager_workload_points" sum="Total"/>
+            </xpath>
+            <xpath expr="//field[@name='expected_date']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="attrs">{"readonly": [("state","not in",["draft","sent"])]}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="hm_type" string="Type"/>
+                <field name="hm_imputed_technician_id" string="Technician"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_status']" position="after">
+                <field name="margin" string="Margin" widget="monetary"/>
+            </xpath>
+            <xpath expr="//field[@name='amount_total']" position="after">
+                <field name="amount_total_invoiced" widget='monetary'  sum="Total facturé" options="{'currency_field': 'currency_id'}"  optional="show"/>
+                <field name="amount_total_remaining_to_invoice" widget='monetary'  sum="Total reste à facturer" options="{'currency_field': 'currency_id'}"  optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hm_view_quotation_tree_with_onboarding" model="ir.ui.view">
+        <field name="name">sale.order.tree.customization</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='commitment_date']" position="after">
+                <field name="property_id"/>
+                <field name="partner_id" string="Customer"/>
+                <field name="hm_work_object" string="Object"/>
+                <xpath expr="//field[@name='create_date']" position="move"/>
+            </xpath>
+            <xpath expr="//field[@name='expected_date']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="attrs">{"readonly": [("state","not in",["draft","sent"])]}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="hm_type_1" string="Type" attrs="{}" invisible="1"/>
+                <field name="hm_technician" string="Technician"/>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="margin" sum="Total marge"/>
+            </xpath>
+            <xpath expr="//field[@name='create_date']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
+        </field>
+    </record>
+
+
+    <!--    *** search views *** -->
+
+    <record id="hm_sale_order_search" model="ir.ui.view">
+        <field name="name">hm.sale.order.search</field>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="property_id"/>
+                <field name="name" string="Numéro de SO"/>
+                <field name="partner_id"/>
+                <field name="manager_id" string="Gestionnaire immobilier"/>
+                <field name="order_line" string="Article"
+                       filter_domain="['|', '|', '|',
+                    ('order_line.product_id', 'ilike', self),
+                    ('order_line.product_id.default_code', 'ilike', self),
+                    ('order_line.product_id.sku', 'ilike', self),
+                    ('order_line.product_id.seller_ids.product_code', 'ilike', self)]"/>
+                <field name="sale_order_template_id"/>
+                <field name="user_id"/>
+                <field name="hm_so_manager_id" string="Gestionnaire SO"/>
+                <field name="hm_responsible_id"/>
+                <field name="hm_imputed_technician_id"/>
+
+                <separator/>
+                <filter string="My Quotations" name="my_quotation" domain="[('user_id', '=', uid)]"/>
+                <separator/>
+                <filter string="Devis" name="draft" domain="[('state','in',('draft', 'sent'))]"/>
+                <filter string="Sales Orders" name="sales" domain="[('state','in',('sale','done'))]"/>
+                <separator/>
+                <filter string="Create Date" name="filter_create_date" date="create_date"/>
+
+                <filter domain="[('state','!=','cancel')]" name="studio_filter_Zh91H" string="Devis et ventes"/>
+                <group expand="0" string="Group By">
+                    <filter context="{'group_by': 'property_id'}" name="group_by_property_id" string="Bien immobilier"/>
+                    <filter context="{'group_by': 'partner_id'}" name="group_by_partner_id" string="Client"/>
+                    <filter context="{'group_by': 'date_order'}" name="group_by_date_order"
+                            string="Date de la commande"/>
+                    <filter context="{'group_by': 'commitment_date'}" name="group_by_commitment_date"
+                            string="Date d'intervention"/>
+                    <filter context="{'group_by': 'sale_order_template_id'}" name="group_by_sale_order_template_id"
+                            string="Modèle de devis"/>
+                    <filter context="{'group_by': 'hm_sales_teams_valid_for_analysis'}"
+                            name="group_by_hm_sales_teams_valid_for_analysis"
+                            string="Equipe de vente validé (pour analyse)"/>
+                    <filter context="{'group_by': 'hm_so_customer_source_invoicing'}"
+                            name="group_by_hm_so_customer_source_invoicing" string="Source client SO (facturation)"/>
+                    <filter context="{'group_by': 'user_id'}" name="group_by_user_id" string="Vendeur"/>
+                    <filter context="{'group_by': 'hm_so_manager_id'}" name="group_by_hm_so_manager_id"
+                            string="Gestionnaire SO"/>
+                    <filter context="{'group_by': 'hm_responsible_id'}" name="group_by_hm_responsible_id"
+                            string="Responsable SO"/>
+                    <filter context="{'group_by': 'hm_imputed_technician_id'}" name="group_by_hm_imputed_technician_id"
+                            string="Technicien"/>
+                    <filter context="{'group_by': 'state'}" name="group_by_state"
+                            string="state"/>
+                    <filter context="{'group_by': 'state2'}" name="group_by_state2"
+                            string="state2"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="hm_sale_analyse_custo_ol_search" model="ir.ui.view">
+        <field name="name">hm.sale.order.custo.ol.search</field>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="property_id"/>
+                <field name="name" string="Numéro de SO"/>
+                <field name="partner_id"/>
+                <field name="manager_id" string="Gestionnaire immobilier"/>
+                <field name="order_line" string="Article"/>
+                <field name="sale_order_template_id"/>
+                <field name="user_id"/>
+                <field name="hm_so_manager_id" string="Gestionnaire SO"/>
+                <field name="hm_imputed_technician_id"/>
+
+                <separator/>
+                <filter string="Mes commandes" name="my_quotation" domain="[('user_id', '=', uid)]"/>
+                <filter domain="[('state','!=','cancel')]" name="studio_filter_Zh91H" string="Devis et ventes"/>
+                <group expand="0" string="Group By">
+                    <filter context="{'group_by': 'property_id'}" name="group_by_property_id" string="Bien immobilier"/>
+                    <filter context="{'group_by': 'partner_id'}" name="group_by_partner_id" string="Client"/>
+                    <filter context="{'group_by': 'date_order'}" name="group_by_date_order"
+                            string="Date de la commande"/>
+                    <filter context="{'group_by': 'commitment_date'}" name="group_by_commitment_date"
+                            string="Date d'intervention"/>
+
+                    <filter context="{'group_by': 'sale_order_template_id'}" name="group_by_sale_order_template_id"
+                            string="Modèle de devis"/>
+                    <filter context="{'group_by': 'hm_so_customer_source_invoicing'}"
+                            name="group_by_hm_so_customer_source_invoicing" string="Source client SO (facturation)"/>
+                    <filter context="{'group_by': 'user_id'}" name="group_by_user_id" string="Vendeur"/>
+                    <filter context="{'group_by': 'hm_so_manager_id'}" name="group_by_hm_so_manager_id"
+                            string="Gestionnaire SO"/>
+                    <filter context="{'group_by': 'hm_imputed_technician_id'}" name="group_by_hm_imputed_technician_id"
+                            string="Technicien"/>
+                    <filter context="{'group_by': 'state'}" name="group_by_state" string="state"/>
+                    <filter context="{'group_by': 'state2'}" name="group_by_state2" string="state2"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!--  <record id="studio_customization.odoo_studio_sale_ord_a033d505-778a-41b3-9525-ea6be55664dc" model="ir.ui.view">-->
+    <record id="hm_view_sales_order_filter" model="ir.ui.view">
+        <field name="name">sale.order.list.select.customization</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="string">Numéro de SO</attribute>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="before">
+                <field name="sale_order_template_id"/>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="hm_so_manager_id" string="Gestionnaire SO"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="manager_id" string="Gestionnaire immobilier"/>
+            </xpath>
+            <xpath expr="//filter[@name='my_sale_orders_filter']" position="after">
+                <filter domain="[('state','!=','cancel')]" name="studio_filter_Zh91H" string="Quotations and Sales"/>
+            </xpath>
+            <xpath expr="//filter[@name='order_month']" position="after">
+                <filter context="{'group_by': 'sale_order_template_id'}" name="group_by_sale_order_template_id"
+                        string="Modèle de devis"/>
+                <filter context="{'group_by': 'hm_so_customer_source_invoicing'}" name="studio_group_by_NaXob"
+                        string="Source client SO (facturation)"/>
+                <filter context="{'group_by': 'hm_so_manager_id'}" name="groupby_hm_so_manager_id"
+                        string="Gestionnaire SO"/>
+                <filter context="{'group_by': 'hm_imputed_technician_id'}" name="studio_group_by_Xrhoo"
+                        string="Technicien"/>
+            </xpath>
+            <xpath expr="//field[@name='team_id']" position="replace"/>
+            <xpath expr="//field[@name='analytic_account_id']" position="replace"/>
+        </field>
+    </record>
+
+    <record id="hm_sale_order_view_search_inherit_quotation" model="ir.ui.view">
+        <field name="name">sale.order.search.inherit.quotation.customization</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='campaign_id']" position="replace"/>
+            <xpath expr="//search[1]/field[@name='name']" position="before">
+                <field name="property_id"/>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="hm_imputed_technician_id"/>
+                <field name="manager_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='order_month']" position="after">
+                <filter context="{'group_by': 'date_order'}" name="studio_group_by_66o8k" string="Confirmation Date"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hm_sale_order_view_search_inherit_sale" model="ir.ui.view">
+        <field name="name">sale.order.search.inherit.sale.customization</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_sale"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='customer']" position="before">
+                <filter context="{'group_by': 'property_id'}" name="group_by_property_id" string="Bien immobilier"/>
+            </xpath>
+            <xpath expr="//filter[@name='order_month']" position="after">
+                <filter context="{'group_by': 'commitment_date'}" name="group_by_commitment_date"
+                        string="Date d'intervention"/>
+            </xpath>
+            <xpath expr="//filter[@name='groupby_hm_so_manager_id']" position="before">
+                <xpath expr="//filter[@name='salesperson']" position="move"/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="before">
+                <xpath expr="//field[@name='property_id']" position="move"/>
+            </xpath>
+            <xpath expr="//field[@name='hm_so_manager_id']" position="after">
+                <xpath expr="//field[@name='hm_imputed_technician_id']" position="move"/>
+            </xpath>
+            <xpath expr="//field[@name='sale_order_template_id']" position="before">
+                <xpath expr="//field[@name='order_line']" position="move"/>
+            </xpath>
+            <xpath expr="//filter[@name='studio_group_by_Xrhoo']" position="after">
+                <filter context="{'group_by': 'state'}" name="group_by_state" string="state"/>
+                <filter context="{'group_by': 'state2'}" name="group_by_state2" string="state2"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="filter_devis" model="ir.filters">
+        <field name="name">Quotations</field>
+        <field name="model_id">sale.order</field>
+        <field name="active" eval="True"/>
+        <field name="is_default" eval="False"/>
+        <field name="domain">[('state', 'in', ('draft', 'sent'))]</field>
+        <field name="action_id" ref="sale.action_quotations_with_onboarding"/>
+        <field name="sort">[]</field>
+    </record>
+
+
+    <record id="filter_delivered_orders" model="ir.filters">
+        <field name="name">Commandes livrée</field>
+        <field name="model_id">sale.order</field>
+        <field name="is_default" eval="False"/>
+        <field name="active" eval="True"/>
+        <field name="context">{'orderedBy': [{'name': 'name', 'asc': False}, {'name': 'invoice_status', 'asc': True}],
+            'group_by': ['commitment_date:month']}
+        </field>
+        <field name="domain">[("invoice_status", "=", "invoiced")]
+        </field>
+        <field name="action_id" ref="sale.action_orders"/>
+        <field name="sort">["-name","invoice_status"]</field>
+    </record>
+
+
+    <record id="filter_all2" model="ir.filters">
+        <field name="name">Tous2</field>
+        <field name="model_id">sale.order</field>
+        <field name="active" eval="True"/>
+        <field name="is_default" eval="True"/>
+        <field name="action_id" ref="sale.action_quotations_with_onboarding"/>
+        <field name="sort">["create_date desc"]</field>
+    </record>
+
+    <record id="filter_contracts_in_progress_v2" model="ir.filters">
+        <field name="active" eval="True"/>
+        <field name="context">{'group_by': ['state2']}</field>
+        <field name="action_id" ref="sale.action_orders"/>
+        <field name="domain">[("state2", "!=", "invoiced")]
+        </field>
+        <field name="is_default" eval="True"/>
+        <field name="model_id">sale.order</field>
+        <field name="name">commandes en cours V2</field>
+        <field name="sort">["name desc","invoice_status"]</field>
+    </record>
+
+    <!--  *** Menus *** -->
+
+    <menuitem id="menu_sale_order_line"
+              parent="sale.sale_order_menu"
+              name="Sale Order Line"
+              sequence="3"/>
+
+    <!--  ***  Others *** -->
+
+    <record id="hm_view_sale_order_calendar" model="ir.ui.view">
+        <field name="name">sale.order.calendar.customization</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sale_order_calendar"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//calendar[1]" position="attributes">
+                <attribute name="date_start">commitment_date</attribute>
+            </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='amount_total']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="property_id"/>
+                <field name="partner_onsite_id"/>
+                <field name="hm_imputed_technician_id"/>
+                <field name="hm_work_object"/>
+                <field name="hm_work_object"/>
+                <field name="hm_so_manager_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sale.action_quotations_with_onboarding" model="ir.actions.act_window">
+        <field name="search_view_id" ref="hm_sale.hm_sale_order_search"/>
+    </record>
+</odoo>

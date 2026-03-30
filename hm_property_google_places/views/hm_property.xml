@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_property_google_map_places" model="ir.ui.view">
+        <field name="name">view.hm.property.google.map.places</field>
+        <field name="model">hm.property</field>
+        <field name="inherit_id" ref="hm_property_google_map.view_property_lead_google_map"/>
+        <field name="priority">5500</field>
+        <field name="arch" type="xml">
+            <xpath expr="//google_map" position="attributes">
+                <attribute name="js_class">google_map_places_property_avatar</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_property_google_places_form_inherit" model="ir.ui.view">
+        <field name="name">Google Places property Form</field>
+        <field name="model">hm.property</field>
+        <field name="inherit_id" ref="hm_property.hm_property_form_view"/>
+        <field name="priority">5000</field>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[1]" position="attributes">
+                <attribute name="autofocus"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Google Place Information" >
+                    <group>
+                        <field name="gplace_formatted_address"/>
+                        <field name="gplace_vicinity"/>
+                        <field name="gplace_id" class="oe_inline" colspan="2" placeholder="Place ID" widget="GooglePlacesIdChar"/>
+                        <field name="gplace_url" class="oe_inline" colspan="2" placeholder="Place URL" widget="url"/>
+                        <field name="gplace_type_ids" widget="many2many_tags"/>
+                        <field name="gplace_opening_hours"/>
+                        <label for="gplace_plus_code_compound" string="Plus code"/>
+                        <div>
+                            <field name="gplace_plus_code_global" invisible="1"/>
+                            <field name="gplace_plus_code_compound" nolabel="1" help="A plus code is like a street address for people or places that don't have one"/>
+                            <field name="gplace_plus_code_url" nolabel="1" widget="url"/>
+                        </div>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

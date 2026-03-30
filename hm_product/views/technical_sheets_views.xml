@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_technical_sheets_view_form" model="ir.ui.view">
+        <field name="name">hm.technical.sheets.view.form</field>
+        <field name="model">hm.technical.sheets</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet string="Fiches techniques">
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" required="1" string="Subject"/>
+                        </h1>
+                    </div>
+                    <group name="studio_group_quM01">
+                        <field name="hm_technical_sheet_category" string="Catégorie fiche technique"/>
+                    </group>
+                    <field name="hm_text_technical_info"
+                           string="Informations tech vrac (chatter)"/>
+                    <group name="studio_group_7d2541">
+                        <group name="studio_group_7d2541_left">
+                            <field invisible="1" name="hm_doc_1_filename"/>
+                        </group>
+                        <group name="studio_group_7d2541_right"/>
+                    </group>
+                    <group name="studio_group_2gyaP">
+                        <field filename="hm_doc_1_filename" name="hm_doc_1" string="Doc 1"/>
+                        <field invisible="1" name="hm_doc_2_filename"/>
+                        <field filename="hm_doc_2_filename" name="hm_doc_2_pdf" string="Doc 2 (PDF)"
+                               widget="pdf_viewer"/>
+                        <field invisible="1" name="hm_doc_3_filename"/>
+                        <field filename="hm_doc_3_filename" name="hm_doc_3_pdf" string="Doc 3 (PDF)"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter" name="studio_div_02d781">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="hm_technical_sheets_view_kanban" model="ir.ui.view">
+        <field name="name">hm.technical.sheets.view.kanban</field>
+        <field name="model">hm.technical.sheets</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <kanban string="Fiches techniques" default_group_by="hm_technical_sheet_category">
+                <field name="hm_stage_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_card_content">
+                                <field name="name" modifiers="{}"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="hm_technical_sheets_view_search" model="ir.ui.view">
+        <field name="name">hm.technical.sheets.view.search</field>
+        <field name="model">hm.technical.sheets</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <search string="Fiches techniques">
+                <field name="name" modifiers="{}"/>
+                <field name="hm_text_technical_info" string="Texte info technique"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="hm_technical_sheets_view_tree" model="ir.ui.view">
+        <field name="name">hm.technical.sheets.view.tree</field>
+        <field name="model">hm.technical.sheets</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <tree string="Fiches techniques">
+                <field name="name" modifiers="{}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hm_technical_sheets_action" model="ir.actions.act_window">
+        <field name="name">Fiches techniques</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hm.technical.sheets</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <menuitem id="hm_technical_info_menu"
+              name="Infos techniques"
+              sequence="10"
+              web_icon="fa fa-bolt,#EB5A46,#6B6C70"/>
+
+    <menuitem id="hm_technical_sheets_menu"
+              action="hm_product.hm_technical_sheets_action"
+              parent="hm_product.hm_technical_info_menu"
+              name="Fiches techniques"
+              sequence="10"/>
+
+    <record id="hm_technical_sheets_stages_view_form" model="ir.ui.view">
+        <field name="name">hm.technical.sheets.stages.view.form</field>
+        <field name="model">hm.technical.sheets.stages</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet string="Fiches techniques étapes">
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" required="1"/>
+                        </h1>
+                    </div>
+                    <group name="studio_group_d2bcab">
+                        <group name="studio_group_d2bcab_left"/>
+                        <group name="studio_group_d2bcab_right"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

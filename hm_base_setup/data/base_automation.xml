@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+<data noupdate="1">
+    <!--  <record id="studio_customization.dispo_technicien_mis_eb804e01-9ddc-40d0-a5e8-812cbe812e8a" model="base.automation">-->
+    <record id="available_technician_setting_indispo" model="base.automation">
+        <field name="action_server_id" ref="hm_base_setup.available_technician_setting_indispo_action"/>
+    </record>
+
+    <!--    <record id="studio_customization.dispo_technicien_mis_3c0e9b3a-8240-4d44-8370-0642b9239279" model="base.automation">-->
+    <record id="available_technician" model="base.automation">
+        <field name="action_server_id" ref="hm_base_setup.available_technician_action"/>
+    </record>
+
+    <!--    <record id="studio_customization.imput_activity_techn_a0477613-2584-449c-9f2e-38f44e893928" model="base.automation">-->
+    <record id="input_activity_technician_available_again" model="base.automation">
+        <field name="action_server_id" ref="hm_base_setup.input_activity_technician_available_again_action"/>
+        <field name="active" eval="True"/>
+        <field name="filter_domain" eval="[('hm_technician_availability_id','!=',ref('hm_base_setup.currently_unavailable'))]"></field>
+        <field name="filter_pre_domain" eval="[('hm_technician_availability_id','=',ref('hm_base_setup.currently_unavailable'))]"></field>
+        <field name="last_run" eval="False"/>
+        <field name="trg_date_id" eval="False"/>
+        <field name="trg_date_range" eval="False"/>
+        <field name="trg_date_range_type" eval="False"/>
+        <field name="trigger">on_write</field>
+    </record>
+
+    <record id="send_mail_notif_update_base_auto" model="base.automation">
+        <field name="action_server_id" ref="hm_base_setup.send_mail_notif_update_action_server"/>
+        <field name="active" eval="True"/>
+        <field name="filter_domain">[["write_uid","!=",1]]</field>
+        <field name="filter_pre_domain"></field>
+        <field name="last_run" eval="False"/>
+        <field name="trg_date_id" eval="False"/>
+        <field name="trg_date_range" eval="False"/>
+        <field name="trg_date_range_type" eval="False"/>
+        <field name="trigger">on_write</field>
+    </record>
+</data>
+</odoo>

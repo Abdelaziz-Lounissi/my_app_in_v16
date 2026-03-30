@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="sale_order_view_form_inherit_1" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_order']" position="after">
+                <label for="customer_availability_id"/>
+                <div class="o_field_widget">
+                    <field name="customer_availability_id" options="{'no_open':True,'no_create': True}" readonly="1"
+                           class="oe_inline"/>
+                    <button type="object" icon="fa-arrow-right" class="btn-link" string="Edit"
+                            name="create_update_customer_availability"
+                            help="Create or update customer availability"/>
+                </div>
+
+                <field name="work_type"/>
+                <field name="agremeent_ids" widget="many2many_tags"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+               <field name="state2" widget="statusbar" force_save="1" attrs="{'invisible': [('state', 'not in', ['sale','done'])]}"
+                    options="{'clickable': '1'}"/>
+                <page name="organisation" string="Organisation" modifiers="{}">
+                    <group name="proposal" string="Proposals" modifiers="{}">
+                        <field name="proposal_lines" string="" widget="section_and_note_one2many" mode="tree,kanban">
+                            <kanban class="o_kanban_mobile">
+                                <field name="name"/>
+                                <field name="proposal_datetime"/>
+                                <field name="sale_order_id" invisible="1"/>
+                                <field name="partner_id" invisible="1"/>
+                                <field name="state" invisible="1"/>
+                                <field name="show_confirm_proposal_button" invisible="1"/>
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <div t-attf-class="oe_kanban_card oe_kanban_global_click ps-0 pe-0">
+                                            <t>
+                                                <div class="row g-2">
+
+                                                    <div class="col-3">
+                                                        <img alt="Image du contact"
+                                                             t-att-src="kanban_image('res.partner', 'avatar_128', record.partner_id.raw_value)"
+                                                             style="max-width: 100%;"/>
+                                                    </div>
+
+                                                    <div class="col-7">
+
+
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <t t-out="record.partner_id.value"/>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <t t-if="record.proposal_datetime.value">
+                                                                    Envoyé le
+                                                                    <strong t-out="record.proposal_datetime.value"/>
+                                                                </t>
+                                                            </div>
+                                                        </div>
+
+                                                        <br/>
+
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <field name="technician_availability_ids"
+                                                                       widget="many2many_tags"/>
+                                                            </div>
+
+                                                        </div>
+
+
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <strong t-out="record.state.value"/>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <div class="col-2">
+                                                        <div class="row">
+                                                            <button name="send_whatsapp" class="btn-link" type="object"
+                                                                    icon="fa-mobile"/>
+
+                                                            <button name="send_proposal" string=" "
+                                                                    attrs="{'invisible': [('state', '!=', 'shortlisted')]}"
+                                                                    type="object" icon="fa-send"/>
+
+                                                            <button name="action_confirm_proposal"
+                                                                    attrs="{'invisible': [('show_confirm_proposal_button', '=', False)]}"
+                                                                    class="btn-link" string=" " type="object"
+                                                                    icon="fa-check"/>
+
+                                                            <button name="action_cancel_proposal"
+                                                                    attrs="{'invisible': [('state', 'not in', ('sent', 'interested'))]}"
+                                                                    class="btn-link btn-danger" string=" " type="object"
+                                                                    icon="fa-ban"/>
+
+                                                            <button name="action_unlink_proposal"
+                                                                    attrs="{'invisible': [('state', '!=', 'shortlisted')]}"
+                                                                    class="btn-link btn-danger" string=" " type="object"
+                                                                    icon="fa-trash-o"/>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </t>
+                                        </div>
+                                    </t>
+                                </templates>
+
+                            </kanban>
+                        </field>
+                    </group>
+
+                    <div style="padding-bottom: inherit; color: red; font-weight: bold;"
+                         attrs="{'invisible': ['|', ('state2', '!=', 'deposit_to_receive'), ('send_proposals', '!=', 'in_batches')]}">
+                        Acompte à recevoir, l'envoi automatisé commencera quand le statut d'intervention passera à 'A
+                        organiser'.
+                    </div>
+
+                    <group>
+                        <group>
+                            <button name="action_send_proposals"
+                                    attrs="{'invisible': [('send_proposals', '!=', 'one_shot')]}" type="object"
+                                    string="Send" class="oe_highlight"/>
+                        </group>
+                        <group>
+                            <field name="last_proposal_sent" invisible="1"/>
+                            <field name="send_proposals"/>
+                            <field name="batch_size"
+                                   attrs="{'invisible': [('send_proposals', '=', 'one_shot')]}"/>
+                            <field name="frequency_proposals"
+                                   attrs="{'invisible': [('send_proposals', '=', 'one_shot')]}"/>
+                        </group>
+                    </group>
+
+                    <group name="techniciens" string="Rechercher des techniciens" modifiers="{}">
+                        <group>
+                            <field name="technicien" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="search_agremeent_ids" widget="many2many_tags"
+                                   options="{'no_open': True, 'no_create': True}"/>
+                            <field name="search_work_type" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="search_zip_code" context="{'search_default_commune_principale': 1}"
+                                   options="{'no_open': True, 'no_create': True}"/>
+                        </group>
+                        <field name="selected_tech_choice_ids" invisible="1"/>
+                        <field nolabel="1" name="tech_choice_ids">
+                            <tree string="Techniciens" editable="bottom" options="{'show_selectors': True}"
+                                  create="false" hasSelectors="true" delete="false">
+                                <button name="action_add_technician" type="object" string="Créer une proposition"
+                                        icon="fa-check"
+                                        class="oe_highlight"/>
+                                <field name="id" invisible="1"/>
+                                <field name="sequence" widget="handle"/>
+                                <field name="partner_id" string="Technicien"
+                                       domain="[('hm_technician', '=', True)]" readonly="1"/>
+                                <field name="zip" string="Code postal" readonly="1"/>
+                                <field name="city" readonly="1"/>
+                                <field name="agremeent_ids_tech" string="Agremeents" widget="many2many_tags"
+                                       readonly="1" invisible="1"/>
+                                <field name="work_type_ids_tech" string="Work type" widget="many2many_tags"
+                                       readonly="1" invisible="1"/>
+                                <field name="sale_order_id" string="Quotations" invisible="1"/>
+                                <field name="status" invisible='1' string="Status"/>
+                                <field name="hm_availablity"/>
+                            </tree>
+                        </field>
+
+                    </group>
+                </page>
+            </xpath>
+
+
+        </field>
+    </record>
+
+</odoo>

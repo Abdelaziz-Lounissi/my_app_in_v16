@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!--  <record id="studio_customization.date_intervention_58c9d2a6-584f-4968-8499-f918b17fee45" model="ir.actions.server">-->
+        <record id="hm_action_intervention_date" model="ir.actions.server">
+            <!--            <field name="name">Date intervention: première définition</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.envoi_mail_la_veille_31914a55-5dc5-4bc6-9f9d-c2106049e3a1" model="ir.actions.server">-->
+        <record id="hm_action_sending_email_the_day_before_intervention" model="ir.actions.server">
+            <!--            <field name="name">Envoi mail la veille intervention</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.envoi_mail_veille_in_5173580c-d716-454e-bdf2-ddff28f4c38b" model="ir.actions.server">-->
+        <record id="hm_action_customer_reminder_before_intervention" model="ir.actions.server">
+            <!--            <field name="name">Rappel client veille intervention</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.envoi_confirmation_d_c790d552-4f4b-4540-88f7-cf51a9d66e83" model="ir.actions.server">-->
+        <record id="hm_action_sending_confirmation_intervention_date" model="ir.actions.server">
+            <!--            <field name="name">Envoi confirmation date intervention</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.demande_attestation__0fdf1bed-36c0-4ca0-81e5-3503d81d97d7" model="ir.actions.server">-->
+        <record id="hm_action_so_order_confirmation_vat_certificate_request" model="ir.actions.server">
+            <!--            <field name="name">Confirmation commande SO + demande attestation TVA</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.confirmation_command_bbba7da4-d6d1-4b6a-b5a6-b812a95a4545" model="ir.actions.server">-->
+        <record id="hm_action_order_confirmation_so_without_intervention_date" model="ir.actions.server">
+            <!--            <field name="name">Confirmation commande SO Sans date intervention</field>-->
+        </record>
+
+<!--        TODO : delete me later-->
+        <!-- <record id="studio_customization.confirmation_command_cf8e76cb-0472-443c-8a50-838c8c6c0443" model="ir.actions.server">-->
+<!--        <record id="hm_action_confirmation_intervention_sav" model="ir.actions.server">-->
+            <!--            <field name="name">Confirmation intervention SAV -</field>-->
+<!--        </record>-->
+
+        <!-- <record id="studio_customization.date_intervention_de_d1febf0d-2009-491e-aafe-32268ea59762" model="ir.actions.server">-->
+        <record id="hm_action_confirmation_date_intervention_after_validation" model="ir.actions.server">
+            <!--            <field name="name">Planned intervention ➡️ Send intervention date confirmation to customer by email-->
+            <!--            </field>-->
+        </record>
+
+        <!-- <record id="studio_customization.date_intervention_de_084ec365-0432-4e13-8cf4-774641a60458" model="ir.actions.server">-->
+        <record id="hm_action_intervention_date_defined_after_validation" model="ir.actions.server">
+            <!--            <field name="name">Date intervention définie (après validation)</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.date_intervention_de_1fbc3302-433d-4894-b86b-d1af31c82aa8" model="ir.actions.server">-->
+        <record id="hm_intervention_date_defined_after_validation_action" model="ir.actions.server">
+            <!--            <field name="name">Date intervention définie (après validation)</field>-->
+        </record>
+
+<!--        TODO : delete me later-->
+        <!-- <record id="studio_customization.modification_date_d__47a8bfac-9ff3-4e93-ba94-2bd8c6ff81f9" model="ir.actions.server">-->
+<!--        <record id="hm_action_modification_intervention_date" model="ir.actions.server">-->
+            <!--            <field name="name">Modification date d'intervention</field>-->
+<!--        </record>-->
+
+        <!-- <record id="studio_customization.cocher_date_interven_d9a19582-d364-403a-b375-3003433c8726" model="ir.actions.server">-->
+        <record id="hm_action_check_date_intervention_sent" model="ir.actions.server">
+            <!--            <field name="name">Cocher "date intervention envoyée"</field>-->
+        </record>
+
+<!--        TODO : delete me later-->
+        <!-- <record id="studio_customization.proposition_financem_86b250ce-8d9b-4ebb-8495-15bbefcc683c" model="ir.actions.server">-->
+<!--        <record id="hm_action_izola_financing_proposal" model="ir.actions.server">-->
+            <!--            <field name="name">Proposition financement Izola</field>-->
+<!--        </record>-->
+
+        <!-- <record id="studio_customization.envoi_mail_veille_in_e657abe7-1e85-4804-87df-f19e19f0c12b" model="ir.actions.server">-->
+        <record id="hm_action_imput_activity_briefing_technician_necess" model="ir.actions.server">
+            <!--            <field name="name">Imput activity - Briefing technicien nécess</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.enregistre_la_marge__b8ca97bd-be27-4483-b498-d4f2f61bfd49" model="ir.actions.server">-->
+        <record id="action_saves_the_expected_margin_at_the_time_of_the_order" model="ir.actions.server">
+            <!--            <field name="name">Confirmed SO ➡️ Store margin forecast</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.demande_confirmation_df901354-283e-4aa6-967b-7c2675c342ed" model="ir.actions.server">-->
+        <record id="action_confirmation_request_written_order_task_creation" model="ir.actions.server">
+            <!--            <field name="name">Demande confirmation commande écrite - création tâche</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.passer_le_status_de__86d13496-8f34-4542-9aaf-dce6a8968efc" model="ir.actions.server">-->
+        <record id="action_change_the_status_of_quotation_to_quotation_sent" model="ir.actions.server">
+            <!--            <field name="name">Passer le status de devis à devis envoyé</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.envoyer_devis_rectif_7299ea75-238f-411f-9502-c3ffb61deb43" model="ir.actions.server">-->
+        <!--        <record id="action_send_corrective_quotation_following_1st_intervention" model="ir.actions.server">-->
+        <!--            <field name="name">Envoyer devis rectificatif suite à 1e intervention</field>-->
+        <!--            <field name="model_id" ref="sale.model_sale_order"/>-->
+        <!--            <field name="binding_model_id" ref="sale.model_sale_order"/>-->
+        <!--            <field name="child_ids"-->
+        <!--                   eval="[(6, 0, [ref('hm_sale.action_sending_quotation_mail_following_intervention'), ref('hm_sale.action_change_the_status_of_quotation_to_quotation_sent')])]"/>-->
+        <!--            <field name="state">multi</field>-->
+        <!--        </record>-->
+
+        <!-- <record id="studio_customization.modification_date_cl_469e5584-d38e-4e7d-a4ed-438785c42eaa" model="ir.actions.server">-->
+        <record id="action_customer_date_modification" model="ir.actions.server">
+            <!--            <field name="name">Modification date client</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.modification_date_te_2b445e73-7bba-472e-be3f-45d5f99e9098" model="ir.actions.server">-->
+        <record id="action_tech_date_modification" model="ir.actions.server">
+            <!--            <field name="name">Modification date tech</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.demande_avis_client__a4c03ff3-3691-480c-8221-7a4aef5f2833" model="ir.actions.server">-->
+        <record id="action_request_customer_reviews_on_google" model="ir.actions.server">
+            <!--            <field name="name">Demande avis client sur Google</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.fictif_pour_sous_act_9a050a1f-39ec-4d89-aa4f-6babc5be34a3" model="ir.actions.server">-->
+        <record id="action_fictive_for_sub_actions" model="ir.actions.server">
+            <field name="name">FICTIF pour sous actions</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="child_ids" eval="[(6, 0, [ref('hm_sale.action_change_intervention_date_tech_customer'), ref('hm_sale.action_request_customer_reviews_on_google'), ref('hm_sale.action_change_the_status_of_quotation_to_quotation_sent')])]"/>
+            <field name="sequence">12</field>
+            <field name="state">multi</field>
+        </record>
+
+<!--        TODO : delete me later-->
+        <!-- <record id="studio_customization.mail_client_modif_da_f0f2da2d-abef-4b9a-ba75-43a5846af27c" model="ir.actions.server">-->
+<!--        <record id="action_customer_mail_change_intervention_date" model="ir.actions.server">-->
+            <!--            <field name="name">Mail client: modif date d'intervention</field>-->
+<!--        </record>-->
+
+<!--        TODO : delete me later-->
+        <!-- <record id="studio_customization.envoi_mail_modificat_5d82431e-0b4c-417d-acb0-f6f6e8769dfe" model="ir.actions.server">-->
+<!--        <record id="action_sending_mail_modification_intervention_date_tech_customer" model="ir.actions.server">-->
+            <!--            <field name="name">Envoi mail modification date d'intervention (tech + client)</field>-->
+<!--        </record>-->
+
+        <!-- <record id="studio_customization.confirmation_interve_114396f5-b158-4681-8a87-0a0a27bc4183" model="ir.actions.server">-->
+        <record id="action_reminder_task_request_down_payment_if_sup_400_euro" model="ir.actions.server">
+            <!--            <field name="name">Tâche rappel demander un acompte si &gt; 400€</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.envoi_bon_de_travail_bdb49f0d-ad1a-4b26-b2a5-9c5128a54250" model="ir.actions.server">-->
+        <record id="action_sending_technician_work_order" model="ir.actions.server">
+            <!--            <field name="name">Planned intervention ➡️ Send PO to technician by email</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.rappel_technicien_ve_deea2b83-7091-43c0-b6c5-0aa2a3322a05" model="ir.actions.server">-->
+        <record id="action_technician_reminder_before_intervention_date" model="ir.actions.server">
+            <!--            <field name="name">Rappel technicien veille date intervention</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.rappel_technicien_ve_881d69ae-0bac-478e-9a0c-cdc454ad37bc" model="ir.actions.server">-->
+        <record id="action_technician_callback_5_days_before_intervention_date" model="ir.actions.server">
+            <!--            <field name="name">Rappel technicien 5 jours avant date intervention</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.confirmation_command_be03d8a1-2127-4f9c-9f3c-85603ead5c89" model="ir.actions.server">-->
+        <record id="action_confirmation_order_so_with_intervention_date" model="ir.actions.server">
+            <!--            <field name="name">Confirmation commande SO Avec date intervention</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.confirmation_command_326cc370-ec45-41ed-86f6-a4197e46cf16" model="ir.actions.server">-->
+        <record id="action_confirmation_order_so_with_intervention_date_vat" model="ir.actions.server">
+            <!--            <field name="name">Confirmation commande SO Avec date intervention + TVA</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.confirmation_command_3fe95d94-fb63-47c9-ad4d-8a7479796c16" model="ir.actions.server">-->
+        <record id="action_confirmation_order_so_without_intervention_date_vat" model="ir.actions.server">
+            <!--            <field name="name">Confirmation commande SO Sans date intervention + TVA</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_decla_3f8799b4-433d-4932-ba92-7a5c0a5bb4b4" model="ir.actions.server">-->
+        <record id="action_imput_activity_onss_declaration" model="ir.actions.server">
+            <!--            <field name="name">Technician assigned on intervention >= 10.000€ ➡️ Assign 'Déclaration ONSS' activity to-->
+            <!--                Olivier-->
+            <!--            </field>-->
+        </record>
+
+        <!--        to be deleted after refactoring tests & validation-->
+        <!-- <record id="studio_customization.test_modif_etape_crm_9796922e-53d8-4308-96fb-48b919f07555" model="ir.actions.server">-->
+        <!--        <record id="action_test_modif_step_crm_linked" model="ir.actions.server">-->
+        <!--            &lt;!&ndash;            <field name="name">test modif étape crm lie</field>&ndash;&gt;-->
+        <!--        </record>-->
+
+        <!-- <record id="studio_customization.imput_gestionnaire_s_8784daf3-b14a-4661-a53a-b3aa3882328b" model="ir.actions.server">-->
+        <record id="action_imput_so_manager_when_confirm_so_for_sav_and_visits" model="ir.actions.server">
+            <!--            <field name="name">Sale Order containing 'SAV' or 'Visite' in SO template confirmed ➡️ Assign user who-->
+            <!--                created the SO as intervention manager-->
+            <!--            </field>-->
+        </record>
+
+        <!-- <record id="studio_customization.position_fiscale_so__63876e18-af9a-432c-aa8b-e38547d7d6b6" model="ir.actions.server">-->
+        <record id="action_fiscal_position_so" model="ir.actions.server">
+            <!--            <field name="name">Position fiscale SO = Position fiscale template forcé si existe</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_organ_e98cffae-f95e-455a-8978-cfa7e817412f" model="ir.actions.server">-->
+        <record id="action_imput_activity_specify_sales_team_for_analysis" model="ir.actions.server">
+            <!--            <field name="name">Imput activity - Préciser équipe de vente pour analyse</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.changement_date_d_in_5a0edcd7-048b-44b9-abe6-3b0ce7e77291" model="ir.actions.server">-->
+        <record id="action_change_intervention_date_tech_customer" model="ir.actions.server">
+            <field name="name">Changement date d'intervention (tech + client)</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="child_ids"
+                   eval="[(6, 0, [ref('hm_sale.action_customer_date_modification'), ref('hm_sale.action_tech_date_modification')])]"/>
+            <field name="state">multi</field>
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_techn_161d6f24-8ddf-4abb-8ff9-0c4622889264" model="ir.actions.server">-->
+        <record id="action_imput_activity_technician_put_in_so_chatter" model="ir.actions.server">
+            <!--            <field name="name">Imput Activity - Technicien mis dans chatteur SO = erreur?</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.change_gestionnaire__c4a30c92-015b-474f-94fd-5d4816d0fe64" model="ir.actions.server">-->
+        <record id="action_change_so_manager_when_selecting_imputed_technician_on_so" model="ir.actions.server">
+            <!--            <field name="name">Change Gestionnaire SO as user.id when selecting technicien imputé on SO MARCHE PAS!-->
+            <!--            </field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_organ_8aef3e48-51f2-4f8c-9bfa-3a5b5eba5424" model="ir.actions.server">-->
+        <record id="action_imput_activity_organize_intervention" model="ir.actions.server">
+            <!--            <field name="name">Imput Activity - organiser intervention</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_devis_3f455432-ad24-4648-a7e1-4bf937433aba" model="ir.actions.server">-->
+        <record id="action_imput_activity_quotation_to_be_established_following_visit" model="ir.actions.server">
+            <!--            <field name="name">Imput activity - Devis à établir suite visite</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_defin_ef2f8fa9-811e-4c2e-a4c8-138bdae07a9d" model="ir.actions.server">-->
+        <record id="action_imput_activity_define_source_request_lead" model="ir.actions.server">
+            <!--            <field name="name">Imput Activity - Définir la source de la demande (lead)</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_corri_a8623d21-b5dd-4cbc-a5d1-7c316c177cd1" model="ir.actions.server">-->
+        <record id="action_imput_activity_correct_offer_following_technical_commercial_visit_in_offer_so" model="ir.actions.server">
+            <!--            <field name="name">Imput activity - Corriger offre suite visite technico-commerciale [dans SO offre &gt;-->
+            <!--                visite technique]-->
+            <!--            </field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_devis_2246333a-b113-4af7-a2ab-1346d0452f76" model="ir.actions.server">-->
+        <record id="action_imput_activity_organize_prior_intervention_fernox" model="ir.actions.server">
+            <!--            <field name="name">Sale Order containing 'Fernox cleaning of circuit' confirmed ➡ Assign 'Plan Fernox-->
+            <!--                pre-intervention' to user that created the SO-->
+            <!--            </field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_when__bf1b8c0c-0ab9-4dbd-b498-d4ed66dd0476" model="ir.actions.server">-->
+        <record id="action_imput_activity_state2_egal_to_organize_project_for_salesman" model="ir.actions.server">
+            <!--            <field name="name">Imput Activity - STATE2 = 1 to_organize For salesman - PROJET</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_statu_7aa3b74f-2caa-4719-b144-8a65f66c6e86" model="ir.actions.server">-->
+        <record id="action_imput_activity_state2_egal_to_organize_intervention_for_salesman" model="ir.actions.server">
+            <!--            <field name="name">Imput Activity - STATE2 = 1 to_organize For salesman - INTERVENTION</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_statu_eee2f01b-3d53-44cc-a8b4-bdc8306bf2a5" model="ir.actions.server">-->
+        <record id="action_imput_activity_state2_egal_to_organize_sup_400€_for_so_manager" model="ir.actions.server">
+            <!--            <field name="name">Imput Activity - STATE2 = 1 to_organize For SO_Manager - >400€ - All except PAC</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_statu_476742ea-c175-48e4-b83d-b8b76207edbd" model="ir.actions.server">-->
+        <record id="action_imput_activity_state2_egal_to_organize_inf_400€_for_so_manager" model="ir.actions.server">
+            <!--            <field name="name">Intervention manager assigned on confirmed intervention of less than 400€ ➡️ Assign-->
+            <!--                activity to intervention manager-->
+            <!--            </field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_statu_37bb9d9c-d1a4-462e-8d33-7dc0e01a88c5" model="ir.actions.server">-->
+        <record id="action_imput_activity_state2_egal_in_progress_projects" model="ir.actions.server">
+            <!--            <field name="name">Imput Activity - STATE2 = in_progress - Projets</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_statu_22ab34a8-f86d-4667-8275-2e48187567a6" model="ir.actions.server">-->
+        <record id="action_imput_activity_state2_egal_in_progress_interventions" model="ir.actions.server">
+            <!--            <field name="name">Imput Activity - STATE2 = 4 in_progress - Interventions [SUPPRIM QUAND APP PARTT]</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_statu_36490377-1bb8-4b8d-9743-7e75ffeb8b24" model="ir.actions.server">-->
+        <record id="action_imput_activity_state2_egal_report_sent_project_for_so_manager" model="ir.actions.server">
+            <!--            <field name="name">Imput Activity - STATE2 = 7 A Cloturer - Projet for SO_manager</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_statu_65e02034-0fdc-443a-9856-35a1ce374315" model="ir.actions.server">-->
+        <record id="action_imput_activity_state2_egal_report_sent_project_for_salesman" model="ir.actions.server">
+            <!--            <field name="name">Imput Activity - STATE2 = 7 A cloturer - Projet for Salesman</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_statu_0b6abcc3-09ff-4f62-870b-9710037830aa" model="ir.actions.server">-->
+        <record id="action_imput_activity_state2_egal_closed_project_for_admin" model="ir.actions.server">
+            <!--            <field name="name">Installation with premium > 0 € validated ➡️ Assign 'Send premium documents to client' to-->
+            <!--                Alexis-->
+            <!--            </field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_state_29996e3a-cde7-4173-8bb2-1a0068ae4386" model="ir.actions.server">-->
+        <record id="action_imput_activity_state2_egal_closed_project_for_ol" model="ir.actions.server">
+            <!--            <field name="name">Imput Activity - STATE2 = 8 Closed - For OL</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_state_e8e88730-c513-4646-95ff-6b99c4d25718" model="ir.actions.server">-->
+        <record id="action_imput_activity_state2_egal_report_sent_intervention_for_sO_manager" model="ir.actions.server">
+            <!--            <field name="name">Imput Activity - STATE2 = report_sent - Intervention for SO_manager</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.refactoring_passer_s_e7cb8fe4-5a4e-4b09-b91b-007399197bd9" model="ir.actions.server">-->
+        <record id="action_pass_state2_to_validated_when_check_closed_and_invoiced_intervention" model="ir.actions.server">
+            <!--            <field name="name">Passer state2 en Validé quand on coche intervention cloturée et facturée</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.articles_speciaux_mo_1e684500-dc57-454f-b2b4-5622df622043" model="ir.actions.server">-->
+        <record id="action_special_articles_mo_miscellaneous_descriptive_copy_of_so_on_po" model="ir.actions.server">
+            <!--            <field name="name">Articles spéciaux (MO, divers) &gt; copie descriptif du SO sur PO</field>-->
+        </record>
+
+        <record id="hm_action_send_request_review_google_rating_automation" model="ir.actions.server">
+            <!--            <field name="name">Send Email: Demande avis Google suite rating</field>-->
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,31 @@
+<odoo>
+
+    <record id="hm_picture_library_form_inherit" model="ir.ui.view">
+        <field name="name">hm.picture.library.view.form</field>
+        <field name="model">hm.picture.library</field>
+        <field name="inherit_id" ref="hm_picture_library.hm_picture_library_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='library_pic_lead_info_ids']" position="before">
+                <field nolabel="1" name="library_pic_icr_info_ids" mode="tree">
+                    <tree create="0" delete="0">
+                        <field name="icr_id" readonly="1" force_save="1"/>
+                        <field name="caption" readonly="1" force_save="1"/>
+                    </tree>
+                </field>
+            </xpath>
+
+            <xpath expr="//field[@name='library_pic_so_info_ids']" position="after">
+                <field nolabel="1" name="library_pic_wk_info_ids" mode="tree">
+                    <tree create="0" delete="false">
+                        <field name="wk_id" readonly="1" force_save="1"/>
+                        <field name="caption" readonly="1" force_save="1"/>
+                    </tree>
+                </field>
+            </xpath>
+
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hm_mail_references,access_hm_mail_references,model_hm_mail_references,base.group_user,1,1,1,1
+access_hm_mail_domain,access_hm_mail_domain,model_hm_mail_domain,base.group_user,1,1,1,1

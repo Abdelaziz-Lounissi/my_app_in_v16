@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hm_technician_app_sync,access_hm_technician_app_sync,model_hm_technician_app_sync,,1,1,1,1
+access_hm_technician_app_picture_sync,access_hm_technician_app_picture_sync,model_hm_technician_app_picture_sync,,1,1,1,1
+access_hm_technician_app_document_sync,access_hm_technician_app_document_sync,model_hm_technician_app_document_sync,,1,1,1,1
+access_hm_mobile_token,access_hm_mobile_token,model_hm_mobile_token,,1,1,1,1

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_sale_report_view_pivot" model="ir.ui.view">
+        <field name="name">sale.report.pivot.customization</field>
+        <field name="model">sale.report</field>
+        <field name="inherit_id" ref="sale_enterprise.sale_report_view_pivot"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//pivot[1]" position="attributes">
+                    <attribute name="disable_linking">true</attribute>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <record id="hm_view_order_product_search" model="ir.ui.view">
+        <field name="name">sale.report.search.customization</field>
+        <field name="model">sale.report</field>
+        <field name="inherit_id" ref="sale.view_order_product_search"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//filter[@name='Category']" position="after">
+                    <filter context="{'group_by': 'categ_id'}" name="studio_group_by_lOMvZ" string="Product Category"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+</odoo>

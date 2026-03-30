@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <!--      <record id="studio_customization.default_tree_view_fo_33fc5e41-851c-4628-88b2-cddef55022f3" model="ir.ui.view">-->
+    <record id="hm_view_groups_tree" model="ir.ui.view">
+        <field name="name">res.groups.tree</field>
+        <field name="model">res.groups</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <tree string="Groupes d'accès">
+                <field name="full_name" modifiers="{'readonly': true}"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
+

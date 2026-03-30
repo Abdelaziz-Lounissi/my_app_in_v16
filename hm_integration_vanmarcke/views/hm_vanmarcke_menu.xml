@@ -1,0 +1,34 @@
+<odoo>
+    <menuitem id="vanmarcke_menu_root"
+              name="Van Marcke"
+              web_icon="hm_integration_vanmarcke,static/description/icon.png"
+              sequence="6"/>
+
+    <menuitem id="hm_product_vanmarcke_menu"
+              name="Product Van Marcke"
+              parent="vanmarcke_menu_root"
+              action="action_hm_product_vanmarcke"
+              sequence="2"/>
+
+    <menuitem id="menu_hm_product_vanmarcke_import_history"
+              name="Import History"
+              parent="vanmarcke_menu_root"
+              sequence="3"
+    />
+    <menuitem id="menu_hm_product_vanmarcke_import_history_list"
+              name="Import History List"
+              action="action_hm_product_vanmarcke_import_history"
+              parent="menu_hm_product_vanmarcke_import_history"
+    />
+<!--    <menuitem id="menu_hm_product_vanmarcke_import_history_list_updated"-->
+<!--              name="Import History updated"-->
+<!--              parent="menu_hm_product_vanmarcke_import_history"-->
+<!--              action="action_hm_product_vanmarcke_import_history_updated"-->
+<!--    />-->
+    <menuitem id="menu_hm_product_vanmarcke_import"
+              name="Import"
+              parent="vanmarcke_menu_root"
+              action="action_hm_product_vanmarcke_import"
+              sequence="4"
+    />
+</odoo>

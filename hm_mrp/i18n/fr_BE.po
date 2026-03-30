@@ -1,0 +1,98 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_mrp
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-19 14:03+0000\n"
+"PO-Revision-Date: 2021-10-19 14:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_mrp
+#: model:ir.model,name:hm_mrp.model_mrp_bom
+msgid "Bill of Material"
+msgstr "Nomenclature"
+
+#. module: hm_mrp
+#: model:ir.model,name:hm_mrp.model_mrp_bom_line
+msgid "Bill of Material Line"
+msgstr "Ligne de nomenclature"
+
+#. module: hm_mrp
+#: model_terms:ir.ui.view,arch_db:hm_mrp.hm_mrp_bom_form_view
+msgid "Cout unit"
+msgstr ""
+
+#. module: hm_mrp
+#: model:ir.model.fields,field_description:hm_mrp.field_mrp_bom_line__hm_standard_price
+msgid "Cost"
+msgstr "Coût"
+
+#. module: hm_mrp
+#: model:ir.model.fields,help:hm_mrp.field_mrp_bom_line__hm_standard_price
+msgid ""
+"In Standard Price & AVCO: value of the product (automatically computed in "
+"AVCO In FIFO: value of the last unit that left the stock (automatically "
+"computed).Used to value the product when the purchase cost is not known "
+"(e.g. inventory adjustment).Used to compute margins on sale orders."
+msgstr ""
+
+#. module: hm_mrp
+#: model:ir.model.fields,help:hm_mrp.field_mrp_bom_line__hm_barcode
+msgid "International Article Number used for product identification."
+msgstr "Numéro d'article international (IAN) utilisé pour identifier cet article."
+
+#. module: hm_mrp
+#: model_terms:ir.ui.view,arch_db:hm_mrp.hm_mrp_bom_form_view
+msgid "Sale Price"
+msgstr "Prix de vente"
+
+#. module: hm_mrp
+#: model:ir.model.fields,field_description:hm_mrp.field_mrp_bom_line__hm_lst_price
+msgid "Public Price"
+msgstr "Prix public"
+
+#. module: hm_mrp
+#: model_terms:ir.ui.view,arch_db:hm_mrp.hm_mrp_bom_form_view
+msgid "Ref fourn"
+msgstr "Réf fourn"
+
+#. module: hm_mrp
+#: model:ir.model.fields,field_description:hm_mrp.field_mrp_bom_line__hm_barcode
+msgid "Ref fourn"
+msgstr "Réf fourn"
+
+#. module: hm_mrp
+#: model:ir.model.fields,help:hm_mrp.field_mrp_bom_line__hm_lst_price
+msgid ""
+"The sale price is managed from the product template. Click on the 'Configure"
+" Variants' button to set the extra attribute prices."
+msgstr ""
+"Le prix de vente est géré à partir du modèle de produit. Cliquez sur le "
+"bouton «Configurer les variantes» pour définir les prix des attributs "
+"supplémentaires."
+
+#. module: hm_mrp
+#: model:base.automation,name:hm_mrp.hm_mrp_update_cost_price_base_auto
+#: model:ir.actions.server,name:hm_mrp.hm_mrp_update_cost_price
+msgid "Update variant cost price based on BOM"
+msgstr ""
+
+#. module: hm_mrp
+#: model:base.automation,name:hm_mrp.hm_mrp_update_cost_sale_price_base_auto
+#: model:ir.actions.server,name:hm_mrp.hm_mrp_update_cost_sale_price
+msgid "Update variant cost/sale price based on BOM"
+msgstr ""
+
+#. module: hm_mrp
+#: code:addons/hm_mrp/models/mrp_bom.py:0
+#, python-format
+msgid "Error when trying to update BOM of %s : this article has in its BOM components the article to substitute > Recursion"
+msgstr "Erreur lors de la tentative de mise à jour de la nomenclature de %s : cet article a dans ses composants BOM l'article à substituer > Récursivité"

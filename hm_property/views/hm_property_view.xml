@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="act_hm_property_2_sale_order" model="ir.actions.act_window">
+            <field name="name">Quotations and Sales</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="context">{'search_default_property_id': active_id, 'default_property_id': active_id}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new quotation, the first step of a new sale!
+                </p>
+                <p>
+                    Once the quotation is confirmed by the customer, it becomes a sales order.
+                    <br/>
+                    You will be able to create an invoice and collect the payment.
+                </p>
+            </field>
+        </record>
+
+<!--        <record id="view_hm_property_google_map" model="ir.ui.view">-->
+<!--            <field name="name">view.hm.property.google_map</field>-->
+<!--            <field name="model">hm.property</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <google_map library="geometry" string="Map" lat="latitude" lng="longitude" color="green">-->
+<!--                    <field name="id"/>-->
+<!--                    <field name="latitude"/>-->
+<!--                    <field name="longitude"/>-->
+<!--                    <field name="display_name"/>-->
+<!--                    <field name="manager_id"/>-->
+<!--                    <field name="property_type_id"/>-->
+<!--                    <templates>-->
+<!--                        <t t-name="kanban-box">-->
+<!--                            <div class="oe_kanban_global_click">-->
+<!--                                <div class="oe_kanban_details">-->
+<!--                                    <strong class="o_kanban_record_title oe_partner_heading">-->
+<!--                                        <field name="display_name"/>-->
+<!--                                    </strong>-->
+<!--                                    <div class="o_kanban_tags_section"/>-->
+<!--                                    <ul>-->
+<!--                                        <li t-if="record.property_type_id.raw_value">-->
+<!--                                            <field name="property_type_id"/>-->
+<!--                                        </li>-->
+<!--                                        <li t-if="record.manager_id.raw_value">-->
+<!--                                            <field name="manager_id"/>-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                    <div class="oe_kanban_partner_links"/>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </t>-->
+<!--                    </templates>-->
+<!--                </google_map>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="action_hm_property_google_map" model="ir.actions.act_window">
+            <field name="name">Google Map</field>
+            <field name="res_model">hm.property</field>
+            <field name="view_mode">form</field>
+            <field name="domain">[('id','=', active_id)]</field>
+<!--            <field name="view_id" ref="hm_property.view_hm_property_google_map"/>-->
+        </record>
+
+        <!-- <record id="studio_customization.odoo_studio_hm_prope_2ceb6f4a-cf1c-45ef-980c-0db55c6a92a5" model="ir.ui.view">-->
+        <record id="hm_property_form_view" model="ir.ui.view">
+            <field name="name">hm.property.form</field>
+            <field name="model">hm.property</field>
+            <field name="arch" type="xml">
+                <form class="oe_form_configuration">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <!--<button type="object" class="oe_stat_button" icon="fa-pencil-square-o" name="action_view_partner_invoices" attrs="{'invisible': [('customer', '=', False)]}">-->
+                            <!--<div class="o_form_field o_stat_info">-->
+                            <!--<span class="o_stat_value">-->
+                            <!--<field name="total_invoiced" widget="monetary" options="{'currency_field': 'currency_id'}"/>-->
+                            <!--</span>-->
+                            <!--<span class="o_stat_text">Invoiced</span>-->
+                            <!--</div>-->
+                            <!--</button>-->
+
+                            <button class="oe_stat_button" name="action_open_documents" type="object" icon="fa-files-o">
+                                <field string="Document(s)" name="doc_count" widget="statinfo"/>
+                            </button>
+
+<!--                            <button type="object" class="oe_stat_button" icon="fa-camera" name="action_view_images"-->
+<!--                                    attrs="{'invisible':[('image_count','=',0)]}">-->
+<!--                                <div class="o_form_field o_stat_info">-->
+<!--                                    <field name="image_count" widget="statinfo" string="Image(s)"/>-->
+<!--                                </div>-->
+<!--                            </button>-->
+
+<!--                            <button type="object" class="oe_stat_button" icon="fa-pencil-square-o"-->
+<!--                                    name="action_view_journal_items">-->
+<!--                                <div class="o_form_field o_stat_info">-->
+<!--                                    Moves-->
+<!--                                </div>-->
+<!--                            </button>-->
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button"
+                                       options="{'terminology': 'archive'}"/>
+                            </button>
+                            <button class="oe_stat_button" type="action"
+                                    name="%(hm_property.act_hm_property_2_sale_order)d" icon="fa-usd">
+                                <field string="Sales" name="sale_order_count" widget="statinfo"/>
+                            </button>
+
+                        </div>
+                        <div class="oe_title oe_read_only">
+                            <label for="name" string="Property name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="display_name" placeholder="e.g. 1er arrière" attrs="{}"/>
+                            </h1>
+                        </div>
+                        <div class="oe_edit_only">
+                            <group name="property_name">
+                                <field name="name" placeholder="e.g. 1er arrière" string="Property Name"
+                                       default_focus="1"/>
+                            </group>
+                        </div>
+                        <div id='tenantShow'  class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': [('check_tenant_address', '=', False)]}">
+                            You have two delivery addresses for this tenant, by default the first address chosen as the billing address, but you can modify it.
+                        </div>
+                        <div  id='LandlordShow' class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': [('check_landlord_address', '=', False)]}">
+                            You have two delivery addresses for this landlord, by default the first address chosen as the billing address, but you can modify it.
+                        </div>
+                        <group>
+                            <group>
+                                <field name="property_type_id" attrs="{}" required="1"  options="{'no_create_edit': True}"/>
+                                <field name="parent_id"
+                                       attrs="{'invisible':[('have_a_parent_property','=', False)], 'required':[('hm_type_need_a_parent','=', True)]}"
+                                       context="{'filter_type_by': 'parent','default_street': street, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id , 'default_country_id': country_id , 'default_zip': zip, 'default_landlord_id': landlord_id, 'default_syndic_id': syndic_id, 'default_manager_id': manager_id , 'default_technician_default_id': technician_default_id, 'default_is_residential': is_residential}"/>
+                                <field name="for_rent" attrs="{'invisible':[('property_type_id','=', 1)]}"/>
+                                <field name="hm_type_need_a_parent" string="Type need a parent" attrs="{}"
+                                       invisible="1"/>
+                                <label for="street" string="Address"/>
+                                <div class="o_address_format">
+                                    <div>
+                                        <field name="street" required="1" class="oe_read_only"/>
+                                    </div>
+                                    <field name="street_name" placeholder="Street Name..." class="oe_edit_only"
+                                           widget="gplaces_address_autocomplete"
+                                           attrs="{'readonly':[('have_a_parent_property','=',  True)]}"
+                                           options="{'lat': 'latitude', 'lng': 'longitude', 'fillfields': {'street_name': 'route', 'street_number': 'street_number', 'street2': ['administrative_area_level_3', 'administrative_area_level_4', 'administrative_area_level_5'], 'city': 'locality', 'zip': 'postal_code', 'state_id': 'administrative_area_level_1', 'country_id': 'country'}, 'address_form': {'street_name': 'street_name', 'street_number': 'street_number', 'street2': 'street2', 'city': 'city', 'zip': 'zip', 'state_id': 'state_id', 'country_id': 'country_id'}, 'display_name': 'street_name', 'force_override': true}"/>
+                                    <div class="oe_edit_only o_row">
+                                        <label for="street_number"/>
+                                        <span></span>
+                                        <field name="street_number" attrs="{'readonly':[('have_a_parent_property','=',  True)]}"/>
+                                        <label for="street_number2" invisible="1"/>
+                                        <field name="street_number2" invisible="1"/>
+                                    </div>
+                                    <field name="street2" placeholder="Floor, apartment, block" class="o_address_street"
+                                           attrs="{'required':[('have_a_parent_property','=',  True)]}" force_save="1"/>
+                                    <field name="city" required="1" placeholder="City" class="o_address_city"
+                                           attrs="{'readonly':[('have_a_parent_property','=',  True)]}" force_save="1"/>
+                                    <field name="state_id" class="o_address_state" placeholder="State"
+                                           attrs="{'readonly':[('have_a_parent_property','=',  True)]}" force_save="1"
+                                           options="{'no_open': True}"/>
+                                    <field name="zip" required="1" placeholder="ZIP" class="o_address_zip"
+                                           attrs="{'readonly':[('have_a_parent_property','=',  True)]}" force_save="1"/>
+                                    <field name="country_id" placeholder="Country" class="o_address_country"
+                                           attrs="{'readonly':[('have_a_parent_property','=',  True)]}" force_save="1"
+                                           options="{'no_open': True, 'no_create': True}"/>
+                                </div>
+
+                                <field name="customer_reference"/>
+
+                            </group>
+                            <group>
+                                <field name="have_a_parent_property" invisible="1"/>
+                                <field name="is_parent" invisible="1"/>
+                                <field name="is_residential" invisible="1"/>
+                                <field name="check_tenant_address" invisible="1"/>
+                                <field name="check_landlord_address" invisible="1"/>
+                                <field name="tenant_id"
+                                       attrs="{'invisible':[('for_rent','=', False)], 'required':[('for_rent','=', True), ('landlord_id','=', False), ('is_parent','=',  False)]}"
+                                       context="{'default_is_tenant': True, 'default_street': street, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id , 'default_country_id': country_id , 'default_zip': zip, 'auto_addresse_locataire': True }"/>
+
+                                <field name="landlord_id"
+                                       attrs="{'required':[('is_parent','=',  False), ('for_rent','=',  False)]}"
+                                       context="{'emails_to_ignore_check':context.get('emails_to_ignore_check', False),'crm_email':context.get('crm_email', False),'crm_phone':context.get('crm_phone', False),'default_for_rent': for_rent, 'street': street, 'street2': street2, 'city': city, 'state_id': state_id , 'country_id': country_id , 'zip': zip }"/>
+
+                                <field name="syndic_id" context="{'default_is_syndic': True}"
+                                       attrs="{'readonly':[('have_a_parent_property','=',  True)], 'invisible':[('is_parent','=',  False)]}"/>
+                                <field name="manager_id" attrs="{'required':[]}"
+                                       context="{'default_is_manager': True}"/>
+                                <field name="technician_default_id" domain="[('hm_technician','=',True)]"/>
+                                <field name="work_billing_id" attrs="{'required':[('is_parent','=',  False)]}"/>
+                                <field name="maintenance_billing_id" attrs="{'required':[('is_parent','=',  False)]}"/>
+                                <field name="build_year" force_save="1"
+                                       attrs="{'readonly':[('have_a_parent_property','=',  True)]}"/>
+                                <field name="batiment_age"/>
+                                <field name="qr_code"/>
+
+                            </group>
+                        </group>
+                        <group name="studio_group_KN0Ex"/>
+                        <notebook colspan="4">
+                            <field name="child_count" invisible="1"/>
+                            <page name="page_technique" string="Technique" autofocus="autofocus">
+                                <group name="studio_group_eaquN">
+                                    <group name="studio_group_eaquN_left">
+                                        <field name="hm_boiler_nameplate"
+                                               string="Plaquette signalétique chaudière"/>
+                                    </group>
+                                    <group name="studio_group_eaquN_right"/>
+                                </group>
+                            </page>
+                            <page name="sub_properties" string="Sub Propertie(s)"
+                                  attrs="{'invisible':[('have_a_parent_property','=', True)]}">
+                                <field name="child_ids" mode="kanban"
+                                       context="{'filter_type_by': 'child','default_parent_id': active_id, 'default_street': street, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id , 'default_country_id': country_id , 'default_zip': zip,                                        'default_landlord_id': landlord_id, 'default_syndic_id': syndic_id, 'default_manager_id': manager_id , 'default_technician_default_id': technician_default_id }"
+                                       on_change="1" modifiers="{}"/>
+                            </page>
+                            <page name="general_information" string="General Information">
+                                <group name="general_info">
+                                    <group>
+                                        <label for="surface" string="Surface"/>
+                                        <div class="o_row">
+                                            <field name="surface"/>
+                                            m2
+                                        </div>
+                                        <label for="quotity" string="Quotity"/>
+                                        <div class="o_row">
+                                            <field name="quotity"/>
+                                        </div>
+                                        <field name="smoke_alarms"/>
+                                        <field name="partner_id" attrs="{}" />
+                                    </group>
+                                    <group>
+                                        <field name="peb_certificate"/>
+                                        <label for="peb_conso" string="PEB Consumption"/>
+                                        <div class="o_row">
+                                            <field name="peb_conso"/>
+                                            Kwh/m2
+                                        </div>
+                                        <field name="peb_category"/>
+                                        <field name="peb_certificator_id"/>
+                                        <field name="peb_expiration_date"/>
+                                    </group>
+                                    <!--<group>-->
+                                    <!--<field name="counter_ids">-->
+                                    <!--<tree editable="bottom">-->
+                                    <!--<field name="counter_id"-->
+                                    <!--context="{'default_property_ids': [{'property_id':parent, 'distribution_key':distribution_key}]}"/>-->
+                                    <!--<field name="distribution_key"/>-->
+                                    <!--</tree>-->
+                                    <!--</field>-->
+                                    <!--</group>-->
+                                    <!--<group>-->
+                                    <!--<field name="in_renovation"/>-->
+                                    <!--</group>-->
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--  <record id="studio_customization.odoo_studio_hm_prope_4df3baeb-1603-4ca6-b52a-56bb983cc499" model="ir.ui.view"-->
+        <record id="hm_property_list_view" model="ir.ui.view">
+            <field name="name">hm.property.tree</field>
+            <field name="model">hm.property</field>
+            <field name="arch" type="xml">
+                <tree string="Properties">
+                    <field name="display_name"/>
+                    <field name="city" required="1"/>
+                    <field name="property_type_id"/>
+                    <field name="tenant_id"/>
+                    <field name="acp_id"/>
+                    <field name="landlord_id"/>
+                    <field name="manager_id"/>
+                    <field name="create_date"/>
+                    <!--<field name="is_empty"/>-->
+                    <!--<field name="to_enter" invisible="1"/>-->
+                    <field name="peb_expiration_date" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- <record id="studio_customization.odoo_studio_hm_prope_e0db97e4-4f13-4146-9f4a-dc324fa72610" model="ir.ui.view">-->
+        <record id="hm_property_search_view" model="ir.ui.view">
+            <field name="name">hm.property.search</field>
+            <field name="model">hm.property</field>
+            <field name="arch" type="xml">
+                <search string="Properties">
+                    <field name="display_name" string="Property"/>
+                    <field name="landlord_id"/>
+                    <field name="parent_id"/>
+                    <field name="tenant_id"/>
+                    <field name="manager_id"/>
+                    <field name="syndic_id"/>
+<!--                    <filter name="is_empty" string="Empty" domain="[('is_empty','=', True)]"/>-->
+<!--                    <filter name="to_enter" string="To Enter" domain="[('to_enter','=', True)]"/>-->
+                    <filter name="peb_empty" string="PEB to Enter" domain="[('peb_expiration_date','=', False)]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Parent Property" name="group_by_parent" context="{'group_by':'parent_id'}"/>
+                        <filter string="Landlord" name="group_by_landlord" context="{'group_by':'landlord_id'}"/>
+                        <filter string="City" name="group_by_city" context="{'group_by':'city'}"/>
+                        <filter string="Manager" name="group_by_manager" context="{'group_by':'manager_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="hm_property_action" model="ir.actions.act_window">
+            <field name="name">Properties</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hm.property</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="search_view_id" ref="hm_property_search_view"/>
+        </record>
+
+        <menuitem id="hm_property_menu_root" name="Property" web_icon="hm_property,static/description/app_icon.png"
+                  sequence="5"/>
+
+        <menuitem id="menu_hm_property" parent="hm_property_menu_root" name="Properties" action="hm_property_action"/>
+
+<!--        <menuitem id="menu_sale_hm_property" parent="sale.sale_order_menu" name="Properties" sequence="5"-->
+<!--                  action="hm_property_action"/>-->
+
+    </data>
+</odoo>

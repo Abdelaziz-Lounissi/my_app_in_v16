@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- <record id="studio_customization.envoi_mail_veille_in_f4f6803f-2f67-418f-a122-0723574f0e09" model="base.automation">-->
+        <record id="hm_customer_reminder_before_intervention" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.hm_action_customer_reminder_before_intervention"/>
+        </record>
+
+        <!--  <record id="studio_customization.confirmation_command_0695c1d5-61bf-4d8b-aeae-57469adce1f5" model="base.automation">-->
+        <record id="hm_order_confirmation_so_without_intervention_date" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.hm_action_order_confirmation_so_without_intervention_date"/>
+        </record>
+
+        <!--  <record id="studio_customization.date_intervention_de_4746ef81-4034-4c46-8c89-1b4e17042eef" model="base.automation">-->
+        <record id="hm_confirmation_date_intervention_after_validation" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.hm_action_confirmation_date_intervention_after_validation"/>
+        </record>
+
+        <!--  <record id="studio_customization.envoi_mail_veille_in_f10185f9-999f-4d85-8df7-7667572b7762" model="base.automation">-->
+        <record id="hm_imput_activity_briefing_technician_necess" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.hm_action_imput_activity_briefing_technician_necess"/>
+        </record>
+
+        <!-- <record id="studio_customization.enregistre_la_marge__faa7846d-7ba8-440f-9c94-14821e6e0a97" model="base.automation">-->
+        <record id="hm_saves_the_expected_margin_at_the_time_of_the_order" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_saves_the_expected_margin_at_the_time_of_the_order"/>
+        </record>
+
+        <!-- <record id="studio_customization.envoi_bon_de_travail_4b528caa-1e26-4adc-bf34-b34aa78074cc" model="base.automation">-->
+        <record id="hm_action_sending_technician_work_order" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_sending_technician_work_order"/>
+        </record>
+
+        <!--  <record id="studio_customization.rappel_technicien_ve_34f9980f-579d-43ff-b140-3f914977c0b6" model="base.automation">-->
+        <record id="hm_technician_reminder_before_intervention_date" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_technician_reminder_before_intervention_date"/>
+        </record>
+
+<!--        TODO : delete me later-->
+        <!--  <record id="studio_customization.rappel_technicien_ve_e23d13ac-2034-4608-8dd8-fbb6ebfc1514" model="base.automation">-->
+<!--        <record id="hm_technician_callback_5_days_before_intervention_date" model="base.automation">-->
+<!--            <field name="action_server_id" ref="hm_sale.action_technician_callback_5_days_before_intervention_date"/>-->
+<!--        </record>-->
+
+        <!--  <record id="studio_customization.confirmation_command_a2ed1710-b22a-4b8c-97b8-ec79363eaa80" model="base.automation">-->
+        <record id="hm_confirmation_order_so_with_intervention_date" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_confirmation_order_so_with_intervention_date"/>
+        </record>
+
+        <!--  <record id="studio_customization.confirmation_command_c575bf67-fe62-4ef1-8bea-6758d9876d9d" model="base.automation">-->
+        <record id="hm_confirmation_order_so_with_intervention_date_vat" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_confirmation_order_so_with_intervention_date_vat"/>
+        </record>
+
+        <!--  <record id="studio_customization.confirmation_command_a4227728-9de8-43ef-9a01-b2033fc5f539" model="base.automation">-->
+        <record id="hm_confirmation_order_so_without_intervention_date_vat" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_confirmation_order_so_without_intervention_date_vat"/>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_decla_31d01fb5-14da-4cc8-992d-8dae5c882654" model="base.automation">-->
+        <record id="hm_imput_activity_onss_declaration" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_imput_activity_onss_declaration"/>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_organ_133171a8-3411-43f5-af36-68cee5efd154" model="base.automation">-->
+        <record id="imput_activity_specify_sales_team_for_analysis" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_imput_activity_specify_sales_team_for_analysis"/>
+        </record>
+
+        <!-- <record id="studio_customization.imput_gestionnaire_s_4d573cea-0f0f-4d83-b903-a37f21d15883" model="base.automation">-->
+        <record id="hm_imput_so_manager_when_confirm_so_for_sav_and_visits" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_imput_so_manager_when_confirm_so_for_sav_and_visits"/>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_devis_56449637-c438-403f-b69e-222ef6188b01" model="base.automation">-->
+        <record id="hm_imput_activity_quotation_to_be_established_following_visit" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_imput_activity_quotation_to_be_established_following_visit"/>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_devis_16d63f95-cb81-435e-b586-7e5598e99b3f" model="base.automation">-->
+        <record id="hm_imput_activity_organize_prior_intervention_fernox" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_imput_activity_organize_prior_intervention_fernox"/>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_when__83227f40-bdd4-486d-9d71-b4952884ecab" model="base.automation">-->
+        <record id="hm_imput_activity_state2_egal_to_organize_project_for_salesman" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_imput_activity_state2_egal_to_organize_project_for_salesman"/>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_statu_eda276c8-acd1-46f3-8c62-ef35c5843a11" model="base.automation">-->
+        <record id="hm_imput_activity_state2_egal_to_organize_intervention_for_salesman" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_imput_activity_state2_egal_to_organize_intervention_for_salesman"/>
+
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_statu_1ce30ecf-adbc-4359-8e01-57956323fb0c" model="base.automation">-->
+        <record id="hm_imput_activity_state2_egal_to_organize_sup_400€_for_so_manager" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_imput_activity_state2_egal_to_organize_sup_400€_for_so_manager"/>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_statu_696c5d64-43b4-4a6c-9f08-97c6fd4f9c47" model="base.automation">-->
+        <record id="hm_imput_activity_state2_egal_to_organize_inf_400€_for_so_manager" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_imput_activity_state2_egal_to_organize_inf_400€_for_so_manager"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_statu_97d01f51-8f66-4011-a895-f55338151757" model="base.automation">-->
+        <record id="hm_imput_activity_state2_egal_in_progress_projects" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_imput_activity_state2_egal_in_progress_projects"/>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_statu_a21b9881-7904-4a94-b890-cfea1bd9a4ee" model="base.automation">-->
+        <record id="hm_imput_activity_state2_egal_in_progress_interventions" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_imput_activity_state2_egal_in_progress_interventions"/>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_statu_1f1e4876-7a69-45d2-8095-618b80dc6612" model="base.automation">-->
+        <record id="hm_imput_activity_state2_egal_report_sent_project_for_so_manager"
+                model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_imput_activity_state2_egal_report_sent_project_for_so_manager"/>
+
+        </record>
+
+<!--        TODO : delete me later-->
+        <!--  <record id="studio_customization.imput_activity_statu_75d6932f-818c-4f63-b532-2ba86725dd06" model="base.automation">-->
+<!--        <record id="hm_imput_activity_state2_egal_report_sent_project_for_salesman" model="base.automation">-->
+<!--            <field name="action_server_id" ref="hm_sale.action_imput_activity_state2_egal_report_sent_project_for_salesman"/>-->
+<!--        </record>-->
+
+        <!--  <record id="studio_customization.imput_activity_statu_b9bb6211-85df-4521-af9a-75c122f74e02" model="base.automation">-->
+        <record id="hm_imput_activity_state2_egal_closed_project_for_admin" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_imput_activity_state2_egal_closed_project_for_admin"/>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_state_8df91d3b-35ec-487f-ba84-ad114d21f392" model="base.automation">-->
+        <record id="hm_imput_activity_state2_egal_closed_project_for_ol" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_imput_activity_state2_egal_closed_project_for_ol"/>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_state_5aef66ee-191d-43bf-a996-371ff5c6cb72" model="base.automation">-->
+        <record id="hm_imput_activity_state2_egal_report_sent_intervention_for_sO_manager" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.action_imput_activity_state2_egal_report_sent_intervention_for_sO_manager"/>
+        </record>
+
+
+        <record id="hm_automation_send_request_review_google_rating" model="base.automation">
+            <field name="action_server_id" ref="hm_sale.hm_action_send_request_review_google_rating_automation"/>
+        </record>
+
+    </data>
+</odoo>

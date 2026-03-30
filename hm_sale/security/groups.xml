@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_show_workload_points_in_minutes" model="res.groups">
+        <field name="name">Show workload points in minutes</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="group_modifier_dates_limites_organisation_cloture_so" model="res.groups">
+        <field name="name">Modifier dates limites d'organisation et de clôture SO</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+</odoo>

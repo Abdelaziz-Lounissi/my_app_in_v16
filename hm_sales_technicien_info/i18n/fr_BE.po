@@ -1,0 +1,1092 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_sales_technicien_info
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e-20230110\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-26 16:55+0000\n"
+"PO-Revision-Date: 2023-09-26 16:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__sale_order__batch_size__1
+msgid "1 technician at a time"
+msgstr "1 technicien à la fois"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__sale_order__batch_size__2
+msgid "2 technicians at a time"
+msgstr "2 techniciens à la fois"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__sale_order__batch_size__3
+msgid "3 technicians at a time"
+msgstr "3 techniciens à la fois"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__techniciens_choice__old_status__traiter
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__techniciens_choice__status__traiter
+msgid "A traiter"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__accepted_datetime
+msgid "Accepted Date"
+msgstr "Intervention organisée le"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__accepted_by_id
+msgid "Accepted by"
+msgstr "Intervention organisée par"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__techniciens_choice__old_status__accepte
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__techniciens_choice__status__accepte
+msgid "Accepté"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement_region__hm_access_profession_id
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_work_type__hm_access_profession_id
+msgid "Accès à la profession"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#. openerp-web
+#: code:addons/hm_sales_technicien_info/static/src/xml/import_technicien_button_views.xml:0
+#, python-format
+msgid "Add"
+msgstr "Ajouter"
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.sale_order_view_form_inherit_1
+msgid "Add Technician"
+msgstr "Créer des propositions"
+
+#. module: hm_sales_technicien_info
+#: model:ir.actions.act_window,name:hm_sales_technicien_info.hm_agrement_action
+#: model:ir.model,name:hm_sales_technicien_info.model_hm_agreement
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement_region__agreement_id
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_product_product__agreement_id
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_product_template__agreement_id
+#: model:ir.ui.menu,name:hm_sales_technicien_info.menu_hm_agrement_action
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.agreement_region_view_form
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.agreement_region_view_tree
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.hm_agreement_form_view
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.hm_agreement_list_view
+msgid "Agreement"
+msgstr "Agrément"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model,name:hm_sales_technicien_info.model_hm_agreement_region
+msgid "Agreement Region"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_sale_order__search_agremeent_ids
+msgid "Agreements"
+msgstr "Agréments"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_res_partner__agremeent_ids_tech
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_res_users__agremeent_ids_tech
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_sale_order__agremeent_ids
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__agremeent_ids_tech
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.sale_order_view_form_inherit_1
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.techniciens_choice_form_view
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.techniciens_choice_list_view
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_res_partner_form_inherit
+msgid "Agremeents"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_partner_tree_for_popup
+msgid "Agréments"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.actions.act_window,name:hm_sales_technicien_info.hm_agreement_region_action
+#: model:ir.ui.menu,name:hm_sales_technicien_info.hm_approvals_and_skills_menu
+msgid "Agréments et compétences"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.ui.menu,name:hm_sales_technicien_info.menu_technician_all_intervention_proposals
+msgid "All Intervention Proposals"
+msgstr "Toutes les propositions"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_customer_availability__allow_availabilities_outside_prefs
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__allow_availabilities_outside_prefs
+msgid "Allow Technician to Enter Availabilities Outside Client Preferences"
+msgstr ""
+"Autoriser le technicien à introduire des disponibilités en-dehors des "
+"préférences du client"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__techniciens_choice__old_status__annuler
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__techniciens_choice__status__annuler
+msgid "Annulé"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_technician_intervention_proposal_form
+msgid "Availabilities"
+msgstr "Disponibilités"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__availability
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__hm_availablity
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.customer_availability_view_form
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.customer_availability_view_tree
+msgid "Availability"
+msgstr "Disponibilité"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__availability_last_updated
+msgid "Availability Last Updated"
+msgstr "Disponibilités mises à jour le"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__availability_color
+msgid "Availability color"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__availability_color__blue
+msgid "Blue"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.hm_proposal_warning_wizard_form_view
+msgid "Cancel"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_technician_intervention_proposal_tree
+msgid "Cancel proposal"
+msgstr "Annuler la proposition"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_technician_intervention_proposal__state__canceled
+msgid "Canceled"
+msgstr "Annulée"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__canceled_datetime
+msgid "Canceled Date"
+msgstr "Annulée le"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__canceled_by_id
+msgid "Cancelled by"
+msgstr "Annulée par"
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.hm_category_competence_form_view
+msgid "Categorie_competence"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model,name:hm_sales_technicien_info.model_hm_category_competence
+msgid "Category competence"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement_region__hm_category_competence_id
+msgid "Catégorie de compétence"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.sale_order_view_form_inherit_1
+msgid "Code postal"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_sale_order__search_zip_code
+msgid "Code postale"
+msgstr "Code postal"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__my_color
+msgid "Color Index"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.hm_proposal_warning_wizard_form_view
+msgid "Confirm"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_technician_intervention_proposal_tree
+msgid "Confirm proposal"
+msgstr "Confirmer"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model,name:hm_sales_technicien_info.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement__create_uid
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement_region__create_uid
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_category_competence__create_uid
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_customer_availability__create_uid
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_proposal_warning_wizard__create_uid
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__create_uid
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__create_uid
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_work_type__create_uid
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__create_uid
+msgid "Created by"
+msgstr "Créée par"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement__create_date
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement_region__create_date
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_category_competence__create_date
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_customer_availability__create_date
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_proposal_warning_wizard__create_date
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__create_date
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__create_date
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_work_type__create_date
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__create_date
+msgid "Created on"
+msgstr "Créée le"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__availability__custom
+msgid "Custom"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model,name:hm_sales_technicien_info.model_hm_customer_availability
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__customer_availability_id
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__hm_customer_availability_id
+msgid "Customer Availability"
+msgstr "Disponiblité client"
+
+#. module: hm_sales_technicien_info
+#: model:ir.actions.act_window,name:hm_sales_technicien_info.hm_customer_availability_action
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_customer_availability__cust_availability_ids
+msgid "Customer availability"
+msgstr "Disponibilités client"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__date
+msgid "Date"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__date_from
+msgid "Date from"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__intervention_deadline_date
+msgid "Date limite d'intervention"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__date_to
+msgid "Date to"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,help:hm_sales_technicien_info.field_hm_technician_intervention_proposal__tech_first_answer_datetime
+msgid ""
+"Date à laquelle le technicien a décliné ou renseigné ses disponibilités pour"
+" la première fois"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,help:hm_sales_technicien_info.field_hm_technician_intervention_proposal__declined_datetime
+msgid "Date à laquelle le technicien a refusé la proposition"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,help:hm_sales_technicien_info.field_hm_technician_intervention_proposal__availability_last_updated
+msgid ""
+"Date à laquelle les disponibilités du technicien ont été mises à jour pour "
+"la dernière fois"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__dayofweek
+msgid "Day of Week"
+msgstr "Jour de la semaine"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__declined_datetime
+msgid "Declined Date"
+msgstr "Refusée le"
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_technician_intervention_proposal_tree
+msgid "Delete proposal"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement__display_name
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement_region__display_name
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_category_competence__display_name
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_customer_availability__display_name
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_proposal_warning_wizard__display_name
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__display_name
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__display_name
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_work_type__display_name
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__display_name
+msgid "Display Name"
+msgstr "Afficher Nom"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_sale_order__customer_availability_id
+msgid "Disponibilités du client"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__availability__daytime
+msgid "During the day"
+msgstr "En journée"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__availability__all_day
+msgid "During the day and evening"
+msgstr "En journée et en soirée"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__urgency_level
+msgid "Emergency degrees"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__sale_order__frequency_proposals__10_min
+msgid "Every 10 minutes"
+msgstr "Toutes les 10 minutes"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__sale_order__frequency_proposals__1440_min
+msgid "Every 24 hours"
+msgstr "Toutes les 24 heures"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__sale_order__frequency_proposals__30_min
+msgid "Every 30 minutes"
+msgstr "Toutes les 30 minutes"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__sale_order__frequency_proposals__240_min
+msgid "Every 4 hours"
+msgstr "Toutes les 4 heures"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__sale_order__frequency_proposals__60_min
+msgid "Every hour"
+msgstr "Toutes les heures"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_sale_order__search_work_type
+msgid "Find Work type"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__tech_first_answer_datetime
+msgid "First technician's response"
+msgstr "Première réponse technicien le"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_sale_order__frequency_proposals
+msgid "Frequency of proposals"
+msgstr "Fréquence des propositions"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__dayofweek__4
+msgid "Friday"
+msgstr "Vendredi"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__availability_color__green
+msgid "Green"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_hm_technician_intervention_proposal_search
+msgid "Group By"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_res_partner__agremeent_reg_ids
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_res_users__agremeent_reg_ids
+msgid "HM Agreements"
+msgstr "Agréments"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__hm_availablity_1
+msgid "HM Availability"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_category_competence__hm_name
+msgid "HM Name"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement__id
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement_region__id
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_category_competence__id
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_customer_availability__id
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_proposal_warning_wizard__id
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__id
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__id
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_work_type__id
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__id
+msgid "ID"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,help:hm_sales_technicien_info.field_hm_technician_intervention_proposal__allow_availabilities_outside_prefs
+msgid ""
+"If I have client availability, I will retrieve that value; otherwise, I will"
+" return True."
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__sale_order__send_proposals__in_batches
+msgid "In batches"
+msgstr "Par lots"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__availability__afternoon
+msgid "In the afternoon"
+msgstr "En après-midi"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__availability__afternoon_evening
+msgid "In the afternoon and in the evening"
+msgstr "En après-midi et en soirée"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__availability__evening
+msgid "In the evening"
+msgstr "En soirée"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__availability__morning
+msgid "In the morning"
+msgstr "En matinée"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_technician_intervention_proposal__state__interested
+msgid "Interested"
+msgstr "Technicien intéressé"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__interested_datetime
+msgid "Interested Date"
+msgstr "Date intérêt technicien"
+
+#. module: hm_sales_technicien_info
+#: model:ir.actions.act_window,name:hm_sales_technicien_info.action_technician_all_intervention_proposals
+#: model:ir.actions.act_window,name:hm_sales_technicien_info.action_technician_intervention_proposals
+#: model:ir.ui.menu,name:hm_sales_technicien_info.menu_root_technician_intervention_proposals
+msgid "Intervention Proposals"
+msgstr "Propositions d'intervention"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_sale_order__proposal_lines
+msgid "Intervention proposal to the technician"
+msgstr "Propositions d'intervention au technicien"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_sale_order__notify_so_manager_byproposals
+msgid "Is SO Manager Notified By Proposals"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_sale_order__last_proposal_sent
+msgid "Last Proposal Sent"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement____last_update
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement_region____last_update
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_category_competence____last_update
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_customer_availability____last_update
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_proposal_warning_wizard____last_update
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar____last_update
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal____last_update
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_work_type____last_update
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement__write_uid
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement_region__write_uid
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_category_competence__write_uid
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_customer_availability__write_uid
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_proposal_warning_wizard__write_uid
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__write_uid
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__write_uid
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_work_type__write_uid
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement__write_date
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement_region__write_date
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_category_competence__write_date
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_customer_availability__write_date
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_proposal_warning_wizard__write_date
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__write_date
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__write_date
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_work_type__write_date
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: hm_sales_technicien_info
+#: code:addons/hm_sales_technicien_info/models/sale_order.py:0
+#: code:addons/hm_sales_technicien_info/models/sale_order.py:0
+#, python-format
+msgid "Merci de sélectionner aux moins une ligne !"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__dayofweek__0
+msgid "Monday"
+msgstr "Lundi"
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_hm_technician_intervention_proposal_search
+msgid "My interventions"
+msgstr "Mes interventions"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement__name
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement_region__name
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_category_competence__name
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_customer_availability__name
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__name
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__name
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_work_type__name
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.hm_agreement_list_view
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.hm_work_type_list_view
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_partner_tree_for_popup
+msgid "Name"
+msgstr "Nom"
+
+#. module: hm_sales_technicien_info
+#: code:addons/hm_sales_technicien_info/models/hm_agreement.py:0
+#, python-format
+msgid "Name must be unique!"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__hm_so_manager_phone
+msgid "Numéro de téléphone gestionnaire SO"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__hm_work_object
+msgid "Object"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_category_competence__old_object_id
+msgid "Old object ID"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__sale_order__send_proposals__one_shot
+msgid "One-shot"
+msgstr "En une fois"
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.sale_order_view_form_inherit_1
+msgid "Organisation"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement_region__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model,name:hm_sales_technicien_info.model_product_product
+msgid "Product"
+msgstr "Produit"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model,name:hm_sales_technicien_info.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__property_id
+msgid "Property"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__property_address_without_street
+msgid "Property address without street"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__proposal_datetime
+msgid "Proposal Date"
+msgstr "Envoyée le"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_technician_intervention_proposal__state__accepted
+msgid "Proposal accepted"
+msgstr "Intervention organisée "
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_technician_intervention_proposal__state__declined
+msgid "Proposal declined"
+msgstr "Déclinée par technicien"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_technician_intervention_proposal__state__sent
+msgid "Proposal sent"
+msgstr "Envoyée"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_res_partner__proposal_lines
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_res_users__proposal_lines
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.sale_order_view_form_inherit_1
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_res_partner_form_inherit
+msgid "Proposals"
+msgstr "Propositions"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__techniciens_choice__old_status__propose_client
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__techniciens_choice__status__propose_client
+msgid "Proposé technicien"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model,name:hm_sales_technicien_info.model_sale_order_template
+msgid "Quotation Template"
+msgstr "Modèle de devis"
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.sale_order_view_form_inherit_1
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.techniciens_choice_list_view
+msgid "Quotations"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.sale_order_view_form_inherit_1
+msgid "Rechercher des techniciens"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__availability_color__red
+msgid "Red"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__sale_id
+msgid "Ref sale order"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__techniciens_choice__old_status__refuser
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__techniciens_choice__status__refuser
+msgid "Refusé"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: code:addons/hm_sales_technicien_info/models/hm_agreement_region.py:0
+#, python-format
+msgid "Region and Agreement must be unique!"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model,name:hm_sales_technicien_info.model_hm_resource_availability_calendar
+msgid "Resource Availability Calendar"
+msgstr "Calendrier de disponibilité des ressources"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_agreement_region__region
+msgid "Région"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_customer_availability__sale_order_id
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_hm_technician_intervention_proposal_search
+msgid "SO"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__hm_so_manager_id
+msgid "SO Manager"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__sale_order_id
+msgid "Sale Order"
+msgstr "SO"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model,name:hm_sales_technicien_info.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__dayofweek__5
+msgid "Saturday"
+msgstr "Samedi"
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_hm_technician_intervention_proposal_search
+msgid "Search Technician Intervention Proposals"
+msgstr "Recherche de propositions d'intervention technique"
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.hm_resource_availability_popup_form_view
+msgid "Select"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_sale_order__selected_tech_choice_ids
+msgid "Selected Technicians"
+msgstr "Techniciens imputés"
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.sale_order_view_form_inherit_1
+msgid "Send"
+msgstr "Envoyer"
+
+#. module: hm_sales_technicien_info
+#: model:ir.actions.server,name:hm_sales_technicien_info.schedule_proposal_sending_ir_actions_server
+#: model:ir.cron,cron_name:hm_sales_technicien_info.schedule_proposal_sending
+#: model:ir.cron,name:hm_sales_technicien_info.schedule_proposal_sending
+msgid "Send automated intervention proposals to technicians"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_technician_intervention_proposal_tree
+msgid "Send proposal"
+msgstr "Envoyer la proposition"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_sale_order__send_proposals
+msgid "Send proposals"
+msgstr "Envoyer les propositions"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__sent_by_id
+msgid "Sent by"
+msgstr "Envoyée par"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__sequence
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_technician_intervention_proposal__state__shortlisted
+msgid "Shortlisted"
+msgstr "A envoyer"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_res_partner__region_tech
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_res_users__region_tech
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__region_tech
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_partner_tree_for_popup
+msgid "Sous-région"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_hm_technician_intervention_proposal_search
+msgid "State"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__state
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__status
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.sale_order_view_form_inherit_1
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.techniciens_choice_form_view
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.techniciens_choice_list_view
+msgid "Status"
+msgstr "Statut"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__old_status
+msgid "Status Old"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.hm_view_partner_tree
+msgid "Statut"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_sale_order__batch_size
+msgid "Suggest the intervention to"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__dayofweek__6
+msgid "Sunday"
+msgstr "Dimanche"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,help:hm_sales_technicien_info.field_hm_technician_intervention_proposal__show_confirm_proposal_button
+msgid "Technical field"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,help:hm_sales_technicien_info.field_sale_order__notify_so_manager_byproposals
+msgid ""
+"Technical field used to define if the sales order manager is notified when "
+"all proposals are sent."
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__show_confirm_proposal_button
+msgid ""
+"Technical field, used to hide/show the confirm button based on customer "
+"availability"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__partner_id
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__partner_id
+msgid "Technician"
+msgstr "Technicien"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__tech_answer_deadline_datetime
+msgid "Technician Answer Deadline"
+msgstr "Date limite réponse technicien"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__tech_availability_id
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__technician_availability_ids
+msgid "Technician Availability"
+msgstr "Disponibilités du technicien"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model,name:hm_sales_technicien_info.model_hm_technician_intervention_proposal
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_technician_intervention_proposal_form
+msgid "Technician Intervention Proposal"
+msgstr "Proposition d'intervention technique"
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_technician_intervention_proposal_tree
+msgid "Technician Intervention Proposals"
+msgstr "Propositions d'intervention"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_sale_order__technicien
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.techniciens_choice_form_view
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_partner_tree_for_popup
+msgid "Technicians"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_sale_order__tech_choice_ids
+msgid "Technicians Selected"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.sale_order_view_form_inherit_1
+msgid "Technicien"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.hm_resource_availability_popup_form_view
+msgid "Technicien Availabilities"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.sale_order_view_form_inherit_1
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.techniciens_choice_list_view
+msgid "Techniciens"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model,name:hm_sales_technicien_info.model_techniciens_choice
+msgid "Techniciens choice"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.actions.act_window,name:hm_sales_technicien_info.techniciens_choice_act
+#: model:ir.ui.menu,name:hm_sales_technicien_info.menu_techniciens_choice
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.techniciens_choice_search_view
+msgid "Techniciens imputés"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__dayofweek__3
+msgid "Thursday"
+msgstr "Jeudi"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__dayofweek__1
+msgid "Tuesday"
+msgstr "Mardi"
+
+#. module: hm_sales_technicien_info
+#: model:ir.ui.menu,name:hm_sales_technicien_info.hm_work_type_menu
+msgid "Type d'intervention"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.view_partner_tree_for_popup
+msgid "Type de mission"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__availability__unavailable
+msgid "Unavailable"
+msgstr "Indisponible"
+
+#. module: hm_sales_technicien_info
+#: model:ir.actions.server,name:hm_sales_technicien_info.update_product_agreement_ir_actions_server
+#: model:ir.cron,cron_name:hm_sales_technicien_info.update_product_agreement
+#: model:ir.cron,name:hm_sales_technicien_info.update_product_agreement
+msgid "Update Product Agrement "
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__urgency_fee
+msgid "Urgency fee for intervention within 24 hours"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,help:hm_sales_technicien_info.field_hm_technician_intervention_proposal__sequence
+msgid "Used to order proposal"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.hm_work_type_form_view
+msgid ""
+"Utilisé dans le classement des types d'interventions que le technicien "
+"accepte d'entreprendre"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,help:hm_sales_technicien_info.field_hm_technician_intervention_proposal__currency_id
+msgid "Utility field to express amount currency"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__city
+msgid "Ville"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_proposal_warning_wizard__warning_message
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.hm_proposal_warning_wizard_form_view
+msgid "Warning Message"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields.selection,name:hm_sales_technicien_info.selection__hm_resource_availability_calendar__dayofweek__2
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__hour_from
+msgid "Work from"
+msgstr "De"
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_resource_availability_calendar__hour_to
+msgid "Work to"
+msgstr "à"
+
+#. module: hm_sales_technicien_info
+#: model:ir.actions.act_window,name:hm_sales_technicien_info.hm_work_type_action
+#: model:ir.model,name:hm_sales_technicien_info.model_hm_work_type
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_hm_technician_intervention_proposal__work_type
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_res_partner__work_type_ids
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_res_users__work_type_ids
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_sale_order__work_type
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_sale_order_template__work_type
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__work_type_ids_tech
+#: model:ir.ui.menu,name:hm_sales_technicien_info.menu_hm_work_type_action
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.hm_work_type_form_view
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.hm_work_type_list_view
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.sale_order_view_form_inherit_1
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.techniciens_choice_form_view
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.techniciens_choice_list_view
+msgid "Work type"
+msgstr "Type d'intervention"
+
+#. module: hm_sales_technicien_info
+#: code:addons/hm_sales_technicien_info/models/intervention_proposal.py:0
+#, python-format
+msgid "You cannot cancel a proposal that is in 'Shortlisted' status."
+msgstr ""
+"Vous ne pouvez pas annuler une proposition qui est en statut 'Proposition à "
+"envoyer'."
+
+#. module: hm_sales_technicien_info
+#: code:addons/hm_sales_technicien_info/models/intervention_proposal.py:0
+#, python-format
+msgid "You cannot delete a proposal that is not in 'Proposal to send' status."
+msgstr ""
+"Vous ne pouvez pas supprimer une proposition qui n'est pas en statut "
+"'Proposition à envoyer'."
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.agreement_region_view_kanban
+msgid "agreement and region"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model,name:hm_sales_technicien_info.model_hm_proposal_warning_wizard
+msgid "hm.proposal.warning.wizard"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.sale_order_view_form_inherit_1
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.techniciens_choice_form_view
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.techniciens_choice_list_view
+msgid "region_tech"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__sale_order_id
+msgid "sale order"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model:ir.model.fields,field_description:hm_sales_technicien_info.field_techniciens_choice__zip
+msgid "zip"
+msgstr ""
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.customer_availability_view_form_wizard
+msgid "save and close"
+msgstr "Enregistrez et fermez"
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.customer_availability_view_form_wizard
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.hm_proposal_warning_wizard_form_view
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: hm_sales_technicien_info
+#: model_terms:ir.ui.view,arch_db:hm_sales_technicien_info.sale_order_view_form_inherit_1
+msgid "Edit"
+msgstr "Modifier"

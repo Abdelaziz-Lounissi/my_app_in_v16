@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_property_lead_google_map" model="ir.ui.view">
+        <field name="name">view.hm.property.google.map</field>
+        <field name="model">hm.property</field>
+        <field name="arch" type="xml">
+            <google_map string="Leads" lat="property_latitude" lng="property_longitude" color="marker_color" sidebar_title="name" sidebar_subtitle="customer_address">
+                <field name="name"/>
+                <field name="property_latitude"/>
+                <field name="property_longitude"/>
+                <field name="customer_address"/>
+                <field name="marker_color"/>
+            </google_map>
+        </field>
+    </record>
+    <record id="view_hm_property_google_map_form" model="ir.ui.view">
+        <field name="name">view.hm.property.google.map.form</field>
+        <field name="model">hm.property</field>
+        <field name="arch" type="xml">
+            <form js_class="google_map_form" string="Lead" lat="property_latitude" lng="property_longitude">
+                <field name="property_latitude"/>
+                <field name="property_longitude"/>
+            </form>
+        </field>
+    </record>
+    <record id="action_view_hm_property_google_map" model="ir.actions.act_window">
+        <field name="name">Google Map</field>
+        <field name="res_model">hm.property</field>
+        <field name="view_mode">google_map</field>
+        <field name="view_id" ref="view_property_lead_google_map"/>
+        <field name="domain">[('id', '=', active_id)]</field>
+    </record>
+    <record id="hm_property_view_form_inherit_google_map" model="ir.ui.view">
+        <field name="name">hm.property.view.form.inherit.google.map</field>
+        <field name="model">hm.property</field>
+        <field name="inherit_id" ref="hm_property.hm_property_form_view"/>
+        <field name="priority">1000</field>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="edit_lat_lng">1</attribute>
+                <attribute name="google_map_form_view_ref">hm_property_google_map.view_hm_property_google_map_form</attribute>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="%(hm_property_google_map.action_view_hm_property_google_map)d"
+                    type="action"
+                    class="oe_stat_button"
+                    icon="fa-map-marker" string="Google Map"
+                    attrs="{'invisible': ['|',('property_latitude', '=', 0.0), ('property_longitude', '=', 0.0)]}"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Geolocation" name="geo_location">
+                    <group>
+                        <group string="Geolocation">
+                            <label for="property_latitude" string="Geo Location"/>
+                            <div>
+                                <span>Lat : <field name="property_latitude" nolabel="1" class="oe_inline"/>
+                                </span>
+                                <br/>
+                                <span>Long: <field name="property_longitude" nolabel="1" class="oe_inline"/>
+                                </span>
+                                <br/>
+                                <button attrs="{'invisible': ['|', ('property_latitude', '!=', 0), ('property_longitude', '!=', 0)]}" icon="fa-gear" string="Compute based on address" title="Compute Localization" name="geo_localize" type="object" class="btn btn-link p-0"/>
+                                <button attrs="{'invisible': [('property_latitude', '=', 0), ('property_longitude', '=', 0)]}" icon="fa-refresh" string="Refresh" title="Refresh Localization" name="geo_localize" type="object" class="btn btn-link p-0"/>
+                            </div>
+                            <field name="marker_color" widget="color_picker"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hm_property.hm_property_action" model="ir.actions.act_window">
+            <field name="view_mode">tree,kanban,google_map,form</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+    <record id="available_priority" model="technician.availability">
+        <field name="name">Disponible PRIORITAIRE</field>
+    </record>
+
+    <record id="available" model="technician.availability">
+        <field name="name">Disponible</field>
+    </record>
+
+    <record id="available_if_emergency" model="technician.availability">
+        <field name="name">Disponible SI URGENCE</field>
+    </record>
+
+    <record id="available_date_indispo_known" model="technician.availability">
+        <field name="name">Disponible (date indispo connue)</field>
+    </record>
+
+    <record id="currently_unavailable" model="technician.availability">
+        <field name="name">Actuellement indisponible</field>
+    </record>
+
+    <record id="corona_stop_total" model="technician.availability">
+        <field name="name">Corona: STOP Total</field>
+    </record>
+
+    <record id="corona_what_if_emergency" model="technician.availability">
+        <field name="name">Corona: Que si urgences</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <record id="purchase.action_report_purchase_order" model="ir.actions.report">
+        <field name="name">Bon de facturation technicien</field>
+        <field name="model">purchase.order</field>
+        <field name="binding_model_id" ref="purchase.model_purchase_order"/>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">purchase.report_purchaseorder</field>
+        <field name="binding_view_types">list,form</field>
+    </record>
+
+    <record id="hm_action_report_purchase_order" model="ir.actions.report">
+        <field name="name">Commande fournisseur</field>
+        <field name="model">purchase.order</field>
+        <field name="binding_model_id" ref="purchase.model_purchase_order"/>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hm_purchase.hm_report_purchase_order</field>
+        <field name="binding_view_types">list,form</field>
+        <field name="print_report_name">(object.state in ('draft', 'sent') and 'Request for Quotation - %s' % (object.name) or 'Purchase Order - %s' % (object.name))</field>
+    </record>
+
+    <record id="hm_action_report_purchase_order_without_price" model="ir.actions.report">
+        <field name="name">Commande fournisseur SANS PRIX (bon enlevement)</field>
+        <field name="model">purchase.order</field>
+        <field name="binding_model_id" ref="purchase.model_purchase_order"/>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hm_purchase.hm_report_po_without_price</field>
+        <field name="binding_view_types">list,form</field>
+        <field name="print_report_name">(object.state in ('draft', 'sent') and 'Request for Quotation - %s' % (object.name) or 'Purchase Order - %s' % (object.name))</field>
+    </record>
+
+</odoo>

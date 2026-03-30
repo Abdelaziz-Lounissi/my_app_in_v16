@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_company_form_facq" model="ir.ui.view">
+        <field name="name">res.company.form.facq</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//group[@name='social_media']" position="after">
+                    <group name="Facq" string="Facq API">
+                        <field name='user_id' groups="base.group_erp_manager,base.group_system"/>
+                        <field name='login' groups="base.group_erp_manager,base.group_system"/>
+                        <field name='password' password="True" groups="base.group_erp_manager,base.group_system"/>
+                        <field name='culture_id' groups="base.group_erp_manager,base.group_system"/>
+                        <field name='facq_path' groups="base.group_erp_manager,base.group_system"/>
+                    </group>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+</odoo>

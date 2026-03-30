@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template id="template" xml:space="preserve">
+
+    <t t-name="hm_sale.ShowDescriptioninSOLWidgetTemplate" owl="1">
+        <div t-on-mouseenter="showPopup"
+             t-on-mouseleave="closePopup" class="d-flex justify-content-center align-items-center"
+             style="width: 85px; height: 85px;">
+            <a
+                    t-attf-class="fa fa-info-circle"
+                    t-att-tabindex="0"
+                    t-att-class="''"
+            />
+        </div>
+
+    </t>
+
+
+    <t t-name="hm_sale.CustomPopoverTemplate" owl="1">
+        <div class="card border-primary" style="max-width: 300px; margin: auto; position: relative;">
+            <div class="card-body">
+                <h5>Description de l'article :</h5>
+                <p><t t-out="props.productDescription"/></p>
+            </div>
+        </div>
+    </t>
+
+
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

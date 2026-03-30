@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="hm_proposal_warning_wizard_form_view" model="ir.ui.view">
+            <field name="name">hm.proposal.warning.wizard.form</field>
+            <field name="model">hm.proposal.warning.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Warning Message">
+                    <sheet>
+                        <div>
+                            <field name="warning_message" readonly="1" widget="text"/>
+                        </div>
+                    </sheet>
+                    <footer>
+                        <button name="confirm_action" string="Confirm" type="object" class="btn-primary"/>
+                        <button name="cancel_action" string="Cancel" type="object" class="btn-secondary"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

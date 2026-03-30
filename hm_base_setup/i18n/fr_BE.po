@@ -1,0 +1,1236 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_base_setup
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-07 07:23+0000\n"
+"PO-Revision-Date: 2021-10-07 07:23+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_status__a_contacter
+msgid "A contacter"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_status__a_décidé_d'arrêter
+msgid "A décidé d'arrêter"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.at_the_request_of_my_landlord_or_trustee
+msgid "A la demande de mon propriétaire ou syndic"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_to_an_intern
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_to_an_intern
+msgid "A un stagiaire"
+msgstr ""
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_external_employee_access_form_view
+msgid "Accès externes employés"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model,name:hm_base_setup.model_hm_access_profession
+msgid "Access To The Profession"
+msgstr "Accès à la profession"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_access_to_the_profession_ids
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_access_to_the_profession_ids
+#: model:ir.ui.menu,name:hm_base_setup.hm_access_to_profession_menu
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_access_profession_view_form
+msgid "Access to the profession"
+msgstr "Accès à la profession"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_external_access_employees_ids
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_external_employee_access_form_view
+msgid "Accès externes employés"
+msgstr ""
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_users_form
+msgid "Accès externes fournis"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_status__actif
+msgid "Actif"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_status__actif_-_phase_test
+msgid "Actif - Phase test"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_status__actif_mais_peu_dispo
+msgid "Actif mais peu dispo"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_currently_unavailable
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_currently_unavailable
+#: model:technician.availability,name:hm_base_setup.currently_unavailable
+msgid "Actuellement indisponible"
+msgstr ""
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_partner_form
+msgid "Admin"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__from_property
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__from_property
+msgid "Adresse des Biens"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_ir_attachment__display_icr_on_client_documents
+msgid "Afficher l'ICR sur les documents du client"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_regulation_type__aquastat_chaudière_+_aquastat_sanitaire
+msgid "Aquastat chaudière + aquastat sanitaire"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_regulation_type__aquastat
+msgid "Aquastat chaudière seul"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_assurance_rc
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_assurance_rc
+msgid "Assurance RC"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_assurance_rc__assuré,_reçu_police
+msgid "Assuré, reçu police"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_assurance_rc__assuré,_pas_reçu
+msgid "Assuré,pas reçu"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model,name:hm_base_setup.model_ir_attachment
+msgid "Attachment"
+msgstr "Pièce jointe"
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_partner_form
+msgid "Attestation TVA ANCIEN"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.other
+msgid "Autre"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_other_access_employees_ids
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_users_form
+msgid "Autre accès employé"
+msgstr ""
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_other_access_employe_form_view
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_users_form
+msgid "Autre_acces_employe"
+msgstr ""
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_users_form
+msgid "Autres accès"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.actions.act_window,name:hm_base_setup.hm_action_other_plumbing_products
+msgid "Autres produits plomberie"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_availablity
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_availablity
+msgid "Availability"
+msgstr "Disponibilité"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_gestionnaire_count
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_gestionnaire_count
+msgid "Biens gérés"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.word_of_mouth
+msgid "Bouche à oreille"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.actions.server,name:hm_base_setup.hm_technician_available_again_action
+msgid "COMM INTERNE: technicien à nouveau dispo"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_carte_facq
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_carte_facq
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_partner_form
+msgid "Carte Facq"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_carte_vam
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_carte_vam
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_partner_form
+msgid "Carte VAM"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_carte_facq__carte_bloquée
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_carte_vam__carte_bloquée
+msgid "Carte bloquée"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_carte_facq__carte_opérationnelle
+msgid "Carte opérationnelle"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_carte_vam__carté_opérationnelle
+msgid "Carté opérationnelle"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.actions.act_window,name:hm_base_setup.hm_action_chauffagistes
+#: model:ir.ui.menu,name:hm_base_setup.hm_heating_engineers_menu
+msgid "Chauffagistes"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_regulation_type__climatique_+_thermostat_actif
+msgid "Climatique + thermostat actif"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_regulation_type__climatique_pure_(sonde_ext)
+msgid "Climatique pure (sonde ext)"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.actions.server,name:hm_base_setup.check_no_longer_ask_for_customer_reviews_action
+msgid "Cocher \"ne plus demander avis client\""
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.actions.server,name:hm_base_setup.check_do_not_ask_for_customer_feedback_action
+msgid "Cocher - ne plus demander avis client"
+msgstr ""
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.zip_code_search_view
+msgid "Code postaux"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.actions.act_window,name:hm_base_setup.zip_code_action
+#: model:ir.ui.menu,name:hm_base_setup.menu_zip_code_partner
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.zip_code_form_view
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.zip_code_tree_view
+msgid "Codes postaux"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_technician_colleague_ids
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_technician_colleague_ids
+msgid "Collègue technicien"
+msgstr ""
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_partner_form
+msgid "Collègue technicien HeatMe"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_zip_code__commune_principale
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.zip_code_search_view
+msgid "Commune Principale"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_zip_code__name
+msgid "Complete name"
+msgstr "Nom Complet"
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_partner_form
+msgid "Compétences"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.ui.menu,name:hm_base_setup.hm_config_technicians_menu
+msgid "Config techniciens"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_contact_id
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_contact_id
+msgid "HM Contact"
+msgstr "Contact"
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_res_partner_filter2
+msgid "Contacts"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:technician.availability,name:hm_base_setup.corona_what_if_emergency
+msgid "Corona: Que si urgences"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:technician.availability,name:hm_base_setup.corona_stop_total
+msgid "Corona: STOP Total"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_zip_code__code_pays
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.zip_code_search_view
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.zip_code_tree_view
+msgid "Country"
+msgstr "Pays"
+
+#. module: hm_base_setup
+#: model:ir.model,name:hm_base_setup.model_res_country_state
+msgid "Country state"
+msgstr "État"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_customer_source__create_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_access_profession__create_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_external_employee_access__create_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_marque_chaudiere__create_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_other_access_employe__create_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_source_demand__create_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_spoken_language__create_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_region_code__create_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_sub_province__create_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_technician_availability__create_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_zip_code__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_customer_source__create_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_access_profession__create_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_external_employee_access__create_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_marque_chaudiere__create_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_other_access_employe__create_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_source_demand__create_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_spoken_language__create_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_region_code__create_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_sub_province__create_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_technician_availability__create_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_zip_code__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: hm_base_setup
+#: model:ir.model,name:hm_base_setup.model_customer_source
+msgid "Customer Source"
+msgstr "Source Client"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_customer_source__name
+msgid "Customer Source Name"
+msgstr "Nom de la source client"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_partner_shipping_count
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_partner_shipping_count
+msgid "Delivery Address"
+msgstr "Adresse de livraison"
+
+#. module: hm_base_setup
+#: model:ir.actions.server,name:hm_base_setup.request_opinions_on_facebook_and_google_action
+msgid "Demande avis sur Facebook et Google"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_carte_facq__demandé_carte
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_carte_vam__demandé_carte
+msgid "Demandé carte"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_availablity__dimanche
+msgid "Dimanche"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_customer_source__display_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_access_profession__display_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_external_employee_access__display_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_marque_chaudiere__display_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_other_access_employe__display_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_source_demand__display_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_spoken_language__display_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_region_code__display_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_sub_province__display_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_technician_availability__display_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_zip_code__display_name
+msgid "Display Name"
+msgstr "Afficher Nom"
+
+#. module: hm_base_setup
+#: model:ir.actions.server,name:hm_base_setup.available_technician_setting_dispo_action
+msgid "Dispo technicien - mis en dispo"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:base.automation,name:hm_base_setup.available_technician
+#: model:ir.actions.server,name:hm_base_setup.available_technician_action
+msgid "Dispo technicien - mise en dispo"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:base.automation,name:hm_base_setup.available_technician_setting_indispo
+#: model:ir.actions.server,name:hm_base_setup.available_technician_setting_indispo_action
+msgid "Dispo technicien - mise en indispo"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_technician_availability_id
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_technician_availability_id
+msgid "Disponibilité technicien"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:technician.availability,name:hm_base_setup.available
+msgid "Disponible"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:technician.availability,name:hm_base_setup.available_date_indispo_known
+msgid "Disponible (date indispo connue)"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:technician.availability,name:hm_base_setup.available_priority
+msgid "Disponible PRIORITAIRE"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:technician.availability,name:hm_base_setup.available_if_emergency
+msgid "Disponible SI URGENCE"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_start_activity
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_start_activity
+msgid "Début d'activité"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_commercial_delegate_id
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_commercial_delegate_id
+msgid "Délégué commercial"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.actions.act_window,name:hm_base_setup.hm_action_electricians
+msgid "Electriciens"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__is_email_partner
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__is_email_partner
+msgid "IS EMAIL PARTNER"
+msgstr "Courriel"
+
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_manager_mail
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_manager_mail
+msgid "HM Email Manager"
+msgstr "Email gestionnaire"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_property_manager_mail
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_property_manager_mail
+msgid "Email Manager"
+msgstr "Email gestionnaire"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_boiler_registration_with_manufacturer
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_boiler_registration_with_manufacturer
+msgid "Enregistrement chaudière chez fabricant (garantie)"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_status__entreprise_autonome_(vincotte,__)
+msgid "Entreprise autonome (Vincotte,..)"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__is_letter
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__is_letter
+msgid "Envoyé par la poste"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.supplier_bosch
+msgid "FOURNISSEUR - Bosch"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.supplier_buderus
+msgid "FOURNISSEUR - Buderus"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.supplier_bulex_xpert
+msgid "FOURNISSEUR - Bulex Xpert"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.supplier_stiebel
+msgid "FOURNISSEUR - Stiebel"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.supplier_vam_install
+msgid "FOURNISSEUR - VAM Install"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.facebook_local_groups
+msgid "Facebook - Groupes locaux"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.facebook_pub
+msgid "Facebook - pub"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:base.automation,name:hm_base_setup.fictitious_for_sub_shares
+#: model:ir.actions.server,name:hm_base_setup.fictitious_for_sub_shares_action
+msgid "Fictif pour sous actions"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_property_manager_1
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_property_manager_1
+msgid "HM MANAGER"
+msgstr "Gestionnaire du bien"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_property_manager_id
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_property_manager_id
+msgid "HM Manager"
+msgstr "Gestionnaire du bien"
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.google
+msgid "Google"
+msgstr ""
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.zip_code_search_view
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_groups_tree
+msgid "Groupes d'accès"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_customer_source__id
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_access_profession__id
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_external_employee_access__id
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_marque_chaudiere__id
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_other_access_employe__id
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_source_demand__id
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_spoken_language__id
+#: model:ir.model.fields,field_description:hm_base_setup.field_region_code__id
+#: model:ir.model.fields,field_description:hm_base_setup.field_sub_province__id
+#: model:ir.model.fields,field_description:hm_base_setup.field_technician_availability__id
+#: model:ir.model.fields,field_description:hm_base_setup.field_zip_code__id
+msgid "ID"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__is_print_partner
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__is_print_partner
+msgid "Imprimer"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:base.automation,name:hm_base_setup.input_activity_technician_available_again
+#: model:ir.actions.server,name:hm_base_setup.input_activity_technician_available_again_action
+msgid "Imput Activity - Technicien à nouveau dispo (info)"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_info_next_maintenance
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_info_next_maintenance
+msgid "Infos prochain entretien"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_status__intéressé
+msgid "Intéressé"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_ir_attachment__wk_move_id
+msgid "Invoice"
+msgstr "Facture"
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_ir_attachment__ini_cust_move_id
+#: model:ir.model.fields,field_description:hm_base_setup.field_mrp_document__ini_cust_move_id
+msgid "Invoice Ref"
+msgstr "Facture"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_ir_attachment__is_initial_cust_request
+msgid "Is Initial Cust Request"
+msgstr "Est un demande initiale du client"
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.i_have_already_called_on_you
+msgid "J'ai déjà fait appel à vous"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.i_know_the_team
+msgid "Je connais l'équipe"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_languages
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_languages
+msgid "Languages"
+msgstr "Langues"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_spoken_language_ids
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_spoken_language_ids
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_spoken_language_form_view
+msgid "Langue parlée"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_customer_source____last_update
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_access_profession____last_update
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_external_employee_access____last_update
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_marque_chaudiere____last_update
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_other_access_employe____last_update
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_source_demand____last_update
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_spoken_language____last_update
+#: model:ir.model.fields,field_description:hm_base_setup.field_region_code____last_update
+#: model:ir.model.fields,field_description:hm_base_setup.field_sub_province____last_update
+#: model:ir.model.fields,field_description:hm_base_setup.field_technician_availability____last_update
+#: model:ir.model.fields,field_description:hm_base_setup.field_zip_code____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_customer_source__write_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_access_profession__write_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_external_employee_access__write_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_marque_chaudiere__write_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_other_access_employe__write_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_source_demand__write_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_spoken_language__write_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_region_code__write_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_sub_province__write_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_technician_availability__write_uid
+#: model:ir.model.fields,field_description:hm_base_setup.field_zip_code__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_customer_source__write_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_access_profession__write_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_external_employee_access__write_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_marque_chaudiere__write_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_other_access_employe__write_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_source_demand__write_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_spoken_language__write_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_region_code__write_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_sub_province__write_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_technician_availability__write_date
+#: model:ir.model.fields,field_description:hm_base_setup.field_zip_code__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: hm_base_setup
+#: model:ir.model.constraint,message:hm_base_setup.constraint_zip_code_zip_zip_code_unique
+msgid "Le code postal doit étre unique !"
+msgstr ""
+
+#. module: hm_base_setup
+#: code:addons/hm_base_setup/models/zip_code.py:0
+#, python-format
+msgid "Le code postale doit étre positif"
+msgstr ""
+
+#. module: hm_base_setup
+#: code:addons/hm_base_setup/models/zip_code.py:0
+#, python-format
+msgid "Le code postale doit étre un entier"
+msgstr ""
+
+#. module: hm_base_setup
+#: code:addons/hm_base_setup/models/zip_code.py:0
+#, python-format
+msgid "Le couple code postal , localité doit étre unique !"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_zip_code__local
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.zip_code_search_view
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.zip_code_tree_view
+msgid "Localité"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_privileged_sanicenter_store_facq
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_privileged_sanicenter_store_facq
+msgid "Magasin SaniCenter privilégié Facq"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_privileged_technics_store_ids
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_privileged_technics_store_ids
+msgid "Magasin Technics privilegié many"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_vam_privileged_technics_store
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_vam_privileged_technics_store
+msgid "Magasin Technics privilégié VAM"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.actions.server,name:hm_base_setup.mail_avis_google_contact_action
+msgid "Mail avis google contact"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model,name:hm_base_setup.model_hm_marque_chaudiere
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_boiler_brand_ids
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_boiler_brand_ids
+msgid "Marque chaudière"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_mastered_boiler_brand
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_mastered_boiler_brand
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_marque_chaudiere_form_view
+msgid "Marque chaudière maitrisée"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_privileged_boiler_brand
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_privileged_boiler_brand
+msgid "Marque chaudière privilégiée"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.actions.act_window,name:hm_base_setup.hm_marque_chaudiere_action
+msgid "Marques"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.ui.menu,name:hm_base_setup.hm_boilers_brands_menu
+msgid "Marques chaudières"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.actions.server,name:hm_base_setup.put_manager_follower_of_the_client_action
+msgid "Mettre le gestionnaire en follower du client"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_access_profession__hm_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_access_profession__name
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_external_employee_access__hm_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_external_employee_access__name
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_marque_chaudiere__hm_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_marque_chaudiere__name
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_other_access_employe__hm_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_other_access_employe__name
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_source_demand__hm_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_source_demand__name
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_spoken_language__hm_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_spoken_language__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_do_not_send_reminder_before_intervention
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_do_not_send_reminder_before_intervention
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_partner_form
+msgid "Ne pas envoyer de rappel avant intervention"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_do_not_ask_customer_opinions
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_do_not_ask_customer_opinions
+msgid "Ne plus demander avis client"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_new_checkbox
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_new_checkbox
+msgid "New Case à cocher"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_parent_phone
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_parent_phone
+msgid "New Champ lié phone"
+msgstr "New Champ lié"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_new_file
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_new_file
+msgid "New Fichier"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_assurance_policy_file_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_assurance_policy_file_name
+msgid "Nom du fichier pour hm_assurance_policy"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_filename
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_filename
+msgid "Nom du fichier pour hm_new_file"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_2sYmL_file_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_2sYmL_file_name
+msgid "Nom du fichier pour x_studio_field_2sYmL"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_HMUpT_file_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_HMUpT_file_name
+msgid "Nom du fichier pour x_studio_field_HMUpT"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_hHnMQ_file_name
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_hHnMQ_file_name
+msgid "Nom du fichier pour x_studio_field_hHnMQ"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__numero_carte_facq
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__numero_carte_facq
+msgid "Numéro carte Facq"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__numero_carte_vam
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__numero_carte_vam
+msgid "Numéro carte VAM"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_access_profession__old_object_id
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_external_employee_access__old_object_id
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_marque_chaudiere__old_object_id
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_other_access_employe__old_object_id
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_source_demand__old_object_id
+#: model:ir.model.fields,field_description:hm_base_setup.field_hm_spoken_language__old_object_id
+msgid "Old object ID"
+msgstr ""
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_partner_form
+msgid "Onboarding"
+msgstr "Onboarding"
+
+#. module: hm_base_setup
+#: model:ir.model,name:hm_base_setup.model_hm_other_access_employe
+msgid "Other Access Employe"
+msgstr "Autre accès employé"
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.partner_bdw_invest
+msgid "PARTENAIRE - BDW invest"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.partner_energreen
+msgid "PARTENAIRE - Energreen"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.partner_homedesk
+msgid "PARTENAIRE - Homedesk"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.partner_potvin
+msgid "PARTENAIRE - Potvin"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.partner_wilink_immo
+msgid "PARTENAIRE - Wilink immo"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_partner_count
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_partner_count
+msgid "Partner count"
+msgstr "Nombre de partenaires"
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_assurance_rc__pas_assuré
+msgid "Pas assuré"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_carte_facq__pas_fait
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_carte_vam__pas_fait
+msgid "Pas fait"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_status__pas_intéressé
+msgid "Pas intéressé"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_assurance_policy
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_assurance_policy
+msgid "Police assurance"
+msgstr ""
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_res_partner_filter2
+msgid "Property address"
+msgstr "Adresse des Biens"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_zip_code__state_id
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.zip_code_search_view
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.zip_code_tree_view
+msgid "Province"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_ir_attachment__wk_po_origin_id
+msgid "Purchase order"
+msgstr "Commande fournisseur"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_ir_attachment__ini_cust_po_origin_id
+#: model:ir.model.fields,field_description:hm_base_setup.field_mrp_document__ini_cust_po_origin_id
+msgid "Purchase order Ref"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_status__recallé
+msgid "Recallé (STOP)"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_region_code__name
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_country_state__region
+msgid "Region"
+msgstr "Région"
+
+#. module: hm_base_setup
+#: model:ir.model,name:hm_base_setup.model_region_code
+msgid "Region code"
+msgstr "Code de la Région"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_remarks
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_remarks
+msgid "Remarques"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_heating_curve_adjustment
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_heating_curve_adjustment
+msgid "Réglage coube de chauffe"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_know_how_to_find_a_colleague
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_know_how_to_find_a_colleague
+msgid "Sais trouver un collègue"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_ir_attachment__wk_so_origin_id
+msgid "Sale order"
+msgstr "Bon de commande"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_ir_attachment__ini_cust_so_origin_id
+#: model:ir.model.fields,field_description:hm_base_setup.field_mrp_document__ini_cust_so_origin_id
+msgid "Sale order Ref"
+msgstr "Bon de commande"
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_availablity__samedi
+msgid "Samedi"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.website_chauffagiste_be_etc
+msgid "Site chauffagiste.be etc"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_availablity__soir
+msgid "Soir"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_customer_source_id
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_customer_source_id
+msgid "Source client"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model,name:hm_base_setup.model_hm_source_demand
+msgid "Source de la demande"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.actions.act_window,name:hm_base_setup.hm_action_customer_sources
+msgid "Sources clients"
+msgstr ""
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.zip_code_tree_view
+msgid "Sous Province"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_sub_province__name
+#: model:ir.model.fields,field_description:hm_base_setup.field_zip_code__sous_province
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.zip_code_search_view
+msgid "Sous province"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_zip_code__sous_commune
+msgid "Sous-Commune"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model,name:hm_base_setup.model_hm_spoken_language
+msgid "Spoken Language"
+msgstr "Langue parlée"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_status
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_status
+msgid "Status"
+msgstr "Statut"
+
+#. module: hm_base_setup
+#: model:ir.model,name:hm_base_setup.model_sub_province
+msgid "Sub province"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_surnom_heat_me
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_surnom_heat_me
+msgid "Surnom Heat Me"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.filters,name:hm_base_setup.hm_technic_filters_view
+msgid "Technic"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_technician
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_technician
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_partner_form
+msgid "Technician"
+msgstr "Technicien"
+
+#. module: hm_base_setup
+#: model:ir.model,name:hm_base_setup.model_technician_availability
+msgid "Technician Availability"
+msgstr "Disponibilité du technicien"
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_technician_availability__name
+msgid "Technician Availability Name"
+msgstr "Nom de disponibilité du technicien"
+
+#. module: hm_base_setup
+#: model:ir.actions.act_window,name:hm_base_setup.hm_action_technicians
+msgid "Technicians"
+msgstr "Techniciens"
+
+#. module: hm_base_setup
+#: model:ir.filters,name:hm_base_setup.hm_technic_dispos_chauffage_filters_view
+msgid "Technicien dispos - Chauffage"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.filters,name:hm_base_setup.hm_technic_dispos_electricien_filters_view
+msgid "Technicien dispos - Electricien"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.filters,name:hm_base_setup.hm_technic_dispos_frigoriste_filters_view
+msgid "Technicien dispos - Frigoriste"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.filters,name:hm_base_setup.hm_technic_dispos_toiturier_filters_view
+msgid "Technicien dispos - Toiturier"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_mobile_payment_terminal
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_mobile_payment_terminal
+msgid "Terminal paiement mobile"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_connected_testo
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_connected_testo
+msgid "Testo connecté"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_regulation_type__thermostat_+_priorité_sanitaire
+msgid "Thermostat + priorité sanitaire"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields.selection,name:hm_base_setup.selection__res_partner__hm_regulation_type__thermostat_simple
+msgid "Thermostat simple"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_third_party_payer_id
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_third_party_payer_id
+msgid "Tiers payeur"
+msgstr ""
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_partner_form
+msgid "Travaille toujours à 2"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_work_at_2
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_work_at_2
+msgid "Travaille à 2"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.trustup_be
+msgid "Trustup.be"
+msgstr ""
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_partner_form
+msgid "Type de missions"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_regulation_type
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_regulation_type
+msgid "Type de régulation"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model,name:hm_base_setup.model_res_users
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.via_website_form_no_more_info
+msgid "Via formulaire site - pas plus d'info"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__hm_check_profession_access
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__hm_check_profession_access
+msgid "Vérifié accès profession"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_zip_code__zip
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.zip_code_search_view
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.zip_code_tree_view
+msgid "Zip"
+msgstr "Zip"
+
+#. module: hm_base_setup
+#: model:ir.model,name:hm_base_setup.model_zip_code
+msgid "Zip Code"
+msgstr "Code postal"
+
+#. module: hm_base_setup
+#: model:ir.actions.act_window,name:hm_base_setup.hm_action_access_profession
+msgid "Zone intervention"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:customer.source,name:hm_base_setup.facebook_pfp
+msgid "facebook - PFP"
+msgstr ""
+
+#. module: hm_base_setup
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_partner__zip_code
+#: model:ir.model.fields,field_description:hm_base_setup.field_res_users__zip_code
+msgid "zones d'intervention"
+msgstr ""
+
+#. module: hm_base_setup
+#: model_terms:ir.ui.view,arch_db:hm_base_setup.hm_view_partner_form
+msgid "2e téléphone"
+msgstr "2e téléphone"
+
+#. module: base
+#: model:ir.model.fields,field_description:base.field_res_partner__mobile
+#: model_terms:ir.ui.view,arch_db:base.view_partner_form
+msgid "Mobile"
+msgstr "2e téléphone"
+
+#. module: hm_base_setup
+#: code:addons/hm_base_setup/models/res_partner.py:0
+#, python-format
+msgid "This Company %r already have billing address"
+msgstr "Cette société %r à déjà une adresse de facturation"

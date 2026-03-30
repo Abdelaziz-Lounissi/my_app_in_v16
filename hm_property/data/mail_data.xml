@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Partner-related subtypes for messaging / Chatter -->
+          <record id="mt_partner_archived" model="mail.message.subtype">
+            <field name="name">Contact archived</field>
+            <field name="res_model">res.partner</field>
+            <field name="default" eval="False"/>
+            <field name="description">Contact archived</field>
+        </record>
+
+        <record id="mt_partner_unarchived" model="mail.message.subtype">
+            <field name="name">Contact unarchived</field>
+            <field name="res_model">res.partner</field>
+            <field name="default" eval="False"/>
+            <field name="description">Contact unarchived</field>
+        </record>
+
+    </data>
+</odoo>

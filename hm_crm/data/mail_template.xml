@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="mail_template_rappel" model="mail.template">
+            <field name="name">Opportunité: Rappel</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="subject">Rappel Opportunité {{ object.name or 'n/a'}} - {{ (object.partner_id and object.partner_id.name) or 'n/a'}}</field>
+            <field name="partner_to">{{ object.partner_id != False and object.partner_id.id }}</field>
+            <field name="email_from">{{ (object.user_id.email_formatted or user.email_formatted) }}</field>
+            <field name="email_to">{{ (not object.partner_id and object.email_from) }}</field>
+            <field name="body_html" type="xml">
+                <div>
+                     Bonjour <t t-out="object.sudo().partner_id.name or 'Madame/Monsieur' or ''"/> ,<br/><br/>
+                    <p>Il y a quelques jours nous vous avons envoyé un devis pour votre projet de remplacement de chaudière. Nous avons essayé de prendre contact avec vous pour pouvoir en discuter mais nous n’avons malheureusement pas réussi à vous joindre.</p>
+            <!--        <p>Dans un soucis de vous apporter le meilleur service possible nous aimerions savoir si votre projet est toujours d’actualité. Nous serions très reconnaissant si vous pouviez nous dire le statut de votre projet.</p>-->
+                <br/>
+            <!--        <div style="text-align: center; margin: 16px 0px 16px 0px;">-->
+            <!--            <a style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;" t-att-href="object.get_portal_url()" target="_blank">Cliquez ici pour nous donner le statut de votre demande</a><br/>-->
+            <!--        </div>-->
+
+                    Merci.<br/><br/>
+                </div>
+            </field>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+
+    </data>
+</odoo>

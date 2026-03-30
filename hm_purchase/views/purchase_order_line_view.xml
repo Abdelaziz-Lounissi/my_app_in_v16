@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hm_purchase_order_line_tree_view" model="ir.ui.view">
+        <field name="name">hm.purchase.order.line</field>
+        <field name="model">purchase.order.line</field>
+        <field name="arch" type="xml">
+            <tree default_order='product_categ_name asc,product_name asc' create="false" multi_edit="1"
+                  decoration-success="po_type == 'po_emport_marchandise'"
+                  decoration-warning="po_type == 'po_marchandise'" class="o_purchase_order">
+                <field name="product_name" optional="hide"/>
+                <field name="product_categ_display_name" optional="hide"/>
+                <field name="product_categ_name" optional="hide"/>
+                <field name="po_type" invisible="1"/>
+                <field name="product_id" widget="res_partner_many2one"/>
+                <field name="computed_image_art"/>
+                <field name="name"/>
+                <field name="product_qty" attrs="{'invisible': [('product_qty', '=', 0)]}" string="Commandé"/>
+                <field name="qty_received" attrs="{'invisible': [('qty_received', '=', 0)]}" string="Reçu"/>
+                <field name="price_unit"/>
+                <field name="price_subtotal" optional="show" string="Total commandé"/>
+                <field name="partner_id" string="Fournisseur"/>
+                <field name="order_id" widget="res_partner_many2one" string="N° PO"/>
+                <field name="date_order"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hm_purchase_view_purchase_order_line_filter" model="ir.ui.view">
+        <field name="name">hm.purchase.order.line.search</field>
+        <field name="model">purchase.order.line</field>
+        <field name="arch" type="xml">
+            <search string="Search Purchase Order Line">
+                <field name="order_id" string="Order"
+                       filter_domain="['|', '|', ('order_id.name', 'ilike', self), ('partner_ref', 'ilike', self), ('partner_id', 'child_of', self)]"/>
+                <field name="product_id"/>
+                <field name="stage2_id"/>
+                <field name="partner_id" operator="child_of"/>
+
+                <group expand="0" string="Group By">
+                    <filter string="Type PO" name="po_type" domain="[]" context="{'group_by': 'po_type'}"/>
+                    <!--                    <filter string="Status2 SO" name="state2" domain="[]" context="{'group_by': 'state2'}"/>-->
+                    <filter string="Status2 PO" name="stage2_id" domain="[]" context="{'group_by': 'stage2_id'}"/>
+                    <filter string="Catégorie d'articles" name="product_categ_display_name" domain="[]"
+                            context="{'group_by': 'product_categ_display_name'}"/>
+
+                    <filter string="Fournisseur" name="partner_id" domain="[]" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Article" name="groupby_product_id" domain="[]"
+                            context="{'group_by': 'product_id'}"/>
+                    <filter string="Référence commande" name="order_id" domain="[]" context="{'group_by': 'order_id'}"/>
+                    <filter string="État" name="state" domain="[]" context="{'group_by': 'state'}"/>
+
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="hm_purchase_view_purchase_order_line_kanban" model="ir.ui.view">
+        <field name="name">hm.purchase.order.line.kanban</field>
+        <field name="model">purchase.order.line</field>
+        <field name="arch" type="xml">
+            <kanban string="Ligne de commande d'achat" default_group_by="order_id">
+                <field name="product_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('product.product', 'image_128', record.product_id.raw_value)"
+                                     alt="Product" class="o_image_64_contain"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title">
+                                    <field name="product_id"/>
+                                </strong>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+    <record id="hm_purchase_line_action" model="ir.actions.act_window">
+        <field name="name">PO lines</field>
+        <field name="res_model">purchase.order.line</field>
+        <field name="context">{'default_sale_order_id': active_id,'default_hm_so_lie': active_id}</field>
+        <field name="domain">[('order_id.hm_so_lie', '=', active_id), ('order_id.po_type', 'in',
+            ['po_marchandise','po_emport_marchandise']), ('state', '=', 'purchase')]
+        </field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,kanban</field>
+        <field name="search_view_id" ref="hm_purchase.hm_purchase_view_purchase_order_line_filter"/>
+        <field name="view_ids"
+               eval="[(5,0,0), (0, 0, {'view_mode': 'tree', 'view_id': ref('hm_purchase.hm_purchase_order_line_tree_view')}),
+                                (0, 0, {'view_mode': 'kanban', 'view_id': ref('hm_purchase.hm_purchase_view_purchase_order_line_kanban')})
+                     ]"
+        />
+    </record>
+
+    <record id="hm_purchase_import_order_line_tree_view" model="ir.ui.view">
+        <field name="name">hm.purchase.order.line</field>
+        <field name="model">purchase.order.line</field>
+        <field name="arch" type="xml">
+            <tree default_order='product_categ_name asc,product_name asc' multi_edit="1"
+                  decoration-success="po_type == 'po_emport_marchandise'"
+                  decoration-warning="po_type == 'po_marchandise'" class="o_purchase_order">
+                <field name="product_name" optional="hide"/>
+                <field name="product_categ_display_name" optional="hide"/>
+                <field name="product_categ_name" optional="hide"/>
+                <field name="po_type" invisible="1"/>
+                <field name="product_id" widget="res_partner_many2one"/>
+                <field name="computed_image_art"/>
+                <field name="name"/>
+                <field name="product_qty" attrs="{'invisible': [('product_qty', '=', 0)]}" string="Commandé"/>
+                <field name="qty_received" attrs="{'invisible': [('qty_received', '=', 0)]}" string="Reçu"/>
+                <field name="price_unit"/>
+                <field name="price_subtotal" optional="show" string="Total commandé"/>
+                <field name="partner_id" string="Fournisseur"/>
+                <field name="order_id" widget="res_partner_many2one" string="N° PO"/>
+                <field name="date_order"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hm_purchase_order_line_action" model="ir.actions.act_window">
+        <field name="name">Purchase order lines</field>
+        <field name="res_model">purchase.order.line</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,kanban</field>
+        <field name="search_view_id" ref="hm_purchase.hm_purchase_view_purchase_order_line_filter"/>
+        <field name="view_ids"
+               eval="[(5,0,0), (0, 0, {'view_mode': 'tree', 'view_id': ref('hm_purchase.hm_purchase_import_order_line_tree_view')}),
+                                (0, 0, {'view_mode': 'kanban', 'view_id': ref('hm_purchase.hm_purchase_view_purchase_order_line_kanban')})
+                     ]"
+        />
+    </record>
+
+
+    <menuitem id="hm_po_line_menu"
+              name="Purchase order lines"
+              parent="purchase.menu_procurement_management"
+              groups="purchase.group_purchase_manager"
+              action="hm_purchase_order_line_action"
+              sequence="30"/>
+
+    <record id="hm_purchase_import_order_line_tree_view" model="ir.ui.view">
+        <field name="name">hm.purchase.order.line</field>
+        <field name="model">purchase.order.line</field>
+        <field name="arch" type="xml">
+            <tree default_order='product_categ_name asc,product_name asc' multi_edit="1"
+                  decoration-success="po_type == 'po_emport_marchandise'"
+                  decoration-warning="po_type == 'po_marchandise'" class="o_purchase_order">
+                <field name="product_name" optional="hide"/>
+                <field name="product_categ_display_name" optional="hide"/>
+                <field name="product_categ_name" optional="hide"/>
+                <field name="po_type" invisible="1"/>
+                <field name="product_id" widget="res_partner_many2one"/>
+                <field name="computed_image_art"/>
+                <field name="name"/>
+                <field name="product_qty" attrs="{'invisible': [('product_qty', '=', 0)]}" string="Commandé"/>
+                <field name="qty_received" attrs="{'invisible': [('qty_received', '=', 0)]}" string="Reçu"/>
+                <field name="price_unit"/>
+                <field name="price_subtotal" optional="show" string="Total commandé"/>
+                <field name="partner_id" string="Fournisseur"/>
+                <field name="order_id" widget="res_partner_many2one" string="N° PO"/>
+                <field name="date_order"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hm_purchase_order_line_action" model="ir.actions.act_window">
+        <field name="name">Purchase order lines</field>
+        <field name="res_model">purchase.order.line</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,kanban</field>
+        <field name="search_view_id" ref="hm_purchase.hm_purchase_view_purchase_order_line_filter"/>
+        <field name="view_ids"
+               eval="[(5,0,0), (0, 0, {'view_mode': 'tree', 'view_id': ref('hm_purchase.hm_purchase_import_order_line_tree_view')}),
+                                (0, 0, {'view_mode': 'kanban', 'view_id': ref('hm_purchase.hm_purchase_view_purchase_order_line_kanban')})
+                     ]"
+        />
+    </record>
+
+
+    <menuitem id="hm_po_line_menu"
+              name="Purchase order lines"
+              parent="purchase.menu_procurement_management"
+              groups="purchase.group_purchase_manager"
+              action="hm_purchase_order_line_action"
+              sequence="30"/>
+
+
+</odoo>

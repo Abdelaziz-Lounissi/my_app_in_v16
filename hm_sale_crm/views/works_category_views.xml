@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_works_category_view_form" model="ir.ui.view">
+        <field name="name">hm.works.category.view.form</field>
+        <field name="model">hm.works.category</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet string="Works Category">
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" required="1"/>
+                        </h1>
+                    </div>
+                    <group name="studio_group_64c446">
+                        <group name="studio_group_64c446_left">
+                            <field name="hm_works_category_parent_id"/>
+                            <field name="hm_intervention_type"/>
+                        </group>
+                        <group name="studio_group_64c446_right">
+                            <field name="hm_access_to_the_necessary_profession_id"/>
+                            <field name="create_icr_automatically"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="hm_so_manager_theoretical_workload_in_minutes"/>
+                            <field name="hm_so_manager_workload_points"/>
+                        </group>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hm_works_category_view_tree" model="ir.ui.view">
+        <field name="name">hm.works.category.view.tree</field>
+        <field name="model">hm.works.category</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <tree string="Works Category">
+                <field name="name" modifiers="{}"/>
+                <field name="hm_works_category_parent_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hm_works_category_view_search" model="ir.ui.view">
+        <field name="name">hm.works.category.view.search</field>
+        <field name="model">hm.works.category</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <search string="Works Category">
+                <field name="name" modifiers="{}"/>
+                <group name="studio_group_by">
+                    <filter context="{'group_by': 'hm_works_category_parent_id'}" name="studio_group_by_EwCjc"
+                            string="Works_category_parent"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_works_category" model="ir.actions.act_window">
+        <field name="name">Catégorie de travaux</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hm.works.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="works_category_menu"
+              action="hm_sale_crm.action_works_category"
+              sequence="55"
+              parent="sale.menu_sales_config"
+              name="Catégorie de travaux"/>
+
+    <record id="hm_works_category_parent_view_form" model="ir.ui.view">
+        <field name="name">hm.works.category.parent.view.form</field>
+        <field name="model">hm.works.category.parent</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet string="Works Category Parent">
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" required="1"/>
+                        </h1>
+                    </div>
+                    <group name="studio_group_5c6fd7">
+                        <group name="studio_group_5c6fd7_left">
+                            <field name="hm_nameplate_to_be_registered"/>
+                            <field name="do_not_display_icr_at_customer"/>
+                            <field name="hm_sales_teams"/>
+                        </group>
+                        <group name="studio_group_5c6fd7_right"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hm_works_category_parent_view_tree" model="ir.ui.view">
+        <field name="name">hm.works.category.parent.view.tree</field>
+        <field name="model">hm.works.category.parent</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <tree string="Works Category Parent">
+                <field name="name" modifiers="{}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_works_category_parents" model="ir.actions.act_window">
+        <field name="name">Catégorie de travaux parente</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hm.works.category.parent</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_works_category_parents"
+              action="hm_sale_crm.action_works_category_parents"
+              sequence="60"
+              parent="sale.menu_sales_config"
+              name="Catégorie de travaux parente"/>
+
+</odoo>

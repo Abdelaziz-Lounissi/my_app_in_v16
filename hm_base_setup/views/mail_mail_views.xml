@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_mail_mail_form_inherit" model="ir.ui.view">
+        <field name="name">hm.mail.mail.view.form</field>
+        <field name="model">mail.mail</field>
+        <field name="priority">16</field>
+        <field name="inherit_id" ref="mail.view_mail_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='attachment_ids']" position="attributes">
+                <attribute name="context">{'form_view_ref': 'base.view_attachment_form'}
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

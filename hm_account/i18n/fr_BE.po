@@ -1,0 +1,1340 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-21 11:29+0000\n"
+"PO-Revision-Date: 2024-02-21 11:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+msgid ""
+"&amp;nbsp;\n"
+"                                                        <span>on</span>"
+msgstr ""
+"&amp;nbsp;\n"
+"                                                        <span>sur</span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid ""
+"&amp;nbsp;\n"
+"                                                    <span>on</span>"
+msgstr ""
+"&amp;nbsp;\n"
+"                                                    <span>sur</span>"
+
+#. module: hm_account
+#: model:ir.actions.report,print_report_name:hm_account.hm_action_report_return_of_supplier_goods
+#: model:ir.actions.report,print_report_name:hm_account.hm_action_report_supplier_nc_request
+msgid "(object._get_report_base_filename())"
+msgstr ""
+
+#. module: hm_account
+#: model:base.automation,name:hm_account.hm_change_vam_emport_vam_on_confirmation
+#: model:ir.actions.server,name:hm_account.hm_change_vam_emport_vam_on_confirmation_action
+msgid "2Changer Vam Emport > Vam à la confirmation"
+msgstr "Changer Vam Emport > Vam à la confirmation"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+msgid ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Amount</span>\n"
+"                                    <span groups=\"account.group_show_line_subtotals_tax_included\">Total Price</span>"
+msgstr ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Montant</span>\n"
+"                                    <span groups=\"account.group_show_line_subtotals_tax_included\">Prix total</span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Amount</span>\n"
+"                                <span groups=\"account.group_show_line_subtotals_tax_included\">Total Price</span>"
+msgstr ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Montant</span>\n"
+"                                <span groups=\"account.group_show_line_subtotals_tax_included\">Prix totale</span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+msgid ""
+"<span>\n"
+"                                <strong>Bon commande d'origine:</strong>\n"
+"                                <br/>\n"
+"                            </span>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+msgid ""
+"<span>\n"
+"                                <strong>Lieu où la marchandise a été retournée:</strong>\n"
+"                                <br/>\n"
+"                            </span>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+msgid ""
+"<span>\n"
+"                                <strong>Original invoice:</strong>\n"
+"                                <br/>\n"
+"                            </span>"
+msgstr ""
+"<span>\n"
+"                                <strong>facture originale:</strong>\n"
+"                                <br/>\n"
+"                            </span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid ""
+"<span>\n"
+"                            <strong>Intervention date:</strong>\n"
+"                            <br/>\n"
+"                        </span>"
+msgstr ""
+"<span>\n"
+"                            <strong>Date d'intervention:</strong>\n"
+"                            <br/>\n"
+"                        </span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+msgid ""
+"<span>\n"
+"                            <strong>Lieu où le technicien a retourné la marchandise:</strong>\n"
+"                            <br/>\n"
+"                        </span>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document_inherit
+msgid ""
+"<span>\n"
+"                            <strong>Motif NC:</strong>\n"
+"                            <br/>\n"
+"                        </span>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document_inherit
+msgid ""
+"<span>\n"
+"                            <strong>Name:</strong>\n"
+"                            <br/>\n"
+"                        </span>"
+msgstr ""
+"<span>\n"
+"                            <strong>Nom:</strong>\n"
+"                            <br/>\n"
+"                        </span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document_inherit
+msgid ""
+"<span>\n"
+"                            <strong>Réf. Paiement:</strong>\n"
+"                            <br/>\n"
+"                        </span>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document_inherit
+msgid ""
+"<span>\n"
+"                            <strong>Source Document:</strong>\n"
+"                            <br/>\n"
+"                        </span>"
+msgstr ""
+"<span>\n"
+"                            <strong>Document d'origine:</strong>\n"
+"                            <br/>\n"
+"                        </span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_invoice_document_with_payments
+msgid ""
+"<span>\n"
+"                        <strong>Complete Address:</strong>\n"
+"                        <br/>\n"
+"                    </span>"
+msgstr ""
+"<span>\n"
+"                        <strong>Adresse complète:</strong>\n"
+"                        <br/>\n"
+"                    </span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_invoice_document_with_payments
+msgid ""
+"<span>\n"
+"                        <strong>Intervention date:</strong>\n"
+"                        <br/>\n"
+"                    </span>"
+msgstr ""
+"<span>\n"
+"                        <strong>Date d'intervention:</strong>\n"
+"                        <br/>\n"
+"                    </span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_inherit
+msgid ""
+"<span>\n"
+"                        <strong>Name:</strong>\n"
+"                        <br/>\n"
+"                    </span>"
+msgstr ""
+"<span>\n"
+"                        <strong>Nom:</strong>\n"
+"                        <br/>\n"
+"                    </span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document_inherit
+msgid ""
+"<span>\n"
+"                    <strong>Bon commande d'origine:</strong>\n"
+"                    <br/>\n"
+"                </span>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document_inherit
+msgid ""
+"<span>\n"
+"                    <strong>Facture d'origine:</strong>\n"
+"                    <br/>\n"
+"                </span>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document_inherit
+msgid ""
+"<span>\n"
+"                    <strong>Lieu où la marchandise a été retournée:</strong>\n"
+"                    <br/>\n"
+"                </span>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_invoice_document_with_payments
+msgid ""
+"<span>\n"
+"                <strong>Intervention address:</strong>\n"
+"                <br/>\n"
+"            </span>"
+msgstr ""
+"<span>\n"
+"                <strong>Adresse d'intervention:</strong>\n"
+"                <br/>\n"
+"            </span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_inherit
+msgid ""
+"<span>\n"
+"                <strong>Lieu où le technicien a retourné la marchandise:</strong>\n"
+"                <br/>\n"
+"            </span>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_invoice_document_with_payments
+msgid ""
+"<span>\n"
+"                <u>Rapport d'intervention du technicien:</u>\n"
+"            </span>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document_inherit
+msgid "<span>Barcode</span>"
+msgstr "<span>Code-barres</span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_invoice_document_with_payments
+msgid "<span>Complete Address</span>"
+msgstr "<span>Adresse complète</span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_invoice_document_with_payments
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document_inherit
+msgid "<span>Customer</span>"
+msgstr "<span>Client</span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<span>Description</span>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<span>Disc.(%)</span>"
+msgstr "<span>Rem.(%)</span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_invoice_document_with_payments
+msgid "<span>Intervention address</span>"
+msgstr "<span>Adresse d'intervention</span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_invoice_document_with_payments
+msgid "<span>Name</span>"
+msgstr "<span>Nom</span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_invoice_document_with_payments
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document_inherit
+msgid "<span>New Text Block</span>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_invoice_document_with_payments
+msgid "<span>New Title</span>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<span>Quantity</span>"
+msgstr "<span>Quantité</span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_invoice_document_with_payments
+msgid "<span>Rapport d'intervention du technicien:</span>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document_inherit
+msgid "<span>Ref fourn</span>"
+msgstr "<span>Réf fourn</span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<span>Source Document</span>"
+msgstr "<span>Document d'origine</span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<span>Taxes</span>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<span>Unit Price</span>"
+msgstr "<span>Prix unitaire</span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_invoice_document_with_payments
+msgid "<span>Work report:</span>"
+msgstr "<span>Rapport d'intervention:</span>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr "<strong class=\"mr16\">Sous-total</strong>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+msgid ""
+"<strong class=\"text-center\">Scan me with your banking app.</strong>\n"
+"                            <br/>\n"
+"                            <br/>"
+msgstr ""
+"<strong class=\"text-center\">Scannez-moi avec votre application bancaire.</strong>\n"
+"                            <br/>\n"
+"                            <br/>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid ""
+"<strong class=\"text-center\">Scan me with your banking app.</strong>\n"
+"                        <br/>\n"
+"                        <br/>"
+msgstr ""
+"<strong class=\"text-center\">Scannez-moi avec votre application bancaire.</strong>\n"
+"                        <br/>\n"
+"                        <br/>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+msgid ""
+"<strong class=\"text-center\">The SEPA QR Code informations are not set correctly.</strong>\n"
+"                            <br/>"
+msgstr ""
+"<strong class=\"text-center\">Les informations du QR Code ne sont pas correctement configurées.</strong>\n"
+"                            <br/>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid ""
+"<strong class=\"text-center\">The SEPA QR Code informations are not set correctly.</strong>\n"
+"                        <br/>"
+msgstr ""
+"<strong class=\"text-center\">Les informations du QR Code ne sont pas correctement configurées.</strong>\n"
+"                        <br/>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_invoice_document_with_payments
+msgid ""
+"<strong>\n"
+"                <font style=\"color: rgb(247, 198, 206);\">\n"
+"                    <font style=\"color: rgb(247, 247, 247);\">\n"
+"                        <b>Amount Due</b>\n"
+"                    </font>\n"
+"                </font>\n"
+"            </strong>"
+msgstr ""
+"<strong>\n"
+"                <font style=\"color: rgb(247, 198, 206);\">\n"
+"                    <font style=\"color: rgb(247, 247, 247);\">\n"
+"                        <b>Montant dû</b>\n"
+"                    </font>\n"
+"                </font>\n"
+"            </strong>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<strong>Amount Due</strong>"
+msgstr "<strong>Montant dû</strong>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<strong>Bank Account:</strong>"
+msgstr "<strong>Compte bancaire:</strong>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_inherit
+msgid "<strong>Bon de commande d'origine:</strong>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<strong>Customer Code :</strong>"
+msgstr "<strong>Numéro de client :</strong>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+msgid "<strong>Customer Code:</strong>"
+msgstr "<strong>Numéro de client:</strong>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document_inherit
+msgid "<strong>Date de la demande:</strong>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<strong>Description :</strong>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+msgid "<strong>Description:</strong>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<strong>Due Date :</strong>"
+msgstr "<strong>Date d'échéance :</strong>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+msgid "<strong>Due Date:</strong>"
+msgstr "<strong>Date d'échéance:</strong>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_inherit
+msgid "<strong>Facture reçue correspondant:</strong>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<strong>Incoterms :</strong>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+msgid "<strong>Incoterms:</strong>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<strong>Intervention address:</strong>"
+msgstr "<strong>Adresse d'intervention:</strong>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<strong>Invoice Date :</strong>"
+msgstr "<strong>Date de la facture :</strong>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+msgid "<strong>Invoice Date:</strong>"
+msgstr "<strong>Date de la facture:</strong>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document_inherit
+msgid "<strong>Lieu où la marchandise doit être retournée:</strong>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1_inherit
+msgid "<strong>Lieu où retourner la marchandise:</strong>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document_inherit
+msgid ""
+"<strong>Motif du retour et numéro de facture à donner au comptoir:</strong>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document_inherit
+msgid "<strong>Motif du retour:</strong>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<strong>Origin :</strong>"
+msgstr "<strong>Origine :</strong>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<strong>Payment Mode :</strong>"
+msgstr "<strong>Mode de paiement :</strong>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_inherit
+msgid "<strong>Raison de la note de crédit:</strong>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document_inherit
+msgid "<strong>Raison demande note de crédit:</strong>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<strong>Reference:</strong>"
+msgstr "<strong>Réference:</strong>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+msgid "<strong>Source:</strong>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>Sous-total</strong>"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "<strong>Total</strong>"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document_inherit
+msgid "<strong>Vendor:</strong>"
+msgstr "<strong>Fournisseur:</strong>"
+
+#. module: hm_account
+#: model:ir.model,name:hm_account.model_account_invoice_send
+msgid "Account Invoice Send"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model,name:hm_account.model_account_move_reversal
+msgid "Account Move Reversal"
+msgstr "Renversement de la pièce comptable"
+
+#. module: hm_account
+#: model:ir.actions.server,name:hm_account.account_transfer_icr_data_ir_actions_server
+#: model:ir.cron,cron_name:hm_account.account_transfer_icr_data
+#: model:ir.cron,name:hm_account.account_transfer_icr_data
+msgid "Account transfer ICR data"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.actions.server,name:hm_account.hm_activity_tech_merchandise_return_tracking_action
+msgid "Activité - Suivi retour marchandise tech"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move_line__computed_image_art
+msgid "Art"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.actions.server,name:hm_account.hm_missing_vat_attest_create_followup_task_action
+msgid "Attest TVA manquante - créer tache suivi"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.actions.act_window,name:hm_account.hm_bank_2_action
+msgid "Bank 2"
+msgstr "Banque 2"
+
+#. module: hm_account
+#: model:ir.actions.act_window,name:hm_account.hm_action_res_bank_form
+msgid "Banks"
+msgstr "Banques"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_view_move_form
+msgid "Bon de commande lié"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move_line__hm_budget
+msgid "Budget"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "Cancelled Invoice"
+msgstr "Facture annulée"
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move__hm_work_category
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_view_move_form_view
+msgid "Catégorie de travaux"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move__hm_parent_work_category
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_view_move_form_view
+msgid "Catégorie de travaux parent"
+msgstr ""
+
+#. module: hm_account
+#: model:base.automation,name:hm_account.hm_change_facq_noreply_invoicing_facq
+#: model:ir.actions.server,name:hm_account.hm_change_facq_noreply_invoicing_facq_action
+msgid "Changer Facq Noreply Facturation > Facq à la création facture"
+msgstr ""
+
+#. module: hm_account
+#: model:base.automation,name:hm_account.hm_change_vam_invoicing_when_creating_invoice
+#: model:ir.actions.server,name:hm_account.hm_change_vam_invoicing_when_creating_invoice_action
+msgid "Changer Vam Facturation > Vam à la création facture"
+msgstr ""
+
+#. module: hm_account
+#: model:base.automation,name:hm_account.hm_change_last_maintenance_date
+#: model:ir.actions.server,name:hm_account.hm_change_last_maintenance_date_action
+msgid "Changer date dernier entretien"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move_line__partner_of_so
+msgid "Client du devis lié"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_view_move_form
+msgid ""
+"Cocher si la facture a été éditée avec 6% TVA mais était erronnée (chantier "
+"annulé ou facture erronnée)"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.actions.server,name:hm_account.hm_internal_comm_fa_received_action
+msgid "Comm interne - FA reçue"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.actions.server,name:hm_account.hm_internal_comm_missing_down_payment_action
+msgid "Comm interne - Paiement acompte manquant"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model,name:hm_account.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: hm_account
+#: model:base.automation,name:hm_account.hm_copy_reason_for_credit_note_when_validated
+#: model:ir.actions.server,name:hm_account.hm_copy_reason_for_credit_note_when_validated_action
+msgid "Copy Motif de note de crédit quand on la valide"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "Credit Note"
+msgstr "Avoir"
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move_line__order_partner
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_account_invoice_supplier_form_view
+msgid "Customer"
+msgstr "Client"
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_bank_statement_import_journal_creation__default_inbound_payment_method
+#: model:ir.model.fields,field_description:hm_account.field_account_journal__default_inbound_payment_method
+msgid "Default Payment Inbound"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_bank_statement_import_journal_creation__default_outbound_payment_method
+#: model:ir.model.fields,field_description:hm_account.field_account_journal__default_outbound_payment_method
+msgid "Default Payment Outbound"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.actions.report,name:hm_account.hm_action_report_supplier_nc_request
+msgid "Demande NC fournisseur"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.actions.server,name:hm_account.hm_missing_vat_attestation_request_action
+msgid "Demande attestation TVA manquante"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.actions.server,name:hm_account.hm_supplier_credit_note_request_action
+msgid "Demande note de crédit fournisseur"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_account_invoice_supplier_form_view
+msgid "Description"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "Draft Invoice"
+msgstr "Facture en brouillon"
+
+#. module: hm_account
+#: model:ir.actions.act_window,name:hm_account.hm_journal_items_action
+msgid "Ecritures compta"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_account_invoice_supplier_form_view
+msgid "Encoder que si le technicien a confirmé l'avoir rapportée"
+msgstr ""
+
+#. module: hm_account
+#: model:base.automation,name:hm_account.hm_sending_last_vat_certificate_reminder
+#: model:ir.actions.server,name:hm_account.hm_sending_last_vat_certificate_reminder_action
+msgid "Envoi dernier rappel attest TVA"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.actions.server,name:hm_account.hm_sending_email_request_for_vat_attest_missing
+msgid "Envoi mail demande attest TVA manquante"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.actions.server,name:hm_account.hm_send_email_proposal_for_maintenance_action
+msgid "Envoi mail propo entretien (version LUD)"
+msgstr ""
+
+#. module: hm_account
+#: model:base.automation,name:hm_account.hm_fictitious_for_contextual_subactions
+#: model:ir.actions.server,name:hm_account.hm_fictitious_for_contextual_subactions_action
+msgid "Fictif pour sous actions contextuelles"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.view_account_invoice_line_filter
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move_line__hm_partner
+msgid "HM Customer"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_res_partner__hm_property_account_position_name
+#: model:ir.model.fields,field_description:hm_account.field_res_users__hm_property_account_position_name
+msgid "HM New Champ lié Account position"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move__hm_partner_shipping_name
+msgid "HM New Champ lié shipping"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move__hm_property_manager1
+msgid "HM Prop. New Champ lié"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.actions.server,name:hm_account.hm_imput_activity_error_payment_supplier_with_domiciliation_action
+msgid "Imput activity - Error payment supplier with domiciliation"
+msgstr ""
+
+#. module: hm_account
+#: model:base.automation,name:hm_account.hm_imput_activity_new_invoice_received_to_define
+#: model:ir.actions.server,name:hm_account.hm_imput_activity_new_invoice_received_to_define_action
+msgid "Imput activity - New invoice received - A DEFINIR"
+msgstr ""
+
+#. module: hm_account
+#: model:base.automation,name:hm_account.hm_imput_activity_new_invoice_received
+#: model:ir.actions.server,name:hm_account.hm_imput_activity_new_invoice_received_action
+msgid "Imput activity - New invoice received - FRAIS GENERAUX"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.actions.server,name:hm_account.hm_imput_activity_new_invoice_received_general_charges_v2_action
+msgid "Imput activity - New invoice received - FRAIS GENERAUX V2"
+msgstr ""
+
+#. module: hm_account
+#: model:base.automation,name:hm_account.hm_imput_activity_new_invoice_received_materiel
+#: model:ir.actions.server,name:hm_account.hm_imput_activity_new_invoice_received_materiel_action
+msgid "Imput activity - New invoice received - MATERIEL"
+msgstr ""
+
+#. module: hm_account
+#: model:base.automation,name:hm_account.hm_imput_activity_new_invoice_received_technicians
+#: model:ir.actions.server,name:hm_account.hm_imput_activity_new_invoice_received_technicians_action
+msgid "Imput activity - New invoice received - TECHNICIENS"
+msgstr ""
+
+#. module: hm_account
+#: model:base.automation,name:hm_account.hm_imput_activity_pay_supplier_invoice
+#: model:ir.actions.server,name:hm_account.hm_imput_activity_pay_supplier_invoice_action
+msgid ""
+"Imput activity - Pay supplier invoice (si marche pas: account date + 1jr)"
+msgstr ""
+
+#. module: hm_account
+#: model:base.automation,name:hm_account.hm_imput_activity_merchandise_return_tracking
+#: model:ir.actions.server,name:hm_account.hm_imput_activity_merchandise_return_tracking_action
+msgid "Imput activity - Suivi retour marchandises"
+msgstr ""
+
+#. module: hm_account
+#: model:base.automation,name:hm_account.hm_input_activity_merchandise_return_monitoring_delay
+#: model:ir.actions.server,name:hm_account.hm_input_activity_merchandise_return_monitoring_delay_action
+msgid "Imput activity - Suivi retour marchandises MANAGEMENT RETARD"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move__hm_intervention_date
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_view_move_form
+msgid "Intervention date"
+msgstr "Date d'intervention"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: hm_account
+#: model:ir.actions.act_window,name:hm_account.hm_account_invoice_line_action
+#: model:ir.ui.menu,name:hm_account.hm_accounting_suppliers_invoice_line_menu
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_account_move_line_search_view
+msgid "Invoice Line"
+msgstr "Ligne de facture"
+
+#. module: hm_account
+#: model:ir.actions.act_window,name:hm_account.hm_action_account_moves_line_purchase
+msgid "Invoice Lines"
+msgstr "Lignes de facture"
+
+#. module: hm_account
+#: model:ir.model,name:hm_account.model_account_journal
+msgid "Journal"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model,name:hm_account.model_account_move
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_account_move_activity_view
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_account_move_graph_view
+msgid "Journal Entries"
+msgstr "Pièces comptables"
+
+#. module: hm_account
+#: model:ir.model,name:hm_account.model_account_move_line
+msgid "Journal Item"
+msgstr "Écriture comptable"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.view_move_line_tree_grouped_inrefund
+msgid "Journal Items"
+msgstr "Écritures comptables"
+
+#. module: hm_account
+#: model:ir.actions.server,name:hm_account.hm_lancer_ocr_creation_facture_action_action
+msgid "Lancer OCR a la creation facture"
+msgstr "Lancer OCR à la création facture"
+
+#. module: hm_account
+#: model:ir.actions.server,name:hm_account.hm_launch_invoice_ocr_action
+msgid "Lancer OCR facture"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.ui.menu,name:hm_account.menu_account_invoice_supplier
+msgid "Lignes des NC"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move__hm_manager1
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_view_move_form
+msgid "Manager"
+msgstr "Gestionnaire"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1_inherit
+msgid "Marchandises à retourner au fournisseur"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.view_move_line_tree_grouped_inrefund
+msgid "Matching"
+msgstr "Équivalent"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_view_move_form_view
+msgid "Motif pour lequel on a demandé une note de crédit"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move_line__hm_display_name_partner
+#: model:ir.model.fields,field_description:hm_account.field_product_product__hm_property_account_expense_tax_ids
+#: model:ir.model.fields,field_description:hm_account.field_product_template__hm_property_account_expense_tax_ids
+msgid "New Champ lié"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move__hm_property_manager
+msgid "New Champ lié HM Prop. Manager"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move__hm_display_name_manager
+msgid "New Champ lié Name"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move_line__hm_purchase_order_count
+msgid "New Champ lié PO Count"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move__hm_sale_order_property_id
+msgid "New Champ lié SO Prop."
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_account_invoice_supplier_form_view
+msgid "Note"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_inherit
+msgid "Note de crédit à établir par fournisseur"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move__sale_order_id
+msgid "Origin Order"
+msgstr "Commande d'origine"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_view_account_invoice_filter
+msgid "Origin PO"
+msgstr "PO d'origine"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "Paid on"
+msgstr "Payé le"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_view_account_invoice_filter
+#: model_terms:ir.ui.view,arch_db:hm_account.view_account_invoice_line_filter
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: hm_account
+#: model:ir.actions.act_window,name:hm_account.hm_account_payment_action
+#: model:ir.model,name:hm_account.model_account_payment
+msgid "Payments"
+msgstr "Paiements"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+msgid ""
+"Please do not pay it manually, the payment will be asked to your bank to be processed\n"
+"                                automatically."
+msgstr ""
+"Évitez tout règlement manuel, car nous demanderons à votre banque de traiter le paiement\n"
+"                        automatiquement."
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid ""
+"Please do not pay it manually, the payment will be asked to your bank to be "
+"processed automatically."
+msgstr ""
+"Évitez tout règlement manuel, car nous demanderons à votre banque de traiter le paiement\n"
+"                        automatiquement."
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+msgid "Please use the following communication for your payment :"
+msgstr "Merci d'utiliser la communication suivante pour votre paiement :"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "Please use the following communication for your payment:"
+msgstr "Merci d'utiliser la communication suivante pour votre paiement:"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_view_move_form
+msgid "Position fiscale adresse livraison"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model,name:hm_account.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move__hm_property_id
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_view_move_form
+msgid "Property"
+msgstr "Bien immobilier"
+
+#. module: hm_account
+#: model:ir.model.fields,help:hm_account.field_account_move_line__hm_partner
+msgid ""
+"Put an address if you want to deliver directly from the vendor to the "
+"customer. Otherwise, keep empty to deliver to your own company."
+msgstr ""
+"Ajoutez une adresse si vous voulez livrer directement du fournisseur au "
+"client. Sinon, laissez vide pour vous faire livrer à votre société."
+
+#. module: hm_account
+#: model:base.automation,name:hm_account.hm_missing_vat_attest_reminder
+#: model:ir.actions.server,name:hm_account.hm_missing_vat_attest_reminder_action
+msgid "Rappel attest TVA manquant"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.actions.server,name:hm_account.hm_payment_reminder_invoice_1_action
+msgid "Rappel de paiement 1 facture"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.view_account_invoice_line_filter
+msgid "Reference"
+msgstr "Référence"
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move_line__so
+msgid "Related quotation"
+msgstr "Devis lié"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.view_account_invoice_line_filter
+msgid "Retour marchandise non fait"
+msgstr ""
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document_inherit
+msgid "Retour marchandises au fournisseur à réaliser"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.actions.report,name:hm_account.hm_action_report_return_of_supplier_goods
+msgid "Retour marchandises fournisseur"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.actions.server,name:hm_account.hm_return_of_merchandise_to_be_carried_out_by_technician_action
+msgid "Retour marchandises à réaliser par technicien"
+msgstr ""
+
+#. module: hm_account
+#: code:addons/hm_account/wizard/account_move_reversal.py:0
+#, python-format
+msgid "Reversal of: %s"
+msgstr "Extourne de : %s"
+
+#. module: hm_account
+#: code:addons/hm_account/wizard/account_move_reversal.py:0
+#, python-format
+msgid "Reversal of: %s, %s"
+msgstr "Extourne de : %s, %s"
+
+#. module: hm_account
+#: model:ir.model,name:hm_account.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.view_account_invoice_line_filter
+msgid "Search Invoice"
+msgstr "Chercher une facture"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_account_invoice_supplier_form_view
+msgid "Section"
+msgstr ""
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move__hm_technician
+#: model:ir.model.fields,field_description:hm_account.field_account_move_line__hm_technician
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_account_invoice_supplier_form_view
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_view_move_line_tree
+msgid "Technician"
+msgstr "Technicien"
+
+#. module: hm_account
+#: model:ir.model.fields,help:hm_account.field_account_move__hm_vat_number
+msgid ""
+"The Tax Identification Number. Complete it if the contact is subjected to "
+"government taxes. Used in some legal statements."
+msgstr ""
+"Le numéro d'identification fiscale. Complétez-le si le contact est soumis "
+"aux taxes gouvernementales. Utilisé dans certaines déclarations juridiques."
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+msgid ""
+"This invoice will be paid using direct debit and is only\n"
+"                                sent for informative purposes."
+msgstr ""
+"Notez que cette facture sera réglée au moyen d’un prélèvement automatique et qu’elle ne vous est\n"
+"                        envoyée qu’à titre informatif."
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid ""
+"This invoice will be paid using direct debit and is only sent for "
+"informative purposes."
+msgstr ""
+"Notez que cette facture sera réglée au moyen d’un prélèvement automatique et qu’elle ne vous est\n"
+"                        envoyée qu’à titre informatif."
+
+#. module: hm_account
+#: model:ir.model.fields,help:hm_account.field_account_move__hm_intervention_date
+msgid ""
+"This is the delivery date promised to the customer. If set, the delivery "
+"order will be scheduled based on this date rather than product lead times."
+msgstr ""
+"C'est la date de livraison promise au client. Si elle est définie, le bon de"
+" livraison se basera sur cette date plutôt que celle définié grâce au délai "
+"indiqué sur l'article. "
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.view_move_line_tree_grouped_inrefund
+msgid "Total Credit"
+msgstr "Total au crédit"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.view_move_line_tree_grouped_inrefund
+msgid "Total Debit"
+msgstr "Total au débit"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_account_invoice_supplier_form_view
+msgid "Unit"
+msgstr "Unité"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_account_move_line_search_view
+msgid "Unreconciled"
+msgstr "Non lettré"
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move__hm_vat_number
+msgid "VAT Number"
+msgstr "Numéro de TVA"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_account_invoice_supplier_form_view
+msgid "VAT number"
+msgstr "Numéro de TVA"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_return_merchandise_supplier_document
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+msgid "Vendor Bill"
+msgstr "Facture fournisseur"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_report_supplier_nc_request_document
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "Vendor Credit Note"
+msgstr "Avoir de fournisseur"
+
+#. module: hm_account
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_1
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_copy_1_copy_2
+#: model_terms:ir.ui.view,arch_db:hm_account.report_invoice_document_with_payments_copy_1
+msgid "Vendor bill"
+msgstr "Facture fournisseur"
+
+#. module: hm_account
+#: model:ir.actions.act_window,name:hm_account.hm_action_ui_view
+msgid "Views"
+msgstr "Vues"
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_move__hm_withholding_obligation
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_account_invoice_supplier_form_view
+msgid "Withholding obligation"
+msgstr "Obligation de retenue"
+
+#. module: hm_account
+#: model:ir.model.fields,field_description:hm_account.field_account_payment__sender_bank_account
+#: model_terms:ir.ui.view,arch_db:hm_account.hm_account_account_payment_form_inherit
+msgid "Sender bank account"
+msgstr "Compte Bancaire de l'émetteur"
+
+#. module: account
+#: model_terms:ir.ui.view,arch_db:account.portal_my_home_invoice
+#: model_terms:ir.ui.view,arch_db:account.portal_my_home_menu_invoice
+msgid "Invoices &amp; Bills"
+msgstr "Factures"

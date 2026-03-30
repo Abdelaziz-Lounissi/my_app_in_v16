@@ -1,0 +1,133 @@
+ <t t-set="template" t-value="object.get_report_template()"/>
+                <div style="margin: 0px; padding: 0px;">
+                    <t t-if="template">
+                        <p t-if="template == 5"
+                           style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">
+                            <i>
+                                <font style="font-size:12px;">
+                                    If you have any questions regarding the organization of your project, please do not
+                                    reply to this e-mail and contact the
+                                    project manager directly via the link
+                                </font>
+                                <a style="text-decoration:none;background-color:transparent;color:rgb(0, 135, 132);"
+                                   t-attf-href="{{ object.sale_order_id.get_portal_url() }} ">
+                                    <font style="font-size:12px;"><t t-out="object.sale_order_id.name">SO12345</t>.
+                                    </font>
+                                </a>
+                            </i>
+                            <br/>
+                            <br/>
+                        </p>
+
+                        <p style="margin-bottom: 0px;">
+                            Dear <t t-out="object.partner_id.display_name or '''client'''"></t>,
+                            <br/>
+                            <br/>
+                        </p>
+
+                        <p t-if="template == 1" style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">
+                            Please find attached the invoice <strong><t t-out="object.name">FAC/2024/123</t></strong>
+                            for an amount of <strong><t t-out="format_amount(object.amount_total, object.currency_id)">50.00 €</t></strong>
+                            related to the intervention <strong><t t-out="object.sale_order_id.name">SOXXX</t></strong>.
+                            <br/>
+                            The invoice must be paid to the account <strong><t t-out="object.partner_bank_id.display_name  or 'Belfius - BE86 0689 4661 5650'">[Recipient bank account]</t></strong> using the following reference: <strong><t t-out="object.name">FAC/2024/123</t></strong>.
+                            <br/>
+                            We kindly thank you in advance for ensuring payment before the due date on <strong><t t-out="object.invoice_date_due.strftime('%d/%m/%Y')">dd/mm/yyyy</t></strong>.
+                            <br/>
+                            <br/>
+                        </p>
+
+                        <p t-elif="template == 5"
+                           style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">
+                            Please find enclosed the down-payment invoice
+                            <strong>
+                                <t t-out="object.name">FAC/2024/123</t>
+                            </strong>
+                            for
+                            <strong>
+                                <t t-out="format_amount(object.amount_total, object.currency_id)">50,00 €</t>
+                            </strong>
+                            .
+                            <br/>
+                            <br/>
+                            We thank you in advance for paying the invoice as soon as possible so that we can organize the project quickly.
+                            <br/>
+                            <br/>
+                            If this is an urgent job, please return the proof of payment in reply to this e-mail.
+                            <br/>
+                            <br/>
+                        </p>
+
+                        <p t-elif="template == 6"
+                           style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">
+                            Please find enclosed the credit note
+                            <strong>
+                                <t t-out="object.name">NC/2024/123</t>
+                            </strong>
+                            in the amount of
+                            <strong>
+                                <t t-out="format_amount(object.amount_total, object.currency_id)">50,00 €</t>
+                            </strong>
+                            .
+                            <br/>
+                            <br/>
+                            You can deduct this amount from your next payment, or tell us which on which bank account number you wish to be reimbursed by replying to this e-mail.
+                            <br/>
+                            <br/>
+                        </p>
+                    </t>
+                    <t t-else="">
+                        <p style="margin:0px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;padding:0px;font-size: 13px;">
+                            Dear
+                            <t t-if="object.partner_id.parent_id">
+                                <t t-out="object.partner_id.name"></t>
+                                (<t t-out="object.partner_id.parent_id.name"></t>),
+                            </t>
+                            <t t-else="">
+                                <t t-out="object.partner_id.name"></t>,
+                            </t>
+                            <br/>
+                            <br/>
+                            Here is your
+                            <t t-if="object.name">
+                                invoice
+                                <strong>
+                                    <t t-out="object.name">FAC/2024/123</t>
+                                </strong>
+                            </t>
+                            <t t-else="">
+                                invoice
+                            </t>
+                            <t t-if="object.invoice_origin">
+                                (with reference: <t t-out="object.invoice_origin">ref invoice</t>)
+                            </t>
+                            for
+                            <strong>
+                                <t t-out="format_amount(object.amount_total, object.currency_id)">50,00 €</t>
+                            </strong>
+                            from <t t-out="object.company_id.name">Heat Me</t>.
+                            <br/>
+                            <br/>
+                            We thank you in advance for taking care of its payment.
+                            <br/>
+                            <br/>
+                        </p>
+                    </t>
+
+                    <div id="qrcode" t-if="object.display_qr_code and object.amount_residual > 0">
+                        <t t-set="qr_code_url" t-value="object._generate_qr_code(silent_errors=True)"/>
+                        <p t-if="qr_code_url">
+                            <strong class="text-center">Scan me with your banking app.</strong><br/><br/>
+                            <img class="border border-dark rounded" t-att-src="qr_code_url"/>
+                        </p>
+                    </div>
+
+                    <p style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">
+                        Please do not hesitate to contact us if you have any questions.
+                        <br/>
+                        <br/>
+                        Kind regards,
+                        <br/>
+                        The accounting department
+                    </p>
+                </div>

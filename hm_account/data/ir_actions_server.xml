@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="hm_internal_comm_fa_received_action" model="ir.actions.server">
+            <field name="name">Comm interne - FA reçue</field>
+            <field name="model_id" ref="account.model_account_move"/>
+        </record>
+
+        <record id="hm_internal_comm_missing_down_payment_action" model="ir.actions.server">
+            <field name="name">Comm interne - Paiement acompte manquant</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="state">next_activity</field>
+            <field name="activity_type_id" ref="mail.mail_activity_data_todo"/>
+            <field name="activity_summary">Manque facture d'acompte! Faire suivi ou annuler intervention?</field>
+            <field name="activity_user_type">generic</field>
+            <field name="activity_user_field_name">user_id</field>
+        </record>
+
+        <record id="hm_missing_vat_attest_create_followup_task_action" model="ir.actions.server">
+<!--            <field name="name">Attest TVA manquante - créer tache suivi</field>-->
+        </record>
+
+        <record id="hm_return_of_merchandise_to_be_carried_out_by_technician_action" model="ir.actions.server">
+<!--            <field name="name">Retour marchandises à réaliser par technicien</field>-->
+        </record>
+
+        <record id="hm_imput_activity_pay_supplier_invoice_action" model="ir.actions.server">
+<!--            <field name="name">Imput activity - Pay supplier invoice (si marche pas: account date + 1jr)</field>-->
+        </record>
+
+        <record id="hm_imput_activity_error_payment_supplier_with_domiciliation_action" model="ir.actions.server">
+<!--            <field name="name">Imput activity - Error payment supplier with domiciliation</field>-->
+        </record>
+
+        <record id="hm_imput_activity_new_invoice_received_materiel_action" model="ir.actions.server">
+<!--            <field name="name">Imput activity - New invoice received - MATERIEL</field>-->
+        </record>
+
+        <record id="hm_activity_tech_merchandise_return_tracking_action" model="ir.actions.server">
+<!--            <field name="name">Activité - Suivi retour marchandise tech</field>-->
+        </record>
+
+        <record id="hm_imput_activity_merchandise_return_tracking_action" model="ir.actions.server">
+<!--            <field name="name">Imput activity - Suivi retour marchandises</field>-->
+        </record>
+
+        <record id="hm_change_vam_invoicing_when_creating_invoice_action" model="ir.actions.server">
+<!--            <field name="name">Changer Vam Facturation &gt; Vam à la création facture</field>-->
+        </record>
+
+        <record id="hm_launch_invoice_ocr_action" model="ir.actions.server">
+            <field name="name">Lancer OCR facture</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="state">code</field>
+            <field name="code">record.retry_ocr()</field>
+        </record>
+
+        <record id="hm_lancer_ocr_creation_facture_action_action" model="ir.actions.server">
+            <field name="name">Lancer OCR a la creation facture</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="child_ids" eval="[(6, 0, [ref('hm_account.hm_launch_invoice_ocr_action')])]"/>
+            <field name="state">multi</field>
+        </record>
+
+        <record id="hm_input_activity_merchandise_return_monitoring_delay_action" model="ir.actions.server">
+<!--            <field name="name">Imput activity - Suivi retour marchandises MANAGEMENT RETARD</field>-->
+        </record>
+
+        <record id="hm_imput_activity_new_invoice_received_action" model="ir.actions.server">
+<!--            <field name="name">Imput activity - New invoice received - FRAIS GENERAUX</field>-->
+        </record>
+
+        <record id="hm_imput_activity_new_invoice_received_technicians_action" model="ir.actions.server">
+<!--            <field name="name">Imput activity - New invoice received - TECHNICIENS</field>-->
+        </record>
+
+        <record id="hm_imput_activity_new_invoice_received_general_charges_v2_action" model="ir.actions.server">
+<!--            <field name="name">Imput activity - New invoice received - FRAIS GENERAUX V2</field>-->
+        </record>
+
+        <record id="hm_imput_activity_new_invoice_received_to_define_action" model="ir.actions.server">
+<!--            <field name="name">Imput activity - New invoice received - A DEFINIR</field>-->
+        </record>
+
+        <record id="hm_change_facq_noreply_invoicing_facq_action" model="ir.actions.server">
+<!--            <field name="name">Changer Facq Noreply Facturation &gt; Facq à la création facture</field>-->
+        </record>
+
+        <record id="hm_copy_reason_for_credit_note_when_validated_action" model="ir.actions.server">
+<!--            <field name="name">Copy Motif de note de crédit quand on la valide</field>-->
+        </record>
+
+        <record id="hm_change_vam_emport_vam_on_confirmation_action" model="ir.actions.server">
+<!--            <field name="name">Changer Vam Emport &gt; Vam à la confirmation</field>-->
+        </record>
+
+        <record id="hm_send_email_proposal_for_maintenance_action" model="ir.actions.server">
+            <field name="name">Envoi mail propo entretien (version LUD)</field>
+            <field name="model_id" ref="account.model_account_move_line"/>
+        </record>
+
+        <record id="hm_change_last_maintenance_date_action" model="ir.actions.server">
+            <field name="name">Changer date dernier entretien</field>
+            <field name="model_id" ref="account.model_account_move_line"/>
+            <field name="state">object_write</field>
+        </record>
+
+        <record id="hm_change_invoice_payment_state_action" model="ir.actions.server">
+            <field name="name">[Technical] Change SO State to 'To Organize' if Advance Invoice is Paid</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="state">code</field>
+            <field name="code">record.sale_order_id.write({"state2":"to_organize"})</field>
+        </record>
+
+    </data>
+</odoo>

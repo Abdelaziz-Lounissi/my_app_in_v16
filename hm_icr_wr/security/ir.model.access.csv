@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hm_icr,access_hm_icr,model_hm_icr,base.group_user,1,1,1,0
+access_group_portal_hm_icr,access_group_portal_hm_icr,model_hm_icr,base.group_portal,1,0,0,0
+access_hm_work_report,access_hm_work_report,model_hm_work_report,base.group_user,1,1,1,1
+access_group_portal_work_report,access_group_portal_work_report,model_hm_work_report,base.group_portal,1,0,0,0
+access_hm_template_icr_info_public,hm.picture.icr.info public,model_hm_picture_icr_info,,1,1,1,1
+access_hm_template_wr_info_public,hm.picture.wr.info public,model_hm_picture_wr_info,,1,1,1,1

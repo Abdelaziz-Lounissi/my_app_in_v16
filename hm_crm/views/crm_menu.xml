@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <menuitem id="crm.menu_crm_config_lead" sequence="5" name="Pipeline" parent="crm.crm_menu_config"
+              groups="sales_team.group_sale_manager"/>
+
+    <menuitem id="crm.crm_config_settings_menu" action="crm.crm_config_settings_action"
+              groups="base.group_system" name="Configuration" parent="crm.crm_menu_config"/>
+
+    <menuitem id="crm.crm_team_menu_config_activity_types" sequence="4"
+              action="sales_team.mail_activity_type_action_config_sales" name="Types d'activités"
+              parent="crm.crm_menu_config"/>
+
+    <menuitem id="crm.menu_crm_lead_stage_act" action="crm.crm_stage_action" name="Étapes"
+              parent="crm.menu_crm_config_lead" groups="base.group_no_one,sales_team.group_sale_manager"/>
+
+    <menuitem id="crm.res_partner_menu_customer" sequence="8"
+              action="base.action_partner_form" name="Customers"
+              parent="crm.crm_menu_sales"/>
+
+    <menuitem id="crm.menu_crm_opportunities"
+              action="crm.action_your_pipeline" name="Mon Pipeline"
+              parent="crm.crm_menu_sales"/>
+
+    <menuitem id="sale_crm.sale_order_menu_quotations_crm"
+              name="My Quotations"
+              action="sale.action_quotations"
+              parent="crm.crm_menu_sales"
+              sequence="7"/>
+
+</odoo>

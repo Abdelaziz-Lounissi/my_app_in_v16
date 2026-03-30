@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- *** Kanban views *** -->
+
+    <record id="hm_sale_subscription_view_kanban" model="ir.ui.view">
+        <field name="name">sale.order.kanban.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_subscription.sale_subscription_view_kanban"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('o_kanban_record_title')]" position="after">
+                <div class="oe_kanban_details d-flex flex-column justify-content-between">
+                    <div class="o_kanban_record_title oe_partner_heading">
+                        <field name="sale_order_template_id"/>
+                        <div style="margin-top: 10px;"></div>
+                    </div>
+                    <div class="o_kanban_record_bottom">
+                        <field name="property_id"/>
+                        <div style="margin-top: 25px;"></div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hm_sale_subscription_view_tree" model="ir.ui.view">
+        <field name="name">sale.order.tree.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_subscription.sale_subscription_view_tree"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="name" string="Number" readonly="1" decoration-bf="1"/>
+            </xpath>
+
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="sale_order_template_id" string="Plan d'abonnement"/>
+                <field name="property_id"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

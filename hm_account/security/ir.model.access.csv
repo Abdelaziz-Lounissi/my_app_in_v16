@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+purchase.access_account_invoice_purchase,account_invoice purchase,account.model_account_move,purchase.group_purchase_user,1,1,1,0
+
+access_hm_account_move_readonly,account.move readonly,account.model_account_move,hm_account.hm_group_invoicing_readonly,1,0,0,0
+access_hm_account_move_line_readonly,account.move.line readonly,account.model_account_move_line,hm_account.hm_group_invoicing_readonly,1,0,0,0
+access_hm_account_invoice_report_readonly,account.invoice.report_user,account.model_account_invoice_report,hm_account.hm_group_invoicing_readonly,1,0,0,0

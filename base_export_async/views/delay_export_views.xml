@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="action_delay_export" model="ir.actions.act_window">
+        <field name="name">Delay Export</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">delay.export</field>
+        <field name="help">Schedule Exports to send by email</field>
+    </record>
+
+    <menuitem
+        id="menu_delay_export"
+        action="action_delay_export"
+        parent="base.menu_automation"
+    />
+
+</odoo>

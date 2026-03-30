@@ -1,0 +1,169 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_mail
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-03 22:25+0000\n"
+"PO-Revision-Date: 2022-10-03 22:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_mail
+#: code:addons/hm_mail/models/mail_activity.py:0
+#, python-format
+msgid "%s: %s assigned to you"
+msgstr "%s: %s assigné à vous"
+
+#. module: hm_mail
+#. openerp-web
+#: code:addons/hm_mail/static/src/xml/thread.xml:0
+#, python-format
+msgid "(from"
+msgstr "(de"
+
+#. module: hm_mail
+#: model:ir.model,name:hm_mail.model_mail_activity
+msgid "Activity"
+msgstr "Activité"
+
+#. module: hm_mail
+#: model:ir.model,name:hm_mail.model_mail_activity_type
+msgid "Activity Type"
+msgstr "Type d'activité"
+
+#. module: hm_mail
+#: model:base.automation,name:hm_mail.cancel_mail_activity_exception
+#: model:ir.actions.server,name:hm_mail.cancel_mail_activity_exception_ir_actions_server
+msgid "Base Automation: cancel activity if type exception"
+msgstr ""
+
+#. module: hm_mail
+#: model:ir.model.fields,field_description:hm_mail.field_res_partner__hm_blacklist_email
+#: model:ir.model.fields,field_description:hm_mail.field_res_users__hm_blacklist_email
+msgid "Blacklist Email"
+msgstr ""
+
+#. module: hm_mail
+#: model:ir.model,name:hm_mail.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: hm_mail
+#: model_terms:ir.ui.view,arch_db:hm_mail.mail_activity_type_view_form_popup_inherit_view
+msgid "Do not Show in Messages"
+msgstr ""
+
+#. module: hm_mail
+#: model:ir.model,name:hm_mail.model_mail_template
+msgid "Email Templates"
+msgstr "Modèles de courriels"
+
+#. module: hm_mail
+#: model:ir.model.fields,field_description:hm_mail.field_mail_activity_type__activity_as_complete_opportunity_won_lost
+msgid "Mark activity as complete once opportunity won"
+msgstr "Marquer l'activité comme terminée une fois l'opportunité gagnée"
+
+#. module: hm_mail
+#. openerp-web
+#: code:addons/hm_mail/static/src/xml/thread.xml:0
+#, python-format
+msgid "Mark as Read"
+msgstr "Marquer comme lu"
+
+#. module: hm_mail
+#. openerp-web
+#: code:addons/hm_mail/static/src/xml/thread.xml:0
+#: code:addons/hm_mail/static/src/xml/thread.xml:0
+#, python-format
+msgid "Mark as Todo"
+msgstr "Marquer \"À faire\""
+
+#. module: hm_mail
+#. openerp-web
+#: code:addons/hm_mail/static/src/xml/thread.xml:0
+#, python-format
+msgid "Mark as todo"
+msgstr "Marquer \"À faire\""
+
+#. module: hm_mail
+#: model:ir.model.fields,field_description:hm_mail.field_mail_activity_type__activity_as_complete_opportunity_sent
+msgid "Mark the activity as complete once the quote has been sent"
+msgstr "Marquer l'activité comme terminée une fois le devis envoyé"
+
+#. module: hm_mail
+#: model:ir.model,name:hm_mail.model_mail_message
+msgid "Message"
+msgstr ""
+
+#. module: hm_mail
+#: model:ir.model,name:hm_mail.model_mail_notification
+msgid "Message Notifications"
+msgstr "Notifications par message"
+
+#. module: hm_mail
+#. openerp-web
+#: code:addons/hm_mail/static/src/xml/thread.xml:0
+#, python-format
+msgid "No conversation yet..."
+msgstr "Pas encore de conversation..."
+
+#. module: hm_mail
+#. openerp-web
+#: code:addons/hm_mail/static/src/xml/thread.xml:0
+#, python-format
+msgid "Note by"
+msgstr "Note écrite par"
+
+#. module: hm_mail
+#: model:ir.model,name:hm_mail.model_portal_mixin
+msgid "Portal Mixin"
+msgstr ""
+
+#. module: hm_mail
+#. openerp-web
+#: code:addons/hm_mail/static/src/xml/thread.xml:0
+#, python-format
+msgid "Reply"
+msgstr "Répondre"
+
+#. module: hm_mail
+#: model:ir.model.fields,field_description:hm_mail.field_mail_mail__responsable
+#: model:ir.model.fields,field_description:hm_mail.field_mail_message__responsable
+msgid "Responsable"
+msgstr ""
+
+#. module: hm_mail
+#. openerp-web
+#: code:addons/hm_mail/static/src/xml/thread.xml:0
+#, python-format
+msgid "Responsable:"
+msgstr ""
+
+#. module: hm_mail
+#: model:ir.model.fields,field_description:hm_mail.field_mail_activity_type__show_message
+#: model:ir.model.fields,field_description:hm_mail.field_mail_mail__show_message
+#: model:ir.model.fields,field_description:hm_mail.field_mail_message__show_message
+msgid "Show Message"
+msgstr ""
+
+#. module: hm_mail
+#. openerp-web
+#: code:addons/hm_mail/static/src/xml/thread.xml:0
+#, python-format
+msgid "Subject:"
+msgstr "Sujet"
+
+
+#. module: hm_mail
+#. openerp-web
+#: code:addons/hm_mail/static/src/xml/thread.xml:0
+#, python-format
+msgid "on"
+msgstr "le"

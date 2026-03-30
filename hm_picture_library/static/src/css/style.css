@@ -1,0 +1,119 @@
+/* ----- Form & Preview pages ----- */
+.image_preview_container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image_preview_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.image_preview_label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+/* Stored image (binary) styling */
+.stored_image_container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: zoom-in;
+}
+
+.stored_image_container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+
+.stored_image_container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* External image preview (Google Drive, etc.) */
+.external_image_container{
+  width: 100%;
+    height: 100%;
+    display: contents;
+}
+
+
+.external_image_zoomable{
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* fills container without stretching */
+    display: block;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+    padding-right: 2%;
+}
+
+
+/* ----- List view thumbnail styling ----- */
+.o_list_thumbnail .external_image_container {
+    max-width: 80px;
+    max-height: 80px;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: none;
+    display: inline-block;
+}
+
+.o_list_thumbnail .external_image_container:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.o_list_thumbnail .external_image_zoomable {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    max-width: 80px;
+    border-radius: 4px;
+}
+
+/* ----- Responsive adjustments ----- */
+@media (max-width: 768px) {
+    .image_preview_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image_preview_item {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.hm_external_image_wrapper {
+    max-width: 200px;
+    max-height: 200px;
+    width: 100%;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-right: 15px;
+    float: left;
+}
+
+.hm_external_image_wrapper img.external_image_zoomable:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}

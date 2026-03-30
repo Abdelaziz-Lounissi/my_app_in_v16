@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="hm_device_management_order_view_form" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="hm_technician_app.hm_technician_app_so_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/div" position="after">
+                <div attrs="{'invisible': [('warranty_display', '=', '')]}" style="     display: flex;     justify-content: flex-end;     margin-top: 10px;     margin-bottom: 10px; ">
+                    <span style="         background-color: #d4edda;         color: #155724;         font-weight: bold;         padding: 6px 12px;         border-radius: 20px;         border: 1px solid #c3e6cb;         font-size: 14px;         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);     ">
+                        <field name="warranty_display"/>
+                    </span>
+                </div>
+            </xpath>
+
+            <xpath expr="//field[@name='ask_qr_code']" position="before">
+                <field name="ask_device_nameplate"/>
+            </xpath>
+
+            <xpath expr="//field[@name='hm_so_manager_workload_points']" position="after">
+                <field name="selected_device_ids" mode="tree" readonly="0">
+                    <tree string="Devices" editable="bottom" create="false" delete="false">
+                        <field name="device_model_id"/>
+                        <field name="product_tmpl_id"/>
+                        <field name="is_selected" force_save="1"/>
+                    </tree>
+                </field>
+            </xpath>
+
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <menuitem name="Emails References" id="menu_mail_references_root" parent="base.menu_email"/>
+
+        <menuitem name="Domain" id="menu_mail_references_domain" parent="menu_mail_references_root" sequence="1"
+                  action="action_view_hm_mail_domain_mail"/>
+
+        <menuitem name="References" id="menu_mail_references_mail" parent="menu_mail_references_root" sequence="5"
+                  action="action_view_hm_mail_references_mail"/>
+
+    </data>
+</odoo>

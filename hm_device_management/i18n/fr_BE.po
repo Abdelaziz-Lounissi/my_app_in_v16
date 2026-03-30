@@ -1,0 +1,619 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_device_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-17 14:47+0000\n"
+"PO-Revision-Date: 2025-03-17 14:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__access_warning
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__access_warning
+msgid "Access warning"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__message_needaction
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__activity_ids
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__activity_exception_decoration
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__activity_state
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__activity_type_icon
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: hm_device_management
+#: model_terms:ir.ui.view,arch_db:hm_device_management.hm_device_management_product_category_form_view_view_form
+msgid "Application technicien"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model,name:hm_device_management.model_ir_attachment
+msgid "Attachment"
+msgstr "Pièce jointe"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__message_attachment_count
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: hm_device_management
+#: model_terms:ir.actions.act_window,help:hm_device_management.act_hm_device_management_2_hm_device
+msgid "Create a new Device, the first step of a new device!"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__create_uid
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__create_uid
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_so_device_select__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__create_date
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__create_date
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_so_device_select__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,help:hm_device_management.field_hm_device__access_url
+#: model:ir.model.fields,help:hm_device_management.field_hm_device_model__access_url
+msgid "Customer Portal URL"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__registration_date
+msgid "Date of registration with the manufacturer"
+msgstr "Date d'enregistrement auprès du fabricant"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_sale_order__ask_device_nameplate
+#: model:ir.model.fields,field_description:hm_device_management.field_sale_order_template__ask_device_nameplate
+msgid ""
+"Demander au technicien de prendre une photo de la plaquette signalétique"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_so_device_select__device_id
+#: model:ir.model.fields,field_description:hm_device_management.field_sale_order__hm_device_sale_order_id
+msgid "Device"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__construction_date
+msgid "Device Construction Date"
+msgstr "Date de construction de l'appareil"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_property__device_count
+msgid "Device Count"
+msgstr "Nombre d'appareils"
+
+#. module: hm_device_management
+#: model_terms:ir.ui.view,arch_db:hm_device_management.hm_device_form_view
+msgid "Device Information"
+msgstr "Informations sur l'appareil"
+
+#. module: hm_device_management
+#: model_terms:ir.ui.view,arch_db:hm_device_management.hm_device_model_form_view
+msgid "Device Model Information"
+msgstr "Informations sur le modèle d'appareil"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__serial_number
+msgid "Device Serial Number"
+msgstr "Numéro de série de l'appareil"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__device_type_id
+msgid "Device Type"
+msgstr "Type d'appareil"
+
+#. module: hm_device_management
+#: model:ir.actions.act_window,name:hm_device_management.hm_device_model_act_window
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__device_model_id
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_so_device_select__device_model_id
+msgid "Device model"
+msgstr "Modèle"
+
+#. module: hm_device_management
+#. odoo-python
+#: code:addons/hm_device_management/models/ir_attachment.py:0
+#: model:ir.model.fields.selection,name:hm_device_management.selection__ir_attachment__hm_document_type__device_nameplate
+#, python-format
+msgid "Device nameplate"
+msgstr "Plaque signalétique de l'appareil"
+
+#. module: hm_device_management
+#: model:ir.actions.act_window,name:hm_device_management.act_hm_device_management_2_hm_device
+#: model:ir.actions.act_window,name:hm_device_management.hm_device_act_window
+#: model:ir.model,name:hm_device_management.model_hm_device
+#: model:ir.model.fields,field_description:hm_device_management.field_sale_order__selected_device_ids
+#: model:ir.ui.menu,name:hm_device_management.hm_device_menu
+#: model:ir.ui.menu,name:hm_device_management.hm_device_menu_root
+#: model_terms:ir.ui.view,arch_db:hm_device_management.hm_device_management_hm_property_form_view_inherit
+#: model_terms:ir.ui.view,arch_db:hm_device_management.hm_device_management_order_view_form
+msgid "Devices"
+msgstr "Appareils"
+
+#. module: hm_device_management
+#: model:ir.model,name:hm_device_management.model_hm_device_model
+msgid "Devices Model"
+msgstr "Modèles d'appareils"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__display_name
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__display_name
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_so_device_select__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_ir_attachment__hm_document_type
+#: model:ir.model.fields,field_description:hm_device_management.field_mrp_document__hm_document_type
+msgid "Document type"
+msgstr ""
+
+#. module: hm_device_management
+#: model_terms:ir.ui.view,arch_db:hm_device_management.hm_device_model_form_view
+msgid "Enter model name"
+msgstr "Entrer le nom du modèle"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__executed
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_property__executed
+msgid "Executed"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__message_follower_ids
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__message_partner_ids
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,help:hm_device_management.field_hm_device__activity_type_icon
+#: model:ir.model.fields,help:hm_device_management.field_hm_device_model__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__for_rent
+msgid "For Rent?"
+msgstr "Pour location?"
+
+#. module: hm_device_management
+#: model_terms:ir.ui.view,arch_db:hm_device_management.hm_device_form_view
+#: model_terms:ir.ui.view,arch_db:hm_device_management.hm_device_model_form_view
+msgid "General Information"
+msgstr "Informations générales"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__has_message
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__qr_code
+msgid "Heat Me QR Code"
+msgstr "QR Code Heat Me"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__id
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__id
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_so_device_select__id
+msgid "ID"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__activity_exception_icon
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,help:hm_device_management.field_hm_device__activity_exception_icon
+#: model:ir.model.fields,help:hm_device_management.field_hm_device_model__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,help:hm_device_management.field_hm_device__message_needaction
+#: model:ir.model.fields,help:hm_device_management.field_hm_device_model__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,help:hm_device_management.field_hm_device__message_has_error
+#: model:ir.model.fields,help:hm_device_management.field_hm_device__message_has_sms_error
+#: model:ir.model.fields,help:hm_device_management.field_hm_device_model__message_has_error
+#: model:ir.model.fields,help:hm_device_management.field_hm_device_model__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__installation_date
+msgid "Installation Date"
+msgstr "Date d'installation"
+
+#. module: hm_device_management
+#: model_terms:ir.ui.view,arch_db:hm_device_management.hm_device_form_view
+msgid "Installation Details"
+msgstr "Détails de l'installation"
+
+#. module: hm_device_management
+#: model:ir.model.fields.selection,name:hm_device_management.selection__hm_device__state__installed
+msgid "Installed"
+msgstr "Installé"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__installed_by_heat_me
+msgid "Installed by Heat Me"
+msgstr "Installé par Heat Me"
+
+#. module: hm_device_management
+#: model_terms:ir.ui.view,arch_db:hm_device_management.hm_device_form_view
+msgid "Intervention Schedule"
+msgstr "Calendrier d'intervention"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__message_is_follower
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_so_device_select__is_selected
+msgid "Is selected?"
+msgstr "Objet de l'intervention"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__landlord_id
+msgid "Landlord"
+msgstr "Propriétaire"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__last_intervention_date
+msgid "Last Intervention Date"
+msgstr "Dernière intervention le"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device____last_update
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model____last_update
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_so_device_select____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__write_uid
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__write_uid
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_so_device_select__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__write_date
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__write_date
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_so_device_select__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__message_main_attachment_id
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__hm_brand
+msgid "Manufacturer"
+msgstr "Fabricant"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__registration_reference
+msgid "Manufacturer Registration Reference"
+msgstr "Référence enregistrement auprès du fabricant"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__message_has_error
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__message_ids
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__model_name
+msgid "Model"
+msgstr "Modèle"
+
+#. module: hm_device_management
+#: model:ir.ui.menu,name:hm_device_management.hm_device_model_menu
+msgid "Models"
+msgstr "Modèles"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__my_activity_date_deadline
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__name
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__name
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_so_device_select__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__activity_calendar_event_id
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__activity_date_deadline
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__activity_summary
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__activity_type_id
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__next_intervention_date
+msgid "Next Intervention Date"
+msgstr "Prochaine intervention le"
+
+#. module: hm_device_management
+#: model:ir.model.fields.selection,name:hm_device_management.selection__hm_device__installed_by_heat_me__no
+msgid "No"
+msgstr "Non"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__message_needaction_counter
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__message_has_error_counter
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,help:hm_device_management.field_hm_device__message_needaction_counter
+#: model:ir.model.fields,help:hm_device_management.field_hm_device_model__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,help:hm_device_management.field_hm_device__message_has_error_counter
+#: model:ir.model.fields,help:hm_device_management.field_hm_device_model__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__access_url
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__access_url
+msgid "Portal Access URL"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__product_tmpl_id
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__product_tmpl_id
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_so_device_select__product_tmpl_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: hm_device_management
+#: model:ir.ui.menu,name:hm_device_management.hm_device_product_category_menu
+msgid "Product Categories"
+msgstr "Catégories de produits"
+
+#. module: hm_device_management
+#: model:ir.model,name:hm_device_management.model_product_category
+msgid "Product Category"
+msgstr "Catégorie de produit"
+
+#. module: hm_device_management
+#: model:ir.ui.menu,name:hm_device_management.hm_device_products_menu
+msgid "Products"
+msgstr "Produits"
+
+#. module: hm_device_management
+#: model:ir.model,name:hm_device_management.model_hm_property
+msgid "Property"
+msgstr "Bien immobilier"
+
+#. module: hm_device_management
+#: model:ir.model,name:hm_device_management.model_sale_order_template
+msgid "Quotation Template"
+msgstr "Modèle de devis"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__property_id
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_so_device_select__property_id
+msgid "Real Estate"
+msgstr "Bien immobilier"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__activity_user_id
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__message_has_sms_error
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__sale_order_id
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_so_device_select__sale_order_id
+msgid "Sale order"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__sale_order_ids
+msgid "Sales Info"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model,name:hm_device_management.model_sale_order
+#: model_terms:ir.ui.view,arch_db:hm_device_management.hm_device_form_view
+msgid "Sales Order"
+msgstr "Bon de commande SO"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__access_token
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__access_token
+msgid "Security Token"
+msgstr ""
+
+#. module: hm_device_management
+#: model_terms:ir.ui.view,arch_db:hm_device_management.hm_device_model_form_view
+msgid "Select a product template"
+msgstr "Sélectionner un modèle de produit"
+
+#. module: hm_device_management
+#: model:ir.model,name:hm_device_management.model_hm_so_device_select
+msgid "Selected devices"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.ui.menu,name:hm_device_management.hm_device_settings_menu
+msgid "Settings"
+msgstr "Configuration"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__state
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_so_device_select__state
+msgid "State"
+msgstr "Statut appareil"
+
+#. module: hm_device_management
+#: model:ir.model.fields,help:hm_device_management.field_hm_device__activity_state
+#: model:ir.model.fields,help:hm_device_management.field_hm_device_model__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_product_category__technical_value
+msgid "Technical value"
+msgstr "Valeur technique"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__tenant_id
+msgid "Tenant"
+msgstr "Locataire"
+
+#. module: hm_device_management
+#: model:ir.model.fields.selection,name:hm_device_management.selection__hm_device__state__to_install
+msgid "To install"
+msgstr "À installer"
+
+#. module: hm_device_management
+#: model:ir.model.fields,help:hm_device_management.field_hm_device__activity_exception_decoration
+#: model:ir.model.fields,help:hm_device_management.field_hm_device_model__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields.selection,name:hm_device_management.selection__hm_device__state__uninstalled
+msgid "Uninstalled"
+msgstr "Désinstallé"
+
+#. module: hm_device_management
+#: model_terms:ir.ui.view,arch_db:hm_device_management.hm_device_form_view
+msgid "Warranty"
+msgstr "Garantie"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__warranty_duration_in_month
+msgid "Warranty duration in month"
+msgstr "Durée de garantie en mois"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__warranty_end_date
+msgid "Warranty end date"
+msgstr "Date de fin de garantie"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__warranty_start_date
+msgid "Warranty start date"
+msgstr "Date de début de garantie"
+
+#. module: hm_device_management
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device__website_message_ids
+#: model:ir.model.fields,field_description:hm_device_management.field_hm_device_model__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields,help:hm_device_management.field_hm_device__website_message_ids
+#: model:ir.model.fields,help:hm_device_management.field_hm_device_model__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: hm_device_management
+#: model:ir.model.fields.selection,name:hm_device_management.selection__hm_device__installed_by_heat_me__yes
+msgid "Yes"
+msgstr "Oui"

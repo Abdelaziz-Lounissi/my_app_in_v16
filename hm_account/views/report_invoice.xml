@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="invoice_report_inherit" inherit_id="account.report_invoice_document">
+        <xpath expr="//t/div/div/table/tbody/t/tr/t/td[@name='account_invoice_line_name']" position="replace">
+            <td>
+                <strong>
+                    <span t-field="line.product_id.name"/>
+                </strong>
+                <br/>
+                <span t-field="line.spec"/>
+            </td>
+        </xpath>
+
+        <xpath expr="//div[@id='informations']" position="inside">
+            <div class="col-auto col-3 mw-100 mb-2" t-if="o.hm_intervention_date" name="intervention_date">
+                <strong>Date d'intervention :</strong>
+                <p class="m-0" t-field="o.hm_intervention_date"/>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[hasclass('clearfix')]" position="after">
+            <br/>
+        </xpath>
+
+        <xpath expr="//div/h2" position="after">
+             <div class="row">
+                  <div class="col">
+                      <span class="h3 o_bold" t-field="o.sale_order_id.hm_work_object"/>
+                  </div>
+             </div>
+         </xpath>
+    </template>
+
+</odoo>

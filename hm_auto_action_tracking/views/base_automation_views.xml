@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_view_base_automation_form_inherit_tracking" model="ir.ui.view">
+        <field name="name">base.automation.form.inherit.tracking</field>
+        <field name="model">base.automation</field>
+        <field name="inherit_id" ref="base_automation.view_base_automation_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='action_wrapper']" position="after">
+                <group name="automation_description_group" string="Automation Description &amp; Notes">
+                    <field name="description" string=" " placeholder="Enter detailed description of this automation rule..."/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <!--    <record id="studio_customization.default_form_view_fo_0e94df38-601c-4f86-960f-eb7e0851775c" model="ir.ui.view">-->
+    <record id="hm_spoken_language_form_view" model="ir.ui.view">
+        <field name="name">hm.spoken.language.form</field>
+        <field name="model">hm.spoken.language</field>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet string="Langue parlée">
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" required="1"/>
+                        </h1>
+                    </div>
+                    <group name="studio_group_2de681">
+                        <group name="studio_group_2de681_left"/>
+                        <group name="studio_group_2de681_right"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="spoken_language_action" model="ir.actions.act_window">
+        <field name="name">Langues parlées</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hm.spoken.language</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem id="menu_spoken_language"
+              name="Langues parlées"
+              action="spoken_language_action"
+              parent="hm_base_setup.hm_config_technicians_menu"
+              sequence="2"/>
+
+</odoo>

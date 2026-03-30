@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_hm_product_vanmarcke_tree" model="ir.ui.view">
+            <field name="name">hm.product.vanmarcke.tree</field>
+            <field name="model">hm.product.vanmarcke</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Product Van Marcke" create="false">
+                    <field name="updated" readonly="1" invisible="1"/>
+                    <field name="executed" readonly="1" invisible="1"/>
+                    <field name="supplier_code"/>
+                    <field name="manufacturer_code"/>
+                    <field name="code_ean"/>
+                    <field name="name_nl"/>
+                    <field name="name_fr"/>
+                    <field name="long_name_nl"/>
+                    <field name="long_name_fr"/>
+                    <field name="fabricant"/>
+                    <field name="model"/>
+                    <field name="description_nl"/>
+                    <field name="description_fr"/>
+                    <field name="image_url_1"/>
+                    <field name="image_url_2"/>
+                    <field name="image_url_3"/>
+                    <field name="category"/>
+                    <field name="fiche_nl"/>
+                    <field name="fiche_fr"/>
+                    <field name="gross_price"/>
+                    <field name="price_code"/>
+                    <field name="minimum_quantity"/>
+                    <field name="vat_code"/>
+                    <field name="parent_category"/>
+                    <field name="net_price"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_hm_product_vanmarcke_form" model="ir.ui.view">
+            <field name="name">hm.product.vanmarcke.form</field>
+            <field name="model">hm.product.vanmarcke</field>
+            <field name="arch" type="xml">
+                <form string="Product Van Marcke" class="oe_form_configuration" create="1" edit="1">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="executed"/>
+                                <field name="mark_as_updated"/>
+                                <field name="mark_as_created"/>
+                                <field name="supplier_code"/>
+                                <field name="manufacturer_code"/>
+                                <field name="minimum_quantity"/>
+                                <field name="vat_code"/>
+                                <field name="code_ean"/>
+                            </group>
+                            <group>
+                                <field name="name_nl"/>
+                                <field name="name_fr"/>
+                                <field name="long_name_nl"/>
+                                <field name="long_name_fr"/>
+                            </group>
+                        </group>
+
+                        <group>
+                            <group>
+                                <field name="description_nl"/>
+                                <field name="description_fr"/>
+                                <field name="image_url_1" widget="url"/>
+                                <field name="image_url_2" widget="url"/>
+                                <field name="image_url_3" widget="url"/>
+                            </group>
+                            <group>
+                                <field name="model"/>
+                                <field name="fabricant"/>
+                                <field name="category"/>
+                                <field name="parent_category"/>
+                                <field name="fiche_nl"/>
+                                <field name="fiche_fr"/>
+                                <field name="price_code"/>
+                                <field name="gross_price"/>
+                                <field name="net_price"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="hm_product_vanmarcke_view_search" model="ir.ui.view">
+            <field name="name">hm.product.vanmarcke.view.search</field>
+            <field name="model">hm.product.vanmarcke</field>
+            <field name="arch" type="xml">
+                <search string="Search Product Van Marcke">
+                    <field name="supplier_code"/>
+                    <field name="manufacturer_code"/>
+                    <field name="code_ean"/>
+                    <field name="name_nl"/>
+                    <field name="name_fr"/>
+                    <field name="long_name_nl"/>
+                    <field name="long_name_fr"/>
+                    <field name="fabricant"/>
+                    <field name="model"/>
+                    <field name="description_nl"/>
+                    <field name="description_fr"/>
+                    <field name="image_url_1"/>
+                    <field name="image_url_2"/>
+                    <field name="image_url_3"/>
+                    <field name="category"/>
+                    <field name="fiche_nl"/>
+                    <field name="fiche_fr"/>
+                    <field name="gross_price"/>
+                    <field name="price_code"/>
+                    <field name="minimum_quantity"/>
+                    <field name="vat_code"/>
+                    <field name="parent_category"/>
+                    <field name="net_price"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Code EAN" name="code_ean" domain="[]" context="{'group_by': 'code_ean'}"/>
+                        <filter name="fabricant" string="Manufacturer" domain="[]" context="{'group_by': 'fabricant'}"/>
+                        <filter string="Model" name="model" domain="[]"
+                                context="{'group_by': 'model'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_hm_product_vanmarcke" model="ir.actions.act_window">
+            <field name="name">Product Van Marcke</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hm.product.vanmarcke</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="hm_product_vanmarcke_view_search"/>
+            <field name="context">{}</field>
+        </record>
+
+        <record id="hm_product_vanmarcke_action_view_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="hm_integration_vanmarcke.view_hm_product_vanmarcke_tree"/>
+            <field name="act_window_id" ref="action_hm_product_vanmarcke"/>
+        </record>
+
+        <record id="hm_product_vanmarcke_action_view_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="hm_integration_vanmarcke.view_hm_product_vanmarcke_form"/>
+            <field name="act_window_id" ref="action_hm_product_vanmarcke"/>
+        </record>
+
+
+    </data>
+</odoo>

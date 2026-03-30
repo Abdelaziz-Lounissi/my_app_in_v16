@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- <record id="studio_customization.mettre_damien_vendeu_e9dfb760-5232-4d41-8487-d73e991c3350" model="ir.actions.server">-->
+        <record id="hm_put_damien_seller" model="ir.actions.server">
+<!--            <field name="name">Mettre damien vendeur</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imputer_activite_int_bf2aa859-eb2a-4df9-9d73-9cab36bbe258" model="ir.actions.server">-->
+        <record id="hm_charge_crm_intervention_activity_to_damien" model="ir.actions.server">
+<!--            <field name="name">imputer activité intervention CRM à Damien</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.nouvelle_activite_da_41cb6825-4086-4650-80c9-a8cce4eec46d" model="ir.actions.server">-->
+        <record id="hm_new_activity_in_crm_organize_intervention" model="ir.actions.server">
+<!--            <field name="name">Nouvelle activité dans CRM: organiser intervention</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imputer_activite_crm_c5de8bae-dd29-4760-80e0-f8da26be38a4" model="ir.actions.server">-->
+        <record id="hm_charge_crm_activity_do_quote_to_olivier" model="ir.actions.server">
+<!--            <field name="name">imputer activité CRM : faire devis - à Olivier</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.nouvelle_activite_da_f5898cee-6c1d-40e4-8b45-b6fd2e1d5b55" model="ir.actions.server">-->
+        <record id="hm_new_activity_in_crm_sales_activity_make_quote" model="ir.actions.server">
+<!--            <field name="name">Nouvelle activité dans CRM - sales: activité faire devis</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.passer_demande_tech__05c58bd7-8391-4cdd-a192-ab7382378f8d" model="ir.actions.server">-->
+        <record id="hm_pass_tech_website_request_to_technicians_pipeline" model="ir.actions.server">
+<!--            <field name="name">Passer demande tech Website vers Pipeline techiciens</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.passer_demande_tech__469e8a83-5f56-4bc0-b87c-3e92c6422751" model="ir.actions.server">-->
+        <record id="hm_pass_tech_website_request_to_technicians_pipeline_action" model="ir.actions.server">
+<!--            <field name="name">Passer demande tech Website vers Pipeline techiciens</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_make__a46c7cd5-bfba-42ef-ad8e-a1d22a735329" model="ir.actions.server">-->
+        <record id="hm_imput_activity_make_quotation_to_salesman" model="ir.actions.server">
+<!--            <field name="name">Imput activity make quotation to salesman</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activite_make__86e1ef44-2b9d-4d2f-913f-531685e55b84" model="ir.actions.server">-->
+        <record id="hm_imput_activity_make_quote_for_salesman_at_creation" model="ir.actions.server">
+<!--            <field name="name">Imput activité: Make quote for the salesman at creation</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.mettre_chef_d_equipe_3faebc03-4690-4fd9-83e5-de8872474a9e" model="ir.actions.server">-->
+        <record id="hm_put_team_leader_into_salesperson" model="ir.actions.server">
+<!--            <field name="name">Mettre chef d'équipe en vendeur</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.nouvelle_activite_da_ac01f77c-b803-4da8-813e-bd13d31ed4c9" model="ir.actions.server">-->
+        <record id="hm_new_activity_in_crm_interventions_or_partner_put_salesperson_team_leader" model="ir.actions.server">
+<!--            <field name="name">Nouvelle activité dans CRM - interventions ou partner: mettre vendeur chef equipe</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.mettre_en_rouge_oppo_97063311-926b-43c3-973b-f41630b67ea9" model="ir.actions.server">-->
+        <record id="hm_put_in_red_opportunity_pipeline_intervention" model="ir.actions.server">
+<!--            <field name="name">Mettre en rouge Opportunité pipeline "intervention"</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.mettre_en_rouge_oppo_32097063-4cce-4567-a074-115bb6a1b192" model="ir.actions.server">-->
+        <record id="hm_put_in_green_opportunity_pipeline_partnerships" model="ir.actions.server">
+<!--            <field name="name">Mettre en vert Opportunité pipeline "partenariats"</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.mettre_en_rouge_oppo_f9206120-5e4f-44cd-8e91-f9e5f099766f" model="ir.actions.server">-->
+        <record id="hm_put_in_blue_opportunity_pipeline_project" model="ir.actions.server">
+<!--            <field name="name">Mettre en bleu Opportunité pipeline "projet"</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.mettre_en_rouge_oppo_199729d1-b23f-4e6f-8dd1-ea88ebac9827" model="ir.actions.server">-->
+        <record id="hm_put_in_orange_opportunity_pipeline_technician" model="ir.actions.server">
+<!--            <field name="name">Mettre en orange Opportunité pipeline "technicien"</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.mettre_en_rouge_oppo_55943e2c-4819-4eb4-b957-1ad0c684adc3" model="ir.actions.server">-->
+        <record id="hm_intervention_opportunity_check_delay_customer_contact" model="ir.actions.server">
+<!--            <field name="name">Opportunité intervention - Check retard contact client</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.opportunite_interven_3c35bb3b-b612-4159-84c9-aed663d896dc" model="ir.actions.server">-->
+        <record id="hm_quote_opportunity_check_delay_customer_contact" model="ir.actions.server">
+<!--            <field name="name">Opportunité devis - Check retard contact client</field>-->
+        </record>
+
+<!--         <record id="studio_customization.imput_activity_assig_d76a0a62-363a-445a-bb1d-80567892d8a7" model="ir.actions.server">-->
+        <record id="hm_imput_activity_assign_lead_to_team_leader" model="ir.actions.server">
+<!--            <field name="name">Imput activity - Assign lead to team leader</field>-->
+        </record>
+
+
+<!--         <record id="studio_customization.nouvelle_activite_da_c89f227b-8901-4fd3-9cef-df32de497bd0" model="ir.actions.server">-->
+        <record id="hm_new_activity_in_crm_not_interventions_or_partner_activity_assign_lead_to_team_leader" model="ir.actions.server">
+<!--            <field name="name">Nouvelle activité dans CRM - PAS interventions ou partner: activité assigner lead chez chef equipe</field>-->
+        </record>
+
+
+        <!-- <record id="studio_customization.nouvelle_activite_da_1b6ebe5e-2512-4df2-a7c3-bae9acd89d8e" model="ir.actions.server">-->
+        <record id="hm_imput_activity_salesman_defined_activity_make_quote_at_seller" model="ir.actions.server">
+<!--            <field name="name">Stage move to Lead to treat on lead ➡️ Call 'create activity' for salesperson</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.salesman_defined_fro_dd3617f9-f419-415d-82f3-16ea8da3f11f" model="ir.actions.server">-->
+        <record id="hm_salesman_defined_from_creation_imput_activity_make_quotation" model="ir.actions.server">
+<!--            <field name="name">Salesperson defined at creation of opportunity ➡️ Assign 'Assign opportunity' activity to Sales person</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.mettre_les_partenari_b3f1604b-6160-4702-a124-c0a1ab7cafd5"   model="ir.actions.server">-->
+        <record id="hm_make_partnerships_a_private_opportunity_for_creation" model="ir.actions.server">
+<!--            <field name="name">mettre les partenariats en opportunité privée à la cration</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.mettre_les_partenari_91be99e6-4436-41df-897d-fa3483ee9159"  model="ir.actions.server">-->
+        <record id="hm_put_partnerships_as_private_opportunity_when_sales_team_change" model="ir.actions.server">
+<!--            <field name="name">mettre les partenariats en opportunité privée quand changement sales team</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_suivi_d243c927-512f-4fde-b6f9-9287a46cec73"  model="ir.actions.server">-->
+        <record id="hm_input_activity_trade_tracking_when_change_state" model="ir.actions.server">
+<!--            <field name="name">Imput Activity - suivi commercial quand change state</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_suivi_05066c69-1a07-4e80-b25b-73a338caec71"  model="ir.actions.server">-->
+        <record id="hm_input_activity_commercial_followup_when_change_state2" model="ir.actions.server">
+<!--            <field name="name">Imput Activity - suivi commercial quand change state 2 (devis estimatif)</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_suivi_f835e88b-4e87-4783-9fb5-54cc2c263c62" model="ir.actions.server">-->
+        <record id="hm_adapt_sales_team_for_technicien_when_push_in_selected_state" model="ir.actions.server">
+<!--            <field name="name">Adapt sales team for technicien when push in Selected State</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_lead__7892e8bc-e3f1-43ea-826a-9fec610cbb42" model="ir.actions.server">-->
+        <record id="hm_imput_activity_lead_stayed_7days_in_contact_pris" model="ir.actions.server">
+<!--            <field name="name">Imput activity - Lead stayed &gt;7days in "contact pris"</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_lead__6f48e46a-7fa3-4bc3-b8b6-eb3d6b635371" model="ir.actions.server">-->
+        <record id="hm_imput_activity_lead_stayed_7days_in_visite_technique_orga" model="ir.actions.server">
+<!--            <field name="name">Imput activity - Lead stayed &gt;7days in "visite technique orga"</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_lead__c4b43ccf-0df4-4f74-8df4-94100a718f55" model="ir.actions.server">-->
+        <record id="hm_imput_activity_lead_stayed_30days_in_final_proposal_sent" model="ir.actions.server">
+<!--            <field name="name">Imput activity - Lead stayed &gt;30days in "Final Proposal sent"</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_lead__2aa16d93-de04-40d0-947b-91cd67b6fecf" model="ir.actions.server">-->
+        <record id="hm_imput_activity_lead_stayed_90days_in_without_continuation" model="ir.actions.server">
+<!--            <field name="name">Imput activity - Lead stayed &gt;90days in "Sans suite"</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_lead__f791dda6-e202-4d12-af0e-91371ba271d1" model="ir.actions.server">-->
+        <record id="hm_imput_activity_lead_stayed_10days_in_estimated_quote_sent" model="ir.actions.server">
+<!--            <field name="name">Imput activity - Lead stayed &gt;10days in "Devis estimatif envoyé"</field>-->
+       </record>
+
+        <!-- <record id="studio_customization.imput_activity_suivi_79b9c580-043a-4603-b5ef-e89ff5160765" model="ir.actions.server">-->
+        <record id="hm_input_activity_trade_tracking_when_change_state_action" model="ir.actions.server">
+<!--            <field name="name">Imput Activity - suivi commercial quand change state</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_suivi_41b1651b-3adc-4cee-a55e-7d5888c06bbc" model="ir.actions.server">-->
+        <record id="hm_input_activity_lead_lost_without_reason" model="ir.actions.server">
+<!--            <field name="name">Imput Activity - lead mis en perdu sans motif</field>-->
+        </record>
+
+    </data>
+</odoo>

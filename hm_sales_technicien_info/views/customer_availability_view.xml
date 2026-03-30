@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="customer_availability_view_form_wizard" model="ir.ui.view">
+        <field name="name">hm.customer.availability.view.form.wizarf</field>
+        <field name="model">hm.customer.availability</field>
+        <field name="arch" type="xml">
+            <form string="Availability">
+                <group>
+                    <field name="name" readonly="1" force_save="1"/>
+                    <field name="sale_order_id" readonly="1" force_save="1"/>
+                    <field name="allow_availabilities_outside_prefs"/>
+                </group>
+
+                <notebook>
+                    <page string="Availability" name="availability">
+                        <field name="cust_availability_ids" widget="section_one2many">
+                            <tree editable="bottom" default_order="date_from">
+                                <field name="date"/>
+                                <field name="date_from" invisible="1"/>
+                                <field name="date_to" invisible="1"/>
+                                <field name="name" invisible="1"/>
+                                <field name="dayofweek" readonly="1" force_save="1"/>
+                                <field name="availability"/>
+                                <field name="hour_from" widget="float_time"/>
+                                <field name="hour_to" widget="float_time"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+
+                <footer>
+                    <button
+                            name="save_and_close"
+                            type="object"
+                            class="oe_highlight"
+                            string="save and close"
+                    />
+                    <button special="cancel" string="Cancel" class="oe_link"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="customer_availability_view_form" model="ir.ui.view">
+        <field name="name">hm.customer.availability.view.form</field>
+        <field name="model">hm.customer.availability</field>
+        <field name="arch" type="xml">
+            <form string="Availability">
+                <sheet>
+                    <group>
+                        <field name="name" readonly="1" force_save="1"/>
+                        <field name="sale_order_id" readonly="1" force_save="1"/>
+                        <field name="allow_availabilities_outside_prefs"/>
+                    </group>
+
+                    <notebook>
+                        <page string="Availability" name="availability">
+                            <field name="cust_availability_ids" widget="section_one2many">
+                                <tree editable="bottom" default_order="date_from">
+                                    <field name="date"/>
+                                    <field name="date_from" invisible="1"/>
+                                    <field name="date_to" invisible="1"/>
+                                    <field name="name" invisible="1"/>
+                                    <field name="dayofweek" readonly="1" force_save="1"/>
+                                    <field name="availability"/>
+                                    <field name="hour_from" widget="float_time"/>
+                                    <field name="hour_to" widget="float_time"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="customer_availability_view_tree" model="ir.ui.view">
+        <field name="name">hm.customer.availability.tree</field>
+        <field name="model">hm.customer.availability</field>
+        <field name="arch" type="xml">
+            <tree string="Availability" expand="1">
+                <field name="name"/>
+                <field name="sale_order_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hm_customer_availability_action" model="ir.actions.act_window">
+        <field name="name">Customer availability</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hm.customer.availability</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

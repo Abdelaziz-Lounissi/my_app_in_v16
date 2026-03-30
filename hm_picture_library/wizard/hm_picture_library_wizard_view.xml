@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hm_picture_library_wizard_form" model="ir.ui.view">
+            <field name="name">hm.picture.library.wizard.form</field>
+            <field name="model">hm.picture.library.wizard</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <group>
+                        <field name="attachment_ids" widget="many2many_binary"/>
+                        <field name="hm_so_id" invisible="1"/>
+                        <field name="hm_lead_id" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button name="action_save" type="object" string="Save"
+                                class="btn btn-primary"/>
+                        <button string="Cancel" special="cancel" class="btn btn-default"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

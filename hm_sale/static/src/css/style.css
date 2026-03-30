@@ -1,0 +1,7 @@
+.show-description-widget {
+    display: flex;
+    align-items: center;
+    height: 20px !important;
+    width: 32px; !important;
+}
+

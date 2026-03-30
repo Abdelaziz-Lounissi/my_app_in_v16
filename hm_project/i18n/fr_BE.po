@@ -1,0 +1,69 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_project
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-20 15:22+0000\n"
+"PO-Revision-Date: 2024-08-20 15:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_project
+#: model:ir.ui.menu,name:hm_project.menu_project_all_tasks
+msgid "All Tasks"
+msgstr "Toutes les tâches"
+
+#. module: hm_project
+#: model_terms:ir.actions.act_window,help:hm_project.action_view_task
+msgid "Create a new task"
+msgstr "Créer une nouvelle tâche"
+
+#. module: hm_project
+#: model:ir.model.fields.selection,name:hm_project.selection__project_task__priority__3
+msgid "High"
+msgstr "Élevé"
+
+#. module: hm_project
+#: model:ir.model.fields.selection,name:hm_project.selection__project_task__priority__1
+msgid "Low"
+msgstr "Normal"
+
+#. module: hm_project
+#: model:ir.model.fields.selection,name:hm_project.selection__project_task__priority__0
+msgid "Lowest"
+msgstr "Faible"
+
+#. module: hm_project
+#: model:ir.model.fields.selection,name:hm_project.selection__project_task__priority__2
+msgid "Medium"
+msgstr "Moyen"
+
+#. module: hm_project
+#: model_terms:ir.actions.act_window,help:hm_project.action_view_task
+msgid ""
+"Odoo's project management allows you to manage the pipeline of your tasks efficiently.\n"
+"                <br>\n"
+"                You can track progress, discuss on tasks, attach documents, etc."
+msgstr ""
+
+#. module: hm_project
+#: model:ir.model.fields,field_description:hm_project.field_project_task__priority
+msgid "Priority"
+msgstr "Priorité"
+
+#. module: hm_project
+#: model:ir.model,name:hm_project.model_project_task
+msgid "Task"
+msgstr "Tâche"
+
+#. module: hm_project
+#: model:ir.actions.act_window,name:hm_project.action_view_task
+msgid "Tasks"
+msgstr "Tâches"

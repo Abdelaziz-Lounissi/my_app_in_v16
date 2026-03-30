@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <!-- *** Form views *** -->
+
+    <record id="hm_crm_lead_opportunity_view_form" model="ir.ui.view">
+        <field name="name">crm.lead.form.opportunity.customization</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='Misc']/field[@name='team_id']" position="replace">
+            </xpath>
+           <xpath expr="//field[@name='team_id']" position="attributes">
+                <attribute name="required">True</attribute>
+            </xpath>
+            <!--crm_case_form_view_oppor_inherit_sale-->
+            <xpath expr="//button[@name='action_view_sale_quotation']" position="attributes">
+                <attribute name="context">
+                    {'default_partner_id': web_partner_shipping_id, 'search_default_draft': 1, 'search_default_sent': 1,
+                    'default_partner_invoice_id': web_partner_invoice_id,
+                    'default_partner_shipping_id': web_partner_shipping_id,
+                    }
+                </attribute>
+            </xpath>
+
+            <!--view_crm_opportunity_geo_assign_form-->
+            <field name="date_deadline" position="after">
+                <field name="web_partner_invoice_id"/>
+                <field name="web_partner_shipping_id"/>
+                <field name="authorize_reminder_action" invisible="1"/>
+            </field>
+            <field name="description" position="after">
+                <field name="descriptions"/>
+            </field>
+            <xpath expr="//notebook/page[1]/field[@name='description']" position="before">
+                <group string="Rendez-vous">
+                    <group>
+                        <field name="je_souhaite" readonly="1"/>
+                        <field name="explicatif" readonly="1"/>
+                        <field name="cas_urgence" readonly="1"/>
+                    </group>
+                </group>
+            </xpath>
+
+            <xpath expr="//button[@name='action_set_lost']" position="after">
+                <button name="action_send_email_rappel" string="Rappel" type="object"
+                        attrs="{'invisible': [('authorize_reminder_action', '=', False)]}"
+                        confirm="Are you sure you want to send a message to the partner."/>
+            </xpath>
+
+            <xpath expr="//field[@name='property_id']" position="after">
+                <xpath expr="//field[@name='partner_id']" position="move"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_onsite_id']" position="after">
+                <xpath expr="//field[@name='web_partner_invoice_id']" position="move"/>
+                <xpath expr="//field[@name='web_partner_shipping_id']" position="move"/>
+            </xpath>
+
+            <xpath expr="//field[@name='web_partner_shipping_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//page[@name='lead']//field[@name='source_id']" position="after">
+                <field name="hm_wc_lead_id"/>
+                <field name="hm_searchable_phone"/>
+            </xpath>
+
+            <xpath expr="//group[@name='lead_info']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+            </xpath>
+            <xpath expr="/form[1]/sheet[1]/group[1]/group[1]" position="attributes">
+                <attribute name="string">Contact</attribute>
+            </xpath>
+            <xpath expr="/form[1]/sheet[1]/group[1]/group[2]" position="attributes">
+                <attribute name="string">Client et adresse d'intervention</attribute>
+            </xpath>
+            <xpath expr="/form[1]/sheet[1]/group[1]/group[5]" position="attributes">
+                <attribute name="string">Equipe commerciale</attribute>
+            </xpath>
+            <xpath expr="/form[1]/sheet[1]/group[1]/group[1]" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="invisible"/>
+            </xpath>
+            <xpath expr="/form[1]/sheet[1]/group[1]" position="after">
+                <group name="studio_group_5JGOf">
+                    <group name="studio_group_5JGOf_left"/>
+                    <group name="studio_group_5JGOf_right"/>
+                </group>
+            </xpath>
+            <xpath expr="/form[1]/sheet[1]/group[2]/group[1]" position="inside">
+                <field name="date_last_stage_update"/>
+            </xpath>
+
+            <xpath expr="//page//field[@name='title']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[2]" position="inside">
+                <xpath expr="//field[@name='phone']" position="move"/>
+                <xpath expr="//field[@name='web_partner_invoice_id']" position="move"/>
+                <xpath expr="//field[@name='web_partner_shipping_id']" position="move"/>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="before">
+                <xpath expr="//field[@name='team_id']" position="move"/>
+
+            </xpath>
+            <xpath expr="//field[@name='team_id']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="required">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="hm_sales_team_leader_id" string="Sales team leader" attrs="{}" invisible="1"/>
+                <field name="hm_image_sales_team" string="Image sales team" attrs="{}" invisible="1"/>
+                <field name="hm_lead_transmis_id" options="{'no_create_edit': True, 'no_create': True}"/>
+            </xpath>
+
+            <xpath expr="//field[@name='cas_urgence']" position="after">
+                <field name="hm_boiler_replacement" string="Remplacement de chaudière?"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/group[1]" position="after">
+                <group name="studio_group_b5fYB">
+                    <field name="hm_boiler_energy_source" string="Source énergie chaudière"
+                           placeholder="Gaz/mazout? Quoi actuellement? Nouvelle conduite? Ouverture compteur?"
+                           help="Gaz/mazout? Quoi actuellement? Nouvelle conduite? Ouverture compteur?"
+                           attrs="{'invisible': [('hm_boiler_replacement','=',False)]}"/>
+                    <field name="hm_boiler_power" string="Puissance chaudière?"
+                           help="Isolation, superficie habitable? (non isolé 120W/m² / neuf 60W/m²). Consommation: 5kW/1000L mazout ou 1000m³ gaz. Puissance actuelle?"
+                           placeholder="Isolation, superficie habitable? (non isolé 120W/m² / neuf 60W/m²). Consommation: 5kW/1000L mazout ou 1000m³ gaz. Puissance actuelle?"
+                           attrs="{'invisible': [('hm_boiler_replacement','=',False)]}"/>
+                    <field name="hm_heating_circuit_type" string="Type circuit chauffage?"
+                           placeholder="Radiateurs/chauffage sol? Quoi actuel? Travaux de modif?"
+                           attrs="{'invisible': [('hm_boiler_replacement','=',False)]}"/>
+                    <field name="hm_boiler_type_ecs"
+                           attrs="{'invisible': [('hm_boiler_replacement','=',False)]}"
+                           string="Type ECS chaudière?"
+                           placeholder="Instantanné/boiler (volume). Actuellement quoi &gt; modification réseau? Boucle sanitaire?"
+                           help="Confort nécessaire &gt; Instantanné/boiler (volume). Actuellement quoi &gt; modification réseau? Boucle sanitaire?"/>
+                    <field name="hm_boiler_model" string="Modèle de chaudière?"
+                           placeholder="Hauteur chaufferie? &gt; sol ou mural. Compact?"
+                           help="Hauteur chaufferie? &gt; sol ou mural. Compact?"
+                           attrs="{'invisible': [('hm_boiler_replacement','=',False)]}"/>
+                    <field name="hm_regulation" string="Régulation?"
+                           placeholder="Fil existant? Connecté? Sonde extérieure?"
+                           help="Fil existant? Connecté? Sonde extérieure?"
+                           attrs="{'invisible': [('hm_boiler_replacement','=',False)]}"/>
+                    <field name="hm_chimney" string="Cheminée"
+                           placeholder="Configuration? Longueur tubage ou éléments. CLV? ACCES CHEMINEE?"
+                           help="Configuration? Longueur tubage ou éléments. CLV? ACCES CHEMINEE?"
+                           attrs="{'invisible': [('hm_boiler_replacement','=',False)]}"/>
+                    <field name="hm_hair_intake" string="Prise d'air"
+                           placeholder="Dans cheminée (mazout avant?)? Dans local? Conduit indépendant?"
+                           help="Dans cheminée (mazout avant?)? Dans local? Conduit indépendant?"
+                           attrs="{'invisible': [('hm_boiler_replacement','=',False)]}"/>
+                    <field name="hm_condensate_evacuation" string="Evacuation condensats?"
+                           placeholder="Présent? Pompe de relevage?" help="Présent? Pompe de relevage?"
+                           attrs="{'invisible': [('hm_boiler_replacement','=',False)]}"/>
+                    <field name="hm_elements_to_be_replaced" string="Elements à remplacer?"
+                       placeholder="Vase expansion, filtre, isolation à prévoir?"
+                       attrs="{'invisible': [('hm_boiler_replacement','=',False)]}"/>
+                    <field name="hm_motivation_and_deadlines" string="Motivation et délais"
+                           placeholder="Pourquoi remplace? Age chaudière? Dans quel délais?"
+                           help="Pourquoi remplace? Age chaudière? Dans quel délais?"
+                           attrs="{'invisible': [('hm_boiler_replacement','=',False)]}"/>
+                    <field name="hm_boiler_brands_affinity" string="Affinité marques chaudière?"
+                           attrs="{'invisible': [('hm_boiler_replacement','=',False)]}"/>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='description']" position="attributes">
+                <attribute name="attrs">{"invisible": [("description","=",False)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='descriptions']" position="attributes">
+                <attribute name="attrs">{"invisible": [("descriptions","=",False)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='descriptions']" position="after">
+                <field name="hm_html_description" string="Description html"/>
+            </xpath>
+            <xpath expr="//field[@name='web_partner_shipping_id']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+            </xpath>
+
+            <!--   Bloc :  Marketing        -->
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[@name='lead_info']" position="replace">
+                <xpath expr="//group[@name='categorization']" position="move"/>
+            </xpath>
+            <xpath expr="//group[@name='categorization']" position="inside">
+                <field name="hm_customer_source_2" string="Source client"/>
+            </xpath>
+            <xpath expr="//page[@name='lead']//group[3]" position="replace"/>
+
+            <!--      Bloc Contact     -->
+            <xpath expr="///group[@name='lead_partner']//field[@name='partner_name']" position="before">
+                <field name="contact_name"/>
+                <xpath expr="///group[@name='opportunity_partner']//field[@name='email_from']" position="move"/>
+                <!-- move required fields here and make them invisible to delete the group opportunity_partner -->
+                <field name="user_company_ids" invisible="1"/>
+                <field name="mobile_blacklisted" invisible="1"/>
+            </xpath>
+            <xpath expr="///group[@name='lead_partner']//field[@name='website']" position="replace"/>
+            <xpath expr="///group[@name='lead_partner']//field[@name='lang_id']" position="replace"/>
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[@name='opportunity_partner']/field[@name='partner_id']" position="replace"/>
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[@name='opportunity_partner']/label[2]" position="replace"/>
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[@name='opportunity_partner']/label[1]" position="replace"/>
+
+          <!-- delete the group opportunity_partner -->
+            <xpath expr="//group[@name='opportunity_partner']" position="replace"/>
+
+        </field>
+    </record>
+
+    <!-- *** Tree views ***-->
+
+    <record id="hm_crm_case_tree_view_oppor" model="ir.ui.view">
+        <field name="name">crm.lead.tree.opportunity.customization</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='stage_id']" position="after">
+                    <field name="date_last_stage_update"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <!--  ***  Kanban views ***-->
+    <record id="lead_button_rappel_kanban_view" model="ir.ui.view">
+        <field name="name">crm.lead.rappel</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban/templates" position="before">
+                <field name="authorize_reminder_action"/>
+            </xpath>
+            <xpath expr="//field[@widget='kanban_activity']" position="after">
+                <t t-if="record.authorize_reminder_action.raw_value === true">
+                    <div title="Rappel" class="fa-stack text-muted o_field_widget" name="rappel" style="height: 1em;">
+                        <a type="object" name="action_send_email_rappel" aria-label="Rappel" title="Rappel"
+                           confirm="Are you sure you want to send a message to the partner.">
+                            <i class="fa fa-fw fa-lg fa-envelope fa-stack-1x text-success"/>
+                        </a>
+                    </div>
+                </t>
+            </xpath>
+            <xpath expr="//div[hasclass('o_kanban_record_bottom')]" position="before">
+                <t t-if="record.property_id.raw_value">
+                    <div title="Bien immobilier" class="text-muted o_field_widget" name="property_id"
+                         style="height: 1em;">
+                        <strong>Bien immobilier :</strong>
+                        <field name="property_id"/>
+                    </div>
+                </t>
+            </xpath>
+        </field>
+    </record>
+
+
+    <!-- *** Search views ***-->
+
+    <record id="hm_crm_lead_opportunity_search_view" model="ir.ui.view">
+        <field name="name">crm.lead.search.opportunity.customization</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='date_closed']" position="after">
+                <filter context="{'group_by': 'date_last_stage_update'}" name="studio_group_by_WGSqd"
+                        string="Last Stage Update"/>
+            </xpath>
+            <xpath expr="//filter[@name='source']" position="after">
+                <filter context="{'group_by': 'hm_customer_source_2'}" name="groupby_hm_customer_source_2" string="Source client"/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="id" string="ID"/>
+                <field name="property_id" string="Property"/>
+                <!--                <field name="partner_id" string="Nom du client"/>-->
+                <field name="street" string="Adresse du lead"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- *** Others ***-->
+
+    <record id="hm_lead_opportunity_action" model="ir.actions.act_window">
+        <field name="name">Lead/Opportunity</field>
+        <field name="res_model">crm.lead</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="hm_pipeline_complet_filters" model="ir.filters">
+        <field name="name">Pipeline complet</field>
+        <field name="model_id">crm.lead</field>
+        <field name="sort">[]</field>
+        <field name="active" eval="True"/>
+        <field name="is_default" eval="False"/>
+        <field name="action_id" ref="crm.crm_lead_action_pipeline"/>
+    </record>
+
+</odoo>
+
+
+

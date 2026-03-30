@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="mail_activity_type_view_form_popup_inherit_view" model="ir.ui.view">
+        <field name="name">mail.activity.type.form.inherit</field>
+        <field name="model">mail.activity.type</field>
+        <field name="inherit_id" ref="mail.mail_activity_type_view_form"/>
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category']" position="after">
+<!--                <field name="show_message" string="Do not Show in Messages"/>-->
+                <field name="activity_as_complete_opportunity_sent"/>
+                <field name="activity_as_complete_opportunity_won_lost"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

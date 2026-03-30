@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+    <t t-name="hm_picture_library.crm_picture_select_kanban">
+        <button t-if='widget and widget.crm_picture_select_kanban' type="button"
+                class="btn btn-secondary o_button_crm_picture_select_kanban"
+                style="color:#fff; background-color:#7C7BAD;border-color:#7C7BAD;">
+              <i class="fa fa-photo"/> Sélectionner des photos
+        </button>
+
+    </t>
+
+    <t t-name="hm_picture_library.hide_create_button">
+        <button t-if='widget and widget.hide_create_button' type="button"
+                class="btn btn-secondary o_button_crm_picture_hide_create_button"
+                style="color:#fff; background-color:#7C7BAD;border-color:#7C7BAD;">
+              <i class="fa fa-photo"/> Ajouter ma sélection
+        </button>
+
+    </t>
+
+    <t t-name="hm_picture_library.wizard_picture_button">
+        <button t-if='widget and widget.wizard_picture_button' type="button"
+                class="btn btn-secondary o_button_wizard_picture_button"
+                style="color:#fff; background-color:#7C7BAD;border-color:#7C7BAD;">
+            <i class="fa fa-upload"/>
+            Télécharger des photos</button>
+    </t>
+
+    <t t-extend="KanbanView.buttons">
+        <t t-jquery="button" t-operation="after">
+            <t t-call="hm_picture_library.crm_picture_select_kanban"/>
+            <t t-call="hm_picture_library.hide_create_button"/>
+            <t t-call="hm_picture_library.wizard_picture_button"/>
+        </t>
+    </t>
+
+
+    <t t-extend="KanbanView.buttons">
+        <t t-jquery="button" t-operation="replace">
+            <button t-if='widget and !widget.hide_create_button or !widget' type="button"
+                    t-attf-class="btn #{btnClass} o-kanban-button-new" accesskey="c">
+                <t t-esc="create_text || _t('Create')"/>
+            </button>
+        </t>
+
+    </t>
+</templates>

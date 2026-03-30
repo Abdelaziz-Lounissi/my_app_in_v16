@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_product_template_only_form_view" model="ir.ui.view">
+        <field name="name">product.template.product.form.customization</field>
+        <field name="model">product.template</field>
+        <field name="priority" eval="99"/>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='description']" position="after">
+                <group string="Description du site Web" name="website_description">
+                    <field name="quotation_only_description"/>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='default_code']" position="after">
+                <field name="supplier_count" invisible="1"/>
+                <field name="origin"/>
+                <field name="hm_maintain_SO_desc_and_cost_on_PO"/>
+                <field name="sku" readonly="1"/>
+                <field name="hm_brand" string="Marque"/>
+                <field name="hm_supplier_category" string="Catégorie Fournisseur"/>
+            </xpath>
+            <xpath expr="//field[@name='barcode']" position="attributes">
+                <attribute name="string">Code EAN</attribute>
+            </xpath>
+            <xpath expr="//field[@name='barcode']" position="after">
+                <field name="hm_manufacturer_reference" string="Référence fabricant"/>
+                <field name="hm_technical_sheet_1" string="Fiche technique" widget="url"/>
+                <field name="hm_technical_sheet_2" string="Fiche technique 2" widget="url"/>
+                <field name="hm_image_url" string="Image URL 1" widget="url"/>
+                <field name="hm_image_url_2" string="Image URL 2" widget="url"/>
+                <field name="hm_image_url_3" string="Image URL 3" widget="url"/>
+                <field name="facq_vm_filter" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='list_price']" position="after">
+                <field name="hm_modified_price" string="Prix modifié"
+                       help="mettre référence fournisseur de l'article dont on prend le prix de vente. Ou directement le prix de vente si pas de ref."/>
+            </xpath>
+            <xpath expr="//field[@name='uom_po_id']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='list_price']" position="attributes">
+                <attribute name="attrs">{'readonly':[('product_variant_count', '>', 1)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='uom_po_id']" position="after">
+                <field name="hm_current_discount" string="Current discount"/>
+                <field name="hm_radiator_power_kw" string="Puissance radiateur (W)"/>
+                <field name="hm_technical_sheets_ids"/>
+            </xpath>
+            <xpath expr="//field[@name='optional_product_ids']" position="attributes">
+                <attribute name="options"/>
+                <attribute name="string">Product</attribute>
+                <attribute name="widget"/>
+            </xpath>
+            <xpath expr="//field[@name='seller_ids']" position="attributes">
+                <attribute name="widget">section_and_note_one2many</attribute>
+            </xpath>
+
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button" name="action_view_sale_order_confirmed" type="object" icon="fa-edit">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="sale_order_confirmed_count" widget="statinfo" nolabel="1" class="mr4"/>
+                        </span>
+                        <span class="o_stat_text">Bons de commande</span>
+                    </div>
+                </button>
+                <button class="oe_stat_button" name="action_view_purchase_order_confirmed" type="object" icon="fa-list">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="purchase_order_confirmed_count" widget="statinfo" nolabel="1" class="mr4"/>
+                        </span>
+                        <span class="o_stat_text">POs</span>
+                    </div>
+                </button>
+            </div>
+            <xpath expr="//field[@name='description_sale']" position="before">
+                <button name="update_product_tmpl_sale_description" colspan="2"
+                        attrs="{'invisible': [('product_variant_count', '>', 1)]}"
+                        string="Mettre à jour la description dans le modèle de devis"
+                        type="object"
+                        icon="fa-refresh"
+                        effect="{}"
+                        class="btn-secondary"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hm_product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.product.form.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="before">
+                <field class="oe_avatar" name="hm_is_real_picture" widget="boolean_toggle"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="hm_product_template_tree_view" model="ir.ui.view">
+        <field name="name">product.template.product.tree.customization</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='qty_available']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='virtual_available']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hm_product_template_search_view" model="ir.ui.view">
+        <field name="name">product.template.search.customization</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="replace">
+                <field name="name" string="Product"
+                       filter_domain="['|', '|', '|', '|', ('default_code', 'ilike', self), ('product_variant_ids.default_code', 'ilike', self),('name', 'ilike', self), ('barcode', 'ilike', self), ('seller_ids.product_code', 'ilike', self)]"/>
+
+                <filter string="Facq + VM" name="facq_vm" domain="[('facq_vm_filter', '=', True)]"/>
+                <separator/>
+                <filter string="Has more than one supplier" name="has_more_than_one_supplier"
+                        domain="[('supplier_count', '>', 1)]"/>
+                <filter string="Has one supplier" name="has_one_supplier" domain="[('supplier_count', '=', 1)]"/>
+                <filter string="Without supplier" name="has_no_supplier" domain="[('supplier_count', '=', 0)]"/>
+                <filter string="Equivalent product" name="equivalent_product"
+                        domain="[('equivalent_filter', '=', True)]"/>
+
+            </xpath>
+            <xpath expr="//field[@name='categ_id']" position="after">
+                <field name="sku" filter_domain="[('sku', '=', self)]"/>
+                <field name="barcode"/>
+                <field name="optional_product_ids"/>
+                <field name="seller_ids"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <!-- Product Suppliers-->
+    <record id="hm_product_supplierinfo_tree_view2" model="ir.ui.view">
+        <field name="name">product.supplierinfo.tree.view2</field>
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_tree_view"/>
+        <field name="priority" eval="99"/>
+        <field name="arch" type="xml">
+            <field name="delay" position="after">
+                <button name="open_supplier_info" type="object" string="Ouvrir Prix Fournisseur" icon="fa-arrow-right" class="btn btn-link"/>
+            </field>
+        </field>
+    </record>
+
+
+
+    <record id="hm_product_template_kanban_view" model="ir.ui.view">
+        <field name="name">product.template.kanban</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_kanban_view"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[2]" position="after">
+                <div class="oe_kanban_bottom_left" name="studio_div_b1e0a1">
+                    <field name="supplier_count" invisible="1"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hm_product_selection" model="ir.filters">
+        <field name="name">Articles sélection</field>
+        <field name="model_id">product.template</field>
+        <field name="active" eval="True"/>
+        <field name="is_default" eval="True"/>
+        <field name="domain">["&amp;", ("purchase_ok", "=", 1), ("default_code", "!=", False)]</field>
+        <field name="action_id" ref="purchase.product_normal_action_puchased"/>
+        <field name="sort">[]</field>
+    </record>
+
+    <record id="hm_selected_articles" model="ir.filters">
+        <field name="name">Articles sélectionnés</field>
+        <field name="model_id">product.template</field>
+        <field name="active" eval="True"/>
+        <field name="is_default" eval="True"/>
+        <field name="domain">["&amp;", ("sale_ok", "=", 1), ("default_code", "!=", False)]</field>
+        <field name="sort">[]</field>
+        <field name="action_id" ref="sale.product_template_action"/>
+    </record>
+
+</odoo>

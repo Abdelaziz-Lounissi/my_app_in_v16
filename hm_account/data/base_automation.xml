@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data noupdate="1">
+        <record id="hm_change_last_maintenance_date" model="base.automation">
+            <field name="action_server_id" ref="hm_account.hm_change_last_maintenance_date_action"/>
+        </record>
+
+        <record id="hm_sending_last_vat_certificate_reminder" model="base.automation">
+            <field name="action_server_id" ref="hm_account.hm_sending_last_vat_certificate_reminder_action"/>
+        </record>
+
+        <record id="hm_imput_activity_pay_supplier_invoice" model="base.automation">
+            <field name="action_server_id" ref="hm_account.hm_imput_activity_pay_supplier_invoice_action"/>
+        </record>
+
+        <record id="hm_imput_activity_new_invoice_received_materiel" model="base.automation">
+            <field name="action_server_id" ref="hm_account.hm_imput_activity_new_invoice_received_materiel_action"/>
+        </record>
+
+        <record id="hm_imput_activity_merchandise_return_tracking" model="base.automation">
+            <field name="action_server_id" ref="hm_account.hm_imput_activity_merchandise_return_tracking_action"/>
+        </record>
+
+        <record id="hm_change_vam_invoicing_when_creating_invoice" model="base.automation">
+            <field name="action_server_id" ref="hm_account.hm_change_vam_invoicing_when_creating_invoice_action"/>
+        </record>
+
+        <record id="hm_input_activity_merchandise_return_monitoring_delay" model="base.automation">
+            <field name="action_server_id"
+                   ref="hm_account.hm_input_activity_merchandise_return_monitoring_delay_action"/>
+        </record>
+
+        <record id="hm_imput_activity_new_invoice_received" model="base.automation">
+            <field name="action_server_id" ref="hm_account.hm_imput_activity_new_invoice_received_action"/>
+        </record>
+
+        <record id="hm_imput_activity_new_invoice_received_technicians" model="base.automation">
+            <field name="action_server_id" ref="hm_account.hm_imput_activity_new_invoice_received_technicians_action"/>
+        </record>
+
+        <record id="hm_imput_activity_new_invoice_received_to_define" model="base.automation">
+            <field name="action_server_id" ref="hm_account.hm_imput_activity_new_invoice_received_to_define_action"/>
+        </record>
+
+        <record id="hm_change_facq_noreply_invoicing_facq" model="base.automation">
+            <field name="action_server_id" ref="hm_account.hm_change_facq_noreply_invoicing_facq_action"/>
+        </record>
+
+        <record id="hm_copy_reason_for_credit_note_when_validated" model="base.automation">
+            <field name="action_server_id" ref="hm_account.hm_copy_reason_for_credit_note_when_validated_action"/>
+        </record>
+
+        <record id="hm_change_vam_emport_vam_on_confirmation" model="base.automation">
+            <field name="action_server_id" ref="hm_account.hm_change_vam_emport_vam_on_confirmation_action"/>
+        </record>
+
+        <record id="hm_change_invoice_payment_state" model="base.automation">
+            <field name="action_server_id" ref="hm_account.hm_change_invoice_payment_state_action"/>
+        </record>
+    </data>
+</odoo>

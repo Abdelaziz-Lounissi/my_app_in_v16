@@ -1,0 +1,206 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_sale_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-03 09:34+0000\n"
+"PO-Revision-Date: 2021-12-03 09:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_sale_management
+#: model:ir.model.fields.selection,name:hm_sale_management.selection__sale_order_template__hm_pipeline_status_bar__to_validate
+msgid "A valider"
+msgstr ""
+
+#. module: hm_sale_management
+#: model:ir.model.fields,field_description:hm_sale_management.field_sale_order_template__hm_access_to_the_necessary_profession_id
+#: model_terms:ir.ui.view,arch_db:hm_sale_management.hm_sale_order_template_form_view
+msgid "Acces à la profession nécessaire"
+msgstr "Accès à la profession nécessaire"
+
+#. module: hm_sale_management
+#: model:ir.model.fields.selection,name:hm_sale_management.selection__sale_order_template__hm_pipeline_status_bar__actif
+msgid "Actif"
+msgstr ""
+
+#. module: hm_sale_management
+#: model:ir.model.fields,field_description:hm_sale_management.field_sale_order_template__hm_display_proprio_on_work_order
+msgid "Afficher proprio sur bon de travail"
+msgstr ""
+
+#. module: hm_sale_management
+#: model:ir.model.fields,field_description:hm_sale_management.field_sale_order_template_line__computed_image_art
+msgid "Art"
+msgstr ""
+
+#. module: hm_sale_management
+#: model:ir.actions.act_window,name:hm_sale_management.category_sale_order_template_action
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: hm_sale_management
+#: model:ir.model.fields,field_description:hm_sale_management.field_sale_order__hm_work_category
+#: model:ir.model.fields,field_description:hm_sale_management.field_sale_order_template__hm_work_category
+#: model_terms:ir.ui.view,arch_db:hm_sale_management.hm_sale_order_template_form_view
+#: model_terms:ir.ui.view,arch_db:hm_sale_management.hm_sale_order_view_search_inherit_quotation_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale_management.hm_view_order_form_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale_management.hm_view_sales_order_filter_inherit
+msgid "Catégorie de travaux"
+msgstr ""
+
+#. module: hm_sale_management
+#: model:ir.model.fields,field_description:hm_sale_management.field_sale_order__hm_parent_work_category
+#: model_terms:ir.ui.view,arch_db:hm_sale_management.hm_sale_order_view_search_inherit_quotation_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale_management.hm_view_order_form_inherit
+#: model_terms:ir.ui.view,arch_db:hm_sale_management.hm_view_sales_order_filter_inherit
+msgid "Catégorie de travaux parent"
+msgstr ""
+
+#. module: hm_sale_management
+#: model:ir.model,name:hm_sale_management.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: hm_sale_management
+#: model:ir.model.fields.selection,name:hm_sale_management.selection__sale_order_template__hm_pipeline_status_bar__on_progress
+msgid "En construction"
+msgstr ""
+
+#. module: hm_sale_management
+#: model:ir.model.fields,field_description:hm_sale_management.field_res_partner__hm_fiscal_position
+#: model:ir.model.fields,field_description:hm_sale_management.field_res_users__hm_fiscal_position
+msgid "HM Fiscal Position"
+msgstr "Position fiscale"
+
+#. module: hm_sale_management
+#: model:ir.model.fields,field_description:hm_sale_management.field_sale_order__hm_fiscal_position_template_forced_id
+#: model_terms:ir.ui.view,arch_db:hm_sale_management.hm_view_order_form_inherit
+msgid "Fiscal Position template forced"
+msgstr ""
+
+#. module: hm_sale_management
+#: code:addons/hm_sale_management/models/sale_order.py:0
+#, python-format
+msgid ""
+"Le prix d'article (%s) après la remise de(%s) est (%s) inférieur au coût "
+"(%s)! "
+msgstr ""
+
+#. module: hm_sale_management
+#: model:ir.model.fields,field_description:hm_sale_management.field_sale_order_template_option__hm_create_date
+msgid "New Champ lié"
+msgstr ""
+
+#. module: hm_sale_management
+#: model:ir.model.fields,field_description:hm_sale_management.field_sale_order_template__hm_pipeline_status_bar
+msgid "Pipeline status bar"
+msgstr "Barre d'état"
+
+#. module: hm_sale_management
+#: model:ir.model.fields,field_description:hm_sale_management.field_res_partner__hm_property_fiscal_position
+#: model:ir.model.fields,field_description:hm_sale_management.field_res_users__hm_property_fiscal_position
+msgid "Position fiscale du bien"
+msgstr ""
+
+#. module: hm_sale_management
+#: model:ir.model.fields,field_description:hm_sale_management.field_sale_order_template__hm_forced_fiscal_position_for_model
+#: model_terms:ir.ui.view,arch_db:hm_sale_management.hm_sale_order_template_form_view
+msgid "Position fiscale forcée pour modéle"
+msgstr ""
+
+#. module: hm_sale_management
+#: model_terms:ir.ui.view,arch_db:hm_sale_management.hm_sale_order_template_view_search
+msgid "Product"
+msgstr "Produit"
+
+#. module: hm_sale_management
+#: model:ir.model,name:hm_sale_management.model_sale_order_template
+#: model:ir.model.fields,field_description:hm_sale_management.field_res_partner__hm_quotation_template
+#: model:ir.model.fields,field_description:hm_sale_management.field_res_users__hm_quotation_template
+#: model_terms:ir.ui.view,arch_db:hm_sale_management.hm_sale_order_template_kanban_view
+msgid "Quotation Template"
+msgstr "Modèle de devis"
+
+#. module: hm_sale_management
+#: model:ir.model,name:hm_sale_management.model_sale_order_template_line
+msgid "Quotation Template Line"
+msgstr "Ligne Modèle de devis"
+
+#. module: hm_sale_management
+#: model:ir.model,name:hm_sale_management.model_sale_order_template_option
+msgid "Quotation Template Option"
+msgstr "Option Modèle de devis"
+
+#. module: hm_sale_management
+#: model:ir.model.fields,field_description:hm_sale_management.field_sale_order_template_line__hm_barcode
+msgid "Ref fourn"
+msgstr "Réf fourn"
+
+#. module: hm_sale_management
+#: model_terms:ir.ui.view,arch_db:hm_sale_management.hm_sale_order_template_form_view
+msgid "Remplir uniquement si on facture toujours selon cette position fiscale"
+msgstr ""
+
+#. module: hm_sale_management
+#: model:ir.model.fields,field_description:hm_sale_management.field_res_partner__hm_sale_order_ids
+#: model:ir.model.fields,field_description:hm_sale_management.field_res_users__hm_sale_order_ids
+msgid "Sale Order"
+msgstr "Bon de commande"
+
+#. module: hm_sale_management
+#: model:ir.model,name:hm_sale_management.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: hm_sale_management
+#: model:ir.model.fields,field_description:hm_sale_management.field_sale_order__hm_sales_team_from_quotation_template_id
+#: model_terms:ir.ui.view,arch_db:hm_sale_management.hm_view_order_form_inherit
+msgid "Sales team from quotation template"
+msgstr "Equipe de Ventes du modèle de devis"
+
+#. module: hm_sale_management
+#: model:ir.model.fields,field_description:hm_sale_management.field_res_partner__hm_interviews_type_id
+#: model:ir.model.fields,field_description:hm_sale_management.field_res_users__hm_interviews_type_id
+msgid "Type entretiens"
+msgstr ""
+
+#. module: hm_sale_management
+#: model:ir.model,name:hm_sale_management.model_res_users
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: hm_sale_management
+#: code:addons/hm_sale_management/models/sale_order.py:0
+#, python-format
+msgid "Warning"
+msgstr "Avertissement"
+
+#. module: hm_sale_management
+#: model_terms:ir.ui.view,arch_db:hm_sale_management.hm_sale_order_template_tree_view
+msgid "Work Type"
+msgstr "Type de travail"
+
+#. module: hm_sale_management
+#: model:ir.model.fields,field_description:hm_sale_management.field_sale_order_template__product_ids
+msgid "Work type"
+msgstr "Type de travail"
+
+#. module: hm_sale_management
+#: model:ir.actions.server,name:hm_sale_management.hm_update_sale_order_template_line_ir_actions_server
+#: model:ir.cron,cron_name:hm_sale_management.hm_update_sale_order_template_line
+#: model:ir.cron,name:hm_sale_management.hm_update_sale_order_template_line
+msgid "update products of sale order template line"
+msgstr "mettre à jour les produits de la ligne du modèle d'ordre de vente"
+
+#. module: hm_sale_management
+#: model:ir.model.fields,field_description:hm_sale_management.field_sale_order_template__hm_work_type
+msgid "HM Work Type"
+msgstr "Type de travail"

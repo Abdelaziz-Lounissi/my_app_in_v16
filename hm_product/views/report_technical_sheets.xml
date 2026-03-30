@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_technical_sheets">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 style="text-align: center;" t-field="o.name"/>
+
+                        <div class="row mt32 mb32">
+                            <div class="col-6">
+                                <strong>Catégorie fiche technique:</strong>
+                                <p t-field="o.hm_technical_sheet_category"/>
+                            </div>
+                        </div>
+
+                        <span t-field="o.hm_text_technical_info"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report
+        id="action_report_technical_sheets"
+        string="Générer un pdf sur les infos techniques"
+        model="hm.technical.sheets"
+        report_type="qweb-pdf"
+        name="hm_product.report_technical_sheets"
+        file="hm_product.report_technical_sheets"
+        print_report_name="'Fiche technique - %s' % (object.name)"
+    />
+
+</odoo>

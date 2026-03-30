@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <!--    <record id="studio_customization.odoo_studio_product__423dc3c4-3f7a-49c4-8de0-d0c1ecd7f7b0" model="ir.ui.view">-->
+        <record id="hm_product_normal_form_view" model="ir.ui.view">
+            <field name="name">product.product.form.customization</field>
+            <field name="model">product.product</field>
+            <field name="priority">99</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='default_code']" position="after">
+                    <field name="hm_maintain_SO_desc_and_cost_on_PO" readonly="1"/>
+                </xpath>
+
+                <xpath expr="//field[@name='barcode']" position="attributes">
+                    <attribute name="string">Code EAN</attribute>
+                </xpath>
+                <xpath expr="//field[@name='barcode']" position="after">
+                    <field name="hm_technical_sheet_1"/>
+                    <field name="hm_technical_sheet_2"/>
+                    <field name="hm_image_url"/>
+                    <field name="hm_image_url_2"/>
+                    <field name="hm_image_url_3"/>
+                </xpath>
+                <xpath expr="//field[@name='standard_price']" position="attributes">
+                    <attribute name="attrs"/>
+                    <attribute name="class"/>
+                    <attribute name="options"/>
+                    <attribute name="widget"/>
+                </xpath>
+                <xpath expr="//field[@name='uom_po_id']" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='cost_currency_id']" position="after">
+                    <field name="hm_modified_price"/>
+                    <xpath expr="//field[@name='standard_price']"/>
+                    <xpath expr="//field[@name='uom_id']"/>
+                    <xpath expr="//field[@name='taxes_id']"/>
+                    <field name="hm_current_discount"/>
+                    <field name="hm_radiator_power_kw"/>
+                    <field name="hm_technical_sheets_ids"/>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='general_information']/group[1]"
+                       position="after">
+                    <group name="studio_group_gCf2C">
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='optional_product_ids']" position="attributes">
+                    <attribute name="options"/>
+                    <attribute name="widget"/>
+                    <attribute name="style">width:900px</attribute>
+                </xpath>
+                <xpath expr="//field[@name='default_code']" position="after">
+                    <field name="sku" readonly="1"/>
+                </xpath>
+                <xpath expr="//page[@name='sales']" position="after">
+                    <page name="equivalent" string="Equivalent">
+                        <group>
+                            <field name="equivalent_product_ids" nolabel="1"
+                                   context="{'tree_view_ref' : 'hm_product.hm_product_equivalent_tree_view'}"/>
+                        </group>
+                        <button type="object" icon="fa-arrow-right" class="btn-link"
+                                string="Navigate to article template" name="open_equivalent_product"
+                                help="You cannot edit equivalent products from an item variant"/>
+                    </page>
+                </xpath>
+
+
+                <xpath expr="//field[@name='description_sale']" position="before">
+                    <button name="update_product_sale_description" colspan="2"
+                            string="Mettre à jour la description dans le modèle de devis"
+                            type="object"
+                            icon="fa-refresh"
+                            effect="{}"
+                            class="btn-secondary"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hm_product_variant_easy_edit_view" model="ir.ui.view">
+            <field name="name">product.product.view.form.easy.customization</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_variant_easy_edit_view"/>
+            <field name="priority">99</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='valuation']" position="after">
+                    <field name="uom_id"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

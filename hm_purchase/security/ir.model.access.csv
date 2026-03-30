@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hm_purchase_order_line_stage_group_system,Ligne de commande d'achat étapes group_system,model_hm_purchase_order_line_stage,base.group_system,1,1,1,1
+access_hm_purchase_order_line_stage_group_user,Ligne de commande d'achat étapes group_user,model_hm_purchase_order_line_stage,base.group_user,1,0,0,0
+access_purchase_stage_group_system,Purchase stages group_system,model_purchase_stage,base.group_system,1,1,1,1
+access_purchase_stage_group_user,Purchase stages group_user,model_purchase_stage,base.group_user,1,0,0,0

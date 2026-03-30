@@ -1,0 +1,1980 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_purchase
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-11 10:05+0000\n"
+"PO-Revision-Date: 2024-12-11 10:05+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order_line__used_in_bom_count
+msgid "# BoM Where Used"
+msgstr "# Nomenclatures où utilisé"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_my_purchase_orders_technicien
+msgid "# PO"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+msgid ""
+"&gt;&gt; PRIX SPECIAL CONVENU\n"
+"                                            <br/>"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.report,print_report_name:hm_purchase.hm_action_report_purchase_order
+#: model:ir.actions.report,print_report_name:hm_purchase.hm_action_report_purchase_order_without_price
+msgid ""
+"(object.state in ('draft', 'sent') and 'Request for Quotation - %s' % "
+"(object.name) or 'Purchase Order - %s' % (object.name))"
+msgstr ""
+"(object.state in ('draft', 'sent') and 'Demande de Prix - %s' % "
+"(object.name) or 'Bon de Commande - %s' % (object.name))"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document_inherit
+msgid "<b>Delivery Address:</b>"
+msgstr "<b>Adresse de livraison:</b>"
+
+#. module: hm_purchase
+#: model:mail.template,body_html:hm_purchase.hm_request_report_after_intervention_mail_template
+msgid ""
+"<div style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">\n"
+"            <p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"                Cher(e) ${object.partner_id.name}\n"
+"                % if object.partner_id.parent_id:\n"
+"                    (${object.partner_id.parent_id.name})\n"
+"                % endif\n"
+"                <br><br> Vous avez récemment effectué une intervention pour Heat Me:</p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\"><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\"><b style=\"font-weight:bolder;\">${object.hm_intervention_property_address.display_name}</b></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\"><b style=\"font-weight:bolder;\">${object.hm_so_lie.display_name}</b><br></p><p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\"><b style=\"font-weight:bolder;\"><br></b><br></p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">Pourriez vous nous transmettre le rapport d'intervention en réponse à ce mail? Merci de préciser:</p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\"><br></p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">-Les <b style=\"font-weight:bolder;\">heures </b>et déplacements prestés</p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\"><br></p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">-Le <b style=\"font-weight:bolder;\">matériel </b>fourni éventuellement par vos soins</p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\"><br></p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">-Toute <b style=\"font-weight:bolder;\">information </b>utiles au dossier, comme par exemple:</p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">&gt;&gt;<b style=\"font-weight:bolder;\">Photos</b></p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">&gt;&gt;Descriptif des travaux réalisés</p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">&gt;&gt;Descriptifs des éventuels travaux à proposer au client + estimations temps et matériel</p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">&gt;&gt;Non conformités, remarques clients,...</p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\"><br></p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">Un rapport à annexer à votre facturation vous sera ensuite transmis par nos soins.</p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\"><br></p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">Nous vous remercions pour le travail accompli.</p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\"><br>\n"
+"                Salutations,\n"
+"            </p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\"><br></p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\"><br></p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\"><br></p><p style=\"margin:0px 0 1rem 0;font-size:13px;font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\"><br></p>\n"
+"        </div>"
+msgstr ""
+"<div style=\"font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        Cher(e)  <t t-out=\"object.partner_id.name\"></t>\n"
+"        % if object.partner_id.parent_id:\n"
+"        ( <t t-out=\"object.partner_id.parent_id.name\"></t>)\n"
+"        % endif\n"
+"        <br>\n"
+"        <br>\n"
+"        Vous avez récemment effectué une intervention pour Heat Me:\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">\n"
+"        <b style=\"box-sizing:border-box;font-weight:bolder;\"><t t-out=\"object.hm_intervention_property_address.display_name\"></t></b>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">\n"
+"        <b style=\"box-sizing:border-box;font-weight:bolder;\"> <t t-out=\"object.hm_so_lie.display_name\"></t></b>\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">\n"
+"        <b style=\"box-sizing:border-box;font-weight:bolder;\">\n"
+"            <br>\n"
+"        </b>\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        Pourriez vous nous transmettre le rapport d'intervention en réponse à ce mail? Merci de préciser:\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        -Les <b style=\"box-sizing:border-box;font-weight:bolder;\">heures</b>et déplacements prestés\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        -Le <b style=\"box-sizing:border-box;font-weight:bolder;\">matériel</b>fourni éventuellement par vos soins\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        -Toute <b style=\"box-sizing:border-box;font-weight:bolder;\">information</b>utiles au dossier, comme par exemple:\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        &gt;&gt;<b style=\"box-sizing:border-box;font-weight:bolder;\">Photos</b>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        &gt;&gt;Descriptif des travaux réalisés\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        &gt;&gt;Descriptifs des éventuels travaux à proposer au client + estimations temps et matériel\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        &gt;&gt;Non conformités, remarques clients,...\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        Un rapport à annexer à votre facturation vous sera ensuite transmis par nos soins.\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        Nous vous remercions pour le travail accompli.\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        <br>\n"
+"        Salutations,\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"    <p style=\"box-sizing:border-box;margin:0px 0 12px 0;font-size:13px;font-family: 'Lucida Grande', Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"        <br>\n"
+"    </p>\n"
+"</div>"
+
+#. module: hm_purchase
+#: model:mail.template,body_html:hm_purchase.hm_purchase_order_send_mail_template
+msgid ""
+"<div style=\"font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">\n"
+"            <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">Cher <t t-out=\"object.hm_person_who_will_do_the_kidnapping_id.display_name\"></t>,\n"
+"                <br/><br/>\n"
+"                Vous trouverez ci-joint le bon de commande <strong style=\"box-sizing:border-box;font-weight:bolder;font-size: 13px;\"><t t-out=\"object.name\"></t></strong> qui a été envoyé chez notre fournisseur pour votre prochaine intervention. Vous pourrez réceptionner la marchandise selon le bon ci-joint.<br/><br/>Concerne le chantier :&nbsp;<t t-out=\"object.hm_so_lie.display_name\"></t> - <t t-out=\"object.hm_intervention_property_address.display_name\"></t></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br/></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">N'hésitez pas à nous contacter pour toutes questions.\n"
+"                <br/><br/>\n"
+"                Salutations,\n"
+"            </p>\n"
+"        </div>"
+msgstr ""
+"<div style=\"font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">\n"
+"            <p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px;\">Cher <t t-out=\"object.hm_person_who_will_do_the_kidnapping_id.display_name\"></t>,\n"
+"                <br><br>\n"
+"                Vous trouverez ci-joint le bon de commande <strong style=\"box-sizing:border-box;font-weight:bolder;font-size: 13px;\"><t t-out=\"object.name\"></t></strong> qui a été envoyé chez notre fournisseur pour votre prochaine intervention. Vous pourrez réceptionner la marchandise selon le bon ci-joint.<br><br>Concerne le chantier :&nbsp;<t t-out=\"object.hm_so_lie.display_name\"></t> - <t t-out=\"object.hm_intervention_property_address.display_name\"></t></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\"><br></p><p style=\"box-sizing:border-box;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">N'hésitez pas à nous contacter pour toutes questions.\n"
+"                <br><br>\n"
+"                Salutations,\n"
+"            </p>\n"
+"        </div>"
+
+#. module: hm_purchase
+#: model:mail.template,body_html:hm_purchase.hm_po_rapport_intervent_mail_template
+msgid ""
+"<div>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;\">Cher <t t-out=\"object.partner_id.hm_surnom_heat_me or 'technicien'\"></t>,<br><br>\n"
+"        Tu trouveras ci-joint un récapitulatif de ta dernière intervention pour Heat Me, reprenant le rapport que tu nous as transmis. Merci d'en vérifier le contenu et de nous signaler toute anomalie.</p>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;\"><strong style=\"box-sizing:border-box;font-weight:bolder;\">Concerne :</strong> <t t-out=\"object.hm_so_lie.display_name\"></t> - <t t-out=\"object.hm_intervention_property_address.display_name\"></t></p>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;\"><u>Remarque</u> :&nbsp;tu peux à tout moment retrouver l'ensemble de tes bons de facturation sur ton <a href=\"https://www.heat-me.be/web/login\" style=\"box-sizing:border-box;text-decoration:none;color:#008784;background-color: #ffffff;\">portail Heat Me</a>.\n"
+"    </p>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;\">\n"
+"        Le montant du bon de facturation est facturable dès aujourd'hui.<font style=\"color:#ff0000;\">\n"
+"        </font><br>\n"
+"        Ta facture peut reprendre plusieurs PO mais envoie-nous une seule facture par e-mail à l'adresse&nbsp;<a href=\"mailto:factures-fournisseur@heat-me.be\" target=\"_blank\" style=\"text-decoration:none;box-sizing:border-box;color:#008f8c;\">factures-fournisseur@heat-me.be</a> en précisant le PO pour chaque ligne de facture stp.<br><font style=\"color:#ff0000;\">La facture doit être envoyée UNIQUEMENT à l'adresse e-mail <b style=\"box-sizing:border-box;font-weight:bolder;\">factures-fournisseur@heat-me.be</b> et non en réponse à cet e-mail !</font><br></p>\n"
+"    <p style=\"margin:0px 0 12px 0;box-sizing:border-box;\">\n"
+"        Merci pour ton travail.<br>\n"
+"        <br>\n"
+"        Salutations,<br>\n"
+"        L'équipe Heat Me\n"
+"    </p>\n"
+"</div>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid ""
+"<i>Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que\n"
+"                        l'ensemble des recommandations et risques dont le client doit être informé. Le même rapport\n"
+"                        sera transmis au client.<br/>Ceci a été établit selon les informations que vous nous avez\n"
+"                        transmises, vous êtes tenus d'en vérifier le contenu. Si celui-ci est complet,  ce bon est\n"
+"                        désormais facturable. Dans le cas contraire, merci d'y apporter les corrections en réponse à\n"
+"                        ce mail.\n"
+"                    </i>"
+msgstr ""
+"<i>Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que\n"
+"                            l'ensemble des recommandations et risques dont le client doit être informé. Le même rapport\n"
+"                            sera transmis au client.<br/>Ceci a été établit selon les informations que vous nous avez\n"
+"                            transmises, vous êtes tenus d'en vérifier le contenu. Si celui-ci est complet,  ce bon est\n"
+"                            désormais facturable. Dans le cas contraire, merci d'y apporter les corrections en réponse à\n"
+"                            ce mail.\n"
+"                        </i>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid ""
+"<i>Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que\n"
+"                    l'ensemble des recommandations et risques dont le client doit être informé. Le même rapport sera\n"
+"                    transmis au client.<br/>Ceci a été établit selon les informations que vous nous avez transmises,\n"
+"                    vous êtes tenus d'en vérifier le contenu. Si celui-ci est complet,  ce bon est désormais\n"
+"                    facturable. Dans le cas contraire, merci d'y apporter des corrections en réponse à ce mail.\n"
+"                </i>"
+msgstr ""
+"<i>Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que\n"
+"                        l'ensemble des recommandations et risques dont le client doit être informé. Le même rapport sera\n"
+"                        transmis au client.<br/>Ceci a été établit selon les informations que vous nous avez transmises,\n"
+"                        vous êtes tenus d'en vérifier le contenu. Si celui-ci est complet,  ce bon est désormais\n"
+"                        facturable. Dans le cas contraire, merci d'y apporter des corrections en réponse à ce mail.\n"
+"                    </i>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid ""
+"<i>Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que l'ensemble\n"
+"                des recommandations et risques dont le client doit être informé. Le même rapport sera transmis au\n"
+"                client.<br/>Ceci a été établit selon les informations que vous nous avez transmises, vous êtes tenus\n"
+"                d'en vérifier le contenu. Si celui-ci est complet,  ce bon est désormais facturable. Dans le cas\n"
+"                contraire, merci d'y apporter les corrections en réponse à ce mail.\n"
+"            </i>"
+msgstr ""
+"<i>Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que l'ensemble\n"
+"                    des recommandations et risques dont le client doit être informé. Le même rapport sera transmis au\n"
+"                    client.<br/>Ceci a été établit selon les informations que vous nous avez transmises, vous êtes tenus\n"
+"                    d'en vérifier le contenu. Si celui-ci est complet,  ce bon est désormais facturable. Dans le cas\n"
+"                    contraire, merci d'y apporter les corrections en réponse à ce mail.\n"
+"                </i>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+msgid ""
+"<span style=\"color:#FF0000\">\n"
+"                                <b>\n"
+"                                    <u>Date de livraison demandée:</u>\n"
+"                                </b>\n"
+"                                <font style=\"font-size: 11px;\">(Merci de nous prévenir directement si celle-ci ne peut\n"
+"                                    être respectée pour l'intégralité de la commande)\n"
+"                                </font>\n"
+"                            </span>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+msgid ""
+"<span style=\"color:#FF0000\">\n"
+"                                <font style=\"font-size: 11px;\">Merci de nous prévenir directement si la date de\n"
+"                                    livraison demandée ne peut être respectée pour l'intégralité de la commande.\n"
+"                                </font>\n"
+"                            </span>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document_inherit
+msgid ""
+"<span style=\"color:#FF0000\">\n"
+"                    <font style=\"font-size: 11px;\">Merci de nous prévenir directement si la date de livraison demandée\n"
+"                        ne peut être respectée pour l'intégralité de la commande.\n"
+"                    </font>\n"
+"                </span>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+msgid ""
+"<span>\n"
+"                                <b>Delivery Address:</b>\n"
+"                            </span>"
+msgstr ""
+"<span>\n"
+"                                <b>Adresse de livraison:</b>\n"
+"                            </span>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid ""
+"<span>\n"
+"                        <strong>Property name:</strong>\n"
+"                        <br/>\n"
+"                    </span>"
+msgstr ""
+"<span>\n"
+"                            <strong>Nom du bien:</strong>\n"
+"                            <br/>\n"
+"                        </span>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document_inherit
+msgid ""
+"<span>\n"
+"                    <b>Delivery Address</b>\n"
+"                </span>"
+msgstr ""
+"<span>\n"
+"                    <b>Adresse de livraison</b>\n"
+"                </span>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document_inherit
+msgid ""
+"<span>\n"
+"                    <strong>Téléphone:</strong>\n"
+"                    <br/>\n"
+"                </span>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid ""
+"<span>\n"
+"                <strong>Intervention address:</strong>\n"
+"                <br/>\n"
+"            </span>"
+msgstr ""
+"<span>\n"
+"                    <strong>Adresse d'intervention:</strong>\n"
+"                    <br/>\n"
+"                </span>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+msgid "<span>Divers</span>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid "<span>Infos tech</span>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid "<span>Le présent relevé</span>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid "<span>New Text Block</span>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid "<span>Qté Facturé</span>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid "<span>Qté commandée</span>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid "<span>Qté livrées</span>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid "<span>Qté reçue</span>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid "<span>Qté  déjà Facturé</span>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+msgid "<span>Ref fourn.</span>"
+msgstr "<span>Réf fourn.</span>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document_inherit
+msgid "<span>Subtotal</span>"
+msgstr "<span>Sous-total</span>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document_inherit
+msgid "<span>Unit Price</span>"
+msgstr "<span>Prix unitaire</span>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document_inherit
+msgid "<span>on</span>"
+msgstr "<span>sur</span>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+msgid ""
+"<strong>\n"
+"                                <font style=\"color: rgb(255, 0, 0);\">Delivery Date:</font>\n"
+"                            </strong>"
+msgstr ""
+"<strong>\n"
+"                                <font style=\"color: rgb(255, 0, 0);\">Date de livraison:</font>\n"
+"                            </strong>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document_inherit
+msgid ""
+"<strong>\n"
+"                    <font style=\"color: rgb(255, 0, 0);\">Delivery Date:</font>\n"
+"                </strong>"
+msgstr ""
+"<strong>\n"
+"                    <font style=\"color: rgb(255, 0, 0);\">Date de livraison:</font>\n"
+"                </strong>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+msgid "<strong>Amount</strong>"
+msgstr "<strong>Montant</strong>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid "<strong>Bon de travail concerné:</strong>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_purchase_order_page
+msgid "<strong>Date:</strong>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid "<strong>Description des prestations:</strong>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+msgid "<strong>Description</strong>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid "<strong>Montant total</strong>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+msgid "<strong>Order Date:</strong>"
+msgstr "<strong>Date de commande:</strong>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+msgid ""
+"<strong>Personne qui fera l'enlèvement de la marchandise:</strong>\n"
+"                                <br/>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document_inherit
+msgid "<strong>Personne qui réceptionnera la marchandise:</strong>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+msgid ""
+"<strong>Personne qui réceptionnera la marchandise:</strong>\n"
+"                                <br/>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_purchase_order_page
+msgid "<strong>Product</strong>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+msgid "<strong>Qté</strong>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_purchase_order_page
+msgid "<strong>Quantity</strong>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document_inherit
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_purchase_order_page
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>Sous-total</strong>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_purchase_order_page
+msgid "<strong>Total:</strong>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document_inherit
+msgid "<strong>Total</strong>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_purchase_order_page
+msgid "<strong>Unit Price</strong>"
+msgstr "<strong>Prix unitaire</strong>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+msgid "<strong>Votre référence de commande :</strong>"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,help:hm_purchase.field_res_partner__hm_is_real_picture
+#: model:ir.model.fields,help:hm_purchase.field_res_users__hm_is_real_picture
+msgid "A real picture?"
+msgstr "Image réelle?"
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.ir_cron_cron_state2_po_deadline_ir_actions_server
+#: model:ir.cron,cron_name:hm_purchase.ir_cron_cron_state2_po_deadline
+msgid "Activities for PO passed deadline"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "Adresse d'intervention SO:"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__hm_delivery_address
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "Adresse de livraison choisie"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__hm_interv_address_name
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_tree_view
+msgid "Adresse interv"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "Adresse livraison de préférence"
+msgstr ""
+
+#. module: hm_purchase
+#: model:purchase.stage,name:hm_purchase.purchase_stage3_po_commission
+#: model:purchase.stage,name:hm_purchase.purchase_stage3_po_emport_marchandise
+#: model:purchase.stage,name:hm_purchase.purchase_stage3_po_technicien
+#: model:purchase.stage,name:hm_purchase.purchase_stage5_po_frais
+#: model:purchase.stage,name:hm_purchase.purchase_stage6_po_marchandise
+msgid "Annulé"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order_line__computed_image_art
+msgid "Art"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_view_purchase_order_line_filter
+msgid "Article"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_miscellaneous_produts_put_budget_in_po_purchase_price_to_so_confirm
+msgid "Articles divers - Mettre budget dans prix d'achat PO à la confirm SO"
+msgstr ""
+"🔴 Articles divers - Mettre budget dans prix d'achat PO à la confirm SO"
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_action_special_products_mo_miscellaneous_copy_descriptive_of_so_on_po_ir_actions_server
+msgid "Articles spéciaux (MO, divers) > copie descriptif du SO sur PO"
+msgstr "🔴 Articles spéciaux (MO, divers) > copie descriptif du SO sur PO"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "Ask Credit Note"
+msgstr "Demander une note de crédit"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_my_purchase_orders_technicien
+msgid "Intervention address"
+msgstr "Adresse de l'intervention"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_view_search
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_request_quotation_select_view
+msgid "Billing Status"
+msgstr "État de facturation"
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__block_auto_send_to_technician
+msgid "Bloquer les envois auto au technicien"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "Bon de commande"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+msgid "Bon de commande #"
+msgstr ""
+
+#. module: hm_purchase
+#: model:mail.template,report_name:hm_purchase.hm_po_rapport_intervent_mail_template
+msgid "Bon de facturation"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid "Bon pour facturation #"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_my_home_menu_purchase_order
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_my_purchase_orders_technicien
+msgid "Bons de facturation"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order_line__hm_budget
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "Budget"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,help:hm_purchase.field_purchase_order__hm_intervention_datetime
+msgid ""
+"C'est la date de livraison promise au client. Si elle est définie, le bon de"
+" livraison se basera sur cette date plutôt que celle définié grâce au délai "
+"indiqué sur l'article."
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+msgid "Cancelled Purchase Order #"
+msgstr "Numéro du bon d'achat annulé"
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order_line__product_categ_display_name
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order_line__product_categ_name
+msgid "Category name"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_view_purchase_order_line_filter
+msgid "Catégorie d'articles"
+msgstr ""
+
+#. module: hm_purchase
+#. odoo-python
+#: code:addons/hm_purchase/models/purchase_order.py:0
+#, python-format
+msgid ""
+"Ce PO ne peut pas avoir le type PO frais généraux car le SO lié est défini."
+msgstr ""
+
+#. module: hm_purchase
+#. odoo-python
+#: code:addons/hm_purchase/models/purchase_order.py:0
+#, python-format
+msgid "Ce PO ne peut plus être modifié car le PO est au statut Annulé."
+msgstr ""
+
+#. module: hm_purchase
+#. odoo-python
+#: code:addons/hm_purchase/models/purchase_order.py:0
+#, python-format
+msgid ""
+"Ce PO ne peut plus être modifié car le SO lié est Annulé. Pour débloquer "
+"cela adressez vous au manager pour qu'il change le status du SO."
+msgstr ""
+
+#. module: hm_purchase
+#. odoo-python
+#: code:addons/hm_purchase/models/purchase_order.py:0
+#: code:addons/hm_purchase/models/purchase_order.py:0
+#, python-format
+msgid ""
+"Ce PO ne peut plus être modifié car le SO lié est au statut validé. Pour "
+"débloquer cela adressez vous au manager pour qu'il change le status du SO"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_change_state_sent_supplier_confirmed_when_filling_ref_supplier
+msgid ""
+"Change state Envoyé fournisseur > Confirmé when filling ref fournisseur"
+msgstr ""
+"🟡🐞 Supplier reference filled in on PO that is not received nor validated yet"
+" ➡ Update PO state 2 to 'Encodé par fournisseur'"
+
+#. module: hm_purchase
+#: model:purchase.stage,name:hm_purchase.purchase_stage4_po_frais
+msgid "Clôturé"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "Cocher cette case lorsque PO ne doit plus être facturé"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_internal_comm_confirm_order_missing_1_days_before_exec
+msgid "Comm interne : confirm commande manquant (1jr avant exec)"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_internal_comm_confirm_order_missing_3_days_after_order
+msgid "Comm interne : confirm commande manquant (3j après commande)"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_internal_comm_confirm_missing_order_5_days_after_order
+msgid "Comm interne : confirm commande manquant (5jr après commande)"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_internal_comm_undefined_address_and_delivery_date
+msgid "Comm interne : pas défini adresse et date de livraison"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.report,name:hm_purchase.hm_action_report_purchase_order
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_so_purchase_order_tree_view
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_purchase_order_page
+msgid "Commande fournisseur"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.report,name:hm_purchase.hm_action_report_purchase_order_without_price
+msgid "Commande fournisseur SANS PRIX (bon enlevement)"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.act_window,name:hm_purchase.hm_orders_to_confirm_action
+msgid "Commandes à confirmer"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_import_order_line_tree_view
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_line_tree_view
+msgid "Commandé"
+msgstr ""
+
+#. module: hm_purchase
+#. odoo-python
+#: code:addons/hm_purchase/models/purchase_order.py:0
+#, python-format
+msgid "Compose Email"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__date_confirm
+msgid "Approved by the supplier"
+msgstr "Confirmé par le fournisseur le"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+msgid "Confirmation du Bon de commande #"
+msgstr ""
+
+#. module: hm_purchase
+#. odoo-python
+#: code:addons/hm_purchase/report/purchase_report.py:0
+#: model:ir.model.fields.selection,name:hm_purchase.selection__purchase_report__state__confirmed
+#, python-format
+msgid "Confirmed"
+msgstr "Confirmé"
+
+#. module: hm_purchase
+#: model:purchase.stage,name:hm_purchase.purchase_stage3_po_marchandise
+msgid "Confirmé par fournisseur"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model,name:hm_purchase.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: hm_purchase
+#: model:purchase.stage,name:hm_purchase.purchase_stage7_po_marchandise
+msgid "Contrôlé par HM"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_hm_purchase_order_line_stage__create_uid
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_stage__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_hm_purchase_order_line_stage__create_date
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_stage__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_create_peb_reception_activity_to_organize
+msgid "Créer activité réception PEB à organiser"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_create_activity_send_billing_slip
+msgid "Créer activité: envoyer bon de facturation"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__hm_intervention_datetime
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "Date intervention"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__hm_date_state2_update_deadline
+msgid "Date limite de changement de statut"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+msgid ""
+"Delivery Address:\n"
+"                                <br/>\n"
+"                                <br/>"
+msgstr ""
+"Adresse de livraison:\n"
+"                                <br/>\n"
+"                                <br/>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document_inherit
+msgid ""
+"Delivery Address:\n"
+"                        <br/>\n"
+"                        <br/>"
+msgstr ""
+"Adresse de livraison:\n"
+"                        <br/>\n"
+"                        <br/>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+msgid "Delivery Address:<br/>."
+msgstr "Adresse de livraison:<br/>."
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__hm_delivery_date
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "Delivery Date"
+msgstr "Date de livraison"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+msgid "Demande d'intervention #"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_purchase_order_page
+msgid "Demande de prix"
+msgstr ""
+
+#. module: hm_purchase
+#: model:mail.template,name:hm_purchase.hm_request_report_after_intervention_mail_template
+msgid "Demande rapport après intervention"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order_line__hm_description_from_so
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "Description from SO"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_hm_purchase_order_line_stage__display_name
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_stage__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: hm_purchase
+#: model:purchase.stage,name:hm_purchase.purchase_stage3_po_frais
+msgid "Encodé par fournisseur"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_sending_po_supplier_purchase_order
+msgid "Envoi bon de commande fournisseur PO"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_sending_email_request_technician_report
+msgid "Envoi mail demande rapport technicien"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_sending_report_to_technician_and_pass_status_order
+msgid "Envoi rapport au technicien + passage status commande"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_sending_technician_report_following_execution
+msgid ""
+"Envoi rapport technicien suite exécution (DÉSACTIVE CAR CASE \"PO corrigé selon exe\" a été\n"
+"                détournée)\n"
+"            "
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_send_invoice_to_technician
+msgid "Envoyer Bon de facturation au technicien"
+msgstr ""
+
+#. module: hm_purchase
+#: model:purchase.stage,name:hm_purchase.purchase_stage2_po_frais
+#: model:purchase.stage,name:hm_purchase.purchase_stage2_po_marchandise
+msgid "Envoyé au fournisseur"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__hm_state2_update_overdue
+msgid "Est en retard de gestion"
+msgstr ""
+
+#. module: hm_purchase
+#. odoo-python
+#: code:addons/hm_purchase/controllers/portal.py:0
+#: code:addons/hm_purchase/controllers/purchase_portal.py:0
+#, python-format
+msgid "Facturable"
+msgstr ""
+
+#. module: hm_purchase
+#. odoo-python
+#: code:addons/hm_purchase/controllers/portal.py:0
+#: code:addons/hm_purchase/controllers/purchase_portal.py:0
+#, python-format
+msgid "Facturé"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_import_order_line_tree_view
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_line_tree_view
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_view_purchase_order_line_filter
+msgid "Fournisseur"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__so_manager_1
+msgid "Gestionnaire du so"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_line_search
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_view_purchase_order_line_filter
+msgid "Group By"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__has_group_sale_manager
+msgid "Has group sale manager"
+msgstr "A le groupe gestionnaire de vente"
+
+#. module: hm_purchase
+#: model:mail.template,subject:hm_purchase.hm_po_rapport_intervent_mail_template
+msgid ""
+"Heat Me - Bon de facturation (Ref {{ object.name or 'n/d' }} - {{ "
+"object.hm_so_lie.display_name }} - {{ "
+"object.hm_intervention_property_address.display_name }}"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_hm_purchase_order_line_stage__id
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_stage__id
+msgid "ID"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_my_purchase_orders_technicien
+msgid "Il n'y a pas des bons de commande pour votre compte actuellement."
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_imput_activity_material_to_be_defined_to_be_chosen_for_order
+msgid "Imput Activity - Matériel à definir à choisir pour commande"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_action_imput_activity_po_to_send_to_supplier_2h_after_defining_tech_imputed_ir_actions_server
+msgid ""
+"Imput Activity - PO to send to supplier 2h after defining tech imputé - REFACTORING\n"
+"                modifié\n"
+"            "
+msgstr "🔴 Imput Activity - PO to send to supplier 3 days before works"
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_imput_activity_check_po_supplier_manager
+msgid "Imput Activity - check PO fournisseur gestionnaire"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_action_imput_activity_supplier_order_confirm_missing_ir_actions_server
+msgid "Imput Activity - supplier order confirm missing"
+msgstr "🔴 Imput Activity - supplier order confirm missing"
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.supplier_order_confirm_missing_action_ir_actions_server
+msgid ""
+"Imput Activity - supplier order confirm missing (Day -1) REFACTORING: PROBLEM VOIR\n"
+"            NETSKILL\n"
+"        "
+msgstr ""
+"🔴 Imput Activity - supplier order confirm missing (Day -1) REFACTORING: PROBLEM VOIR\n"
+"            NETSKILL\n"
+"        "
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_imput_activity_pass_order_storable_mat
+msgid "Imput activity - passer commande mat stockable"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order_line__hm_technical_info
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "Infos tech"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_intervention_order_status_change_after_intervention_date
+msgid "Intervention - Passage status commande après date intervention"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_intervention_change_supplier_po_for_imputed_technician
+msgid "Intervention - changement fournisseur PO pour technicien imputé"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_my_purchase_orders_technicien
+msgid "Intervention Date"
+msgstr "Date d'intervention"
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__hm_intervention_property_address
+msgid "Intervention address"
+msgstr "Adresse d'intervention"
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_hm_purchase_order_line_stage____last_update
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_stage____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_hm_purchase_order_line_stage__write_uid
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_stage__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_hm_purchase_order_line_stage__write_date
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_stage__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: hm_purchase
+#. odoo-python
+#: code:addons/hm_purchase/controllers/portal.py:0
+#: code:addons/hm_purchase/controllers/purchase_portal.py:0
+#, python-format
+msgid "Le plus récent"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid ""
+"Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que l'ensemble\n"
+"                des recommandations et risques dont le client doit être informé. Le même rapport sera transmis au\n"
+"                client.<br/>Ceci a été établit selon les informations que vous nous avez transmises, vous êtes tenus\n"
+"                d'en vérifier le contenu"
+msgstr ""
+"Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que l'ensemble\n"
+"                    des recommandations et risques dont le client doit être informé. Le même rapport sera transmis au\n"
+"                    client.<br/>Ceci a été établit selon les informations que vous nous avez transmises, vous êtes tenus\n"
+"                    d'en vérifier le contenu"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid ""
+"Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que l'ensemble\n"
+"                des recommandations et risques dont le client doit être informé. Le même rapport sera transmis au\n"
+"                client.<br/>Ceci a été établit selon les informations que vous nous avez transmises, vous êtes tenus\n"
+"                d'en vérifier le contenu. Si celui-ci est complet,  ce bon est désormais facturable."
+msgstr ""
+"Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que l'ensemble\n"
+"                    des recommandations et risques dont le client doit être informé. Le même rapport sera transmis au\n"
+"                    client.<br/>Ceci a été établit selon les informations que vous nous avez transmises, vous êtes tenus\n"
+"                    d'en vérifier le contenu. Si celui-ci est complet,  ce bon est désormais facturable."
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid ""
+"Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que l'ensemble\n"
+"                des recommandations et risques dont le client doit être informé. Le même rapport sera transmis au\n"
+"                client.<br/>Ceci a été établit selon les informations que vous nous avez transmises, vous êtes tenus\n"
+"                d'en vérifier le contenu. Si celui-ci est complet,  ce bon est désormais facturable. Dans le cas\n"
+"                contraire, merci d'y apporter des corrections en réponse à ce mail."
+msgstr ""
+"Le présent rapport reprend les prestations que vous avez réalisées pour Heat Me, ainsi que l'ensemble\n"
+"                    des recommandations et risques dont le client doit être informé. Le même rapport sera transmis au\n"
+"                    client.<br/>Ceci a été établit selon les informations que vous nous avez transmises, vous êtes tenus\n"
+"                    d'en vérifier le contenu. Si celui-ci est complet,  ce bon est désormais facturable. Dans le cas\n"
+"                    contraire, merci d'y apporter des corrections en réponse à ce mail."
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid ""
+"Le présent relevé reprend les prestations que vous avez réalisées pour Heat Me, selon les\n"
+"                    informations que vous nous avez transmises.\n"
+"                    <br/>\n"
+"                    <br/>"
+msgstr ""
+"Le présent relevé reprend les prestations que vous avez réalisées pour Heat Me, selon les\n"
+"                        informations que vous nous avez transmises.\n"
+"                        <br/>\n"
+"                        <br/>"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_view_purchase_order_line_kanban
+msgid "Ligne de commande d'achat"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_line_stage_form_view
+msgid "Ligne de commande d'achat étapes"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__so_manager
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "Manager SO"
+msgstr "Gestionnaire SO"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid ""
+"Merci de reprendre le numéro du bon de commande (PO) sur votre facture et d'y annexer le présent\n"
+"                    bon qui constitue le descriptif officiel des prestations que vous facturez à Heat Me."
+msgstr ""
+"Merci de reprendre le numéro du bon de commande (PO) sur votre facture et d'y annexer le présent\n"
+"                        bon qui constitue le descriptif officiel des prestations que vous facturez à Heat Me."
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid ""
+"Merci de reprendre le numéro du bon de commande (PO) sur votre facture et d'y annexer le présent\n"
+"                bon."
+msgstr ""
+"Merci de reprendre le numéro du bon de commande (PO) sur votre facture et d'y annexer le présent\n"
+"                    bon."
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_purchase_order_page
+msgid "Montant hors-taxe :"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_so_purchase_order_tree_view
+msgid "Montant total hors taxe"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order_line__hm_motif_retour
+msgid "Motif du retour"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__credit_note_claim_reason
+msgid "Motif réclamation NC"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.act_window,name:hm_purchase.nc_receivable_action
+#: model:ir.ui.menu,name:hm_purchase.menu_nc_receivable
+msgid "NC à recevoir"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_hm_purchase_order_line_stage__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: hm_purchase
+#: model:ir.actions.act_window,name:hm_purchase.hm_new_button_action
+msgid "New Button"
+msgstr ""
+
+#. module: hm_purchase
+#. odoo-python
+#: code:addons/hm_purchase/controllers/portal.py:0
+#: code:addons/hm_purchase/controllers/purchase_portal.py:0
+#, python-format
+msgid "Nom"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__hm_intervention_address_name
+msgid "Nom d'adresse d'intervention"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+msgid ""
+"Notre Référence de Commande\n"
+"                                    <br/>\n"
+"                                    <br/>"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_import_order_line_tree_view
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_line_tree_view
+msgid "N° PO"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_my_purchase_orders_technicien
+msgid "Objet des travaux"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_view_purchase_order_line_filter
+msgid "Order"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.ui.menu,name:hm_purchase.hm_order_line_menu
+msgid "Order Line"
+msgstr "Ligne de commande"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_line_search
+msgid "Order Reference"
+msgstr "Référence commande"
+
+#. module: hm_purchase
+#: model:mail.template,report_name:hm_purchase.hm_purchase_order_send_mail_template
+msgid "Order {{ (object.name or '').replace('/','_') }}"
+msgstr "Commande {{ (object.name or '').replace('/','_') }}"
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_organize_delivery_of_past_po
+#: model:ir.actions.server,name:hm_purchase.hm_organize_delivery_of_past_po_action
+msgid "Organiser livraison d'un PO passé"
+msgstr "Organiser livraison d'un PO passé (en attente)"
+
+#. module: hm_purchase
+#: model:ir.actions.act_window,name:hm_purchase.hm_po_action
+msgid "PO"
+msgstr ""
+
+#. module: hm_purchase
+#: model:mail.template,name:hm_purchase.hm_po_rapport_intervent_mail_template
+msgid "PO - Bon de facturation"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields.selection,name:hm_purchase.selection__purchase_order__po_type__po_commission
+#: model:ir.model.fields.selection,name:hm_purchase.selection__purchase_stage__po_type__po_commission
+msgid "PO Commission"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields.selection,name:hm_purchase.selection__purchase_order__po_type__po_emport_marchandise
+#: model:ir.model.fields.selection,name:hm_purchase.selection__purchase_stage__po_type__po_emport_marchandise
+msgid "PO Emport Marchandise"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields.selection,name:hm_purchase.selection__purchase_order__po_type__po_frais_generaux
+#: model:ir.model.fields.selection,name:hm_purchase.selection__purchase_stage__po_type__po_frais_generaux
+msgid "PO Frais Généraux"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_po_missing_nr_of_customer_tel
+msgid "PO Manque nr de tel client"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields.selection,name:hm_purchase.selection__purchase_order__po_type__po_marchandise
+#: model:ir.model.fields.selection,name:hm_purchase.selection__purchase_stage__po_type__po_marchandise
+msgid "PO Marchandise"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields.selection,name:hm_purchase.selection__purchase_order__po_type__po_technicien
+#: model:ir.model.fields.selection,name:hm_purchase.selection__purchase_stage__po_type__po_technicien
+msgid "PO Technicien"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__po_type
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order_line__po_type
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_stage__po_type
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_view_search
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_request_quotation_select_view
+msgid "PO Type"
+msgstr "Type PO"
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_po_emport_tech_put_delivery_address_on_hold
+msgid "PO emport tech - Mettre adresse de livraison en attente"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.act_window,name:hm_purchase.hm_purchase_line_action
+msgid "PO lines"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__hm_po_deleted_from_portal
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "PO supprimé du portail"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,help:hm_purchase.field_purchase_order__so_manager
+msgid "Partner-related data of the user"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_vam_pass_carried_invam_when_po_is_confirmed
+msgid "Passe VAM emport en VAM au moment ou on confirme le PO"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_pass_order_technician_to_pending_technician_at_creation_po
+msgid "Passer commande Technicien en \"Technicien en attente\" à la création PO"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_pass_order_vam_to_pending_vam_at_creation_po
+msgid "Passer commande VAM en \"VAM en attente\" à la création PO"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_place_take_out_supplier_price_requests
+msgid "Passer les demandes de prix fournisseurs \"emport\" en commande"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__hm_person_who_will_do_the_kidnapping_id
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "Personne qui fera l'enlèvement"
+msgstr ""
+
+#. module: hm_purchase
+#. odoo-python
+#: code:addons/hm_purchase/models/purchase_order.py:0
+#, python-format
+msgid ""
+"Please define the following two fields:\n"
+"- Delivery Address\n"
+"- Delivery Date"
+msgstr ""
+"Merci de compléter les champs suivants:\n"
+"- Adresse de Liv\n"
+"- Date de livraison"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.view_move_tree_receipt_picking_inherit
+msgid "Price"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_view_purchase_order_line_kanban
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_purchase_order_page
+msgid "Product"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order_line__product_name
+msgid "Product name"
+msgstr "Nom"
+
+#. module: hm_purchase
+#: model:ir.model,name:hm_purchase.model_purchase_order
+msgid "Purchase Order"
+msgstr "Commande fournisseur"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+msgid "Purchase Order #"
+msgstr "Numéro de Bon de Commande"
+
+#. module: hm_purchase
+#: model:ir.model,name:hm_purchase.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Ligne de commande d'achat"
+
+#. module: hm_purchase
+#: model:mail.template,name:hm_purchase.hm_purchase_order_send_mail_template
+msgid "Purchase Order: Send PO copie technicien"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model,name:hm_purchase.model_purchase_report
+msgid "Purchase Report"
+msgstr "Rapport d'achat"
+
+#. module: hm_purchase
+#: model:ir.model,name:hm_purchase.model_purchase_stage
+msgid "Purchase Stages"
+msgstr "Étapes d'achat"
+
+#. module: hm_purchase
+#: model:ir.model,name:hm_purchase.model_hm_purchase_order_line_stage
+msgid "Purchase order line stage"
+msgstr "Étape de la ligne de commande d'achat"
+
+#. module: hm_purchase
+#: model:ir.actions.act_window,name:hm_purchase.hm_purchase_order_line_action
+#: model:ir.ui.menu,name:hm_purchase.hm_po_line_menu
+msgid "Purchase order lines"
+msgstr "Lignes de commandes d'achats"
+
+#. module: hm_purchase
+#: model:ir.model,name:hm_purchase.model_purchase_bill_union
+msgid "Purchases & Bills Union"
+msgstr "Union des achats & factures"
+
+#. module: hm_purchase
+#: model:mail.message.subtype,name:hm_purchase.mt_rfq_confirmed2
+msgid "RFQ Confirmed"
+msgstr "Demande de prix confirmée"
+
+#. module: hm_purchase
+#: model:mail.message.subtype,name:hm_purchase.mt_rfq_sent_to_supplier
+msgid "RFQ sent to supplier"
+msgstr "RFQ envoyée au fournisseur"
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_technician_callback_before_5_days
+msgid "Rappel technicien 5 jours avant"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_technician_reminder_to_confirm_date
+msgid "Rappel technicien de confirmer date"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_standby_technician_reminder
+msgid "Rappel technicien veille"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid "Rapport d'intervention"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid "Rapport d'intervention du technicien"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "Re-Send PO by Email"
+msgstr "Renvoyer PO par e-mail"
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_res_partner__hm_is_real_picture
+#: model:ir.model.fields,field_description:hm_purchase.field_res_users__hm_is_real_picture
+msgid "Real picture?"
+msgstr "Image réelle?"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchaseorder_document
+msgid "Recommandation à adresser: Néant<br/>Danger à signaler: Néant"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.view_move_tree_receipt_picking_inherit
+msgid "Reference"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,help:hm_purchase.field_purchase_order_line__partner_ref
+msgid ""
+"Reference of the sales order or bid sent by the vendor. It's used to do the "
+"matching when you receive the products as this reference is usually written "
+"on the delivery order sent by your vendor."
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_view_search
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_request_quotation_select_view
+msgid "Retards de gestion"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.view_move_tree_receipt_picking_inherit
+msgid "Return to Do"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_import_order_line_tree_view
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_line_tree_view
+msgid "Reçu"
+msgstr ""
+
+#. module: hm_purchase
+#: model:purchase.stage,name:hm_purchase.purchase_stage4_po_marchandise
+msgid "Réceptionné"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_so_purchase_order_tree_view
+msgid "Référence"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_view_purchase_order_line_filter
+msgid "Référence commande"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+msgid ""
+"Référence du fournisseur:\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    <br/>"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order_line__sku
+msgid "SKU"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order_line__hm_so_lie
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_line_nc_recievable_tree
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_tree_view
+msgid "SO lié"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_sub_action_change_name_vam_to_vam_pending
+msgid "SOUS-ACTION - Changer nom VAM > VAM en attente"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_sub_action_change_technician_name_at_po_according_to_one_charged_to_so
+msgid "SOUS-ACTION - Changer nom technicien au PO selon celui imputé au SO"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_sub_action_put_technician_in_po_follower
+msgid "SOUS-ACTION - Mettre technicien en Follower du PO - MARCHE PAS!"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_sub_action_pass_po_to_status_order
+msgid "SOUS-ACTION - Passer le PO en status \"commande\""
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_sub_action_change_the_po_to_order_status
+msgid "SOUS-ACTION - Passer le PO en statut commande"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_sub_action_fill_field_person_who_will_do_the_removal_according_to_tech_charged_to_SO
+msgid ""
+"SOUS-ACTION - Remplir champ \"personne qui fera l'enlèvement\" selon tech imputé au SO\n"
+"            "
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_sub_action_po_pass_in_request_sent
+msgid "SOUS-ACTION: PO Passe en demande envoyée"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_sub_action_send_technician_order_email
+msgid "SOUS-ACTION: envoi mail commande technicien"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "Sale Line ID"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__hm_so_lie
+msgid "Sale Order"
+msgstr "Bon de commande lié"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_line_search
+msgid "Search Purchase Order"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_view_purchase_order_line_filter
+msgid "Search Purchase Order Line"
+msgstr ""
+
+#. module: hm_purchase
+#. odoo-python
+#: code:addons/hm_purchase/report/purchase_report.py:0
+#: model:ir.model.fields.selection,name:hm_purchase.selection__purchase_report__state__sent_to_supplier
+#, python-format
+msgid "Sent to Supplier"
+msgstr "Envoyé vers fournisseur"
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_stage__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: hm_purchase
+#. odoo-python
+#: code:addons/hm_purchase/models/purchase_order.py:0
+#, python-format
+msgid ""
+"Seuls les membres du groupe Achats > Administrateur peuvent passer un PO lié"
+" au %s en statut 'Clôturé'."
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__hm_delivery_address_id
+msgid "Shipping address"
+msgstr "Adresse de livraison"
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__show_supplier_encoded_button
+msgid "Show Supplier Encoded Button"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_sub_action_change_name_technician_who_will_take_merchandise_to_technician_to_be_charged
+msgid ""
+"Sous-action - changer nom \"technicien qui emportera la marchandise\" pour technicien à\n"
+"                imputer\n"
+"            "
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,help:hm_purchase.field_purchase_stage__po_type
+msgid ""
+"Specific purchase that uses this stage. Other purchases will not be able to "
+"see or use this stage."
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_stage__name
+msgid "Stage Name"
+msgstr "Nom de l'étape"
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__stage2_id
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order_line__stage2_id
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_view_search
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_request_quotation_select_view
+msgid "State2 PO"
+msgstr "Status2 PO"
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__state2
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order_line__state2
+msgid "State2 SO"
+msgstr "Status2 SO"
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_report__state
+msgid "Status"
+msgstr "État de la commande"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_view_purchase_order_line_filter
+msgid "Status2 PO"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_request_quotation_select_view
+msgid "Statut"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model,name:hm_purchase.model_stock_rule
+msgid "Stock Rule"
+msgstr "Règle de stock"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_purchase_order_page
+msgid "Subtotal"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_line_nc_recievable_tree
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "TVA"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_po_without_price_document
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_report_purchase_order_document_inherit
+msgid "Taxes"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_purchase_order_page
+msgid "Taxes:"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__hm_technician
+msgid "Technician"
+msgstr "Technicien"
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__hm_imputed_technician_id
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "Technicien"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_technician_report_request_after_intervention_activity
+msgid "Technicien - Demande rapport après intervention + activité"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+msgid "Technicien ou client qui emportera la marchandise"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_automation_test
+msgid "Test automatisation"
+msgstr ""
+
+#. module: hm_purchase
+#. odoo-python
+#: code:addons/hm_purchase/controllers/portal.py:0
+#: code:addons/hm_purchase/controllers/purchase_portal.py:0
+#, python-format
+msgid "Total"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_my_purchase_orders_technicien
+msgid "Total HTVA"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_import_order_line_tree_view
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_form_refactoring
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_line_tree_view
+msgid "Total commandé"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_so_purchase_order_tree_view
+msgid "Total commandé HTVA"
+msgstr ""
+
+#. module: hm_purchase
+#. odoo-python
+#: code:addons/hm_purchase/controllers/portal.py:0
+#: code:addons/hm_purchase/controllers/purchase_portal.py:0
+#, python-format
+msgid "Tous"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_view_purchase_order_line_filter
+msgid "Type PO"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.view_move_tree_receipt_picking_inherit
+msgid "Unit of Measure"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.ir_cron_update_po_stage2_ir_actions_server
+#: model:ir.cron,cron_name:hm_purchase.ir_cron_update_po_stage2
+msgid "Update Stage2 PO"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order__groupby_stage2_name
+msgid "Used for State2 PO - Group by"
+msgstr "Nom de l'étape"
+
+#. module: hm_purchase
+#: model:ir.model.fields,help:hm_purchase.field_purchase_stage__sequence
+msgid "Used to order stages."
+msgstr "Utilisé pour classer les étapes."
+
+#. module: hm_purchase
+#: model:purchase.stage,name:hm_purchase.purchase_stage2_po_commission
+#: model:purchase.stage,name:hm_purchase.purchase_stage2_po_emport_marchandise
+#: model:purchase.stage,name:hm_purchase.purchase_stage2_po_technicien
+#: model:purchase.stage,name:hm_purchase.purchase_stage5_po_marchandise
+msgid "Validé par gestionnaire"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_order_line_search
+msgid "Vendor"
+msgstr "Fournisseur"
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order_line__partner_ref
+msgid "Vendor Reference"
+msgstr "Référence fournisseur"
+
+#. module: hm_purchase
+#. odoo-python
+#: code:addons/hm_purchase/models/purchase_order.py:0
+#, python-format
+msgid ""
+"Vous ne pouvez pas ajouter un autre bon de commande lorsque state2 est %s."
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.portal_my_purchase_orders_technicien
+msgid "Work Order"
+msgstr "Intervention"
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order_line__hm_product_qty_credit
+msgid "credited Quantity"
+msgstr "Quantité à créditer"
+
+#. module: hm_purchase
+#: model:ir.model.fields,field_description:hm_purchase.field_purchase_order_line__hm_total_credit
+msgid "credited Total"
+msgstr "Total à créditer"
+
+#. module: hm_purchase
+#: model:mail.template,subject:hm_purchase.hm_purchase_order_send_mail_template
+msgid ""
+"{{ object.company_id.name }} - Order {{ object.partner_id.name }} (Ref {{ "
+"object.name or 'n/a'  }}) to be taken for site {{ "
+"object.hm_so_lie.display_name }} - {{ "
+"object.hm_intervention_property_address.display_name }}"
+msgstr ""
+"{{ object.company_id.name }} - Commande {{ object.partner_id.name }} (Ref {{"
+" object.name or 'n/a'  }} ) à emporter pour chantier "
+"{{object.hm_so_lie.display_name }} - {{ "
+"object.hm_intervention_property_address.display_name }}"
+
+#. module: hm_purchase
+#: model:mail.template,subject:hm_purchase.hm_request_report_after_intervention_mail_template
+msgid ""
+"{{ object.company_id.name }} Rapport d'intervention à envoyer {{ "
+"object.hm_so_lie.display_name }} - {{ "
+"object.hm_intervention_property_address.display_name }}"
+msgstr ""
+
+#. module: hm_purchase
+#: model:mail.activity.type,name:hm_purchase.hm_purchase_activity_order_or_cancel
+msgid "À faire URGENT : Commander ou annuler le PO?"
+msgstr ""
+
+#. module: hm_purchase
+#: model:mail.activity.type,name:hm_purchase.hm_purchase_activity_po_check_qty_sku_delivery
+msgid ""
+"À faire URGENT : Vérifier quantités, SKU, disponibilité, date et adresse de "
+"livraison"
+msgstr ""
+
+#. module: hm_purchase
+#: model:mail.activity.type,name:hm_purchase.hm_purchase_activity_supplier_po_encoding_check
+msgid "À faire URGENT : Vérifier si PO a été encodé par le fournisseur"
+msgstr ""
+
+#. module: hm_purchase
+#: model:purchase.stage,name:hm_purchase.purchase_stage1_po_commission
+#: model:purchase.stage,name:hm_purchase.purchase_stage1_po_emport_marchandise
+#: model:purchase.stage,name:hm_purchase.purchase_stage1_po_frais
+#: model:purchase.stage,name:hm_purchase.purchase_stage1_po_marchandise
+#: model:purchase.stage,name:hm_purchase.purchase_stage1_po_technicien
+msgid "À traiter"
+msgstr ""
+
+#. module: hm_purchase
+#: model_terms:ir.ui.view,arch_db:hm_purchase.hm_purchase_view_purchase_order_line_filter
+msgid "État"
+msgstr ""
+
+#. module: hm_purchase
+#. odoo-python
+#: code:addons/hm_purchase/models/purchase_order.py:0
+#, python-format
+msgid ""
+"⚠️ Annulation impossible : ce bon de commande est associé à des factures "
+"fournisseurs."
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_imput_activity_new_po_emport_to_manage
+msgid ""
+"🟠 PO of type 'Emport marchandise' confirmed and intervention manager does "
+"not contain 'Olivier' or 'Sacha' ➡️ Assign activity to intervention manager"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_action_bulk_under_action_fictitious_ir_actions_server
+msgid "🟠 VRAC SOUS ACTION FICTIF"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_merchandise_purchases_change_technician_who_will_take_merchandise_po_for_imputed_technician
+msgid ""
+"🟠 achats marchandises - changement \"technicien qui emportera la "
+"marchandise\" PO pour technicien imputé"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_imput_activity_order_storable_products
+msgid ""
+"🟠🐞 PO containing storable product created ➡️ Assign 'Order storable product'"
+" activity to Olivier"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_sending_technician_billing_slip_after_exe
+msgid ""
+"🟡 PO of type 'PO technicien' closed ➡️ Send 'Billable PO' notification to "
+"technician by email"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_action_sending_copy_po_material_to_take_away_to_technician_without_price_ir_actions_server
+msgid "🟢 Envoi copie PO matériel à emporter au technicien (SANS PRIX)"
+msgstr ""
+
+#. module: hm_purchase
+#: model:ir.actions.server,name:hm_purchase.hm_fill_delivery_address_field_according_to_preferred_address
+msgid ""
+"🟢🐞 [Technical] Van Marcke Purchase Order updated ➡️ Update delivery address"
+msgstr ""

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="set_hm_picture_library_file_size_min" model="ir.config_parameter">
+        <field name="key">hm_picture_library_file_size_min</field>
+        <field name="value">2000</field>
+    </record>
+</odoo>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="zip_code_form_view" model="ir.ui.view">
+        <field name="name">zip.code.form</field>
+        <field name="model">zip.code</field>
+        <field name="arch" type="xml">
+            <form string="Codes postaux">
+                <sheet>
+                    <group>
+                        <!-- <field name="name"/>-->
+                        <field name="zip"/>
+                        <field name="local"/>
+                        <field name="sous_commune"/>
+                        <field name="commune_principale"/>
+                        <field name="state_id"/>
+                        <field name="sous_province"/>
+                        <field name="code_pays"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="zip_code_search_view" model="ir.ui.view">
+        <field name="name">zip.code.search</field>
+        <field name="model">zip.code</field>
+        <field name="arch" type="xml">
+            <search string="Code postaux">
+                <field name="zip" string="Zip"/>
+                <field name="local" string="Localité"/>
+                <field name="state_id" string="Province"/>
+                <field name="code_pays" string="Country"/>
+                <group expand="1" string="Group By">
+                    <filter string="Sous province" name="groupby_sous_province"
+                            context="{'group_by': 'sous_province'}"/>
+                    <filter string="Commune Principale" name="commune_principale"
+                            domain="[('sous_commune', '=', False)]"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="zip_code_tree_view" model="ir.ui.view">
+        <field name="name">zip.code.tree</field>
+        <field name="model">zip.code</field>
+        <field name="arch" type="xml">
+            <tree string="Codes postaux" editable="bottom">
+                <!-- <field name="name"/>-->
+                <field name="zip" string="Zip"/>
+                <field name="local" string="Localité"/>
+                <field name="sous_commune"/>
+                <field name="commune_principale"/>
+                <field name="state_id" string="Province"/>
+                <field name="sous_province" string="Sous Province"/>
+                <field name="code_pays" string="Country"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="zip_code_action" model="ir.actions.act_window">
+        <field name="name">Codes postaux</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">zip.code</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem id="menu_zip_code_partner"
+              name="Codes postaux"
+              action="zip_code_action"
+              parent="contacts.menu_localisation"
+              sequence="2"/>
+
+</odoo>

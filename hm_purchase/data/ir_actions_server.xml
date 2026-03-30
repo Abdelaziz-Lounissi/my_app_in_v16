@@ -1,0 +1,500 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- <record id="studio_customization.test_automatisation_7e579e16-366b-4ca7-a1a1-f698c5d7d200" model="ir.actions.server">-->
+        <record id="hm_automation_test" model="ir.actions.server">
+            <field name="name">Test automatisation</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">multi</field>
+        </record>
+
+        <!-- <record id="studio_customization.rappel_technicien_ve_27ddd31c-26e4-48e5-a83a-a1c53605da4c" model="ir.actions.server">-->
+        <record id="hm_standby_technician_reminder" model="ir.actions.server">
+            <field name="name">Rappel technicien veille</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">mail_post</field>
+        </record>
+
+        <!-- <record id="studio_customization.rappel_technicien_de_6f08f082-7f4f-489c-94a4-4fb9badea41d" model="ir.actions.server">-->
+        <record id="hm_technician_reminder_to_confirm_date" model="ir.actions.server">
+            <field name="name">Rappel technicien de confirmer date</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="sequence">6</field>
+            <field name="state">mail_post</field>
+        </record>
+
+        <!-- <record id="studio_customization.rappel_technicien_de_ad802222-4450-4890-982e-14458710a48a" model="ir.actions.server">-->
+        <record id="hm_po_missing_nr_of_customer_tel" model="ir.actions.server">
+            <field name="name">PO Manque nr de tel client</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="sequence">12</field>
+            <field name="state">mail_post</field>
+        </record>
+
+        <!-- <record id="studio_customization.envoi_rapport_techni_8c01a1c8-0f3f-4a14-9930-79388e409dd7" model="ir.actions.server">-->
+        <record id="hm_sending_technician_report_following_execution" model="ir.actions.server">
+            <field name="name">Envoi rapport technicien suite exécution (DÉSACTIVE CAR CASE "PO corrigé selon exe" a été
+                détournée)
+            </field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">mail_post</field>
+            <field name="template_id" ref="hm_purchase.hm_po_rapport_intervent_mail_template"/>
+        </record>
+
+        <!-- <record id="studio_customization.rappel_technicien_ve_fe1a9474-23fd-4ead-b41b-12b83dc9e0f4" model="ir.actions.server">-->
+        <record id="hm_internal_comm_undefined_address_and_delivery_date" model="ir.actions.server">
+            <field name="name">Comm interne : pas défini adresse et date de livraison</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="sequence">8</field>
+            <field name="state">mail_post</field>
+        </record>
+
+        <!-- <record id="studio_customization.comm_interne_pas_def_096b94f5-ae64-4d61-8884-74acecc32056" model="ir.actions.server">-->
+        <record id="hm_internal_comm_confirm_order_missing_3_days_after_order" model="ir.actions.server">
+            <field name="name">Comm interne : confirm commande manquant (3j après commande)</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="sequence">14</field>
+            <field name="state">next_activity</field>
+            <field name="activity_user_type">specific</field>
+        </record>
+
+        <!-- <record id="studio_customization.comm_interne_confirm_017cc608-6e28-41c4-a6f0-003b2bff40e0" model="ir.actions.server">-->
+        <record id="hm_internal_comm_confirm_order_missing_1_days_before_exec" model="ir.actions.server">
+            <field name="name">Comm interne : confirm commande manquant (1jr avant exec)</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="sequence">13</field>
+            <field name="state">next_activity</field>
+            <field name="activity_user_type">specific</field>
+        </record>
+
+        <!-- <record id="studio_customization.creer_activite_envoy_c2c8ab0e-e9fd-4108-bad7-890ab33f3ceb" model="ir.actions.server">-->
+        <record id="hm_create_activity_send_billing_slip" model="ir.actions.server">
+            <field name="name">Créer activité: envoyer bon de facturation</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">next_activity</field>
+            <field name="activity_user_type">generic</field>
+            <field name="activity_user_field_name">hm_so_lie.user_id</field>
+        </record>
+
+        <!-- <record id="studio_customization.envoi_mail_demande_r_bcafd00f-76c8-4742-893d-2377fba892e8" model="ir.actions.server">-->
+        <record id="hm_sending_email_request_technician_report" model="ir.actions.server">
+            <field name="name">Envoi mail demande rapport technicien</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">mail_post</field>
+        </record>
+
+        <!-- <record id="studio_customization.demande_rapport_apre_d6942c42-5fef-47b5-8783-a3e70399344f" model="ir.actions.server">-->
+        <record id="hm_technician_report_request_after_intervention_activity" model="ir.actions.server">
+            <field name="name">Technicien - Demande rapport après intervention + activité</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="child_ids"
+                   eval="[(6, 0, [ref('hm_purchase.hm_create_activity_send_billing_slip'), ref('hm_purchase.hm_sending_email_request_technician_report')])]"/>
+            <field name="sequence">15</field>
+            <field name="state">multi</field>
+        </record>
+
+        <!-- <record id="studio_customization.sous_action_passer_l_93ade3d5-92ea-469d-b235-25453a455b29" model="ir.actions.server">-->
+        <record id="hm_sub_action_change_the_po_to_order_status" model="ir.actions.server">
+            <field name="name">SOUS-ACTION - Passer le PO en statut commande</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">object_write</field>
+            <field name="fields_lines" eval="[(0, 0, {
+                'col1': ref('purchase.field_purchase_order__state'),
+                'evaluation_type': 'value',
+                'value': 'purchase',
+            })]"/>
+        </record>
+
+        <!-- <record id="studio_customization.sous_action_remplir__dd571bc3-189a-422c-a425-0c2bbbcc33a4" model="ir.actions.server">-->
+        <record id="hm_sub_action_fill_field_person_who_will_do_the_removal_according_to_tech_charged_to_SO"
+                model="ir.actions.server">
+            <field name="name">SOUS-ACTION - Remplir champ "personne qui fera l'enlèvement" selon tech imputé au SO
+            </field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">object_write</field>
+            <field name="fields_lines" eval="[(0, 0, {
+                'col1': ref('hm_purchase.field_purchase_order__hm_person_who_will_do_the_kidnapping_id'),
+                'evaluation_type': 'equation',
+                'value': 'record.hm_imputed_technician_id.id',
+            })]"/>
+        </record>
+
+        <!-- <record id="studio_customization.passer_les_demandes__8e9f9d05-14b2-49eb-a60a-a91bc860b11f" model="ir.actions.server">-->
+        <record id="hm_place_take_out_supplier_price_requests" model="ir.actions.server">
+            <field name="name">Passer les demandes de prix fournisseurs "emport" en commande</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="child_ids"
+                   eval="[(6, 0, [ref('hm_purchase.hm_sub_action_change_the_po_to_order_status'), ref('hm_purchase.hm_sub_action_fill_field_person_who_will_do_the_removal_according_to_tech_charged_to_SO')])]"/>
+            <field name="sequence">9</field>
+            <field name="state">multi</field>
+        </record>
+
+        <!-- <record id="studio_customization.sous_action_envoi_ma_023a0bbf-2a82-49ed-9272-26ad17c1cd5c" model="ir.actions.server">-->
+        <record id="hm_sub_action_send_technician_order_email" model="ir.actions.server">
+            <field name="name">SOUS-ACTION: envoi mail commande technicien</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="sequence">6</field>
+            <field name="state">mail_post</field>
+            <field name="template_id" ref="purchase.email_template_edi_purchase"/>
+        </record>
+
+        <!-- <record id="studio_customization.sous_action_po_passe_a800be05-876e-431f-923a-247e4500006e" model="ir.actions.server">-->
+        <record id="hm_sub_action_po_pass_in_request_sent" model="ir.actions.server">
+            <field name="name">SOUS-ACTION: PO Passe en demande envoyée</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="sequence">6</field>
+            <field name="state">object_write</field>
+            <field name="fields_lines" eval="[(0, 0, {
+                'col1': ref('purchase.field_purchase_order__state'),
+                'evaluation_type': 'value',
+                'value': 'sent',
+            })]"/>
+        </record>
+
+        <!-- <record id="studio_customization.sous_action_mettre_t_b0066c5e-b0f2-453f-a80a-879a2ed5f7ef" model="ir.actions.server">-->
+        <record id="hm_sub_action_put_technician_in_po_follower" model="ir.actions.server">
+            <field name="name">SOUS-ACTION - Mettre technicien en Follower du PO - MARCHE PAS!</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">code</field>
+            <field name="code">
+default, _, external = env['mail.message.subtype'].default_subtypes('purchase.order')
+partner_ids=record.partner_id.ids
+customer_ids = env['res.partner'].sudo().search([('id', 'in', partner_ids), ('partner_share', '=', True)]).ids
+partner_subtypes = dict((pid, external.ids if pid in customer_ids else default.ids) for pid in partner_ids)
+
+fol_id = env['mail.followers'].create({'partner_id': record.partner_id.id, 'res_model': 'purchase.order','subtype_ids': [(6, 0, partner_subtypes[record.partner_id.id])]})
+message_follower_ids = [(4, fol_id.id)]
+record.write({'message_follower_ids': message_follower_ids})
+            </field>
+        </record>
+
+        <!-- <record id="studio_customization.sous_action_changer__03310cec-b249-4122-be6b-a249ca6d16c5" model="ir.actions.server">-->
+        <record id="hm_sub_action_change_name_vam_to_vam_pending" model="ir.actions.server">
+            <field name="name">SOUS-ACTION - Changer nom VAM &gt; VAM en attente</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">object_write</field>
+            <field name="fields_lines" eval="[(0, 0, {
+                'col1': ref('purchase.field_purchase_order__state'),
+                'evaluation_type': 'value',
+                'value': 'sent',
+            })]"/>
+        </record>
+
+        <!-- <record id="studio_customization.passer_commande_vam__2eeadd44-0512-4269-a0dd-f17db01cd7a8" model="ir.actions.server">-->
+        <record id="hm_pass_order_vam_to_pending_vam_at_creation_po" model="ir.actions.server">
+            <field name="name">Passer commande VAM en "VAM en attente" à la création PO</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="child_ids"
+                   eval="[(6, 0, [ref('hm_purchase.hm_sub_action_change_name_vam_to_vam_pending')])]"/>
+            <field name="sequence">11</field>
+            <field name="state">multi</field>
+        </record>
+
+        <!-- <record id="studio_customization.passer_commande_vam__fbd9141d-94b0-4a40-a1f4-227c471caf3f" model="ir.actions.server">-->
+        <record id="hm_pass_order_technician_to_pending_technician_at_creation_po" model="ir.actions.server">
+            <field name="name">Passer commande Technicien en "Technicien en attente" à la création PO</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="sequence">10</field>
+            <field name="state">object_write</field>
+            <field name="fields_lines" eval="[(0, 0, {
+                'col1': ref('purchase.field_purchase_order__partner_id'),
+                'evaluation_type': 'reference',
+                'value': '303',
+            })]"/>
+        </record>
+
+        <!-- <record id="studio_customization.brouillon_envoi_rapp_6a83811f-f0a6-4f08-b38f-770ea0483070" model="ir.actions.server">-->
+        <record id="hm_sending_report_to_technician_and_pass_status_order" model="ir.actions.server">
+            <field name="name">Envoi rapport au technicien + passage status commande</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">mail_post</field>
+            <field name="template_id" ref="hm_purchase.hm_po_rapport_intervent_mail_template"/>
+        </record>
+
+        <!-- <record id="studio_customization.sous_action_passer_p_e7a10bc9-970c-4d38-833f-42c53b46dd9e" model="ir.actions.server">-->
+        <record id="hm_sub_action_pass_po_to_status_order" model="ir.actions.server">
+            <field name="name">SOUS-ACTION - Passer PO au status "commande"</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">code</field>
+            <field name="code">record.button_confirm()</field>
+        </record>
+
+        <!-- <record id="studio_customization.intervention_passage_570f906b-29c2-4ddb-a61a-af73ecc5757f" model="ir.actions.server">-->
+        <record id="hm_intervention_order_status_change_after_intervention_date" model="ir.actions.server">
+            <field name="name">Intervention - Passage status commande après date intervention</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="child_ids" eval="[(6, 0, [ref('hm_purchase.hm_sub_action_pass_po_to_status_order')])]"/>
+            <field name="code">record.button_confirm()</field>
+            <field name="state">multi</field>
+        </record>
+
+        <!-- <record id="studio_customization.sous_action_passer_l_6a563a4e-029f-4a84-ab0c-83e3f797c2cd" model="ir.actions.server">-->
+        <record id="hm_sub_action_pass_po_to_status_order" model="ir.actions.server">
+            <field name="name">SOUS-ACTION - Passer le PO en status "commande"</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">object_write</field>
+            <field name="fields_lines" eval="[(0, 0, {
+                'col1': ref('purchase.field_purchase_order__state'),
+                'evaluation_type': 'value',
+                'value': 'purchase',
+            })]"/>
+        </record>
+
+        <!-- <record id="studio_customization.sous_action_changer__0fcf5e8c-fe01-4b2a-b45d-c76038f9545f" model="ir.actions.server">-->
+        <record id="hm_sub_action_change_technician_name_at_po_according_to_one_charged_to_so" model="ir.actions.server">
+            <field name="name">SOUS-ACTION - Changer nom technicien au PO selon celui imputé au SO</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">object_write</field>
+            <field name="fields_lines" eval="[(0, 0, {
+                'col1': ref('purchase.field_purchase_order__partner_id'),
+                'evaluation_type': 'equation',
+                'value': 'record.hm_imputed_technician_id.id',
+            })]"/>
+        </record>
+
+        <!-- <record id="studio_customization.intervention_changem_3debcea0-0cb6-4750-afe6-93d9fc4cfb7a" model="ir.actions.server">-->
+        <record id="hm_intervention_change_supplier_po_for_imputed_technician" model="ir.actions.server">
+            <field name="name">Intervention - changement fournisseur PO pour technicien imputé</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="child_ids"
+                   eval="[(6, 0, [ref('hm_purchase.hm_sub_action_change_technician_name_at_po_according_to_one_charged_to_so'), ref('hm_purchase.hm_sub_action_put_technician_in_po_follower')])]"/>
+            <field name="state">multi</field>
+        </record>
+
+        <!-- <record id="studio_customization.remplir_le_champ_adr_cd59eda4-c54b-4238-a206-95aebfdff513" model="ir.actions.server">-->
+        <record id="hm_fill_delivery_address_field_according_to_preferred_address" model="ir.actions.server">
+            <field name="name">[Technical] Van Marcke Purchase Order updated ➡️ Update delivery address</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">code</field>
+            <field name="code">record._set_hm_delivery_address()</field>
+
+        </record>
+
+        <!-- <record id="studio_customization.envoyer_rapport_apre_8a72afc0-172f-4c71-a909-2073c91d8166" model="ir.actions.server">-->
+        <record id="hm_send_invoice_to_technician" model="ir.actions.server">
+            <field name="name">Envoyer Bon de facturation au technicien</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="binding_model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">mail_post</field>
+            <field name="template_id" ref="hm_purchase.hm_po_rapport_intervent_mail_template"/>
+        </record>
+
+        <!-- <record id="studio_customization.vrac_sous_action_fic_f8e9306d-6569-4cdc-a984-1bb0a4196f3a" model="ir.actions.server">-->
+        <record id="hm_bulk_under_action_fictitious" model="ir.actions.server">
+            <field name="name">VRAC SOUS ACTION FICTIF</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="child_ids"
+                   eval="[(6, 0, [ref('hm_purchase.hm_send_invoice_to_technician')])]"/>
+            <field name="state">multi</field>
+        </record>
+
+        <!-- <record id="studio_customization.envoi_rapport_techni_ab943110-56b4-45ed-a274-917b98365d59" model="ir.actions.server">-->
+        <record id="hm_sending_technician_billing_slip_after_exe" model="ir.actions.server">
+            <field name="name">PO of type 'PO technicien' closed ➡️ Send 'Billable PO' notification to technician by email</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="child_ids"
+                   eval="[(6, 0, [ref('hm_purchase.hm_send_invoice_to_technician')])]"/>
+            <field name="state">mail_post</field>
+            <field name="template_id" ref="hm_purchase.hm_po_rapport_intervent_mail_template"/>
+        </record>
+
+        <!-- <record id="studio_customization.rappel_technicien_ve_3c6b2989-25e2-4ff2-bbdd-93de0089e73c" model="ir.actions.server">-->
+        <record id="hm_technician_callback_before_5_days" model="ir.actions.server">
+            <field name="name">Rappel technicien 5 jours avant</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">mail_post</field>
+        </record>
+
+        <!-- <record id="studio_customization.sous_action_changer__55417672-ca37-40df-adb0-52e630935c1b" model="ir.actions.server">-->
+        <record id="hm_sub_action_change_name_technician_who_will_take_merchandise_to_technician_to_be_charged" model="ir.actions.server">
+            <field name="name">Sous-action - changer nom "technicien qui emportera la marchandise" pour technicien à
+                imputer
+            </field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">object_write</field>
+            <field name="fields_lines" eval="[(0, 0, {
+                'col1': ref('hm_purchase.field_purchase_order__hm_person_who_will_do_the_kidnapping_id'),
+                'evaluation_type': 'equation',
+                'value': 'record.hm_imputed_technician_id.id',
+            })]"/>
+        </record>
+
+        <!-- <record id="studio_customization.intervention_changem_5d8f4e85-1c3e-49e3-a462-f318521764c6" model="ir.actions.server">-->
+        <record id="hm_merchandise_purchases_change_technician_who_will_take_merchandise_po_for_imputed_technician" model="ir.actions.server">
+            <field name="name">achats marchandises - changement "technicien qui emportera la marchandise" PO pour technicien imputé</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="child_ids"
+                   eval="[(6, 0, [ref('hm_purchase.hm_sub_action_change_name_technician_who_will_take_merchandise_to_technician_to_be_charged')])]"/>
+            <field name="state">multi</field>
+        </record>
+
+        <!--  <record id="studio_customization.po_emport_tech_mettr_d77b5130-97aa-47b5-9bf7-60eece98b3b2" model="ir.actions.server">-->
+        <record id="hm_po_emport_tech_put_delivery_address_on_hold" model="ir.actions.server">
+            <field name="name">PO emport tech - Mettre adresse de livraison en attente</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">object_write</field>
+            <field name="fields_lines" eval="[(0, 0, {
+                'col1': ref('hm_purchase.field_purchase_order__hm_delivery_address'),
+                'evaluation_type': 'reference',
+                'value': '241',
+            })]"/>
+        </record>
+
+        <!--  <record id="studio_customization.passe_vam_emport_en__fecc7c3f-6685-45b9-b7c8-6708d09c4155" model="ir.actions.server">-->
+        <record id="hm_vam_pass_carried_invam_when_po_is_confirmed" model="ir.actions.server">
+            <field name="name">Passe VAM emport en VAM au moment ou on confirme le PO</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">object_write</field>
+            <field name="fields_lines" eval="[(0, 0, {
+                'col1': ref('purchase.field_purchase_order__partner_id'),
+                'evaluation_type': 'reference',
+                'value': '108',
+                }), (0, 0, {
+                'col1': ref('hm_purchase.field_purchase_order__hm_delivery_date'),
+                'evaluation_type': 'value',
+                'value': '01/01/2000',
+            })]"/>
+        </record>
+
+        <!-- <record id="studio_customization.cree_activite_recept_7d754b51-94c6-4d7c-b469-601002392c32" model="ir.actions.server">-->
+        <record id="hm_create_peb_reception_activity_to_organize" model="ir.actions.server">
+            <field name="name">Créer activité réception PEB à organiser</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">next_activity</field>
+            <field name="activity_summary">Organiser réception PEB (si pas fait?) + papiers prime</field>
+            <field name="activity_user_type">specific</field>
+        </record>
+
+        <!-- <record id="studio_customization.activity_order_stock_7c6eb610-4d45-459b-84b2-5f11e28cb957" model="ir.actions.server">-->
+        <record id="hm_imput_activity_order_storable_products" model="ir.actions.server">
+            <field name="name">PO containing storable product created ➡️ Assign 'Order storable product' activity to Olivier</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">next_activity</field>
+            <field name="activity_type_id" ref="mail.mail_activity_data_todo"/>
+            <field name="activity_summary">Commander articles stockables</field>
+            <field name="activity_user_type">specific</field>
+            <field name="activity_user_id" eval="2"/>
+            <field name="activity_note" type="html"><p><font style="color: rgb(255, 0, 0);"><b>AVANT DE VALIDER LA COMMANDE, aller dans Inventaire &gt; Opération &gt; Lancer le planificateur pour générer les commandes avec Q minimum</b></font></p></field>
+        </record>
+
+        <!--  <record id="studio_customization.envoi_bon_de_command_1b8b8e7c-a9c2-4948-b6c2-114d667b8f02" model="ir.actions.server">-->
+        <record id="hm_sending_po_supplier_purchase_order" model="ir.actions.server">
+            <field name="name">Envoi bon de commande fournisseur PO</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">mail_post</field>
+            <field name="template_id" ref="purchase.email_template_edi_purchase_done"/>
+        </record>
+
+        <!-- <record id="studio_customization.comm_interne_confirm_ae7aba86-1ef2-4b15-9713-0cb53fe5e895" model="ir.actions.server">-->
+        <record id="hm_internal_comm_confirm_missing_order_5_days_after_order" model="ir.actions.server">
+            <field name="name">Comm interne : confirm commande manquant (5jr après commande)</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="sequence">13</field>
+            <field name="state">next_activity</field>
+            <field name="activity_user_type">specific</field>
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_passe_96312afb-0c89-4fbf-9cda-9be9e96e7cb3" model="ir.actions.server">-->
+        <record id="hm_imput_activity_pass_order_storable_mat" model="ir.actions.server">
+            <field name="name">Imput activity - passer commande mat stockable</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">next_activity</field>
+            <field name="activity_type_id" ref="mail.mail_activity_data_todo"/>
+            <field name="activity_summary">Commander</field>
+            <field name="activity_user_type">specific</field>
+            <field name="activity_user_id" eval="2"/>
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_check_5177b0c6-dcad-4361-9c9c-af77320ce96b" model="ir.actions.server">-->
+        <record id="hm_imput_activity_check_po_supplier_manager" model="ir.actions.server">
+            <field name="name">Imput Activity - check PO fournisseur gestionnaire</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">next_activity</field>
+            <field name="activity_type_id" ref="mail.mail_activity_data_todo"/>
+            <field name="activity_summary">CHECK FACTURE EMPORT gestionnaire</field>
+            <field name="activity_user_type">generic</field>
+            <field name="activity_user_field_name">hm_so_lie.user_id</field>
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_1e09efd4-332d-459b-91e7-29ae1bef63ee" model="ir.actions.server">-->
+        <record id="hm_imput_activity_material_to_be_defined_to_be_chosen_for_order" model="ir.actions.server">
+            <field name="name">Imput Activity - Matériel à definir à choisir pour commande</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">next_activity</field>
+            <field name="activity_type_id" ref="mail.mail_activity_data_todo"/>
+            <field name="activity_summary">VOIR QUEL PIECE COMMANDER ("à définir")</field>
+            <field name="activity_user_type">generic</field>
+            <field name="activity_user_field_name">hm_so_lie.user_id</field>
+        </record>
+
+        <!--  <record id="studio_customization.imput_activity_po_to_07c0b214-7370-4c3e-861e-de3124990c55" model="ir.actions.server">-->
+        <record id="hm_imput_activity_po_to_send_to_supplier_2h_after_defining_tech_imputed" model="ir.actions.server">
+            <field name="name">Imput Activity - PO to send to supplier 2h after defining tech imputé - REFACTORING
+                modifié
+            </field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">next_activity</field>
+            <field name="activity_type_id" ref="mail.mail_activity_data_todo"/>
+            <field name="activity_summary">Envoyer la commande au fournisseur</field>
+            <field name="activity_user_type">generic</field>
+            <field name="activity_user_field_name">so_manager_1</field>
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_suppl_216a2af9-470a-423b-9b0b-7743ee0eb17c" model="ir.actions.server">-->
+        <record id="hm_imput_activity_supplier_order_confirm_missing" model="ir.actions.server">
+            <field name="name">Imput Activity - supplier order confirm missing</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">next_activity</field>
+            <field name="activity_user_type">specific</field>
+        </record>
+
+        <!-- <record id="studio_customization.change_state_envoye__d29a634b-27ac-4715-b4e7-848e7e451aac" model="ir.actions.server">-->
+        <record id="hm_change_state_sent_supplier_confirmed_when_filling_ref_supplier" model="ir.actions.server">
+            <field name="name">Change state Envoyé fournisseur &gt; Confirmé when filling ref fournisseur</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">object_write</field>
+            <field name="fields_lines" eval="[(0, 0, {
+                'col1': ref('hm_purchase.field_purchase_order__stage2_id'),
+                'evaluation_type': 'reference',
+                'value': ref('hm_purchase.purchase_stage3_po_marchandise'),
+            })]"/>
+        </record>
+
+        <!-- <record id="studio_customization.imput_activity_new_p_67a8cf09-5665-4883-a00d-d68215712a37" model="ir.actions.server">-->
+        <record id="hm_imput_activity_new_po_emport_to_manage" model="ir.actions.server">
+            <field name="name">PO of type 'Emport marchandise' confirmed and intervention manager does not contain 'Olivier' ➡️ Assign activity to intervention manager</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="state">next_activity</field>
+            <field name="activity_type_id" ref="mail.mail_activity_data_todo"/>
+            <field name="activity_summary">New PO Emport à traiter</field>
+            <field name="activity_user_type">generic</field>
+            <field name="activity_user_field_name">so_manager_1</field>
+        </record>
+
+        <!-- <record id="studio_customization.articles_divers_mett_38541c33-201d-4d58-a399-e573daa993b6" model="ir.actions.server">-->
+        <record id="hm_miscellaneous_produts_put_budget_in_po_purchase_price_to_so_confirm" model="ir.actions.server">
+            <field name="name">Articles divers - Mettre budget dans prix d'achat PO à la confirm SO</field>
+            <field name="model_id" ref="purchase.model_purchase_order_line"/>
+            <field name="state">object_write</field>
+            <field name="fields_lines" eval="[(0, 0, {
+                'col1': ref('purchase.field_purchase_order_line__price_unit'),
+                'evaluation_type': 'equation',
+                'value': 'record.hm_budget',
+            })]"/>
+        </record>
+
+        <!-- <record id="studio_customization.articles_speciaux_mo_9f4525a9-5d0c-48a2-908f-f259cd22b1ac" model="ir.actions.server">-->
+        <record id="hm_special_products_mo_miscellaneous_copy_descriptive_of_so_on_po" model="ir.actions.server">
+            <field name="name">Articles spéciaux (MO, divers) &gt; copie descriptif du SO sur PO</field>
+            <field name="model_id" ref="purchase.model_purchase_order_line"/>
+            <field name="state">object_write</field>
+            <field name="fields_lines" eval="[(0, 0, {
+                'col1': ref('purchase.field_purchase_order_line__name'),
+                'evaluation_type': 'equation',
+                'value': 'record.hm_description_from_so',
+            })]"/>
+        </record>
+
+    </data>
+</odoo>

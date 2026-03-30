@@ -1,0 +1,107 @@
+<odoo>
+
+    <!--Tree view-->
+    <record id="hm_wr_tree_view" model="ir.ui.view">
+        <field name="name">hm.work.report.tree</field>
+        <field name="model">hm.work.report</field>
+        <field name="arch" type="xml">
+            <tree duplicate="0">
+                <field name="name"/>
+                <field name="hm_related_so_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Form view-->
+    <record id="hm_wr_form_view" model="ir.ui.view">
+        <field name="name">hm.work.report.form</field>
+        <field name="model">hm.work.report</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <sheet>
+                    <div class="oe_title">
+                        <h1 modifiers="{}">
+                            <field name="name" modifiers="{'readonly':true}"/>
+                        </h1>
+                    </div>
+
+                    <group>
+                        <field name="body_text"/>
+                    </group>
+
+
+                    <notebook >
+                        <page string="Infos" autofocus="autofocus">
+                            <group>
+                                <field name="picture_wr_info_ids" string="">
+                                    <tree create="0" editable="bottom">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="name" invisible="1"/>
+                                        <field name="hm_picture_library_id" readonly="1" force_save="1"/>
+                                        <field name="image_1920" widget='image' class="oe_avatar" options='{"zoom": true, "preview_image":"image_1024"}'/>
+                                        <field name="external_image_preview_html" optional="show" class="o_list_thumbnail"/>
+                                        <field name="caption"/>
+                                    </tree>
+                                </field>
+                            </group>
+                            <group name="product_template_images">
+                                <field name="hm_related_so_id" invisible="1"/>
+                                <field name="picture_lib_ids" class="o_website_sale_image_list"
+                                       context="{'default_name': name, 'search_default_sale_order_ids': [hm_related_so_id]}"
+                                       mode="kanban" colspan="2"
+                                       options="{'create_text':'Ajouter des photos', 'no_create': True}" nolabel="1"/>
+                            </group>
+                        </page>
+                        <page string="Links" groups="base.group_no_one">
+                            <group>
+                                <group>
+                                    <field name="hm_related_so_id"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <!--    search view-->
+
+    <record id="hm_wr_search_view" model="ir.ui.view">
+        <field name="name">hm.work.report.search</field>
+        <field name="model">hm.work.report</field>
+        <field name="arch" type="xml">
+            <search string="Search ">
+                <field name="name"/>
+                <field name="hm_related_so_id"/>
+                <field name="body_text"/>
+                <field name="create_date"/>
+                <field name="create_uid"/>
+
+                <group string="Group By" name="groupby">
+                    <filter
+                            name="hm_related_so_id"
+                            string="SO"
+                            context="{'group_by': 'hm_related_so_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!--Action-->
+    <record id="hm_wr_action" model="ir.actions.act_window">
+        <field name="name">Work Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hm.work.report</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="hm_icr_wr.hm_wr_search_view"/>
+        <field name="view_ids"
+               eval="[(5, 0, 0),
+                                  (0, 0, {'view_mode': 'tree', 'view_id': ref('hm_wr_tree_view')}),
+                                  (0, 0, {'view_mode': 'form', 'view_id': ref('hm_wr_form_view')})]"/>
+    </record>
+
+
+</odoo>

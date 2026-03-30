@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="action_hm_picture_library_sale_order" model="ir.actions.act_window">
+            <field name="name">Bibliothèque de photos</field>
+            <field name="res_model">hm.picture.library</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('sale_order_ids', 'in', active_id), ('is_client_signature', '=', False)]</field>
+            <field name="context">{'show_selectable' : True ,'selected_sale_id': active_id}</field>
+        </record>
+
+        <record id="hm_picture_library_sale_order_form_view_inherit" model="ir.ui.view">
+            <field name="name">sale.order.form.for.picture</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                    <button name="%(hm_picture_library.action_hm_picture_library_sale_order)d" type="action"
+                            context="{'default_sale_order_ids': [(6, 0, [active_id])]}"
+                            class="oe_stat_button" icon="fa-picture-o">
+                        <div class="o_stat_info">
+                            <field name="total_pictures" class="o_stat_value"/>
+                            <span class="o_stat_text" attrs="{'invisible': [('total_pictures', '&lt;', 2)]}">Photos
+                            </span>
+                            <span class="o_stat_text" attrs="{'invisible': [('total_pictures', '&gt;', 1)]}">Photo
+                            </span>
+                        </div>
+                    </button>
+
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page name="picture" string="Pictures">
+                        <field name="selected_picture_info_ids" readonly="0" nolabel="1">
+                            <tree create="0" delete="0" editable="bottom">
+                                <field name="name" invisible="1"/>
+                                <field name="hm_picture_library_id" readonly="1" force_save="1"/>
+                                <field name="external_image_url" invisible="1"/>
+                                <field name="image_1920" widget='image' class="oe_avatar"
+                                       options='{"zoom": true, "preview_image":"image_256"}'
+                                       optional="show"/>
+                                <field name="external_image_preview_html" optional="show" class="o_list_thumbnail"/>
+                                <field name="caption"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <function model="ir.model.data" name="write">
+            <function model="ir.model.data" name="search">
+                <value eval="[
+                    ('module', '=', 'purchase'),
+                    ('model', '=', 'mail.message.subtype'),
+                    ('name', '=', 'mt_rfq_confirmed')
+                ]"/>
+            </function>
+            <value eval="{'noupdate': False}"/>
+        </function>
+
+        <record id="purchase.mt_rfq_confirmed" model="mail.message.subtype">
+            <field name="name">RFQ Approved</field>
+        </record>
+
+        <function model="ir.model.data" name="write">
+            <function model="ir.model.data" name="search">
+                <value eval="[
+                    ('module', '=', 'purchase'),
+                    ('model', '=', 'mail.message.subtype'),
+                    ('name', '=', 'mt_rfq_confirmed')
+                ]"/>
+            </function>
+            <value eval="{'noupdate': True}"/>
+        </function>
+
+        <record id="mt_rfq_confirmed2" model="mail.message.subtype">
+            <field name="name">RFQ Confirmed</field>
+            <field name="default" eval="False"/>
+            <field name="res_model">purchase.order</field>
+        </record>
+
+        <record id="mt_rfq_sent_to_supplier" model="mail.message.subtype">
+            <field name="name">RFQ sent to supplier</field>
+            <field name="default" eval="False"/>
+            <field name="res_model">purchase.order</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="ir_cron_update_so_state2" model="ir.cron">
+            <field name="name">If SO state2 = planned and commitment_date &lt; now then update state2 = in_progress</field>
+            <field name="model_id" ref="model_sale_order"/>
+            <field name="state">code</field>
+            <field name="code">model.update_state2()</field>
+            <field name="active" eval="False"/>
+            <field name="interval_number">10</field>
+            <field name="priority">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

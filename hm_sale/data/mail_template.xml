@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data noupdate="1">
+
+        <!--  <record id="studio_customization.rappel_du_rendez_vou_5e1bd004-9536-4c6b-888f-3d2239233c31" model="mail.template">-->
+        <record id="hm_mail_template_appointment_reminder" model="mail.template">
+            <!--            <field name="name">Rappel du rendez-vous</field>-->
+        </record>
+
+        <!--  <record id="studio_customization.confirmation_command_6950b8c1-c172-4ebe-9620-862410116d5e" model="mail.template">-->
+        <record id="mail_template_order_confirmation_without_date_and_vat_certificate_request" model="mail.template">
+            <!--            <field name="name">Confirmation commande SANS DATE + demande attest TVA</field>-->
+        </record>
+
+        <!--  <record id="studio_customization.confirmation_interve_48de13f0-5526-44c9-bce8-c9f1d29e902f" model="mail.template">-->
+        <record id="hm_mail_template_confirmation_of_sav_intervention_or_sales_visit" model="mail.template">
+            <!--            <field name="name">Confirmation intervention SAV ou visite commerciale</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.demande_avis_sur_goo_1e5efcab-6afc-4730-ba46-718813db0b10" model="mail.template">-->
+        <record id="hm_mail_template_request_review_on_google_after_execution" model="mail.template">
+            <!--            <field name="name">Demande avis sur Google après exécution</field>-->
+        </record>
+
+        <!-- <record id="studio_customization.confirmation_command_38f4e95d-e586-4781-b956-1df42341a3a4" model="mail.template">-->
+        <record id="hm_mail_template_order_confirmation_with_date" model="mail.template">
+            <!--            <field name="name">Confirmation commande AVEC DATE</field>-->
+        </record>
+
+        <record id="sale.email_template_edi_sale" model="mail.template">
+            <!--            <field name="name">Devis Heat-Me: Send by email</field>-->
+        </record>
+
+        <record id="hm_mail_template_intervention_report" model="mail.template">
+            <!--            <field name="name">Envoi rapport d'intervention du technicien au client</field>-->
+        </record>
+
+    </data>
+</odoo>

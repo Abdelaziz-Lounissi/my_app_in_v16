@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_partner_property_form_inherit" model="ir.ui.view">
+        <field name="name">account_partner_payment.partner_form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='property_supplier_payment_term_id']" position="after">
+                <field name="hm_commercial_delegate_id"/>
+            </xpath>
+        </field>
+    </record>
+
+
+<!--
+ # Override the 'action_view_partner_invoices' button to include the group 'hm_group_invoicing_readonly',
+ # allowing users in this group to view the button 'partner invoices' in the form view.
+-->
+    <record id="hm_res_partner_view_buttons_inherit" model="ir.ui.view">
+        <field name="name">res.partner.view.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.partner_view_buttons"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_view_partner_invoices']" position="attributes">
+                <attribute name="groups">account.group_account_invoice,account.group_account_readonly,hm_account.hm_group_invoicing_readonly</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

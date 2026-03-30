@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="hm_picture_library_action_reset_picture" model="ir.actions.server">
+            <field name="name">[Technical] Reset Picture Info</field>
+            <field name="model_id" ref="hm_picture_library.model_hm_picture_library"/>
+            <field name="state">code</field>
+            <field name="code">
+record._reset_picture_info()
+            </field>
+        </record>
+
+<record id="hm_picture_create_picture_library_from_attachments_action_serv" model="ir.actions.server">
+            <field name="name">[Technical] Create picture library from attachments</field>
+            <field name="model_id" ref="base.model_ir_attachment"/>
+            <field name="state">code</field>
+            <field name="code">
+record._create_picture_library_from_attachments()
+            </field>
+        </record>
+
+<record id="hm_picture_update_picture_library_from_attachments_action_serv" model="ir.actions.server">
+            <field name="name">[Technical] Attachment created ➡️ Update picture library</field>
+            <field name="model_id" ref="base.model_ir_attachment"/>
+            <field name="state">code</field>
+            <field name="code">
+record._update_picture_library_from_attachments()
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
